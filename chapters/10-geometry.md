@@ -1,258 +1,183 @@
 # Chapter 10 — Geometry
+*How to Measure What You Cannot Reach.*
 
-## Suggested Titles
+There is a pond in the way.
 
-- **How We Measure the World**: From the Egyptian Rope to GPS Satellites
-- **Geometry: The Machinery of Shape and Space**
-- **Lines, Angles, and the Pythagorean Theorem: What Builders and Surveyors Know**
+A surveyor needs to measure the distance from one corner of a property to the far corner on the opposite shore. She cannot walk it. The water is in the way. She has a tape measure, a transit, and a pencil. She plants a stake at her position, walks perpendicular to the direction of the far corner, plants another stake, measures the distance she walked, and writes three numbers in her notebook. Then she calculates the answer she needs from those three numbers, using a relationship a Greek philosopher figured out 2,500 years ago.
 
----
+She never gets her boots wet.
 
-## TL;DR
-
-Geometry is the mathematics of shape and space. This chapter teaches three core machineries: how lines and angles form the skeleton of the spatial world, how perimeter and area let us measure the boundaries and interiors of shapes, and how the Pythagorean theorem connects the sides of right triangles—a relationship so fundamental it powers everything from construction to GPS.
+This is what geometry is for. Not for theorem-proving for its own sake, but as an instrument — a way of extracting measurements you need from measurements you can make. The word comes from Greek: *geo* (earth) and *metron* (measure). Earth-measuring. The whole discipline, right there in the etymology.
 
 ---
 
-## Cold Open
+## The vocabulary
 
-A surveyor stands at the corner of a plot of land, holding a transit and a measuring tape. The client wants to know the exact distance across the property to the far corner, but there is a pond in the way. The surveyor cannot simply wade through and measure. Instead, she plants a stake at the client's position, walks perpendicular to the direction of the far corner, plants another stake, measures that distance, records the angle back to the far corner, and writes three numbers in her notebook. From those three numbers—using machinery that Pythagoras figured out 2,500 years ago—she calculates the distance across the pond without getting her boots wet.
+Geometry begins with three things you cannot define without circularity, so Euclid, in about 300 BCE, didn't really try. A *point* is "that which has no part" — no width, no length, no dimension, just location. A *line* is "length without breadth." These are primitives. You understand them the way you understand "red" — by pointing at them, not by constructing them from smaller pieces.
 
-This is geometry at work. Not the geometry of theorem-proving for theorem-proving's sake, but geometry as an instrument. It is the mathematics of space and shape, born from the need to re-measure Egyptian fields after the Nile flooded them, and still doing the same work today when an engineer needs to know if a beam is truly perpendicular or a contractor needs to know how much concrete fills a foundation.
+What you can do is describe their relationships.
 
-The word *geometry* comes from Greek: *geo* (earth) and *metron* (measure)—literally, "earth-measuring." That honest etymology is the whole discipline in miniature.
+Two distinct points determine exactly one line. That line extends forever in both directions. If you pick just one end — a starting point and a direction, going on forever in one direction — that's a *ray*. If you pick both ends — two points and the stretch of line between them — that's a *line segment*, and it has a definite length.
 
-### Learning Objectives
+The notation is systematic. A point is a capital letter: $A$. A segment from $A$ to $B$ gets a bar over the letters: $\overline{AB}$. A ray starting at $A$ through $B$ gets an arrow: $\overrightarrow{AB}$. A full line through both gets arrows in both directions: $\overleftrightarrow{AB}$.
 
-By the end of this chapter you will be able to:
+<!-- → [IMAGE: four labeled diagrams in a row — point A (dot), segment AB (line with two endpoints), ray AB (line with one endpoint and one arrow), line AB (line with arrows at both ends) — each with its symbol beneath; student should be able to read the symbol and immediately identify which object it represents] -->
 
-- **Specify** the properties of lines, rays, line segments, angles, and planes; use notation correctly.
-- **Distinguish** angle types by measure and relationships (complementary, supplementary, vertical angles); solve for unknown angle measures.
-- **Classify** triangles and polygons; compute perimeter and area from dimensions.
-- **Apply** the Pythagorean theorem to find unknown sides of right triangles; use it to solve real-world distance problems.
-- **Recognize** when similar figures have proportional sides; use that scaling to estimate heights and distances.
+Now introduce direction. When two rays share a starting point — called the *vertex* — they form an *angle*. The angle is measured by the rotation from one ray to the other, in degrees. A full rotation is 360°. Half a rotation is a *straight angle*, 180°. A quarter rotation is a *right angle*, 90°, marked with a small square at the vertex. Below 90° is *acute*. Between 90° and 180° is *obtuse*.
 
-### Prerequisites
+Two angles that sum to 90° are *complementary*. Two that sum to 180° are *supplementary*. These words carry information: if you know one of a complementary pair, you can always find the other; same with supplementary. The relationship does the work.
 
-Comfortable with arithmetic. Ability to solve simple algebraic equations ($ax = b$, $a + bx = c$). Willingness to think visually.
+<!-- → [IMAGE: four angle diagrams side by side — acute (<90°), right (90° with square corner symbol), obtuse (90°–180°), straight (180°) — each labeled with its name and degree range; beneath, a small diagram showing a complementary pair summing to 90° and a supplementary pair summing to 180°] -->
 
-### Why This Chapter Matters
+Two lines that never meet — that maintain the same distance forever — are *parallel*, written $\ell_1 \parallel \ell_2$. Two lines that meet at exactly 90° are *perpendicular*, written $\ell_1 \perp \ell_2$. A perpendicular from a point to a line is the shortest path from that point to the line. This is not a definition; it is a theorem. But it is one of those theorems so close to obvious that it feels like a definition.
 
-Geometry answers the question "how do we measure space?" It is the foundation for everything that requires knowing distances, angles, areas, or volumes. Construction, surveying, navigation, engineering, physics, computer graphics—all rest on the geometric machinery you will learn here. Unlike logic or probability, which are more abstract, geometry is directly anchored to the world you can touch and see. That makes it the most directly useful mathematics most students encounter.
+Here is the structural fact about angles that makes surveying possible. When a line — called a *transversal* — crosses two parallel lines, it creates eight angles. The corresponding angles on the same side of each parallel line are equal. The alternate interior angles (on opposite sides of the transversal, between the parallels) are also equal. This is how a surveyor checks whether two roads are actually parallel: find a road that crosses both, measure the corresponding angles. Equal? Parallel. Unequal? The roads are drifting toward each other.
 
----
+<!-- → [IMAGE: two parallel horizontal lines crossed by a diagonal transversal — all eight angles labeled 1–8 — corresponding pairs (1 and 5, 2 and 6, etc.) highlighted in the same color; alternate interior pairs (3 and 6, 4 and 5) highlighted in a second color — student should see at a glance which angle pairs are forced to be equal when the lines are parallel] -->
 
-## Concept 1 — Lines, Rays, and Angles: The Language of Direction
-
-You are standing in a city grid. A street runs north-south in front of you. Another runs east-west. Where they meet is a corner—what a geometer calls a *point*. The street itself, running infinitely in both directions, is a *line*. The block you are standing on—the street from this corner to the next corner—is a *line segment*: a line with two endpoints.
-
-In about 300 BCE, Euclid, the Greek mathematician who compiled all geometric knowledge into his *Elements*, did not try to define these objects rigorously. A point was "that which has no part"—it has no width, no length, no dimension, just location. A line was "length without breadth." These descriptions are not proofs; they are *primitives*—concepts so basic that trying to define them in terms of other things would be circular. You can understand the description without needing a formal definition, just as you understand "dog" without needing to construct dogs from smaller concepts.
-
-Here is what we write:
-
-- A point $A$ is named with a capital letter.
-- A line segment from point $A$ to point $B$ is written $\overline{AB}$ (a bar over the two letters).
-- A ray starting at $A$ and passing through $B$ is written $\overrightarrow{AB}$ (an arrow in one direction).
-- A line passing through both $A$ and $B$ is written $\overleftrightarrow{AB}$ (arrows in both directions).
-
-Here is what matters: two distinct points determine exactly one line. One point and a direction determine exactly one ray. A line segment has a definite length; a ray goes on forever in one direction; a line goes on forever in both directions.
-
-Now we introduce direction. When two rays share a starting point (called the *vertex*), they form an *angle*. The angle is measured by the amount of rotation from one ray to the other, typically in degrees. A *straight angle* measures 180°. A *right angle* measures 90° (and is often drawn with a small square at the vertex to indicate it). An *acute angle* measures less than 90°. An *obtuse angle* measures between 90° and 180°.
-
-#### Scale Shift: From the Corner to the Earth
-
-Here is where geometry becomes powerful. The same machinery that measures a corner lot also measures the curvature of the Earth. A surveyor wants to know if two roads are parallel. They check: do the roads maintain a constant distance apart as they extend? By Euclid's definition, two lines in the same plane are *parallel* if they never intersect, no matter how far they extend. In practice, the surveyor uses the fact that parallel lines make equal *corresponding angles* with a third line (called a *transversal*) that crosses them both. If the angles are equal, the lines are parallel. If they are not, one road is drifting toward the other.
-
-When two lines intersect at a right angle—90°—they are *perpendicular*, written $\ell_1 \perp \ell_2$. A perpendicular line is the shortest path from a point to a line.
-
-#### Worked Example: Finding Unknown Angles Using Supplementary Angle Relationships
-
-A surveyor measures the angle between a property line and a new fence to be 47°. The fence runs the full length of the property, which is a straight line (180°). What is the angle on the other side of the fence?
-
-*Given:* One angle measures 47°. The two angles form a straight line (are *supplementary*—sum to 180°).
-
-*Solution:* 
-$$180° - 47° = 133°$$
-
-The angle on the other side is 133°.
-
-*Check:* $47° + 133° = 180°$. ✓
-
-*General principle:* Two angles that share a side and together form a straight line are *supplementary*; they always sum to 180°. Two angles that sum to 90° are *complementary*. If you know one, you can always find the other.
-
-#### Common Misconceptions
-
-**Parallel lines are the same as perpendicular lines.** They are opposites. Parallel lines never meet. Perpendicular lines meet at exactly a 90° angle.
-
-**An angle is defined by its shape, not its measure.** A 45° angle and a 47° angle look similar but are different. The degree measure is the entire definition.
-
-**The sum of angles in any configuration is always 180°.** Only for triangles. For a quadrilateral (four-sided shape), the sum is 360°. For a five-sided shape, 540°. The rule is $(n - 2) \times 180°$ for an $n$-sided polygon.
+A right angle is not just a geometric object. It is the guarantee of perpendicularity, and perpendicularity is the guarantee that walls stand straight and floors lie flat. The right angle is the most practically important angle measurement in all of construction.
 
 ---
 
-## Concept 2 — Polygons, Perimeter, and Area: Measuring Boundaries and Interiors
+## Measuring the boundary and the interior
 
-You are designing a kitchen. The floor is rectangular, measuring 12 feet long and 9 feet wide. You need to:
+A *polygon* is a closed flat shape made of straight line segments. Three sides: triangle. Four sides: quadrilateral. Five: pentagon. Six: hexagon. The sides meet at *vertices*.
 
-1. Order enough trim (the wood border along the edges) to go around the room.
-2. Order enough tile to cover the floor.
+When you walk around a polygon once, the total distance you cover is the *perimeter*. It is the sum of all the side lengths.
 
-The first is a *perimeter* problem: the sum of the lengths of all the edges. The second is an *area* problem: the total square footage inside the boundary.
+For a rectangle with length $\ell$ and width $w$:
 
-A *polygon* is a closed, flat shape made of straight line segments. The line segments are called *sides*; the corners where sides meet are *vertices* (plural of vertex). Polygons are named by the number of sides: a triangle has 3, a quadrilateral has 4, a pentagon has 5, a hexagon has 6, and so on.
+$$P = 2\ell + 2w$$
 
-#### Perimeter: The Boundary
+For any *regular polygon* — a polygon with all sides equal and all angles equal — the perimeter is just the number of sides times the length of one side:
 
-For your rectangular kitchen:
-$$\text{Perimeter} = 2 \times \text{length} + 2 \times \text{width} = 2(12) + 2(9) = 24 + 18 = 42 \text{ feet}$$
-
-You order 42 feet of trim.
-
-For any *regular polygon* (all sides equal, all angles equal), the perimeter is simply:
 $$P = n \times s$$
-where $n$ is the number of sides and $s$ is the length of one side.
 
-A regular pentagon with sides of 8 cm has perimeter $P = 5 \times 8 = 40$ cm.
+For a circle, the perimeter has a special name — *circumference* — and a special formula:
 
-For a *circle*—the only polygon-like shape without sides—the perimeter is called the *circumference*. It is related to the radius (distance from center to edge) by:
-$$C = 2\pi r \quad \text{or} \quad C = \pi d$$
-where $d$ is the diameter (twice the radius) and $\pi \approx 3.14159$.
+$$C = 2\pi r$$
 
-#### Area: The Interior
+where $r$ is the radius (center to edge) and $\pi \approx 3.14159$. The circumference of a circle with radius 5 inches is $2\pi(5) = 10\pi \approx 31.4$ inches.
 
-Area is measured in square units—square feet, square meters, square inches. Think of it this way: if the floor were tiled with one-foot-square tiles, how many tiles would you need?
+These are all boundary measurements, in linear units: feet, meters, inches. You are measuring the edge.
 
-For the rectangular kitchen:
-$$\text{Area} = \text{length} \times \text{width} = 12 \times 9 = 108 \text{ square feet}$$
+Area is something different. Area measures the interior — the total surface enclosed by the boundary. It's measured in *square* units: square feet, square meters. Imagine tiling the interior with one-foot squares and counting the tiles. That count is the area.
 
-For a *triangle*, the area is half of base times height:
+For a rectangle:
+
+$$A = \ell \times w$$
+
+A 12-foot by 9-foot kitchen floor has area $108$ square feet. That tells you how many tiles to buy, how much carpet to order.
+
+For a triangle, the area is half the base times the *height* — where height means the perpendicular distance from the base to the opposite vertex. Not the length of the slanted side. The perpendicular drop.
+
 $$A = \frac{1}{2} b h$$
 
-The *height* is measured perpendicular (at a 90° angle) to the base. This matters: if the base is 10 cm and you drop a perpendicular from the opposite vertex to that base, and the perpendicular measures 6 cm, then:
-$$A = \frac{1}{2} (10)(6) = 30 \text{ square cm}$$
+The reason for the factor of one-half is concrete: any triangle is half of a rectangle. Imagine a rectangle. Cut it diagonally from corner to corner. You get two triangles, each half the area of the rectangle they came from. The rectangle has area $bh$; the triangle has area $\frac{1}{2}bh$.
 
-For a *circle*, area is:
+For a circle:
+
 $$A = \pi r^2$$
 
-A circle with radius 5 inches has area:
-$$A = \pi (5)^2 = 25\pi \approx 78.5 \text{ square inches}$$
+A circle with radius 5 inches has area $\pi(25) \approx 78.5$ square inches.
 
-#### Worked Example: Calculating Area and Cost for a Real Renovation
+Here is the thing students most often confuse: perimeter and area are not the same kind of thing. Perimeter is a length. Area is a length squared. They are incommensurable — you cannot compare them in units, and you should not expect them to scale the same way.
 
-You are installing vinyl tile in a rectangular basement measuring 20 feet by 15 feet. Each box of tiles covers 25 square feet and costs $40. How many boxes do you need, and what will you spend?
+Double the dimensions of a rectangle. What happens to the perimeter? It doubles. What happens to the area? It quadruples. This matters enormously in the real world. A kitchen twice as long and twice as wide doesn't need twice as much tile — it needs four times as much. A developer who confuses perimeter and area when estimating materials has made an expensive mistake.
 
-*Given:*
-- Basement dimensions: 20 ft by 15 ft
-- Coverage per box: 25 sq ft
-- Cost per box: $40
-
-*Solution:*
-
-Step 1. Find the total area of the basement:
-$$A = 20 \times 15 = 300 \text{ square feet}$$
-
-Step 2. Divide by the coverage per box to find how many boxes are needed:
-$$\text{Boxes needed} = \frac{300}{25} = 12 \text{ boxes}$$
-
-Step 3. Multiply by the cost per box:
-$$\text{Total cost} = 12 \times 40 = \$480$$
-
-*Check:* $12 \times 25 = 300$. ✓
-
-*General lesson:* Always break real-world area problems into clear steps: measure, compute total area, divide by unit coverage, multiply by unit cost. The algebra is simple; the care is in getting the dimensions right.
-
-#### Common Misconceptions
-
-**Perimeter and area are the same thing.** They are completely different. Perimeter measures the distance around the boundary (in linear units like feet). Area measures the space inside (in square units like square feet). A shape can have a large perimeter and small area, or vice versa.
-
-**The area formula for a triangle is $A = bh$.** It is $A = \frac{1}{2}bh$. The factor of $\frac{1}{2}$ comes from the fact that a triangle is half of a rectangle with the same base and height.
-
-**The circumference of a circle equals its radius.** Circumference is $2\pi r$, which is about 6.28 times the radius, not equal to it.
+<!-- → [IMAGE: two rectangles side by side — left: 3×2 rectangle with perimeter=10 and area=6 labeled; right: 6×4 rectangle (doubled dimensions) with perimeter=20 (×2) and area=24 (×4) labeled — caption: "Double the dimensions. Perimeter doubles. Area quadruples." Student sees the scaling asymmetry as a visual fact, not just an algebraic result] -->
 
 ---
 
-## Concept 3 — The Pythagorean Theorem: The Most Famous Relationship in Geometry
+## The Pythagorean theorem
 
-Right triangles are triangles with one angle measuring exactly 90°. They are the most useful triangles in practice because they appear everywhere: a ladder leaning against a wall, a ramp into a building, the diagonal of a rectangular plot of land. And they obey a rule so elegant and powerful that it has been known for at least 2,500 years.
+Right triangles are special. They appear everywhere that two directions are perpendicular to each other: a wall meeting a floor, a ramp rising from flat ground, a horizontal distance and a vertical rise. And they obey a rule so fundamental that it has been known in some form for at least 4,000 years.
 
-The *Pythagorean theorem* states:
+The Babylonians knew Pythagorean triples — sets of three whole numbers that satisfy the relationship — long before Pythagoras was born. But Pythagoras, in the fifth century BCE, is credited with proving the relationship holds for *every* right triangle, not just the special ones with integer sides.
+
+The theorem:
 
 $$a^2 + b^2 = c^2$$
 
-where $a$ and $b$ are the lengths of the two sides that form the right angle (the *legs*), and $c$ is the length of the side opposite the right angle (the *hypotenuse*—the longest side).
+where $a$ and $b$ are the two *legs* — the sides that form the right angle — and $c$ is the *hypotenuse* — the side opposite the right angle, the longest side.
 
-This is not a theorem because it is useful. It is useful because it is a theorem—it follows with mathematical certainty from the axioms Euclid laid down.
+Here is the geometric meaning. Build a square on each side of a right triangle. The two smaller squares together have exactly the same total area as the large square on the hypotenuse. This is the statement of the theorem: the sum of the areas of the squares on the legs equals the area of the square on the hypotenuse.
 
-#### The Machinery Behind It
+$$a^2 + b^2 = c^2$$
 
-Imagine a right triangle with legs of length 3 and 4. Construct a square on each side of the triangle:
+Not approximately. Exactly. Always, for every right triangle, in flat space.
 
-- The square on the leg of length 3 has area $3^2 = 9$ square units.
-- The square on the leg of length 4 has area $4^2 = 16$ square units.
-- The sum is $9 + 16 = 25$ square units.
+<!-- → [IMAGE: right triangle with a square constructed on each of its three sides — the two smaller squares on the legs are shaded in one color each, the large square on the hypotenuse shaded in a third color — caption: "The area of the square on the hypotenuse equals the combined area of the squares on the two legs. This is what a²+b²=c² actually says." Student sees the theorem as a statement about areas, not just side lengths] -->
 
-Now construct a square on the hypotenuse. The Pythagorean theorem says its area will be exactly 25 square units—which means the hypotenuse has length $\sqrt{25} = 5$.
+The most famous right triangle has legs 3 and 4. The hypotenuse is $\sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5$. The triple $(3, 4, 5)$ is the simplest Pythagorean triple. The ancient Babylonian surveyors used knotted ropes with 12 equally-spaced knots. Tie the ends together, pull the rope into a triangle with sides 3, 4, and 5 knots, and you have a guaranteed right angle at the corner — a right angle you can lay out without any instrument except a knotted rope.
 
-Indeed: $3^2 + 4^2 = 9 + 16 = 25 = 5^2$.
+Other triples: $(5, 12, 13)$. $(8, 15, 17)$. $(7, 24, 25)$. Any multiple of a Pythagorean triple is also a Pythagorean triple: $(6, 8, 10)$, $(9, 12, 15)$, $(30, 40, 50)$. They are all scaled versions of the $(3, 4, 5)$ family, or the $(5, 12, 13)$ family, and so on. The triangles all have the same shape — same angles — and the sides scale proportionally.
 
-The triple $(3, 4, 5)$ is one of the most ancient *Pythagorean triples*—sets of three whole numbers that satisfy the theorem. Others include $(5, 12, 13)$, $(8, 15, 17)$, and $(7, 24, 25)$. The ancient Babylonians (around 1800 BCE, long before Pythagoras) knew these triples and used them in surveying.
-
-#### Worked Example: Finding the Distance Across a Pond
-
-A surveyor stands at point $A$ on one side of a pond. The point she wants to reach is $B$ on the opposite side. She measures off a perpendicular line from $A$ toward the far shore, marking a point $C$ 60 meters away. From $C$, she turns 90° and measures the distance to $B$, which is 80 meters.
-
-What is the distance directly across the pond from $A$ to $B$?
-
-*Given:*
-- $AC = 60$ meters (perpendicular to the direction of $B$)
-- $CB = 80$ meters (at a right angle to $AC$)
-- Angle $ACB = 90°$
-
-*Solution:* The path $A \to C \to B$ forms a right triangle. The direct distance $AB$ is the hypotenuse.
-
-$$AB^2 = AC^2 + CB^2 = 60^2 + 80^2 = 3,600 + 6,400 = 10,000$$
-
-$$AB = \sqrt{10,000} = 100 \text{ meters}$$
-
-*Check:* This is a scaled version of the $(3, 4, 5)$ Pythagorean triple: $(60, 80, 100) = 20 \times (3, 4, 5)$. ✓
-
-*General lesson:* Whenever you have two perpendicular measurements and need to find the diagonal distance between two points, the Pythagorean theorem is your tool. It turns a measurement problem that would otherwise require walking into a calculation problem.
-
-#### The Scaling Insight: Similar Triangles
-
-Here is a powerful observation. If you take a right triangle with sides 3, 4, and 5, and you scale every dimension by the same factor—say, multiply by 10—you get a right triangle with sides 30, 40, and 50. The angles are exactly the same. The shapes are *similar*: same angles, proportional sides.
-
-This means: if you know the angles of a right triangle, you can figure out the proportions of the sides without measuring them. A ladder leaning against a building at a 30° angle to the ground will always rise in proportion to its length, regardless of whether the ladder is 10 feet or 40 feet long. This is why architects and builders can scale drawings up and down without losing accuracy.
-
-#### Common Misconceptions
-
-**The Pythagorean theorem applies to all triangles.** It applies only to right triangles. For other triangles, you need different tools.
-
-**The hypotenuse is always the longest side.** It is—by definition. The hypotenuse is opposite the right angle, and the right angle is the largest angle in a right triangle, so the side opposite it must be longest.
-
-**You must always get a whole number for the hypotenuse.** Many right triangles have irrational hypotenuses. For example, a right triangle with legs of 1 and 1 has hypotenuse $\sqrt{1^2 + 1^2} = \sqrt{2} \approx 1.414$. Pythagoras himself proved that $\sqrt{2}$ cannot be written as a fraction, which shocked the ancient Greek world.
+Most right triangles do not have integer hypotenuses. A right triangle with two legs of length 1 has hypotenuse $\sqrt{1^2 + 1^2} = \sqrt{2} \approx 1.414$. Pythagoras himself proved that $\sqrt{2}$ is irrational — it cannot be written as a fraction. This apparently disturbed him considerably. The universe was supposed to be made of whole numbers and their ratios. The diagonal of a unit square isn't.
 
 ---
 
-## Integration: The Building Site, Complete
+## The pond, worked out
 
-Return to the surveyor with her transit and her three measurements. She has determined three distances using the machinery of geometry:
+Now return to the surveyor. She stands at point $A$. The far corner of the property is at point $B$, across the pond. She cannot measure $AB$ directly.
 
-- From her starting point to a perpendicular reference line: 60 meters.
-- From that reference point to the far corner (measured at a right angle): 80 meters.
-- Using the Pythagorean theorem, the direct distance to the far corner: 100 meters.
+So she does this: she walks from $A$ in a direction perpendicular to the line toward $B$, for 60 meters, to a point she calls $C$. From $C$, she can see $B$ clearly. The angle at $C$ between $CA$ and $CB$ is 90° — she made it that way by walking perpendicular to the original direction. She measures $CB$ as 80 meters.
 
-But there is more. The client wants a fence around the perimeter of the property. The property is a rectangle with one side 100 meters (the distance across the pond) and an adjacent side that she measures to be 150 meters.
+The triangle $ACB$ is a right triangle with legs 60 and 80 and a right angle at $C$. The hypotenuse is $AB$, the distance she wants.
 
-*Perimeter:* $P = 2(100) + 2(150) = 200 + 300 = 500$ meters of fencing needed.
+$$AB^2 = 60^2 + 80^2 = 3{,}600 + 6{,}400 = 10{,}000$$
 
-*Area:* $A = 100 \times 150 = 15,000$ square meters.
+$$AB = \sqrt{10{,}000} = 100 \text{ meters}$$
 
-The client also needs to know if the fence will meet code. Local code requires posts every 10 meters. $500 \div 10 = 50$ posts.
+Check: $(60, 80, 100) = 20 \times (3, 4, 5)$. Pythagorean triple, scales correctly. ✓
 
-The surveyor writes the numbers in her report: 500 meters perimeter, 15,000 square meters area, 50 fence posts. The client nods, orders the fencing, and the work begins.
+The surveyor has measured $AB$ without walking it. She turned an impossible direct measurement into two easy perpendicular measurements and a calculation. The pond didn't change. Her ability to reason about it did.
 
-This is geometry doing the work it was invented to do. Not abstract. Not divorced from consequence. The three core ideas—how to measure directions and angles, how to compute perimeters and areas, how to use the Pythagorean theorem to find distances without walking them—are three separate tools. But they work together. The angles tell you the shape. The perimeter tells you the boundary cost. The area tells you the interior cost. The Pythagorean theorem lets you skip the walking and measure with mathematics instead.
+<!-- → [IMAGE: top-down diagram of the pond problem — point A on the left shore, point C directly below A connected by a vertical segment labeled "60 m", point B on the right shore connected to C by a horizontal segment labeled "80 m", dashed line from A to B labeled "? (hypotenuse)" crossing the pond — right angle marked at C; below the diagram, the calculation AB²=60²+80²=10000, AB=100 m — student sees the abstract right triangle mapped onto the concrete surveying situation] -->
+
+---
+
+## Why similar triangles matter
+
+There is a deeper principle underneath the Pythagorean calculation: triangles with the same angles have sides in fixed proportion, regardless of their size. If you take a $(3, 4, 5)$ right triangle and scale it by any factor $k$, you get a $(3k, 4k, 5k)$ right triangle with exactly the same angles. Triangles with the same angles are called *similar*, and their sides are *proportional*.
+
+This is more powerful than it first sounds. Suppose you want to know the height of a tree, and you can't climb it. Here is what you can do: stand at a measured distance from the tree, note the angle at which your line of sight meets the treetop, and then set up a small similar triangle you can measure directly. The ratio of the small triangle's sides equals the ratio of the full-scale triangle's sides. Solve for the height.
+
+Architects use this constantly. A blueprint at 1:50 scale means every measurement on paper, when multiplied by 50, gives the real-world measurement. The shapes are similar. The ratios are preserved. You can design a building on paper because the scaled-down version tells you everything about the full-size version.
+
+And here is the connection that makes trigonometry possible — though that's another chapter. In a right triangle with a given angle, the ratio of any two sides is fixed, regardless of how big or small the triangle is. Give me the angle; I'll give you the ratio. That's what the trigonometric functions are: tables of those ratios, so you can calculate the sides you can't measure from the angles you can.
+
+<!-- → [IMAGE: two similar right triangles — small triangle with legs 3 and 4 and hypotenuse 5; large triangle with legs 9 and 12 and hypotenuse 15 — corresponding sides connected by labeled ratio arrows (×3) — the angle at the lower-left corner labeled θ in both — caption: "Same angle θ, same side ratios, regardless of size. This is why scaling preserves shape."] -->
+
+---
+
+## The three tools, working together
+
+Return to the surveyor's client. He owns the rectangular plot. One side is the 100-meter measurement across the pond. The adjacent side she measures directly: 150 meters. He wants a fence around the perimeter and needs to know how much fencing to buy. He wants to know the area for his property tax assessment. And he wants posts every 10 meters.
+
+Perimeter: $P = 2(100) + 2(150) = 500$ meters of fencing.
+
+Area: $A = 100 \times 150 = 15{,}000$ square meters.
+
+Posts: $500 \div 10 = 50$ fence posts.
+
+None of this required a single step of advanced mathematics. It required three things: knowing what to measure (angles and directions to set up the right triangle), knowing how to calculate the distance you can't walk (the Pythagorean theorem), and knowing how to convert that distance into perimeter and area (the formulas for rectangular shapes).
+
+The three ideas are separate. Lines and angles describe direction and shape. Perimeter and area measure boundary and interior. The Pythagorean theorem converts perpendicular measurements into diagonal distances. But they compose. The surveyor uses angles to set up the right-triangle calculation. The Pythagorean theorem produces the missing side length. That side length feeds the perimeter and area formulas. The tools chain together.
+
+---
+
+## What makes the theorem profound
+
+The Pythagorean theorem is not just a useful formula. It is a statement about the nature of flat space.
+
+Consider: the theorem holds in flat space (a Euclidean plane), but not in curved space. On the surface of a sphere — the Earth's surface — the angles of a triangle sum to *more* than 180°, and $a^2 + b^2 \neq c^2$ for the sides of a right-angled spherical triangle. The GPS satellites orbiting Earth have to account for curvature in their calculations; the flat-space geometry you learned here isn't quite right at that scale.
+
+Einstein's general relativity, a century ago, showed that massive objects curve spacetime itself. The geometry of the universe near a massive star is not Euclidean. The Pythagorean theorem fails. A different, more general geometry — Riemannian geometry — governs curved space. Riemannian geometry was developed in the nineteenth century, by Bernhard Riemann, without any idea it would become the mathematical language of general relativity. Riemann was following the mathematics where it led.
+
+None of this makes the Pythagorean theorem wrong. It is perfectly correct in flat space. It just reveals that "flat space" is a special case — the geometry you experience on human scales, in rooms and fields and cities, where the curvature of the Earth and the curvature of spacetime are both negligibly small. At those scales, Euclid's machinery works exactly. The theorem holds. The surveyor can trust her calculation.
+
+The deepest reason to learn geometry is this: it teaches you to extract information about space from measurements of other parts of space. You cannot walk across the pond. But you can walk perpendicular to the direction of the pond, measure two legs, and compute the hypotenuse. The calculation substitutes for the walk. And once you have internalized that substitution — once you see how measurement and reasoning together can get you something neither could get alone — you have the most important intellectual skill geometry has to offer.
 
 ---
 
@@ -260,71 +185,42 @@ This is geometry doing the work it was invented to do. Not abstract. Not divorce
 
 ### Warm-up
 
-**Exercise 10.1** *(LO: angles and notation.)* In a right angle, two rays meet at a vertex. One ray points due north. The other ray points 37° east of north. What angle do the two rays form?
+**Exercise 10.1** Two angles are supplementary. One measures 63°. (a) What does the other measure? (b) Are these two angles also complementary? Explain in one sentence.
 
-**Exercise 10.2** *(LO: perimeter of a rectangle.)* A rectangular garden measures 18 feet by 12 feet. How much fencing is needed to enclose it?
+**Exercise 10.2** A rectangular garden measures 14 meters by 8 meters. (a) What length of fencing is needed to enclose it? (b) What is the area? (c) If fertilizer costs \$2.50 per square meter, what is the total cost to fertilize the garden?
 
-**Exercise 10.3** *(LO: area of a triangle.)* A triangular plot of land has a base of 24 meters and a height of 10 meters (perpendicular to the base). What is its area in square meters?
+**Exercise 10.3** A right triangle has legs of 6 cm and 8 cm. (a) Use the Pythagorean theorem to find the hypotenuse. (b) Is this a scaled Pythagorean triple? If so, identify the scale factor and the base triple.
 
 ### Application
 
-**Exercise 10.4** *(LO: Pythagorean theorem.)* A ladder leans against a wall. The base of the ladder is 6 feet from the wall. The ladder is 10 feet long. How high up the wall does the ladder reach?
+**Exercise 10.4** A ladder is 13 feet long. It leans against a wall with its base 5 feet from the wall. (a) How high up the wall does the ladder reach? (b) Is this a Pythagorean triple? Name it.
 
-**Exercise 10.5** *(LO: perimeter and area combined.)* You are tiling a square bathroom floor with tiles that measure 1 foot by 1 foot. The bathroom is 9 feet on each side. (a) How many tiles do you need? (b) If you run a decorative border tile along the entire perimeter, how many border tiles do you need?
+**Exercise 10.5** A triangular plot of land has a base of 30 meters and a perpendicular height of 18 meters. (a) What is its area? (b) If fencing is needed around the triangular perimeter and the two other sides measure 24 meters and 26 meters, how much fencing is required?
 
-**Exercise 10.6** *(LO: area application — real-world cost.)* A room measures 16 feet by 20 feet. You want to install carpeting that costs $3.50 per square foot. What is the total cost?
+**Exercise 10.6** Two angles are complementary. One angle measures $3x + 5$ degrees and the other measures $2x$ degrees. (a) Set up an equation and solve for $x$. (b) Find the measure of each angle. (c) Verify that the two angles sum to 90°.
 
 ### Synthesis
 
-**Exercise 10.7** *(LO: Pythagorean theorem + perimeter.)* A right triangle has legs measuring 5 cm and 12 cm. (a) Find the length of the hypotenuse using the Pythagorean theorem. (b) Find the perimeter of the triangle.
+**Exercise 10.7** A rectangular property measures 90 meters by 120 meters. (a) Use the Pythagorean theorem to find the length of the diagonal from one corner to the opposite corner. (b) Find the perimeter of the property. (c) If fence posts are placed every 15 meters, how many posts are needed?
 
-**Exercise 10.8** *(LO: similar triangles and proportions.)* Two similar right triangles have corresponding legs in the ratio 2:5. The smaller triangle has legs of 6 cm and 8 cm. Find the lengths of the legs of the larger triangle.
+**Exercise 10.8** Two similar triangles have corresponding sides in the ratio 3:7. The smaller triangle has legs of 9 cm and 12 cm. (a) Find the legs of the larger triangle. (b) Find the hypotenuse of each triangle using the Pythagorean theorem. (c) Confirm that the hypotenuses are also in the ratio 3:7.
 
-**Exercise 10.9** *(LO: complementary and supplementary angles.)* Two angles are supplementary (sum to 180°). One angle measures $4x + 10$ degrees, and the other measures $3x - 5$ degrees. Find the measure of each angle.
-
-**Exercise 10.10** *(LO: circumference and area of a circle.)* A circular garden has a diameter of 14 meters. (a) Find the circumference. (b) Find the area. Use $\pi \approx 3.14$.
+**Exercise 10.9** A circular pond has a radius of 10 meters. A rectangular garden surrounds it, with each side of the rectangle tangent to the circle (touching it at exactly one point), making the rectangle 20 meters by 20 meters. (a) Find the circumference of the pond. (b) Find the area of the pond. (c) Find the area of the garden not covered by the pond (the garden area minus the pond area). Use $\pi \approx 3.14$.
 
 ### Challenge
 
-**Exercise 10.11** *(LO: Pythagorean triples and scaling.)* The Pythagorean triple $(3, 4, 5)$ is scaled by a factor of $k$ to produce $(3k, 4k, 5k)$. (a) Verify that $(3k)^2 + (4k)^2 = (5k)^2$ algebraically. (b) If $k = 7$, what is the new triple? (c) What is the perimeter of the right triangle with sides $3k$, $4k$, and $5k$? (d) What is the area?
+**Exercise 10.10** The Pythagorean triple $(3, 4, 5)$ scaled by a factor $k$ gives $(3k, 4k, 5k)$. (a) Verify algebraically that $(3k)^2 + (4k)^2 = (5k)^2$. (b) Write a formula for the perimeter of this triangle in terms of $k$. (c) Write a formula for the area in terms of $k$. (d) If the perimeter is 120 meters, what is the area?
 
-**Exercise 10.12** *(LO: modeling a real situation.)* You live in a house with a rectangular roof. The roof measures 30 meters by 20 meters. During a heavy rainstorm, water flows off the roof. (a) What is the total area of the roof? (b) If 1 cubic meter of water falls as rain per square meter of roof, how much water (in cubic meters) falls on your roof? (c) If gutters can handle 0.5 cubic meters per hour, can the gutters handle a 1-hour rainstorm? Why or why not?
+**Exercise 10.11** A surveyor wants to measure the width of a river. She stands at point $A$ on one bank and marks a point $B$ directly across the river on the opposite bank. She walks 40 meters along her bank to point $C$, perpendicular to the line $AB$. From $C$, she measures the angle to $B$ and calculates $CB = 30$ meters. (a) Draw a diagram of the situation, labeling all three points and all given measurements. (b) Identify the right angle in the triangle. (c) Calculate the width of the river $AB$.
 
----
+## LLM exercises
 
-## Chapter Summary
+**LLM Exercise 10.1** Ask an AI to explain the difference between perimeter and area, then evaluate whether its explanation makes the distinction clear to someone who might confuse them. Does it give examples? Does it explain the units difference (linear vs. square) and what happens to each when you scale a shape? Write a paragraph evaluating what the AI got right and what it left out.
 
-You can now do five things with geometry that you likely could not an hour ago.
+**LLM Exercise 10.2** Give an AI this problem: *A right triangle has legs of 5 cm and 12 cm. Find the hypotenuse.* Solve it yourself first using the Pythagorean theorem. Then compare your approach to the AI's. Did the AI set up the formula correctly — identifying which sides are legs and which is the hypotenuse? Did it check whether the result is a Pythagorean triple?
 
-You can read a building blueprint and understand what the lines, angles, and measurements mean. You know that a right angle is 90°, that parallel lines never meet, and that perpendicular lines meet at exactly that angle.
+**LLM Exercise 10.3** Ask an AI to explain why the Pythagorean theorem works — not just what it says, but the geometric reason behind it. Evaluate whether the AI's explanation uses the areas-of-squares interpretation (the square on the hypotenuse equals the sum of the squares on the legs) or just restates the formula. Write two sentences on what a genuinely explanatory answer would include that a formula restatement misses.
 
-You can calculate the perimeter of any polygon (the distance around the edge) and the area of any common shape (the square footage inside). This means you can figure out how much fencing, trim, carpeting, or paint you need for a real project.
+**LLM Exercise 10.4** Ask an AI: *Two angles are supplementary. One measures 3x + 15 degrees and the other measures 2x + 10 degrees. Find x and the measure of each angle.* Solve it yourself first. Check whether the AI sets up the equation $( 3x + 15) + (2x + 10) = 180$, solves correctly, and verifies that the two angles sum to 180°. If it made an error, identify which step went wrong using the vocabulary from this chapter.
 
-You can apply the Pythagorean theorem to find unknown distances in right triangles without measuring them directly. This is the tool surveyors, carpenters, and navigators use when they cannot walk the path they need to measure.
-
-You understand that similar shapes scale: if two triangles have the same angles, their sides are proportional, which means you can estimate heights and distances using proportions.
-
-And you have seen how three separate ideas—angles and directions, measurements of boundaries and interiors, and the Pythagorean relationship—fit together into a coherent toolkit for making sense of space.
-
-The thing to watch for, going forward, is *what you are actually measuring*. Perimeter is a linear measurement (units like feet or meters). Area is a square measurement (square feet or square meters). Volume (which appears in the next chapter) is a cubic measurement (cubic feet or cubic meters). Keep the units straight, and the rest is bookkeeping.
-
-What you should now be able to teach a friend who asks: what is the Pythagorean theorem, why the 3-4-5 triangle is special, and why perimeter and area are completely different things.
-
----
-
-## Connections Forward
-
-Chapter 11 extends geometry into the third dimension: volume and surface area of prisms and cylinders. The Pythagorean theorem reappears there in calculating diagonal distances through three-dimensional space.
-
-Probability (Chapter 7) uses area to visualize sample spaces. A circular dartboard region divided by lines creates geometric shapes whose areas represent the likelihood of different outcomes.
-
-The similarity and scaling you learned here is the foundation for trigonometry, which uses the proportions of sides in special right triangles to find angles and unknown distances. You will encounter this in any physics or engineering course.
-
-And here is a hidden connection: the algebraic idea of solving for an unknown ($x$) is exactly what you do with the Pythagorean theorem when you know two sides and solve for the third. Geometry and algebra are not separate languages; they are two ways of saying the same thing.
-
----
-
-## Tags
-
-#geometry #pythagorean-theorem #perimeter-area #angles #polygons #surveying #measurement #euclidean-geometry #right-triangles #similarity
-
+**LLM Exercise 10.5** Ask an AI to explain what similar triangles are and why they are useful. Then evaluate whether its explanation goes beyond the definition ("same angles, proportional sides") to explain why the property is powerful — for example, that it lets you measure things you cannot physically reach by setting up a small-scale version. Write a paragraph describing at least one real-world application the AI mentioned and whether you find the explanation convincing.
