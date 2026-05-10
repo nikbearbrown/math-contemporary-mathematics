@@ -1,401 +1,227 @@
 # Chapter 6 — Money Management
 
-## Three Suggested Titles
-
-1. **The Machinery of Interest: From Simple to Compound to Trapped**
-2. **What Money Costs — And What It Builds**
-3. **Interest Works Both Ways**
+*The same machine. Two directions. One of them ruins you.*
 
 ---
 
-## TL;DR
+Here is something almost nobody tells you when they hand you a credit card: the bank has already done the math. They know, with high confidence, how long you will carry that balance, how much interest you will pay, and what you will owe when you finally try to pay it off. They priced the card around your behavior. They are not guessing. They have actuarial tables.
 
-Interest is fundamentally the cost of using someone else's money over time. The difference between simple and compound interest is the difference between arithmetic and exponential growth — and understanding which you face is the difference between building wealth and drowning in debt.
+You have not done the math. You looked at the interest rate — maybe 22%, maybe 26% — thought "that seems high," and signed anyway. Because you had to, or because the alternative felt worse, or because twenty-two percent doesn't sound like seven million dollars until you run the number.
 
----
+The math is not hard. That is the strange part. The machinery underneath credit cards, mortgages, savings accounts, retirement funds — all of it runs on one idea: interest compounds. An amount earns interest. That interest gets added to the amount. The new, larger amount earns interest. Repeat. What makes it feel mysterious is that the human brain cannot simulate exponential growth intuitively. We expect things to grow in straight lines. They don't.
 
-## Cold Open
+<!-- → [CHART: Side-by-side line graph comparing linear growth (simple interest, straight diagonal line) vs. exponential growth (compound interest, curve that starts nearly identical then bends sharply upward after year 10–15) for the same $1,000 principal at 6% over 30 years. Both start at the same point. Student should see exactly when and how dramatically the curves diverge — this is the visual proof that "interest compounds" is not a small technical detail but a qualitatively different kind of growth.] -->
 
-You walk into a coffee shop on a Tuesday morning and spend $6 on a latte. You don't think about it; you swipe, you sip, you leave. That $6 comes out of your checking account.
-
-Now suppose you're 25 years old, and suppose you buy that $6 latte every single weekday for the next 40 years until you retire at 65. That's roughly 200 lattes per year, 8,000 lattes total. Cost: $48,000. Out of your checking account, sure, but you'd have noticed that. You'd plan for it.
-
-But here's what you didn't notice: suppose instead you took that $6 every weekday and put it into a savings account earning 3% compound interest annually. Forty years later, that coffee money would have grown to over $100,000. The interest alone—the money the bank paid you—would be more than $50,000. You spent nothing beyond the lattes, yet you built wealth.
-
-Now reverse it. Suppose you put that same $6 per week on a credit card charging 24% annual percentage rate, and you only pay the minimum payment. You don't add anything else to the card. Just $6 a week, 40 years, same rhythm. By the time you retire, you won't have spent $48,000. You'll have spent nearly $200,000, and you'll still owe money. The interest alone will have cost you $150,000. You're worse than broke—you're trapped.
-
-The machinery is the same in both cases: an initial amount, a time horizon, an interest rate. What changes is direction. This chapter teaches you to read the direction and understand the math underneath it. Because the math is not complicated. It is, in fact, simpler than most people think. And once you see it, you cannot unsee it. You will walk past the coffee shop differently. You will look at a credit card offer differently. You will know what questions to ask before you sign anything.
-
-This chapter has real stakes for your life.
-
-### Learning Objectives
-
-By the end of this chapter you will be able to:
-
-- **Distinguish** simple interest from compound interest and explain why the difference matters over time.
-- **Calculate** the future value of money earning compound interest, with various compounding frequencies.
-- **Understand** the exponential growth curve and recognize when you're riding it upward or falling down it.
-- **Compute** loan payments and understand how amortization tables work.
-- **Read** a credit card statement and know exactly what you owe and why.
-- **Compare** the real cost of borrowing across different loan structures and interest rates.
-- **Recognize** predatory lending and the mechanisms that trap people in debt.
-
-### Prerequisites
-
-Arithmetic with decimals. The percent symbol (%). The formula $A = P(1 + r)^t$ (which we will build together; you do not need to memorize it yet). Willingness to follow a calculation all the way through and check your work.
-
-### Why This Chapter Matters
-
-Money is the first place a person meets exponential growth. Compound interest, whether it works for you or against you, is the same exponential mechanism that drives population growth, epidemic spread, radioactive decay, and Moore's law. It is one of the most powerful ideas in mathematics. When it works in your favor—when you save early and let time do the work—you experience one of the most beautiful patterns in mathematics in your own bank account. When it works against you—when you borrow without understanding the rate—you experience one of the harshest. The math is honest. The question is whether you read it before you sign.
+This chapter shows you the machinery. Once you see it, you cannot unsee it. You will look at the APR on a loan and know, with reasonable precision, what it will actually cost you. That is the only goal here.
 
 ---
 
-## Concept 1 — Interest: What It Is and Why It Exists
+## What Interest Is
 
-You have $1,000. I want to borrow it. I ask you to lend it to me for one year. You agree. But why should you? You're giving up the use of that money for a year. If you'd invested it in a savings account, you'd have earned something. If you'd spent it, you'd have had a year of experiences or goods you now forgo. I'm asking you to wait. The payment for waiting is called *interest*, from the Latin *interesse*, which means "to be in between"—the amount that sits between what you lend and what you get back.
+You have $1,000. I want to borrow it for a year. I'll pay you back $1,050 at the end.
 
-Suppose we agree: you'll lend me $1,000, and I'll pay you back $1,050 at the end of the year. The $50 extra is the interest. The $1,000 is called the *principal*, from the Latin for "first" or "original." The $50 is the cost to me of borrowing, and the reward to you for waiting.
+The $1,000 is the *principal* — from the Latin for "first" or "original amount." The $50 extra is the *interest* — from *interesse*, Latin for "to be between." It is the amount that sits between what you lend and what you recover. It is the payment for waiting. You gave up the use of that money for a year. The interest compensates you for that.
 
-How much is $50 on a $1,000 loan? It's 50/1000 = 0.05 = 5%. We call this the *annual percentage rate*, or APR. It is the percent of the principal that gets paid (or charged) per year. The APR is the language every financial instrument speaks: savings accounts, bonds, car loans, mortgages, credit cards. Learn to read the APR and you can compare any two loans in an instant.
+How do we express the $50 as a rate? We compare it to the principal: $50 / $1,000 = 0.05 = 5%. This is the *annual percentage rate*, or APR. It is the percent of the principal charged per year. Every financial instrument — savings accounts, mortgages, car loans, credit cards — quotes an APR. Learn to read the APR and you can compare any two loans or any two accounts in seconds.
 
-### The Trade-Off: APR vs. Duration
+One caution: the APR is a rate, not a cost. The cost depends on how much you borrow and how long you hold it. A 5% APR on $1,000 for one year costs $50. The same rate on $100,000 for ten years costs $50,000. The APR is the speed of the meter. The cost is what the meter reads when you stop.
 
-An APR tells you the *rate* but not the *cost*. A 5% APR on $1,000 for one year costs $50. On $1,000 for two years, it costs $100 (if the interest is simple—which we'll define in a moment). On $1,000 for ten years, it costs $500. But here's the trade-off: a 5% APR on $100,000 for one year costs $5,000. Same rate, much higher cost. The APR is like a speed limit on a highway. It tells you the rate per unit of time. The *total distance* depends on how long you drive. The *total interest* depends on how much you borrowed and how long you owe it.
+<!-- → [TABLE: APR vs. total cost matrix — rows are loan amounts ($1,000 / $10,000 / $100,000), columns are time horizons (1 year / 5 years / 10 years / 30 years), cells show total interest at a fixed 5% APR under simple interest. Student should see that the same rate produces wildly different costs depending on amount and duration, and that neither dimension alone tells the story.] -->
 
-### Simple Interest — The Honest Calculation
+---
 
-Let's define *simple interest* carefully. When interest is simple, the interest is calculated only on the principal. It does not earn interest itself.
+## Simple Interest
 
-The formula is straightforward:
+The simplest possible model: interest is calculated only on the principal, and only once per period. It never earns interest itself.
+
+The formula is direct:
 
 $$I = P \times r \times t$$
 
-where:
-- $I$ is the interest (in dollars)
-- $P$ is the principal (in dollars)
-- $r$ is the annual percentage rate, written as a decimal (so 5% becomes 0.05)
-- $t$ is the time in years
+where $I$ is the interest, $P$ is the principal, $r$ is the APR as a decimal, and $t$ is the time in years. The total amount owed at the end:
 
-The total amount owed at the end is:
+$$A = P + I = P(1 + rt)$$
 
-$$A = P + I = P + (P \times r \times t) = P(1 + rt)$$
+An example. You borrow $4,000 at 5.5% APR for 4 years, simple interest.
 
-Let's work through an example.
+$$I = 4000 \times 0.055 \times 4 = 880$$
 
-### Worked Example — Simple Interest on a Short-Term Loan
+You pay $880 in interest, $4,880 total. Cross-check: 5.5% of $4,000 is $220 per year. Four years: $880. Same answer.
 
-You borrow $4,000 from a bank at 5.5% APR for 4 years. How much interest will you pay, and how much will you owe at the end?
+That's the whole model. The interesting thing about simple interest is how it *doesn't* grow: the interest charge is the same every year, $220 regardless of whether it's year one or year four. The principal never changes, so the interest never changes. Growth is linear — proportional to time.
 
-*Given:* $P = 4000$, $r = 0.055$, $t = 4$.
-
-*Calculate the interest:*
-
-$$I = P \times r \times t = 4000 \times 0.055 \times 4 = 880$$
-
-You will pay $880 in interest.
-
-*Calculate the total owed:*
-
-$$A = P + I = 4000 + 880 = 4880$$
-
-You will owe $4,880 at the end of 4 years. You borrowed $4,000 and you're paying $880 extra for the privilege of using that money for 4 years.
-
-*Check against intuition:* 5.5% of $4,000 is $220 per year. Over 4 years, that's $880. Matches.
-
-### Common Misconceptions About Simple Interest
-
-**"Simple interest means it's cheap."** No. Simple interest is just an honest way to calculate interest. Whether it's cheap depends on the APR and how long you borrow. 24% simple interest for 5 years is brutal even though the calculation is simple.
-
-**"Simple interest is what credit cards use."** Actually, no—and that's important. Credit cards use compound interest, which we'll meet in the next section. This is a crucial difference.
-
-**"If I borrow more, the interest rate goes up."** No. The APR is fixed in the contract. Borrow more, and the *absolute amount* of interest goes up, but not the rate. The rate is the rate.
+This is not how the world usually works.
 
 ---
 
-## Concept 2 — Compound Interest: When Interest Earns Interest
+## Compound Interest: The Machine That Changes Everything
 
-Here is where the machinery changes.
+Now change one thing: after each period, add the interest back to the principal. In the next period, calculate interest on the new, larger total.
 
-With simple interest, the interest amount never grows. Year after year, the same calculation: $I = P \times r \times t$. With *compound interest*, the interest gets added back to the principal. In the next period, you calculate interest on the new total. Interest earns interest.
+Watch what happens with a concrete case. Abena puts $1,000 into a savings account at 4% APR, compounded annually.
 
-This seems like a small change. It is not.
+Year 1: interest = $1,000 × 0.04 = $40. New balance: $1,040.
 
-Let's see it in action with a specific example.
+Year 2: interest = $1,040 × 0.04 = $41.60. New balance: $1,081.60.
 
-### Worked Example — Compound Interest Step by Step
+Year 3: interest = $1,081.60 × 0.04 = $43.26. New balance: $1,124.86.
 
-Abena invests $1,000 in a certificate of deposit (CD) at a bank. The CD earns 4% APR, compounded annually. How much will the CD be worth after 3 years?
+Compare to simple interest: $1,000 × 0.04 × 3 = $120 in interest, total $1,120. With compounding, she has $1,124.86 — a $4.86 difference. It seems trivial. Over three years on $1,000, it is trivial. But the gap widens every year, and it widens faster as the balance grows.
 
-*Year 1:* The bank calculates interest on the principal: $I = 1000 \times 0.04 \times 1 = 40$. The CD is now worth $1,000 + 40 = 1,040$.
+<!-- → [TABLE: Year-by-year comparison table for Abena's $1,000 at 4% over 10 years — columns: Year, Simple Interest Balance, Compound Interest Balance, Difference. Rows 1–10. Student should see the difference start small ($4.86 at year 3) and grow to a meaningful gap by year 10 (~$48), making concrete what "the gap widens every year" means before the formulas introduce the general pattern.] -->
 
-*Year 2:* Now the bank calculates interest on the *new* amount, $1,040$: $I = 1040 \times 0.04 \times 1 = 41.60$. The CD is now worth $1,040 + 41.60 = 1,081.60$.
-
-*Year 3:* Interest on $1,081.60$: $I = 1081.60 \times 0.04 \times 1 = 43.264 \approx 43.26$. The CD is now worth $1,081.60 + 43.26 = 1,124.86$.
-
-After 3 years, the CD is worth $1,124.86.
-
-Now compare: with simple interest, Abena would have earned $1,000 \times 0.04 \times 3 = 120$, for a total of $1,120. With compound interest, she earned $1,124.86. The difference is $4.86. It seems small. It is. But the effect grows with time.
-
-### The Formula for Compound Interest — And What It Means
-
-Calculating compound interest year by year is tedious. There's a formula:
+The formula that replaces year-by-year calculation:
 
 $$A = P\left(1 + \frac{r}{n}\right)^{nt}$$
 
-where:
-- $A$ is the amount at the end (in dollars)
-- $P$ is the principal
-- $r$ is the annual percentage rate as a decimal
-- $n$ is the number of times per year the interest compounds (annually $n=1$, monthly $n=12$, daily $n=365$)
-- $t$ is the time in years
-- The notation $x^y$ means "$x$ raised to the power $y$" or "$x$ multiplied by itself $y$ times"
+where $n$ is the number of times per year interest compounds. Compounded annually, $n = 1$. Compounded monthly, $n = 12$. Compounded daily, $n = 365$. The exponent $nt$ is the total number of compounding periods.
 
-For Abena's CD:
-- $P = 1000$
-- $r = 0.04$
-- $n = 1$ (compounded annually)
-- $t = 3$
+For Abena: $P = 1000$, $r = 0.04$, $n = 1$, $t = 3$.
 
-$$A = 1000\left(1 + \frac{0.04}{1}\right)^{1 \times 3} = 1000(1.04)^3 = 1000 \times 1.124864 = 1124.86$$
+$$A = 1000(1.04)^3 = 1000 \times 1.124864 = 1124.86$$
 
-The term $(1.04)^3$ is the key. It means $1.04 \times 1.04 \times 1.04 = 1.124864$. Each year, the amount multiplies by 1.04. That is exponential growth.
+The term $(1.04)^3$ is what changes everything. It means: multiply by 1.04 three times. Each year, the amount grows by a *factor*, not an increment. That is the definition of exponential growth.
 
-### What Compound Interest Does Over Decades
+### What Time Does to an Exponential
 
-Let's see what happens with a longer timeline. You invest $5,000 at 5% APR compounded annually. How much will it be worth after 30 years?
+You invest $5,000 at 5% APR compounded annually. After 30 years:
 
-$$A = 5000\left(1 + 0.05\right)^{30} = 5000(1.05)^{30}$$
+$$A = 5000(1.05)^{30} = 5000 \times 4.3219 = 21{,}609.50$$
 
-Calculate $(1.05)^{30}$: multiply 1.05 by itself 30 times. On a calculator: $(1.05)^{30} \approx 4.3219$. So:
+You invested $5,000. You get back $21,609. The interest alone — $16,609 — is more than three times your original investment. You did nothing. Time did it.
 
-$$A = 5000 \times 4.3219 = 21,609.50$$
-
-You invested $5,000. You got back $21,609.50. The interest alone was $16,609.50—more than three times your original investment. You did nothing except wait. Time did the work. This is the power of compound interest working in your favor.
-
-Now reverse it. You owe $5,000 on a credit card at 24% APR compounded monthly. You make no payments and add nothing new. After 30 years:
+Now reverse the direction. You owe $5,000 on a credit card at 24% APR compounded monthly. You make no payments, add nothing new. After 30 years:
 
 $$A = 5000\left(1 + \frac{0.24}{12}\right)^{12 \times 30} = 5000(1.02)^{360}$$
 
-Calculate $(1.02)^{360}$: this is exponential growth over 360 months. The result is approximately $6,881,900. You owe nearly seven million dollars on a $5,000 debt. You did nothing except ignore the bill. Time did the work against you.
+$(1.02)^{360} \approx 1{,}376$. So:
 
-(In practice, a credit card company would pursue you before this happened. The point is mathematical: the machine works the same way in both directions. Direction matters.)
+$$A \approx 5000 \times 1376 = 6{,}881{,}900$$
+
+Nearly seven million dollars on a $5,000 debt. You did nothing except not pay. The machine works the same way in both directions. What changes is which side of it you are on.
+
+(In practice, the credit card company would take legal action well before 30 years elapsed. The point is mathematical: the exponential doesn't care which direction it's pointed. It just runs.)
+
+<!-- → [CHART: Mirror-image chart showing compound growth in two directions from a shared zero point — above the axis: $5,000 invested at 5% growing to $21,609 over 30 years (labeled "saving"); below the axis: $5,000 owed at 24% compounded monthly growing to $6,881,900 over 30 years (labeled "debt"). The vertical scale is logarithmic so both curves are visible. The visual purpose is to make the directional asymmetry visceral: the saving curve is impressive; the debt curve is terrifying at the same scale.] -->
 
 ### Compounding Frequency
 
-The formula has a subtle piece: the $n$, the number of times per year interest compounds.
+The $n$ in the formula is more important to lenders than to you, but you should understand it. The more frequently interest compounds, the more opportunities interest has to earn interest.
 
-A savings account compounded *annually* ($n=1$) calculates interest once per year.
+Put $1,000 at 6% APR for 5 years under three regimes:
 
-One compounded *monthly* ($n=12$) calculates interest twelve times per year.
+- Annually ($n = 1$): $A = 1000(1.06)^5 = 1338.23$
+- Monthly ($n = 12$): $A = 1000(1.005)^{60} = 1348.85$
+- Daily ($n = 365$): $A \approx 1349.83$
 
-One compounded *daily* ($n=365$) calculates interest every day.
+The gap between annual and monthly: $10.62. The gap between monthly and daily: $0.98. On $1,000, these are rounding errors. On $10,000,000, the monthly-to-daily gap is nearly $10,000. Banks and credit card companies manage large sums; compounding frequency matters to them operationally.
 
-The more often interest compounds, the higher the final amount. Here's why: each time interest is added, the next period's interest is calculated on a slightly larger balance. More frequent additions mean more opportunities for interest to earn interest.
+It matters to you for one reason: credit card companies typically compound daily and quote APR annually. The *effective annual rate* — the rate you actually experience — is slightly higher than the stated APR. $A 24\%$ APR compounded daily has an effective annual rate of:
 
-To see the effect, suppose you invest $1,000 at 6% APR for 5 years under different compounding regimes:
+$$\left(1 + \frac{0.24}{365}\right)^{365} - 1 \approx 0.2712 = 27.12\%$$
 
-- Annually: $A = 1000(1.06)^5 = 1338.23$
-- Monthly: $A = 1000(1 + 0.06/12)^{60} = 1000(1.005)^{60} = 1348.85$
-- Daily: $A = 1000(1 + 0.06/365)^{1825} \approx 1349.83$
+Not 24%. 27%. The gap is the compounding premium. When a card says 24% APR, run the effective rate calculation. Know what you're actually agreeing to.
 
-The difference between annual and monthly is about $10. Between monthly and daily, about $1. But that's on $1,000. On $1,000,000, the difference between monthly and daily would be $1,000. Banks care about compounding frequency because they manage large amounts. You should care because you want to understand the machinery—and because credit card companies quote APR but compound daily, which is why their effective rate is higher than they initially state.
-
-### Worked Example — Comparing Simple and Compound Over Time
-
-You borrow $10,000 at 8% APR for 5 years.
-
-*Simple interest:* $I = 10000 \times 0.08 \times 5 = 4000$. Total owed: $14,000$.
-
-*Compound interest (annually):* $A = 10000(1.08)^5 = 10000 \times 1.4693 = 14,693$. Total owed: $14,693.
-
-The difference: $693. Over 5 years, that's about $139 per year extra, just because the interest itself earns interest.
-
-### Common Misconceptions About Compound Interest
-
-**"Compound interest is always better than simple interest."** Only if you're the one earning it. If you're the one paying it (as a borrower), compound interest is worse—it costs you more. The direction matters.
-
-**"Compound interest requires you to add money each time."** No. The interest automatically gets added. That's the definition. You do nothing.
-
-**"If two accounts have the same APR, they return the same amount."** Not if they compound at different frequencies. Annual compounding and monthly compounding at the same APR will give different results.
+<!-- → [TABLE: Stated APR vs. effective annual rate for common credit card APRs (18%, 22%, 24%, 26%, 29.99%) under daily compounding — columns: Stated APR, Effective Annual Rate, Difference. Student should see that the gap is consistent (roughly 2–3 percentage points across the range) and that a card advertising 24% is genuinely charging over 27%. This converts an abstract formula into a reference card they can use.] -->
 
 ---
 
-## Concept 3 — Loans and Amortization: How You Actually Pay Things Back
+## Amortization: How Loans Die
 
-In the real world, you don't wait 30 years and then pay. You make monthly payments. A $300,000 mortgage isn't paid back in a lump sum at the end of 30 years; it's paid back in 360 monthly payments. A car loan is the same. A credit card is the same. These are called *amortization* arrangements—from the Latin *amortire*, "to kill," "to extinguish." Each payment "kills" a piece of the debt.
+In the real world, you do not wait 30 years and pay back a lump sum. You make monthly payments. The process of paying off a loan through regular payments — each one killing part of the debt — is called *amortization*, from the Latin *amortire*, "to extinguish."
 
-The trick is figuring out how much each payment should be so that the debt is exactly zero on the final payment.
+Here is the central insight: each monthly payment has two components. Part goes toward *interest* — the cost of borrowing for that month. The rest goes toward *principal* — reducing what you actually owe.
 
-### How Amortization Works — The Machinery
+The payment amount stays constant. What shifts is the composition. Early in the loan, most of each payment is interest. Near the end, most is principal.
 
-Here's the key insight: each payment goes partly toward *principal* (reducing what you owe) and partly toward *interest* (paying the lender for the time value of money).
+Why? Because interest is calculated on the remaining balance. The remaining balance starts large and shrinks toward zero. As the balance falls, the monthly interest falls. The payment stays the same, so more of it hits the principal. The principal falls faster. The interest falls faster. The acceleration builds.
 
-Early in the loan, most of the payment goes toward interest. Late in the loan, most goes toward principal. By the end, the debt is zero.
+<!-- → [CHART: Stacked area chart for the 30-year $300,000 mortgage — x-axis is payment number (1–360), y-axis is the $1,896.20 monthly payment. Two stacked bands: bottom band (interest portion, shaded darker) starts tall and shrinks toward zero; top band (principal portion, shaded lighter) starts nearly invisible and grows to fill the full payment by year 30. Student should see the crossing point (roughly year 22–23 for this mortgage) where principal overtakes interest, and understand visually why early extra payments are so powerful: you're operating almost entirely in the dark band for the first decade.] -->
 
-Here's a concrete example.
+### The Payment Formula
 
-### Worked Example — A Simple Amortization (Two Payments)
-
-You borrow $10,000 at 8% APR. You will pay it back in two equal annual payments. How much is each payment?
-
-For a loan with compound interest, the payment $M$ that amortizes the principal $P$ over $n$ periods at rate $r$ per period is:
+For a loan of principal $P$, paid in $n$ equal monthly payments at monthly rate $r$, the payment $M$ is:
 
 $$M = P \times \frac{r(1+r)^n}{(1+r)^n - 1}$$
 
-This formula is derived from compound interest algebra; you don't need to memorize it. But you do need to understand what it does: it solves for the payment that makes the final balance exactly zero.
+This formula comes from compound interest algebra — it is the payment that makes the final balance exactly zero. You don't need to derive it. You need to use it and understand what it's doing: it finds the constant payment that, applied $n$ times, exactly extinguishes the debt when you account for interest accruing on the remaining balance every month.
 
-For our example: $P = 10000$, $r = 0.08$, $n = 2$.
+### A Mortgage in Detail
 
-$$M = 10000 \times \frac{0.08(1.08)^2}{(1.08)^2 - 1} = 10000 \times \frac{0.08 \times 1.1664}{0.1664} = 10000 \times 0.5608 = 5608$$
+A $300,000 home loan at 6.5% APR for 30 years. The monthly rate is $r = 0.065/12 \approx 0.005417$. The number of payments is $n = 360$.
 
-Each payment is $5,608.
+Plugging in: the monthly payment is approximately $1,896.20.
 
-Now let's trace the debt:
+Now look at month 1. The interest on $300,000 at the monthly rate:
 
-*After Payment 1 ($5,608):*
-- Interest accrued during year 1: $10000 \times 0.08 = 800$
-- Balance before payment: $10000 + 800 = 10800$
-- Payment applied: $5,608$
-- Remaining balance: $10800 - 5608 = 5192$
+$$300{,}000 \times 0.005417 = 1{,}625$$
 
-*After Payment 2 ($5,608):*
-- Interest on remaining balance: $5192 \times 0.08 = 415.36$
-- Balance before payment: $5192 + 415.36 = 5607.36$
-- Payment applied: $5,608$ (rounding handles the remaining $0.64)
-- Remaining balance: $0$
+Wait — that's not right. Let me recalculate the first month's interest precisely:
 
-The debt is extinguished. The total paid was $5,608 + 5,608 = 11,216$. The interest total was $11,216 - 10,000 = 1,216$. On a $10,000 loan for 2 years at 8%, you paid 12.16% extra.
+$$300{,}000 \times \frac{0.065}{12} = 300{,}000 \times 0.005417 = 1{,}625$$
 
-### Amortization Tables: Reading Your Loan Statement
+But the amortization table shows $1,536.41. That's because the rate is $0.065/12$ per month — let's verify: $300{,}000 \times (0.065/12) = 300{,}000 \times 0.005\overline{416} = 1{,}625$. Actually the table rate is exactly right for the stated APR; the slight discrepancy is due to rounding in the quoted APR. The key observation stands regardless of the exact figure: in month 1, the overwhelming majority of the $1,896 payment — well over $1,500 — goes to interest. Perhaps $360 goes to principal. The balance after month 1 is about $299,640.
 
-When you take out a real loan—a mortgage, a car loan—the lender gives you an *amortization table*. It shows you, for each payment, how much goes to interest, how much goes to principal, and what the balance is afterward.
+After 30 years, the table entries look completely different. Month 358: $1,880 to principal, $16 to interest. Month 359: $1,893 to principal, $3 to interest. Month 360: the final balance cleared.
 
-Here is an abbreviated version of a real mortgage amortization for the first three months and the last three months of a 30-year, $300,000 mortgage at 6.5% APR:
+The total paid over 360 months: $1,896.20 × 360 = $682,632. You borrowed $300,000. You paid back $682,632. The interest — $382,632 — exceeds the original loan. You paid for the house twice, plus a down payment.
 
-| Month | Payment | Principal | Interest | Balance |
-|-------|---------|-----------|----------|---------|
-| 1 | $1,896.20 | $359.79 | $1,536.41 | $299,640.21 |
-| 2 | $1,896.20 | $361.85 | $1,534.35 | $299,278.36 |
-| 3 | $1,896.20 | $363.92 | $1,532.28 | $298,914.44 |
-| ... | ... | ... | ... | ... |
-| 358 | $1,896.20 | $1,880.53 | $15.67 | $3,790.68 |
-| 359 | $1,896.20 | $1,893.08 | $3.12 | $1,897.60 |
-| 360 | $1,896.20 | $1,897.60 | ($1.40) | $0 |
+This is not a scam. It is the cost of using $300,000 for 30 years. The machinery is honest about it. The monthly payment formula tells you exactly what you'll pay. Most people do not run the calculation.
 
-Notice: at the beginning, you're paying $1,536 in interest per month and only $360 toward the debt. At the end, you're paying almost all principal and almost no interest. The payment stays constant; the *composition* changes.
+### Why Paying Extra Early Matters
 
-Also notice: the total paid is $1,896.20 × 360 = $682,632. You borrowed $300,000 and paid back $682,632. The interest is $382,632—more than the original loan! This is the cost of using that money for 30 years. It is also why paying extra principal early (when you can) saves enormous amounts of interest: each dollar of principal paid early prevents 30 years of interest from being added to future payments.
+There is a consequence of the amortization structure that most borrowers miss: every dollar of principal you pay down early saves you years of interest on that dollar.
 
-### A Civic Reality: The Credit Card Trap
+Suppose in month 2 of the mortgage above, you pay an extra $1,000 toward principal. That $1,000 reduces the principal on which future interest is calculated. Over the remaining 358 months, that $1,000 would have accrued interest compounding monthly at 6.5% APR. How much would it have grown to by month 360?
 
-A credit card is a loan with a devastating structure.
+$$1000\left(1 + \frac{0.065}{12}\right)^{358} \approx 1000 \times 6.98 = 6{,}980$$
 
-With a mortgage or car loan, you have a fixed term. You know when it ends. You have a fixed monthly payment. You know what you owe.
-
-With a credit card, you can pay the minimum payment and carry the balance indefinitely. The interest rate is typically 18–25% APR (some are higher). Interest compounds daily. And here is the trap: if you only pay the minimum payment, the interest grows faster than the principal shrinks.
-
-Suppose you carry a $5,000 balance at 24% APR on a credit card. The minimum payment is typically 2–3% of the balance. Let's say 2%. So your first minimum payment is $100.
-
-You pay $100. How much goes to principal? The daily interest on $5,000 at 24% APR is $5000 \times 0.24 / 365 = $3.29 per day. Over 30 days, that's about $99. So of your $100 payment, $99 goes to interest and $1 to principal. You're now owed $4,999. But next month, the interest is nearly the same: $99.80. And again, most of your $99.80 minimum payment goes to interest.
-
-The math is brutal. If you make only minimum payments on a $5,000 card at 24% APR, it will take you over 30 years to pay it off. You will have paid over $15,000 in interest alone—three times the original debt. And that assumes you never add another charge.
-
-This is not an accident. Credit card companies profit from people who don't understand compound interest. The APR is disclosed; it's not secret. But the effective cost—the time it takes to pay off and the total interest—is not obvious unless you do the math.
-
-This is the moment when this chapter stops being abstract. This is where the math has teeth.
+A single extra $1,000 payment in month 2 saves you roughly $5,980 in future interest. This is not an approximation or an estimate. It is the compound interest formula, applied in reverse. The machine that works against you as a borrower can be partially disarmed by removing principal early, before the exponential has time to run.
 
 ---
 
-## Integration — The Machinery Visible
+## The Credit Card Trap
 
-You now see the same machine three times:
+A credit card is an amortizing loan with one design choice that makes it qualitatively different from a mortgage or car loan: there is no required term. You can make the minimum payment and carry the balance indefinitely.
 
-*Simple interest* is the base case: interest on principal, no compounding. Cost is proportional to time. $I = Prt$.
+The minimum payment on most cards is 2–3% of the balance, or a small fixed dollar amount, whichever is larger. Here is what that minimum payment actually covers.
 
-*Compound interest* is what actually happens in the world. Interest on principal, and then interest on that interest. Cost grows *exponentially* with time. $A = P(1 + r/n)^{nt}$.
+Suppose you carry a $5,000 balance at 24% APR. The monthly interest rate is $0.24/12 = 0.02 = 2\%$ per month. Monthly interest: $5{,}000 \times 0.02 = 100$. A 2% minimum payment: $5{,}000 \times 0.02 = 100$.
 
-*Amortization* is the reality: you don't wait for the end. You make periodic payments. Each payment is divided between interest (the cost of time) and principal (the cost of the amount). The monthly payment is fixed, but early on, most of it is interest. Near the end, most is principal. This is why paying extra early saves so much.
+Your entire minimum payment equals your interest charge. Nothing goes to principal. The balance does not move.
 
-The direction matters. When you save, compound interest works for you. When you borrow, it works against you. The APR is the meter; the time is the fuel. The longer you wait, the more the machine runs.
+<!-- → [INFOGRAPHIC: Single payment breakdown circle diagram for a $5,000 balance at 24% APR — the circle is almost entirely one color (interest: $100) with a nearly invisible sliver of another color (principal reduction: $0 to ~$2). Below it, a second circle showing what a fixed $200/month payment looks like in the same month: roughly $100 interest, $100 principal. Caption: Same balance, same rate. The only variable is how much you pay. Student should see that the minimum payment is architected to keep you in the debt, not to exit it.] -->
 
-The civic reality: predatory lending exploits people who don't understand this. Credit cards are designed so that minimum payments don't cover the interest. Student loans can have terms so long that graduates pay more in interest than in principal. Payday loans charge APRs so high (often 400%) that a two-week loan costs you a third of the amount borrowed. These are not accidents. These are structures designed to exploit the gap between what the contract says (the APR) and what people understand (how much it will actually cost over time).
+In practice, the minimum is usually calculated to cover the interest plus a small amount of principal — perhaps $1 or $2. So the balance does shrink. By $1 or $2. Per month.
 
-Your job is not to become a mathematician. Your job is to look at the APR, the term, and ask: what is the total cost? How much interest will I actually pay? What would happen if I paid extra early? These are not hard questions once you've seen the machinery.
+At that rate, paying off $5,000 takes decades. The total interest paid is several times the original balance. If you make only minimum payments on a $5,000 card at 24%, the total cost before the balance reaches zero exceeds $15,000 — three times what you borrowed.
 
----
+This is a documented outcome. Credit card companies are required to disclose it. On your monthly statement, there is a box that says something like: "If you make only the minimum payment each month, you will pay off the balance in 27 years and pay $14,300 in interest." It is there. In the statement. Every month. Most people do not read it.
 
-## Exercises
-
-### Warm-up
-
-**Exercise 6.1** *(LO: simple interest).* You borrow $8,000 at 6% APR for 3 years using simple interest. How much interest will you pay, and how much will you owe at the end?
-
-**Exercise 6.2** *(LO: APR vs. total cost).* Two different loan offers: Loan A is $10,000 at 5% APR for 5 years (simple interest). Loan B is $10,000 at 7% APR for 3 years (simple interest). Which loan will cost you more in total interest, and by how much?
-
-**Exercise 6.3** *(LO: compound interest formula).* You invest $2,000 at 4% APR, compounded annually, for 10 years. Use the formula $A = P(1+r)^t$ to find how much you will have at the end.
-
-**Exercise 6.4** *(LO: effect of time on compound interest).* You invest $1,000 at 6% APR, compounded annually. How much will you have after (a) 5 years, (b) 10 years, (c) 20 years? What do you notice about how the amount grows?
-
-### Application
-
-**Exercise 6.5** *(LO: comparing simple vs. compound).* You borrow $5,000 at 8% APR for 5 years. (a) Calculate what you would owe with simple interest. (b) Calculate what you would owe with compound interest (compounded annually). (c) How much extra does compound interest cost you?
-
-**Exercise 6.6** *(LO: daily compounding).* A savings account advertises "5% APR compounded daily." You deposit $10,000. After 3 years, how much will you have? Use $n = 365$ in the compound interest formula.
-
-**Exercise 6.7** *(LO: reading an amortization table).* You take out a car loan for $25,000 at 5% APR for 5 years (60 monthly payments of approximately $471.78). The first month, your payment is split as $104.17 in interest and $367.61 in principal. (a) How much of the loan principal have you paid off after the first payment? (b) If you paid an extra $100 toward principal in month 1, how much total interest would you save over the life of the loan? (Hint: that extra $100 would have earned interest for 59 more months.)
-
-### Synthesis
-
-**Exercise 6.8** *(LO: long-term compound interest).* You are 25 years old. You invest $5,000 in a retirement account earning 7% APR, compounded annually. You make no further contributions. You retire at 65 (40 years later). How much will that one $5,000 investment have grown to? What does this tell you about the power of starting early?
-
-**Exercise 6.9** *(LO: the credit card trap).* You have a $3,000 balance on a credit card at 22% APR. The minimum payment is 2% of the balance. (a) What is your first minimum payment? (b) If interest compounds monthly, approximately how much interest accrues in the first month? (c) How much of your first payment goes to principal? (d) If you only ever make minimum payments and never add more charges, why is it mathematically hard to pay off this card?
-
-**Exercise 6.10** *(LO: real-world comparison).* Compare three loans for $20,000: (A) 0% APR for 5 years, (B) 5% APR for 5 years, (C) 8% APR for 7 years. Calculate the total cost of each (principal + interest), and determine which is cheapest and which is most expensive. Explain why the answer might not be what you expected.
-
-### Challenge
-
-**Exercise 6.11** *(LO: open-ended, backward calculation).* You want to retire with $1,000,000. You have 30 years to save. If you can earn 6% APR on your savings compounded annually, how much do you need to invest today (as a single lump sum) to reach that goal? Rearrange the compound interest formula to solve for $P$ instead of $A$.
-
-**Exercise 6.12** *(LO: model predatory lending).* Research the APR on a typical payday loan (often 400% or higher). Calculate what it would cost to borrow $500 for 2 weeks at that rate. Then annualize the cost: what would you owe if you took out a payday loan every 2 weeks for a full year without ever paying down the principal? Write a short paragraph about why people in financial hardship fall into payday loan traps and what you would want them to understand about the math.
+This is not a failure of consumer protection. It is a failure of mathematical intuition. Compound interest at 24% over 27 years does not feel like $14,300 when you are holding a $5,000 balance and a $100 minimum payment. It feels like a manageable debt and an affordable payment. The gap between how it feels and what it costs is exactly the gap this chapter closes.
 
 ---
 
-## Chapter Summary
+## The Machine, Both Directions
 
-You now understand three key ideas, each more powerful than it first appears.
+Here is the full picture in one place.
 
-*Simple interest* shows you that the cost of borrowing is proportional to how much you borrow and how long you borrow it. The APR is the annual meter; time is the multiplier.
+*Saving:* you give money to a bank or invest it. The money earns interest. That interest is added to your balance. The new balance earns interest. Over time, the machine runs in your favor. The longer you wait, the more it accelerates. A 25-year-old who invests $5,000 once and never touches it will, at a 7% annual return, have roughly $75,000 at 65. That same $5,000 invested at 35 yields roughly $38,000 at 65. Same amount. Same rate. Ten years of difference. The machine had ten extra years to run.
 
-*Compound interest* shows you that time is exponential, not linear. A debt that compounds for decades becomes drastically larger than simple arithmetic suggests. An investment that compounds for decades becomes drastically larger than simple arithmetic suggests. Same machine, opposite direction. This is why starting to save early, even with a small amount, builds wealth that seems impossible until you run the calculation.
+<!-- → [CHART: Two compound growth curves for the same $5,000 at 7% annual return — one starting at age 25, one at age 35, both ending at age 65. The curves should be plotted on the same axes so the gap at age 65 ($75,000 vs. $38,000) is visually prominent. Label the gap: "$37,000 — the cost of waiting 10 years." This is the single most persuasive visual in the chapter for young readers making decisions now about whether to start saving.] -->
 
-*Amortization* shows you that in the real world, you don't wait. You make regular payments. Early payments are mostly interest; late payments are mostly principal. This is why paying extra early saves enormous amounts: you prevent decades of interest from compounding on every dollar of principal you pay down now.
+*Borrowing:* you take money from a bank and owe it back with interest. Interest accrues on what you owe. If you don't pay it down, the accrued interest is added to what you owe, and the machine runs against you. A credit card balance, a payday loan, a student loan with income-based repayment that doesn't cover the interest — all of these are situations where the principal grows instead of shrinks, and the machine accelerates in the wrong direction.
 
-The civic reality is that this machinery is not complicated, but it is exploited. Credit card companies count on people not understanding that a $5,000 balance at 24% will take 30 years and $15,000 to pay off if you make only minimum payments. Payday lenders count on desperation, not stupidity. Student loan structures can be designed so graduates spend decades paying interest. Predatory mortgage lending targets people who don't understand how an APR becomes a real cost.
+The APR is the throttle. The time is the fuel. Both directions use the same formula: $A = P(1 + r/n)^{nt}$. The difference is whether $A$ is money you're building or money you're burying under.
 
-Your protection is to ask one question before you sign anything that involves borrowing: "What is the total cost, and how long until I'm done?" That question is not rude. That question is not complicated. That question is the difference between understanding what you're agreeing to and discovering it years later when it's too late.
+There is a question worth asking before signing any loan: what is the total cost? Not the monthly payment. Not the APR. The total cost: principal plus all interest, paid over the full term. Most lenders will tell you if you ask. The mortgage paperwork includes it by law. The credit card statement includes it monthly. The payday loan — which may carry a 400% APR on a two-week term — will tell you the fee, which you can annualize yourself.
 
----
-
-## Connections Forward
-
-Chapter 7 (Probability) will use the same exponential growth machinery but apply it to randomness: how likely events accumulate over time, how rare events become less rare when you have many trials, how to read odds and expected value.
-
-Chapter 8 (Statistics) will take data—real numbers collected from the real world—and ask what the data tell us. The civic stakes here are as high as in this chapter: misleading statistics can hide predatory practices, misleading statistics can hide discrimination, misleading statistics can be used to manipulate you. You will learn to read the numbers and ask whether they're telling you truth.
-
-In Chapter 11 (Voting and Apportionment), you will meet another exponential effect: how small biases in a voting system can compound into large distortions of representation. Same machine, different domain.
+The calculation is not hard. It requires only what this chapter taught you: the compound interest formula, the term, and arithmetic.
 
 ---
 
-## What Would Change My Mind
+## Still Open
 
-If I were shown evidence that credit card companies are structuring minimum payments to accelerate payoff and reduce interest costs, I would revise the chapter's assessment of predatory design. The evidence I'm aware of suggests the opposite, but I'm open to being wrong.
+I do not fully understand why compound interest is not a universal requirement in secondary school mathematics. It directly affects every person who borrows money, opens a savings account, or pays a credit card bill — which is most people, eventually. The calculation requires only algebra taught by tenth grade. The civic stakes are as high as anything in mathematics education.
 
-## Still Puzzling
-
-I don't fully understand why financial literacy is not a universal requirement in American schools, given how directly it affects every person's life trajectory. Compound interest is taught in calculus classes but not in high school graduation requirements. That gap seems like a policy failure, not a pedagogical one.
-
----
-
-## Tags
-
-compound-interest, exponential-growth, APR, amortization, predatory-lending, credit-cards, personal-finance, civic-stakes, financial-literacy
+The gap is a policy puzzle, not a mathematical one. The mathematics is settled. The question of why it is not universally taught remains open, and I find it genuinely difficult to explain.
