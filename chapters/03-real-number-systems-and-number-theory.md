@@ -1,94 +1,80 @@
 # Chapter 3 — Real Numbers and Number Theory
 
-## Suggested titles
-
-- **Prime Numbers and the Structure of Integers**
-- **Building the Numbers: From Natural to Rational**
-- **What Numbers Are Made Of**
+*The lock that has no key and the fraction that has no end.*
 
 ---
 
-## TL;DR
+There is a number sitting on a server right now that no one on Earth knows how to factor. It has several hundred digits. It is the product of exactly two primes. The bank that generated it published this number openly — told everyone in the world exactly what it is — because they are completely confident that knowing the number does not help you find the two primes it came from. Not in your lifetime. Not in anyone's lifetime with current technology.
 
-Every integer above 1 is either prime or builds uniquely from primes. Extending numbers to negatives and fractions preserves the rules of arithmetic—nothing breaks. The machinery of number theory powers encryption, scheduling, and every fraction you handle.
+That is the situation. A multiplication problem that takes a fraction of a second to run forward cannot be reversed in 300 trillion years.
 
----
+This is not a quirk or a clever trick layered on top of arithmetic. It is a consequence of the deepest structural fact about the integers: every number above 1 is either prime or breaks uniquely into primes, and while the breaking-down is guaranteed to exist, no one has found a fast way to find it. The guarantee of existence and the computational difficulty of discovery live in the same theorem. That tension is what cryptographers are renting when they build encryption.
 
-## Cold Open
+<!-- → [INFOGRAPHIC: Two-column asymmetry diagram — left column "Multiply two primes" with arrow pointing right, label "< 1 second"; right column "Factor the product back" with arrow pointing right, label "300 trillion years on current hardware". Visual emphasis on the one-way arrow. Student should see that the same operation is trivially fast in one direction and computationally impossible in the other — this is the premise the rest of the chapter pays off.] -->
 
-A cryptographer in 2021 sits down to design a new security system for a banking app. She needs a number so large—so incomprehensibly large—that even the fastest computers on Earth would take 300 trillion years to break it down into its prime factors. She reaches for two primes with hundreds of digits each, multiplies them together, and that product becomes the lock. No one on the planet can reverse the process in reasonable time. Yet the two primes *must exist*, and they must be unique. She doesn't build this system from abstract theory. She builds it on a fact about numbers that a student in ancient Greece figured out: every integer is either prime or builds from primes in exactly one way.
-
-That fact is not a curiosity. It is load-bearing.
-
-This chapter teaches you to see inside numbers—how they factor, how they combine, how they fail to combine. It shows you why negative numbers don't break the rules. It shows you fractions the way a baker or a chemist sees them: as precise ratios between quantities. And it prepares you for the rest of this book, which runs on these gears.
-
-### Learning objectives
-
-By the end of this chapter you will be able to:
-
-- **Identify** prime and composite numbers and apply divisibility tests to classify them.
-- **Find** the prime factorization of any composite number and recognize that factorization is unique.
-- **Calculate** the greatest common divisor (GCD) and least common multiple (LCM) and apply them to real scheduling and packing problems.
-- **Interpret** negative numbers as directions on a number line and perform arithmetic with integers.
-- **Distinguish** rational numbers (fractions) from other real numbers and simplify them to lowest terms.
-- **Perform** addition, subtraction, multiplication, and division with fractions, with and without a calculator.
-- **Solve** real-world problems involving unit conversion, percentages, and proportional reasoning.
-
-### Prerequisites
-
-You know how to divide. You know that 24 ÷ 3 = 8 and that when you have a remainder, division doesn't come out even. You're comfortable with the idea of zero and comfortable enough with negative numbers to know that a bank account can be overdrawn. You've handled fractions in cooking or splitting a bill.
-
-### Why this chapter matters
-
-Number theory isn't abstract algebra floating in textbooks. Prime factorization secures every encrypted transaction. GCD and LCM solve real problems: how to cut fabric without waste, how to schedule teams fairly when people work different numbers of hours. Rational numbers (fractions) are how you compare rates (miles per gallon, cups per person), convert units, understand percentages, and read nutrition labels. This chapter is where you learn to see the structure inside the numbers you use every day.
+This chapter teaches you to see inside numbers — how they factor, how they combine with signs, how they subdivide into fractions. Not as rules to memorize but as things that are true for reasons you can understand.
 
 ---
 
-## Concept 1: Prime Numbers, Factorization, and the Structure of Integers
+## What Divides What
 
-You open a file on your computer and it encrypts instantly—a process that relies on factorization. You look at a nutrition label and see "serving size 2/3 cup"—a fraction from divisibility. You organize a shift schedule so three people work every 6 days and they overlap fairly—an application of multiples. Each one rests on the same machinery: what numbers divide evenly into other numbers, and what prime pieces those numbers break into.
+Start here: when does one number divide another evenly?
 
-A **natural number** (or counting number) is any of {1, 2, 3, 4, 5, ...}. The **integers** extend that to include zero and negatives: {..., −3, −2, −1, 0, 1, 2, 3, ...}. The Greeks called them *mathemata*—things that could be counted or measured. We call them the natural numbers, from Latin *naturalis*, meaning "by nature." For this section we focus on natural numbers and their structure.
+A natural number $m$ **divides** $n$ if you can write $n = m \times k$ for some integer $k$ with no remainder. Twelve divides 60 because $60 = 12 \times 5$. Twelve does not divide 58, because $58 = 12 \times 4 + 10$ — there is a remainder of 10 left over.
 
-Divisibility is the core idea. A natural number $n$ is **divisible** by a number $m$ if we can express $n$ as $m$ times another natural number with no remainder. Written algebraically: $n$ is divisible by $m$ if $n = m \times k$ for some integer $k$. We also say "$m$ divides $n$" or "$m$ is a divisor of $n$."
+That's the whole idea. Everything else in this section is built on it.
 
-Example: 36 is divisible by 4 because $36 = 4 \times 9$. No remainder. The number 37 is not divisible by 4 because $37 = 4 \times 9 + 1$. There is a remainder.
+To avoid long division for common cases, mathematicians developed divisibility tests — fast shortcuts that check divisibility without performing the division.
 
-Rather than test divisibility by long division every time, mathematicians use **divisibility rules** — quick tests for common divisors.
-
-| Divisor | Rule |
+| Divisor | Test |
 |---------|------|
 | 2 | Last digit is even |
 | 3 | Sum of all digits is divisible by 3 |
 | 5 | Last digit is 0 or 5 |
 | 10 | Last digit is 0 |
 
-Example: Is 318 divisible by 3? Sum the digits: $3 + 1 + 8 = 12$. Is 12 divisible by 3? Yes (it equals $3 \times 4$). So 318 is divisible by 3. We can verify: $318 = 3 \times 106$.
+<!-- → [TABLE: Expanded divisibility rules reference — add columns for 4 (last two digits divisible by 4), 6 (divisible by both 2 and 3), 9 (digit sum divisible by 9), with a "why it works" column giving a one-sentence plain-language explanation of each rule. Students need this as a reference card and the "why" column prevents rote memorization.] -->
 
-Now to the core structure.
+Try it on 318. Is it divisible by 3? Add the digits: $3 + 1 + 8 = 12$. Is 12 divisible by 3? Yes: $12 = 3 \times 4$. So 318 is divisible by 3. Check: $318 = 3 \times 106$. The test worked.
 
-A **prime number** is a natural number greater than 1 that has exactly two divisors: 1 and itself. The first primes are {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, ...}.
+Why does the digit-sum test work? Because $10 \equiv 1 \pmod{3}$ — ten leaves a remainder of 1 when divided by 3 — so any power of 10 also leaves remainder 1. That means the value of a digit in any position is equivalent, modulo 3, to just the digit itself. The sum of digits captures all the information about divisibility by 3. This is a glimpse of modular arithmetic, which comes later. For now, the test is enough.
 
-A **composite number** is a natural number greater than 1 that has at least one divisor other than 1 and itself. The number 12 is composite because it is divisible by 2, 3, 4, and 6 in addition to 1 and 12.
+---
 
-The number 1 is special—neither prime nor composite. It has only one divisor (itself). We exclude it from both categories.
+## The Prime Pieces
 
-The **Fundamental Theorem of Arithmetic** states: every integer greater than 1 can be expressed as a product of primes in exactly one way, apart from the order in which the primes appear.
+A **prime** is a natural number greater than 1 whose only divisors are 1 and itself. The primes begin: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, ...
 
-This is not obvious. It is profound. It means 18 can be factored as $2 \times 3 \times 3$ but no other combination of primes will produce 18. That uniqueness is what makes prime factorization a lock that cannot be unpicked.
+A **composite** is a natural number greater than 1 that has at least one other divisor. The number 12 is composite: $12 = 2 \times 6 = 3 \times 4 = 2 \times 2 \times 3$.
 
-To find the **prime factorization** of a composite number, we repeatedly divide by small primes until only 1 remains. 
+The number 1 is neither. It has only one divisor — itself — and is excluded from both categories. This exclusion is not arbitrary. It is necessary for the theorem about to follow.
 
-Example: Factor 140.
+### The Fundamental Theorem of Arithmetic
+
+Every integer greater than 1 can be expressed as a product of primes in **exactly one way**, up to the order of the factors.
+
+That word *exactly* is doing enormous work. Let's feel the weight of it.
+
+Take 18. You can factor it as $2 \times 9 = 2 \times 3 \times 3$. Or start differently: $3 \times 6 = 3 \times 2 \times 3$. Different paths, same destination. Rearrange the factors however you like — you always get $2 \times 3^2$, and nothing else. No other combination of primes multiplies to 18.
+
+If 1 were prime, this would break. $18 = 2 \times 3^2 = 1 \times 2 \times 3^2 = 1 \times 1 \times 2 \times 3^2$ — suddenly there would be infinitely many factorizations, and uniqueness would be gone. So 1 is excluded. The theorem is preserved.
+
+### How to Factor
+
+To find the prime factorization of any composite number: repeatedly divide by the smallest prime that goes in evenly, until what remains is 1.
+
+Example: factor 140.
+
 - 140 is even, so divide by 2: $140 = 2 \times 70$
-- 70 is even, so divide by 2 again: $70 = 2 \times 35$, so $140 = 2 \times 2 \times 35 = 2^2 \times 35$
-- 35 ends in 5, so it's divisible by 5: $35 = 5 \times 7$
+- 70 is even, so divide by 2 again: $70 = 2 \times 35$, so far $2^2 \times 35$
+- 35 ends in 5, divisible by 5: $35 = 5 \times 7$
 - 7 is prime. Stop.
-- Prime factorization of 140: $2^2 \times 5 \times 7$
 
-Check: $2 \times 2 \times 5 \times 7 = 4 \times 5 \times 7 = 20 \times 7 = 140$. ✓
+Result: $140 = 2^2 \times 5 \times 7$
 
-A useful visual tool is the **factor tree**. Write the number at the top. Draw branches down to two factors. If either factor is composite, branch again. Stop when all leaves are prime.
+Check: $4 \times 5 \times 7 = 20 \times 7 = 140$. ✓
+
+A factor tree shows the same calculation visually: write 140 at the top, branch into two factors, branch again if either factor is composite, stop when all leaves are prime. Read the leaves: $2, 2, 5, 7$.
 
 ```
         140
@@ -100,262 +86,213 @@ A useful visual tool is the **factor tree**. Write the number at the top. Draw b
              5    7
 ```
 
-Reading the leaves: $140 = 2 \times 2 \times 5 \times 7$. Same answer, visual path.
+<!-- → [IMAGE: Clean rendered factor tree for 140 with color coding — composite nodes in one color, prime leaf nodes in a contrasting color, and the final factorization $2^2 \times 5 \times 7$ displayed below the tree. A second smaller tree beside it showing an alternate starting factorization (e.g., starting with $4 \times 35$) that reaches the same leaves — this is the visual proof that the leaves are path-independent.] -->
 
-### Trade-off: uniqueness vs. computational difficulty
+The leaves are always the same, regardless of which branches you chose.
 
-The Fundamental Theorem guarantees uniqueness—a number has exactly one prime factorization. But here is the trade-off: while factoring small numbers is easy, factoring very large numbers is computationally hard. A 2048-bit number (about 617 digits in decimal) is impossible to factor on current hardware, even with weeks of computation. This asymmetry—uniqueness is guaranteed, but breaking the factorization is hard—is why it powers encryption.
+### Checking Primality
 
-### Worked example: Is 247 prime or composite?
+To test whether a number $n$ is prime, you only need to check prime divisors up to $\sqrt{n}$. Here's why: if $n$ has a factor larger than $\sqrt{n}$, its paired factor must be smaller than $\sqrt{n}$. So if no prime up to $\sqrt{n}$ divides $n$, no factor of any kind exists, and $n$ is prime.
 
-We don't know yet. To determine this, we check if any prime up to $\sqrt{247}$ divides it.
+Is 247 prime? $\sqrt{247} \approx 15.7$, so check primes up to 15: {2, 3, 5, 7, 11, 13}.
 
-$\sqrt{247} \approx 15.7$, so we check primes up to 15: {2, 3, 5, 7, 11, 13}.
+- 247 is odd → not divisible by 2
+- Digit sum $2 + 4 + 7 = 13$ → not divisible by 3
+- Doesn't end in 0 or 5 → not divisible by 5
+- $247 \div 7 = 35$ remainder 2 → not divisible by 7
+- $247 \div 11 = 22$ remainder 5 → not divisible by 11
+- $247 \div 13 = 19$ exactly → divisible
 
-- 247 is odd, so not divisible by 2.
-- Sum of digits: $2 + 4 + 7 = 13$. 13 is not divisible by 3, so neither is 247.
-- 247 doesn't end in 0 or 5, so not divisible by 5.
-- Divide: $247 \div 7 = 35$ remainder 2. Not divisible.
-- Divide: $247 \div 11 = 22$ remainder 5. Not divisible.
-- Divide: $247 \div 13 = 19$ with no remainder. Divisible!
+So $247 = 13 \times 19$. Both 13 and 19 are prime. 247 is composite.
 
-So $247 = 13 \times 19$. Both 13 and 19 are prime. Thus 247 is composite, and its factorization is $13 \times 19$.
+One misconception worth clearing away: prime does not mean odd. The number 2 is the only even prime. All other primes are odd because any even number greater than 2 is divisible by 2. But odd does not imply prime — 9, 15, 21 are all odd and composite.
 
-### Common misconception: "Prime means odd"
+### GCD and LCM: Two Tools from the Same Machine
 
-False. 2 is the only even prime. All other primes are odd (because any other even number is divisible by 2). But odd does not mean prime—9, 15, 21 are odd and composite.
+The **greatest common divisor** (GCD) of two integers is the largest positive integer that divides both. The divisors of 12 are {1, 2, 3, 4, 6, 12}. The divisors of 18 are {1, 2, 3, 6, 9, 18}. The common divisors are {1, 2, 3, 6}. The greatest is 6. So GCD(12, 18) = 6.
 
----
+The **least common multiple** (LCM) is the smallest positive integer divisible by both. Multiples of 12: 12, 24, 36, 48, ... Multiples of 18: 18, 36, 54, ... First one they share: 36. So LCM(12, 18) = 36.
 
-## Concept 2: Integers and Operations with Signed Numbers
+Using prime factorization makes both calculations mechanical.
 
-The ancient mathematicians had a problem. They could add and multiply positive numbers. But what happens if you owe money? What if you measure a position relative to a reference point—above or below sea level, north or south of the equator? How do you do arithmetic with "anti-magnitude," with quantities that point in opposite directions?
+$12 = 2^2 \times 3$, $\quad 18 = 2 \times 3^2$
 
-The solution: extend the natural numbers to include zero and negative numbers. These form the **integers**: {..., −3, −2, −1, 0, 1, 2, 3, ...}.
+For GCD: take the **minimum** exponent of each prime shared by both.
 
-An integer has two parts: a **magnitude** (size, absolute value) and a **direction** (positive, negative, or zero).
+$$\text{GCD}(12, 18) = 2^{\min(2,1)} \times 3^{\min(1,2)} = 2^1 \times 3^1 = 6$$
 
-On a **number line**, zero sits in the middle. Positive integers point right. Negative integers point left. The **absolute value** of a number is its distance from zero, always non-negative. We write it with vertical bars: $|5| = 5$ and $|-5| = 5$.
+For LCM: take the **maximum** exponent of each prime appearing in either.
 
-Example: Your bank account starts at \$0. A deposit of \$50 moves it to +50. A withdrawal of \$30 moves it to +20. An overdraft of \$25 moves it to −25. Each transaction is addition or subtraction with direction. The absolute values are 50, 30, 25. The directions are clear: deposits are positive, withdrawals are negative.
+$$\text{LCM}(12, 18) = 2^{\max(2,1)} \times 3^{\max(1,2)} = 2^2 \times 3^2 = 36$$
 
-Adding integers follows a visual rule. **Start at the first number. Move right if you're adding a positive number, left if you're adding a negative.**
+There is a compact relationship between the two: $\text{GCD}(a,b) \times \text{LCM}(a,b) = a \times b$. Check: $6 \times 36 = 216 = 12 \times 18$. ✓
 
-$3 + 5 = 8$ (start at 3, move right 5 steps, land at 8)
+<!-- → [INFOGRAPHIC: Side-by-side Venn diagram for GCD and LCM using prime factor "bubbles" — left circle contains prime factors unique to 12 ($2^2 \times 3$), right circle contains prime factors unique to 18 ($2 \times 3^2$), overlapping region shows shared factors. Caption: GCD takes the overlap (minimum exponents); LCM takes the union (maximum exponents). This is the cleanest visual for why the min/max rule works, and students almost always request it.] -->
 
-$3 + (-5) = -2$ (start at 3, move left 5 steps, land at −2)
+GCD solves packing and division problems: a camp director with 48 sleeping bags and 64 tent stakes who wants identical kits with no leftovers needs GCD(48, 64) kits. $48 = 2^4 \times 3$, $64 = 2^6$. GCD $= 2^4 = 16$. Sixteen kits, 3 sleeping bags and 4 stakes each.
 
-$(-3) + (-5) = -8$ (start at −3, move left 5 steps, land at −8)
-
-Subtraction reverses direction: **$a - b$ means start at $a$ and move left $b$ steps.**
-
-$7 - 3 = 4$ (start at 7, move left 3 steps, land at 4)
-
-$3 - 7 = -4$ (start at 3, move left 7 steps, land at −4)
-
-A useful rule: **Subtracting a negative is the same as adding a positive.** $7 - (-3) = 7 + 3 = 10$.
-
-Multiplication has a sign rule. **Same signs give positive. Opposite signs give negative.**
-
-- $(3) \times (4) = 12$ (both positive, result is positive)
-- $(-3) \times (-4) = 12$ (both negative, result is positive)
-- $(3) \times (-4) = -12$ (different signs, result is negative)
-
-Division follows the same sign rule. $12 \div 3 = 4$ and $(-12) \div (-3) = 4$, but $(12) \div (-3) = -4$.
-
-### Trade-off: generality vs. loss of intuition
-
-By adding negative numbers, we lose the physical intuition that magnitude is always positive. But we gain the ability to solve any linear equation. Consider $3 + x = 2$. With only positive integers, this has no solution. With integers (including negatives), $x = -1$. Negative numbers are the price we pay for generality.
-
-### Worked example: Net wealth
-
-Emma has assets worth \$15,000 (savings and a car) and debts of \$8,000 (student loans and credit cards). What is her net wealth?
-
-Net wealth = Assets − Debts = $15,000 − 8,000 = 7,000$.
-
-Emma has a net wealth of +\$7,000.
-
-Now suppose Marcus has assets of \$12,000 but debts of \$18,000. His net wealth is $12,000 − 18,000 = -6,000$. Negative net wealth means he owes more than he owns.
-
-This is not an abstraction. Credit agencies compute this every day. Negative numbers model reality.
-
-### Common misconception: "Minus times minus should give minus"
-
-False. The sign rule is: **same signs → positive, different signs → negative.** $(-3) \times (-4) = +12$. Think of it as a reversal: negating a negative direction flips it back to positive. Or think of it algebraically: the number line itself reverses direction under multiplication by a negative, and reversing a reversal leaves you where you started.
+LCM solves alignment and scheduling problems: Bus A runs every 12 minutes, Bus B every 18 minutes. They just departed together. LCM(12, 18) = 36 minutes until they align again.
 
 ---
 
-## Concept 3: Rational Numbers and Arithmetic with Fractions
+## Integers: Direction as Well as Magnitude
 
-You walk into a bakery and the baker tells you she needs $\frac{2}{3}$ cup of sugar for one batch of cookies and $\frac{1}{4}$ cup of butter. But you're making three batches. How much sugar? How much butter? How do you combine these quantities?
+The natural numbers let you count. They don't let you say "below zero" or "owed" or "south of." For those, you need the integers: the full set $\{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}$.
 
-A **rational number** is a number that can be expressed as a fraction $\frac{p}{q}$, where $p$ and $q$ are integers and $q \neq 0$. The word "rational" comes from Latin *ratio*, meaning "relation" or "proportion" — a fraction expresses one quantity compared to another.
+An integer has two properties: a **magnitude** (how big) and a **direction** (positive, negative, or zero). On a number line, zero sits at the center. Positive numbers extend right. Negative numbers extend left. The **absolute value** of a number is its distance from zero, always non-negative: $|{-5}| = 5$, $|5| = 5$.
 
-Every integer is rational. Write 5 as $\frac{5}{1}$. Write −3 as $\frac{-3}{1}$. But rational numbers extend beyond integers to all proper and improper fractions, terminating decimals (like 0.5 or 3.14), and repeating decimals (like 0.333... or 0.142857142857...).
+### Arithmetic on the Number Line
 
-The key property: **two fractions are equal if they represent the same portion.** $\frac{2}{4}$ and $\frac{1}{2}$ both represent "half." To reduce a fraction to lowest terms, we divide both numerator and denominator by their **greatest common divisor (GCD)**.
+Addition moves you along the line. Start at the first number. Move right for a positive addend; move left for a negative addend.
 
-The GCD of two integers is the largest positive integer that divides both. Example: the divisors of 12 are {1, 2, 3, 4, 6, 12}. The divisors of 18 are {1, 2, 3, 6, 9, 18}. The common divisors are {1, 2, 3, 6}. The greatest is 6. So GCD(12, 18) = 6.
+$3 + 5 = 8$ — start at 3, move right 5, land at 8.
 
-To reduce $\frac{12}{18}$: divide top and bottom by the GCD, 6. $\frac{12}{18} = \frac{12 \div 6}{18 \div 6} = \frac{2}{3}$. Now 2 and 3 share no common divisors except 1, so $\frac{2}{3}$ is in lowest terms.
+$3 + (-5) = -2$ — start at 3, move left 5, land at −2.
 
-Adding and subtracting fractions requires a **common denominator**—a number both denominators divide into. The **least common multiple (LCM)** is the smallest positive integer divisible by both.
+$(-3) + (-5) = -8$ — start at −3, move left 5, land at −8.
 
-Example: $\frac{1}{4} + \frac{1}{6}$. 
+<!-- → [IMAGE: Horizontal number line from −10 to +10, showing all three addition examples as labeled arrows — each arrow a different color, with start point marked, direction of movement shown, and landing point circled. Student should see the physical meaning of sign: positive = rightward movement, negative = leftward movement. Include a fourth arrow showing $7 - (-3) = 10$ to illustrate the double-reversal.] -->
 
-The LCM of 4 and 6 is 12 (since $4 = 2^2$, $6 = 2 \times 3$, and LCM = $2^2 \times 3 = 12$).
+Subtraction reverses: $a - b$ means start at $a$ and move *against* the direction of $b$.
 
-Convert each fraction:
-- $\frac{1}{4} = \frac{1 \times 3}{4 \times 3} = \frac{3}{12}$
-- $\frac{1}{6} = \frac{1 \times 2}{6 \times 2} = \frac{2}{12}$
+$7 - 3 = 4$. $3 - 7 = -4$.
 
-Now add: $\frac{3}{12} + \frac{2}{12} = \frac{5}{12}$.
+Subtracting a negative is the same as adding a positive: $7 - (-3) = 7 + 3 = 10$. Two reversals bring you back to the original direction.
 
-Multiplication is simpler—no common denominator needed. **Multiply numerators together and denominators together**: $\frac{a}{b} \times \frac{c}{d} = \frac{a \times c}{b \times d}$.
+Multiplication has a sign rule: **same signs produce positive; opposite signs produce negative.**
 
-Example: $\frac{2}{3} \times \frac{3}{4} = \frac{6}{12} = \frac{1}{2}$.
+$(3) \times (4) = 12$
+$(-3) \times (-4) = 12$
+$(3) \times (-4) = -12$
 
-Division uses the **reciprocal**: $\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \times \frac{d}{c} = \frac{ad}{bc}$.
+Why do two negatives make a positive? Formally, it follows from the requirement that arithmetic laws (distributive, associative) remain consistent when extended to negatives. Intuitively: multiplying by a negative reverses direction. Reversing a reversal returns to the original orientation.
 
-Example: $\frac{2}{3} \div \frac{1}{4} = \frac{2}{3} \times \frac{4}{1} = \frac{8}{3}$.
+Division obeys the same sign rule. $(-12) \div (-3) = 4$. $(12) \div (-3) = -4$.
 
-**Percent** is a specific rational number: $n\%$ means $\frac{n}{100}$. To find 30% of 200, multiply: $\frac{30}{100} \times 200 = 0.30 \times 200 = 60$. Percentages let you compare proportions across different bases (e.g., "60% of voters approve" and "45% of voters approve" are directly comparable even if one group has 1,000 voters and the other has 2,500).
+### What Negative Numbers Unlock
 
-### Trade-off: exactness vs. termination
-
-Rational numbers let us express any ratio exactly. But some ratios produce infinite decimals. $\frac{1}{3} = 0.333...$. We accept this because the pattern repeats. But this trade-off means we can't represent *all* real numbers as fractions—numbers like $\sqrt{2}$ (the side of a square with area 2) cannot be written as $\frac{p}{q}$ for any integers $p$ and $q$. These are **irrational numbers**, deferred to Chapter 3, part 2.
-
-### Worked example: A recipe scales.
-
-A cookie recipe calls for $\frac{2}{3}$ cup of sugar, $\frac{3}{4}$ cup of flour, and $\frac{1}{4}$ cup of butter. You want to make 1.5 times the recipe (you're feeding a crowd). How much sugar?
-
-Sugar needed: $1.5 \times \frac{2}{3}$ cups.
-
-Rewrite 1.5 as a fraction: $1.5 = \frac{3}{2}$.
-
-Multiply: $\frac{3}{2} \times \frac{2}{3} = \frac{6}{6} = 1$ cup.
-
-For flour: $\frac{3}{2} \times \frac{3}{4} = \frac{9}{8} = 1\frac{1}{8}$ cups.
-
-For butter: $\frac{3}{2} \times \frac{1}{4} = \frac{3}{8}$ cup.
-
-This is not abstract. A baker or a chemist does this daily.
-
-### Common misconception: "Fractions are for division; decimals are for real quantities"
-
-False. Both fractions and decimals are rational numbers. Fractions are *exact* representations (no rounding). Decimals are *approximate* or *terminating*. A baker measures by fraction (a pinch, a cup). A car's fuel economy is given as a decimal (27.3 miles per gallon), which is the rational number $\frac{273}{10}$ written in decimal form.
+Without negative numbers, the equation $3 + x = 2$ has no solution in the natural numbers. With integers, $x = -1$. Every linear equation $ax + b = c$ now has a solution, as long as $a \neq 0$. That generality is the price of admitting negative numbers, and it is a price worth paying.
 
 ---
 
-## Integration: From Prime Structure to Practical Ratio
+## Rational Numbers: Exact Ratios
 
-Return to the cold open. The cryptographer multiplies two primes with hundreds of digits. The product is sent to the bank. Every transaction is encrypted with that product as the lock.
+A **rational number** is any number expressible as $\frac{p}{q}$ where $p$ and $q$ are integers and $q \neq 0$. The word comes from Latin *ratio* — a proportion, a relation between two quantities.
 
-Now zoom out. That encryption secures the transfer of money, which is measured in fractions of a dollar (cents). The customer withdraws $100.50 from an account—that's $\frac{10050}{100}$ cents, or $\frac{201}{2}$ dollars. The bank's server computes interest, which compounds monthly: $\text{New Balance} = \text{Old Balance} \times (1 + \frac{r}{12})$, where $r$ is the annual rate. A rate of 3.6% is $\frac{3.6}{100} = \frac{36}{1000} = \frac{9}{250}$. Monthly rate is $\frac{9}{250 \times 12} = \frac{3}{1000}$.
+Every integer is rational. Write 5 as $\frac{5}{1}$. Rational numbers extend beyond integers to all fractions, to terminating decimals ($0.5 = \frac{1}{2}$), and to repeating decimals ($0.333\ldots = \frac{1}{3}$).
 
-The GCD of 9 and 250 is 1, so $\frac{9}{250}$ is already lowest terms. The LCM of 250 and 12 is 1500. These are not abstract. They determine what you owe and what the bank earns.
+### Equivalent Fractions and Lowest Terms
 
-The integration: **prime factorization secures the system. Rational arithmetic operates it. Both rest on the integers—the negative, zero, and positive whole numbers. And all three rest on the same truth: numbers have structure, and we can use that structure to build, compute, and understand.**
+Two fractions are equal when they name the same portion of the whole. $\frac{2}{4}$ and $\frac{1}{2}$ are equal: both say "half." A fraction is in **lowest terms** when the numerator and denominator share no common factor except 1 — that is, when their GCD is 1.
 
----
+To reduce: divide both numerator and denominator by their GCD.
 
-## Exercises
+$\frac{12}{18}$: GCD(12, 18) = 6. Divide: $\frac{12 \div 6}{18 \div 6} = \frac{2}{3}$. GCD(2, 3) = 1. Done.
 
-### Warm-up
+### Adding and Subtracting
 
-**3.1** *(LO: divisibility and prime identification.)* Determine whether each number is prime or composite. For composite numbers, give the prime factorization.
+To add or subtract fractions, you need a common denominator. The LCM of the two denominators is the one to use — it keeps the numbers as small as possible.
 
-(a) 23
-(b) 51
-(c) 100
+$$\frac{1}{4} + \frac{1}{6}$$
 
-**3.2** *(LO: GCD and LCM.)* Find the GCD and LCM of each pair.
+LCM(4, 6): $4 = 2^2$, $6 = 2 \times 3$. LCM $= 2^2 \times 3 = 12$.
 
-(a) 12 and 18
-(b) 20 and 35
+Convert:
 
-**3.3** *(LO: integer operations.)* Compute:
+$$\frac{1}{4} = \frac{3}{12}, \qquad \frac{1}{6} = \frac{2}{12}$$
 
-(a) $(-5) + 8$
-(b) $3 - (-7)$
-(c) $(-4) \times (-6)$
-(d) $(-20) \div 4$
+Add:
 
-**3.4** *(LO: rational operations.)* Simplify each to lowest terms.
+$$\frac{3}{12} + \frac{2}{12} = \frac{5}{12}$$
 
-(a) $\frac{24}{36}$
-(b) $\frac{5}{7} + \frac{2}{3}$
-(c) $\frac{3}{4} \times \frac{8}{9}$
+Why do you need a common denominator? Because $\frac{1}{4}$ and $\frac{1}{6}$ are measuring in different units — fourths and sixths. You cannot add them directly any more than you can add 3 feet and 2 meters without converting. The LCM converts both to the same unit.
 
-### Application
+<!-- → [IMAGE: Area-model diagram for fraction addition — a rectangle divided into 12 equal parts. Left portion shaded to show $\frac{3}{12}$ (= $\frac{1}{4}$), a differently-shaded portion showing $\frac{2}{12}$ (= $\frac{1}{6}$), combined shading showing $\frac{5}{12}$. The visual makes concrete why the denominator is a unit of measurement and why changing it doesn't change the value of the fraction.] -->
 
-**3.5** *(LO: GCD and real-world packing.)* A camp director has 48 sleeping bags and 64 tent stakes. She wants to make identical kits, each with the same number of sleeping bags and the same number of stakes, with no items left over. What is the maximum number of kits she can make, and how many sleeping bags and stakes go in each?
+### Multiplying and Dividing
 
-**3.6** *(LO: LCM and scheduling.)* Bus A arrives every 12 minutes. Bus B arrives every 18 minutes. Both just arrived. When is the next time both buses will arrive at the same time?
+Multiplication requires no common denominator. Multiply numerators, multiply denominators.
 
-**3.7** *(LO: fraction operations and unit conversion.)* You have 2.5 liters of juice and want to pour it into bottles that hold $\frac{2}{5}$ liter each. How many full bottles can you fill? Do you have juice left over? If so, how much?
+$$\frac{a}{b} \times \frac{c}{d} = \frac{a \times c}{b \times d}$$
 
-**3.8** *(LO: percent and real data.)* A college has 8,000 students. A survey finds that 62.5% have part-time jobs. How many students have part-time jobs?
+$$\frac{2}{3} \times \frac{3}{4} = \frac{6}{12} = \frac{1}{2}$$
 
-### Synthesis
+Division uses the reciprocal. To divide by $\frac{c}{d}$, multiply by $\frac{d}{c}$.
 
-**3.9** *(LO: GCD, LCM, and optimization.)* A gardener has 60 feet of fencing and wants to create a rectangular garden where the length is a whole number of feet and the width divides the length evenly. What are the possible dimensions?
+$$\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \times \frac{d}{c} = \frac{ad}{bc}$$
 
-**3.10** *(LO: rational operations and recipe scaling.)* A soup recipe serves 4 and calls for $\frac{3}{2}$ cups of broth, $\frac{1}{4}$ cup of cream, and $\frac{5}{8}$ cup of vegetables. How much of each ingredient do you need to serve 10 people?
+$$\frac{2}{3} \div \frac{1}{4} = \frac{2}{3} \times \frac{4}{1} = \frac{8}{3}$$
 
-**3.11** *(LO: integer operations and financial reasoning.)* A company has quarterly profits of +\$250,000, −\$50,000 (a loss), +\$180,000, and −\$30,000. What is the total profit for the year? What is the average quarterly profit?
+Why the reciprocal? Division asks: "how many times does $\frac{c}{d}$ fit into $\frac{a}{b}$?" Flipping and multiplying is what delivers that count exactly.
 
-### Challenge
+### Percent as Rational Number
 
-**3.12** *(LO: factorization and cryptography.)* Two primes multiply to give 143. Find both primes. (Hint: one prime is less than 15.)
+A percent is a specific rational number. $n\%$ means $\frac{n}{100}$. To find 30% of 200:
 
-**3.13** *(LO: rational synthesis and problem-solving.)* You are catering an event for 75 people. The recipe serves 12 and calls for $\frac{2}{3}$ cup sugar, $\frac{1}{2}$ cup butter. You have 6 cups sugar and 3 cups butter on hand. Do you have enough of each ingredient? Show your work.
+$$\frac{30}{100} \times 200 = 0.30 \times 200 = 60$$
 
----
+Percentages let you compare proportions across groups with different totals. If 600 of 1,000 voters in one city approve a measure, and 900 of 2,000 in another, you cannot compare those raw numbers directly. Convert: 60% vs. 45%. Now you can.
 
-## Chapter summary
+### A Worked Example: Scaling a Recipe
 
-You can now do six things.
+A cookie recipe calls for $\frac{2}{3}$ cup of sugar and $\frac{3}{4}$ cup of flour. You want to make 1.5 times the recipe.
 
-You can identify prime and composite numbers, and you can break any composite number into its unique prime factors. This is load-bearing. It is how encryption works. It is how you recognize when two fractions are truly the same and when they are not.
+Rewrite 1.5 as a fraction: $\frac{3}{2}$.
 
-You can work with negative integers—add them, subtract them, multiply them, divide them—following the sign rules. You understand that negative doesn't mean invalid. It means direction.
+Sugar: $\frac{3}{2} \times \frac{2}{3} = \frac{6}{6} = 1$ cup.
 
-You can reduce fractions to lowest terms, add and subtract fractions using common denominators, and multiply and divide fractions without a common denominator. You see fractions as ratios—as precise ways to express parts of a whole, not as approximations.
+Flour: $\frac{3}{2} \times \frac{3}{4} = \frac{9}{8} = 1\frac{1}{8}$ cups.
 
-You can find the GCD of two integers and use it to reduce fractions or to solve packing and sharing problems. You can find the LCM and use it to align repeating events or to add fractions with different denominators.
+A baker does this by feel after years of practice. You now have the machinery to do it in any unfamiliar case.
 
-You can work with percents as rational numbers (fractions out of 100) and solve real problems: what percentage of the class scored above 85? If 40% of attendees are newcomers and there are 250 attendees, how many are newcomers?
+### What Rational Numbers Cannot Reach
 
-And you understand, in your bones now, that numbers have structure. They factor. They combine. They follow rules. Those rules don't change when you extend them—from naturals to integers to rationals. That consistency is what allows you to build further, to trust the machinery, and to see into systems that depend on these gears.
+Rational numbers handle any ratio of integers. But not every length or measurement is such a ratio. The diagonal of a unit square has length $\sqrt{2}$. Can $\sqrt{2}$ be written as $\frac{p}{q}$ for integers $p$ and $q$?
 
-The thing to remember: **every composite number is prime pieces, and those pieces are unique.** That uniqueness is what makes much of mathematics and much of modern security possible.
+Assume it can: $\sqrt{2} = \frac{p}{q}$ in lowest terms. Then $2 = \frac{p^2}{q^2}$, so $p^2 = 2q^2$. This means $p^2$ is even, which means $p$ is even (since the square of an odd number is odd). Write $p = 2k$. Then $4k^2 = 2q^2$, so $q^2 = 2k^2$. So $q$ is also even. But then both $p$ and $q$ are even — which contradicts the assumption that $\frac{p}{q}$ was in lowest terms.
+
+The assumption fails. $\sqrt{2}$ is not rational. It is **irrational** — real, but not expressible as any fraction. The rational numbers are dense on the number line (between any two rationals there is always another rational), but they have gaps, and irrational numbers fill them. Together, rationals and irrationals form the **real numbers**.
+
+<!-- → [INFOGRAPHIC: Number line zoomed in on the interval [1, 2], showing: (1) a cluster of rational number markers as tick marks with fractions labeled ($\frac{3}{2}$, $\frac{4}{3}$, $\frac{7}{5}$, $\frac{10}{7}$, converging toward $\sqrt{2}$), (2) $\sqrt{2} \approx 1.41421...$ marked with a distinct symbol showing it falls in the gap between rational approximations, and (3) a small inset showing the unit square with diagonal labeled $\sqrt{2}$ to connect the abstract number to its geometric origin. Caption: The rationals are everywhere dense but don't cover everything. $\sqrt{2}$ is the gap.] -->
 
 ---
 
-## Connections forward
+## The Structure Underneath Everything
 
-Chapter 4 treats numbers not as abstract quantities but as *represented* in different ways—in base 10 (which you already know), in other bases (like base 2 for computers), and in the systems ancient cultures used. When you understand that the *same number* can be written in different bases, you see that base-10 itself is a choice, not a law.
+Now return to the cryptographer.
 
-Chapter 5, Algebra, takes the rules of arithmetic you've just learned and abstracts them further, replacing specific numbers with variables. But the rules of GCD, LCM, fraction operations, and sign arithmetic all remain. Algebra is just arithmetic with placeholders.
+She multiplies two primes with hundreds of digits each. The product is a specific, unique integer. The Fundamental Theorem guarantees that no other pair of primes produces this same number. That uniqueness is the lock.
 
-Chapter 6, Money Management, applies fractions and percents directly—interest, loans, tax, investment. Everything in this chapter is in motion there.
+The bank's server then handles transactions. Balances are computed using integer arithmetic — additions, subtractions, sign-correct multiplications. Interest compounds monthly: a 3.6% annual rate is $\frac{3.6}{100} = \frac{9}{250}$ annually, $\frac{9}{3000} = \frac{3}{1000}$ monthly. These are rational arithmetic operations on exact fractions.
 
----
+The GCD shows up in reporting: when combining data from systems with different measurement intervals, the analysts find the smallest common interval by computing LCM. When dividing resources fairly, they find GCD to eliminate waste.
 
-## What would change my mind
+Prime structure secures the whole system. Integer arithmetic runs it. Rational arithmetic measures the transactions. All three rest on the same foundation: the integers, extended by the rules of divisibility and the fact that every number factors uniquely.
 
-If a student found a composite number whose prime factorization was not unique, the Fundamental Theorem of Arithmetic would be wrong, and much of number theory would need rebuilding. This has not happened in recorded mathematics, and rigorous proofs show it cannot.
+<!-- → [INFOGRAPHIC: Three-layer stack diagram — bottom layer labeled "Integers: direction + magnitude", middle layer labeled "Prime factorization: unique structure", top layer labeled "Rational arithmetic: exact ratios". An arrow running up the left side labeled "Chapter 3 builds upward." At the top, a small icon of a lock representing the cryptography application. Student should see that the three concepts aren't parallel — they're layered, each one depending on the one below.] -->
 
----
+The thing to hold onto — the one idea from this chapter that matters most:
 
-## Still puzzling
-
-The distribution of primes—why they become rarer as numbers grow larger, and whether there is an exact formula that predicts where the next prime will appear—remains one of mathematics' deepest open questions. The Riemann Hypothesis, which addresses this, has been open since 1859 and carries a $1 million prize for its solution.
+**Every composite number is built from prime pieces, and those pieces are unique.** That uniqueness is not an accident or a convenient convention. It is a structural fact about the integers, and it is why so much of mathematics — and so much of modern security — is possible.
 
 ---
 
-## Tags
+## Still Open
 
-prime-factorization, encryption, greatest-common-divisor, least-common-multiple, integers, negative-numbers, rational-numbers, fractions, percent, number-theory, fundamental-theorem-of-arithmetic
+The distribution of primes — why they become rarer as numbers grow, and whether any formula predicts exactly where the next prime falls — remains one of the deepest unsolved problems in mathematics. The Riemann Hypothesis, posed in 1859, addresses this distribution. It carries a $1,000,000 prize for its resolution. It has not been resolved.
 
+If you find yourself drawn to it, you are in good company. Gauss, Euler, Riemann, Hardy, and thousands of working mathematicians since have looked at the prime distribution and felt the pull. The question is not exotic or esoteric. It is the natural next question after everything this chapter showed you.
+
+---
+
+## LLM Exercises
+
+**Prompt 1.** Ask a language model: "Is 1 a prime number? Explain your reasoning." Evaluate whether the explanation correctly identifies that 1 is excluded because of the Fundamental Theorem of Arithmetic — not simply because of convention. Push back on any answer that gives a weaker reason.
+
+**Prompt 2.** Give a language model this problem: "A camp has 48 sleeping bags and 60 water bottles. What is the maximum number of identical kits, with no items left over?" Verify the model's arithmetic by working out GCD(48, 60) yourself using prime factorization. If the model's answer differs from yours, determine which is correct.
+
+**Prompt 3.** Ask a language model to explain why $\sqrt{2}$ is irrational using a proof by contradiction. Compare the proof it gives to the argument in this chapter. Identify any steps it skips, compresses, or explains differently. Does it reach the same conclusion by the same logic, or does something differ?
+
+**Prompt 4.** Ask: "What is the monthly interest rate if the annual rate is 4.8%? Show the fraction in lowest terms." Check that the model converts correctly and reduces $\frac{4.8}{100 \times 12}$ to lowest terms. Note whether it handles the decimal in the numerator correctly.
+
+**Prompt 5.** Give a language model two large numbers — say, 252 and 198 — and ask for their GCD and LCM. Verify using prime factorization. Then ask the model to confirm the relationship $\text{GCD}(a,b) \times \text{LCM}(a,b) = a \times b$. Does it check out?
