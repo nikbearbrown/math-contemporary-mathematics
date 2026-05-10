@@ -1,300 +1,173 @@
 # Chapter 8 — Statistics
+*Two Million Wrong Answers, and How to Get a Thousand Right Ones.*
 
-## Three title options
+In October 1936, the most prestigious polling organization in the United States announced its prediction for the presidential election: Alf Landon would defeat Franklin Roosevelt by eighteen percentage points. The organization was the *Literary Digest*. It had correctly predicted every presidential election since 1916. It had surveyed two million people — the largest poll in American history to that point.
 
-1. **What the Data Actually Shows: Reading numbers in a world of polling, surveys, and NBA contracts**
-2. **The Shape of Certainty: How we gather facts, measure them, and make sense of what we find**
-3. **Numbers as evidence: From the polling booth to the paycheck, what statistics let us see**
+Roosevelt won by eighteen percentage points in the other direction.
 
----
+The *Digest* had polled from three lists: its own subscribers, telephone directories, and automobile registration records. All three, in 1936, were lists of wealthy people. The magazine was polling during the Great Depression, in an election that turned almost entirely on whether you had survived it. The poor and working-class voters who adored Roosevelt were not on any of those lists. Two million responses from the wrong population are worth less than a hundred responses from the right one.
 
-## TL;DR
-
-Statistics is the mathematics of learning from data—the practice of collecting it honestly (sampling without bias), understanding what it's telling you (measures of center and spread), and knowing when to trust a pattern versus when to mistrust it (normal distribution and confidence). A single number tells you almost nothing. The story the data tells is in how it's spread out, where the middle really is, and what happens when you compare an individual value to the whole population.
+This is the lesson that carries through everything in this chapter. Statistics is not about collecting large amounts of data. It is about collecting *honest* data, describing it accurately, and knowing what you can and cannot conclude from it. Get any of those three things wrong and the numbers will deceive you — or, if someone else controls the numbers, they will use them to deceive you.
 
 ---
 
-## Cold open: The moment the poll arrives
+## Where data come from
 
-Your phone rings at 6:15 p.m. on a Tuesday. A recorded voice says this is a political opinion survey. Do you answer? If you do, you are now part of data. You answer five questions. Then you hang up.
+The *Digest* had a **sampling** problem. It needed to know what the voting population thought, but it could not ask all voters. No one ever can. So it chose a sample — a subset meant to represent the whole. And the sample was wrong, not because it was too small, but because the method of choosing it introduced a systematic tilt toward one kind of person.
 
-On the other end, a polling firm collects your response along with 1,499 others. They weight the data—they adjust the numbers so that the respondents roughly match the demographics of the actual voting population. Then they announce: "Our poll shows candidate A leads candidate B 52% to 48%." They publish a margin of error: "plus or minus three percentage points."
+The principle here is simple but important: a sample is valid only if every member of the population had a fair and equal chance of being included. When that is true, the sample is called **random**, and random samples have a beautiful property — they tend to look like the population they came from, including its diversity, its spread, its center.
 
-What just happened is statistics. You generated data. The polling firm organized it, summarized it, and made a claim: *this is what the population thinks, within these bounds*. The claim is only as good as the data itself. If the 1,500 people who answered are skewed—too many wealthy people, too many urban people, too many morning people who answer their phones—then the summary will lie.
+The main sampling methods are distinguished by how they achieve (or fail to achieve) this:
 
-This chapter teaches you how to see whether a claim like that one can be trusted.
+A **simple random sample** gives every member of the population an equal probability of selection. You have a list of all voters; a random number generator picks 1,500 of them. No human judgment involved. No systematic tilt. This is the gold standard.
 
-### Learning objectives
+A **systematic random sample** takes every $k$th item from an ordered list, starting at a randomly chosen point. If you want a 2% sample of a list of 10,000 names, you pick a random start between 1 and 50, then take every 50th name. This works well unless the list itself has a periodic pattern — say, if every 50th entry happens to be a department head.
 
-By the end of this chapter you will be able to:
+A **stratified sample** divides the population into groups — income brackets, age groups, geographic regions — and randomly samples within each group. The *Digest* should have done this. Had they stratified by income and sampled randomly within each income bracket, Roosevelt's supporters would have had equal representation. They did not.
 
-- **Recognize** sources of bias in data collection and **evaluate** sampling methods.
-- **Interpret** measures of center (mean, median, mode) and **choose** the right one for the question you're asking.
-- **Calculate** and **understand** measures of spread (range, standard deviation).
-- **Apply** the 68-95-99.7 rule to normally distributed data.
-- **Compute** percentiles and z-scores to **compare** values across different populations.
-- **Read** the story a histogram tells—symmetry, skew, outliers—and **detect** when someone is using a graph to mislead.
+A **cluster sample** selects entire clusters at random — five city blocks, twenty classrooms, a dozen precincts — and surveys everyone in the selected clusters. Convenient for surveys that must be conducted in person. Risky if the clusters are not themselves representative.
 
-### Prerequisites
+The worst option, the one responsible for most bad polling, is the **convenience sample** — asking whoever is available. Stand at a street corner, call whoever answers their phone at 6pm, email your subscriber list. You will systematically miss everyone who is not there. The missed people are rarely missing at random.
 
-Arithmetic with whole numbers, decimals, and fractions. Ability to read and create a coordinate plane. Willingness to think about where numbers come from and what they might be hiding.
+<!-- → [TABLE: five-row reference table of sampling methods — columns: "Method", "How it works", "Key strength", "Key risk / failure mode" — rows: simple random, systematic random, stratified, cluster, convenience; the convenience row should be visually flagged (e.g., shaded or marked with a warning symbol) to signal it is not a valid random method — student should be able to scan this and immediately identify which method the Literary Digest used and why it failed] -->
 
-### Why this chapter matters
+There is a second failure mode, subtler than a bad list: **non-response bias**. Even with a random sample, if only some people respond, you have a problem. The people who answer political surveys are not the same as the people who hang up. The ones who respond may feel more strongly, more informed, more angry, or more at leisure. Whatever systematically distinguishes responders from non-responders will show up in your data as a distortion.
 
-Statistics sits between mathematics and the real world. In Chapters 6 and 7, you learned probability—the mathematics of what *should* happen if a process is random and fair. Statistics is what you do when the real world doesn't cooperate with theory. You have actual data. It's messy. It has people in it, or measurements, or votes, or salaries. Your job is to extract the truth without letting the mess (or a dishonest narrator) fool you.
-
-Every time you see "the data shows," a number quoted as fact, a bell curve on a report card, or a margin of error on a poll, you are looking at a statistical claim. This chapter teaches you to ask hard questions of those claims.
+The *Digest* sent ten million surveys. Two million came back. Even if the original list had been perfect, a 20% response rate from an unknown subset is a serious problem. When you see a poll, the first question to ask is not how many people were surveyed — it is how they were chosen, and whether there is any reason to think the sample is tilted.
 
 ---
 
-## Concept 1 — Where does data come from, and why it matters
+## The story in the middle
 
-**Cold open: The night the Literary Digest got it wrong**
+Once you have honest data, you need to describe it. And the first question is: what is the *center*?
 
-October 1936. The Literary Digest, a weekly magazine of enormous prestige, had predicted the outcome of every U.S. presidential election since 1916. Sixteen years without error. The magazine sent surveys to ten million Americans. Two million sent responses back. The Digest tabulated the numbers and made their prediction: Kansas governor Alf Landon would defeat the incumbent Franklin Delano Roosevelt, 57% to 43%.
+There are three answers to that question, and they are not interchangeable.
 
-The election happened. Roosevelt won, 61% to 39%. The Digest's margin of error wasn't a rounding mistake or a statistical hiccup. It was catastrophic—18 percentage points off in one direction.
+The **mean** is the sum of all values divided by how many there are. If a basketball league has ten players with salaries of 90, 90, 95, 100, 102, 105, 110, 115, 120, and 190 (in thousands of dollars), the mean salary is $\frac{90 + 90 + 95 + 100 + 102 + 105 + 110 + 115 + 120 + 190}{10} = \frac{1117}{10} = 111.7$ thousand dollars. The mean is $111,700.
 
-What went wrong?
+The **median** is the middle value when the data are sorted. With ten values, the median is the average of the fifth and sixth: $\frac{102 + 105}{2} = 103.5$ thousand dollars. The median is $103,500.
 
-The survey reached ten million people. That's an enormous number. Surely with that much data, the result should be reliable. But reliability isn't just about size. It's about who you're asking.
+The mean is higher than the median by about $8,000. Why? Because the player earning $190,000 pulls the mean upward. The mean is sensitive to extreme values; it gets tugged toward outliers. The median does not care about the outlier's exact value — it only cares that one value is above the middle and one is below.
 
-The Digest's sample came from three sources: their own magazine subscribers (wealthy); telephone directories (still only wealthy households in 1936); and auto-registration lists (again, wealthy—most Americans did not own cars). The Digest mailed surveys to people from these lists. About one in four responded. The respondents were systematically richer than the overall population.
+The **mode** is the most frequently occurring value. In this dataset, $90,000 appears twice and nothing else does, so the mode is $90,000. The mode answers the question: if I pick a random data point, what am I most likely to see?
 
-The year was 1936, in the depths of the Great Depression. Roosevelt was beloved by the poor and working-class voters. Those voters were not in the Digest's sample. They couldn't afford magazine subscriptions or cars or phones. The sample, though large, was **biased**—skewed toward a group that had reasons to vote differently from the population as a whole.
+These three measures answer three different questions. The mean answers: if you split the total equally, what does each person get? The median answers: what does the person in the middle earn? The mode answers: what is the most common value?
 
-### Sampling methods and their pitfalls
+<!-- → [TABLE: three-row reference table — columns: "Measure", "What it computes", "The question it answers", "When to use it", "Sensitive to outliers?" — rows: mean, median, mode; the basketball salary dataset (90, 90, 95, 100, 102, 105, 110, 115, 120, 190) runs as a worked column alongside each row showing the computed value — student should see at a glance why the mean ($111.7K) and median ($103.5K) diverge and what that gap means] -->
 
-When you cannot measure an entire population, you must choose a sample. The way you choose that sample decides whether you can trust the result.
+The choice between them is not arbitrary. It depends on what you are trying to communicate — and on whether the data are symmetric or skewed.
 
-A **simple random sample** gives every member of the population an equal chance of being selected. If you have a list of all voters and you use a random number generator to pick 1,500 of them, that's a simple random sample. The Digest did not do this. They selected from lists they happened to have.
+If income data are **skewed right** — most people earn modest salaries, but a few earn enormous ones — the mean gets pulled up by the high earners and overstates what a typical person earns. The median is more honest. This is why median household income is always reported in economics: a small number of very wealthy households would inflate the mean into a number that most families cannot recognize as representing their experience.
 
-A **systematic random sample** is chosen from an ordered list (like voter registration, alphabetical by last name, or every tenth name on a list). You decide what fraction of the population you want to sample—say, 2%, which is 1 in 50. You randomly pick a starting point (between 1 and 50, say you pick 23), then select every 50th name after that (23, 73, 123, ...). This is faster than pure random sampling and works well if the list itself has no pattern. The advantage: easier to implement at scale.
+If you see a data summary that uses the mean where the data are skewed, ask why. Sometimes it is honest (the mean really is what the question requires). Sometimes it is chosen precisely because it makes the number larger, or smaller, than the typical experience.
 
-A **stratified sample** divides the population into groups (strata)—age groups, income brackets, regions, political affiliation—then randomly samples within each group. If you're surveying a school with grades 9–12, and you want to know student opinion, you might randomly sample 25 ninth-graders, 25 tenth-graders, 25 eleventh-graders, and 25 twelfth-graders. This guarantees representation from each group. The Digest should have done something like this, stratified by income level. They did not.
+### Spread: the story the mean cannot tell
 
-A **cluster sample** selects entire clusters at random—say, five city blocks are chosen at random, and every household on those blocks is surveyed. Convenient if the survey must be done in person. Less useful if the clusters themselves are not representative (surveying all households on five blocks in a wealthy neighborhood, when you want to know something about the city, will produce biased data).
+Two classes both have a mean test score of 80. In class A, every student scored between 75 and 85. In class B, half scored 100 and half scored 60. The same mean describes two entirely different situations. To distinguish them, you need a measure of **spread**.
 
-The **bias** comes from the method itself. If you stand on a street corner and survey the first five people you see, you're committing what's called a **convenience sample**. It's not random. You're more likely to stop people who look friendly, who have time, who are walking slowly. The result will be biased toward whatever traits correlate with friendliness and leisure.
+The simplest is the **range**: the difference between the highest and lowest values. Class A's range is 10. Class B's range is 40. But the range depends entirely on the two extreme values, and a single outlier can make it misleading.
 
-Non-response is another source of bias. The Digest sent two million surveys. One million came back. Why didn't the other million? Perhaps people who are angry at the government are more likely to respond. Perhaps people with strong political opinions are more likely to care enough to mail a survey back. If responders differ systematically from non-responders, the result is biased, even if the original list was random.
+The more informative measure is the **standard deviation** — the average distance of data points from the mean. Its formula is:
 
-### A worked example — identifying the sampling method
+$$s = \sqrt{\frac{\sum (x - \bar{x})^2}{n - 1}}$$
 
-You are a high school principal. You want to know whether students support a new dress code policy. Which sampling method makes sense, and why?
+Read this step by step. Take each value $x$. Subtract the mean $\bar{x}$. Square the result (so negative differences count the same as positive ones). Add them all up. Divide by $n - 1$ (not $n$ — a technical correction that makes the estimate better for small samples). Take the square root to undo the squaring and return to the original units.
 
-**The question:** Do we use simple random, systematic, stratified, or cluster sampling?
+For the three scores 75, 80, 85 (mean = 80): the differences are $-5, 0, 5$. Squared: $25, 0, 25$. Sum: 50. Divided by $n - 1 = 2$: 25. Square root: 5. Standard deviation is 5. Roughly speaking, a typical score is about 5 points from the mean.
 
-**The reasoning:** You want the result to be trustworthy. A simple random sample from the entire student body would work. You have a list of all students. A random number generator picks 100 of them. You ask each one. Cost is minimal, method is unbiased. That works.
+The standard deviation has a feel once you work with it. A low standard deviation means the data cluster tightly around the mean — consistent, predictable. A high standard deviation means the data scatter widely — diverse, variable, possibly with outliers driving the spread. Two datasets with the same mean can have entirely different stories, and the standard deviation is what tells you which story you are in.
 
-But you might worry: what if ninth-graders feel differently from seniors? You could stratify by grade, randomly sampling 25 ninth-graders, 25 tenth-graders, 25 eleventh-graders, 25 seniors. You now guarantee that each grade is represented. The result is still unbiased, and you have bonus information: which grade supports or opposes the dress code.
-
-A cluster sample would mean: you randomly select five homeroom classes and survey every student in those five classes. This is convenient; you can do it during lunch. But it's risky. If homerooms are assigned by grade or ability level, one random selection might overrepresent students from one grade or with one ability level. The sample could be biased without you knowing it.
-
-A convenience sample—standing at the lunch table and asking whoever sits down—would be the worst choice. You'd systematically miss students who eat somewhere else, skip lunch, or don't speak up in crowds.
-
-**Best choice:** Simple random or stratified random, depending on whether you care about breakdowns by grade.
-
-### Common misconceptions
-
-**"A large sample is always reliable."** The Digest's sample of two million was enormous. It was still biased. Size matters only if the method is unbiased. A small random sample is more trustworthy than a large biased one.
-
-**"If my survey gets responses from 100 people, that's enough."** Enough for what? It depends on the population, the diversity of the population, the margin of error you can tolerate, and whether the method is random. This is a question for another course (sampling design). For now: random method first, then size.
-
-**"Random means I choose however I feel like."** No. Random means every unit has a known, equal probability of being chosen, and the choice is made by a method outside human judgment. You don't get to decide "this person looks representative." A random number generator decides.
+<!-- → [INFOGRAPHIC: side-by-side dot plots for two datasets with the same mean (80) but different standard deviations — left plot: scores tightly bunched between 75–85, standard deviation 5; right plot: scores spread from 60–100, standard deviation ~15; vertical line marks the mean in both; bracket annotations show "1 SD" on each side of the mean; label beneath each: "Same mean. Different story." — student should see viscerally that mean alone is insufficient] -->
 
 ---
 
-## Concept 2 — The story in the middle: Measures of center and spread
+## The shape of the data
 
-**Cold open: What does "average" salary mean to you?**
+A mean and standard deviation describe two features of a dataset. The **histogram** — a bar chart where each bar represents the count of values in a range — shows the whole shape. And the shape matters.
 
-The professional women's basketball player Candace Parker signed a contract with the Chicago Sky in 2021. Her salary: $190,000. The average salary in the WNBA that year was $144,000 per year. By that measure, Parker was above average—well paid, relatively speaking.
+Some datasets produce a symmetric, bell-shaped histogram. This shape is common enough in nature and measurement that it has a name: the **normal distribution**. Heights of adults in a population. Birth weights. SAT scores. The measurement error in repeated careful measurements of the same thing. Many processes that result from the sum of many independent small random effects produce, in the limit, this bell curve.
 
-But the median WNBA salary that year was much lower: $102,000.
+The normal distribution is worth understanding deeply because of one remarkable fact: if you know the mean and the standard deviation of a normally distributed dataset, you know almost everything about it.
 
-Parker's salary was above the mean but far above the median. Which is the "real" average?
+Specifically, the **68-95-99.7 rule** tells you:
 
-Both. And neither. They measure different things.
+- 68% of values fall within one standard deviation of the mean
+- 95% fall within two standard deviations
+- 99.7% fall within three standard deviations
 
-The **mean**, also called the arithmetic average, is the sum of all values divided by how many values there are. Compute it, sum everything up, divide by the count:
+<!-- → [IMAGE: annotated bell curve diagram — x-axis labeled in standard deviation units (−3s to +3s) with mean μ at center; three nested shaded regions: innermost (±1s) labeled "68%", middle (±2s) labeled "95%", outer (±3s) labeled "99.7%"; a second x-axis beneath shows the heights example in inches (62.5, 65, 67.5, 70, 72.5, 75, 77.5) so the abstract rule is immediately grounded in a real example — student should be able to read off any percentage directly from the diagram] -->
 
-$$\text{Mean} = \frac{\text{sum of all values}}{n}$$
+Adult male heights in the United States are approximately normally distributed with mean 70 inches and standard deviation 2.5 inches. The rule tells us immediately: 68% of men are between 67.5 and 72.5 inches tall. 95% are between 65 and 75 inches. 99.7% are between 62.5 and 77.5 inches. If you meet a random man, there is less than a 0.3% chance he is shorter than 5'2.5" or taller than 6'5.5".
 
-The **median** is the middle value when data are sorted from smallest to largest. If you line up every WNBA salary from lowest to highest, the median is the salary of the player in the middle. Half the league makes less; half makes more. Half makes less than $102,000.
+The rule is not just a memory device. It encodes the geometry of the normal distribution — the way probability mass concentrates around the mean and tapers in both directions.
 
-The **mode** is the value that appears most often. If 50 players on the roster make $90,000 and everyone else makes different amounts, $90,000 is the mode. It's the most common salary.
-
-Each answers a different question.
-
-**When to use the mean:** When you want to know the total and divide it fairly. If the WNBA's total payroll one year was $14 million and the league had 100 players, the mean salary is $140,000. If you wanted to redistribute paychecks equally, everyone would get $140,000. The mean captures the idea of "equal share."
-
-**When to use the median:** When you want to know what a typical player earns. The median is less sensitive to extreme outliers. If one superstar makes $500,000 and the rest make $90,000–$150,000, the median tells you the middle salary (which is the real experience of most players), while the mean gets pulled upward by the superstar's salary.
-
-**When to use the mode:** When you want to know the most common value. If you're a new player and you ask "how much do most WNBA players make," the mode is the answer. It's the value you're most likely to land on if you're randomly assigned a salary.
-
-### A worked example — choosing the right measure of center
-
-You collect test scores from your class: 85, 92, 78, 81, 88, 75, 90, 86, 100, 82.
-
-Compute the mean, median, and mode. Which best represents a "typical" student performance?
-
-**Mean:** Sum: 85 + 92 + 78 + 81 + 88 + 75 + 90 + 86 + 100 + 82 = 857. Count: 10. Mean = 857/10 = 85.7.
-
-**Median:** Sort the data: 75, 78, 81, 82, 85, 86, 88, 90, 92, 100. Since there are 10 values (even), the median is the average of the 5th and 6th values: (85 + 86)/2 = 85.5.
-
-**Mode:** No value appears twice. There is no mode (or we could say all values are modes equally). Not useful here.
-
-**Which is best?** The mean and median are very close (85.7 vs 85.5). The distribution is nearly symmetric. Either measure tells you: a typical student scored in the mid-80s. The mode doesn't exist, so we don't use it. Pick either mean or median; they agree.
-
-### Measures of spread: When the middle isn't enough
-
-Imagine two classes with the same mean test score of 80. In class A, every student scored between 75 and 85. In class B, half scored 100 and half scored 60. The mean is the same. The story is very different.
-
-Class A's students are clustered around the mean. Class B's students are spread out, far from it. Statistics calls this spread **dispersion**. Two measures capture it.
-
-The **range** is the simplest: the difference between the highest and lowest values. Class A's range: 85 − 75 = 10. Class B's range: 100 − 60 = 40. The range tells you how far apart the extremes are. But it only looks at two values, so it can be deceiving. One student who scored unusually high or low inflates it.
-
-The **standard deviation** is the average distance of data points from the mean. It's more complicated to compute, but more honest. The formula is:
-
-$$s = \sqrt{\frac{\sum{(x - \overline{x})}^{2}}{n - 1}}$$
-
-Where $x$ is each data value, $\overline{x}$ (said "x-bar") is the mean, $n$ is the count, and $\Sigma$ means "add these all up."
-
-Here's the process: (1) Compute the mean. (2) Subtract the mean from each value. (3) Square those differences. (4) Add them up. (5) Divide by $n-1$. (6) Take the square root.
-
-Example: Test scores 75, 80, 85 (mean = 80).
-- Differences from mean: −5, 0, 5.
-- Squared: 25, 0, 25.
-- Sum: 50.
-- Divide by $n-1 = 2$: 50/2 = 25.
-- Square root: $\sqrt{25} = 5$.
-
-Standard deviation is 5. It measures roughly how far a typical score is from 80.
-
-### A worked example — interpreting spread
-
-Two colleges reported mean SAT scores of 1100. College A's standard deviation is 50. College B's is 150. What does this tell you?
-
-**At College A:** Typical students score within 50 points of 1100 (so, between 1050 and 1150). Most are clustered near the mean. It's a selective college; scores are consistent.
-
-**At College B:** Typical students scatter widely around 1100. You might score 950 or 1250. The college admits a more diverse range of students, or there's more variation in student preparation.
-
-If you're a student deciding where to apply, this matters. If you scored 1200, you're above average at both schools, but you're more notably above average at College B. If you scored 900, you're below average at both, but you might have a better shot at College B, since they admit students across a wider range.
-
-### Common misconceptions
-
-**"The mean and median should always be close."** Only if the data are symmetric and roughly bell-shaped. If the data are skewed (bunched on one side with a tail stretching the other way), the mean gets pulled toward the tail and the median stays more central.
-
-**"A low standard deviation means the data are bad."** No. Low standard deviation means the data are tightly clustered around the mean. That's often good—it suggests consistency. High standard deviation might mean there's real diversity in the population, or it might mean you have outliers. You have to look at the data, not just the number.
+Not every dataset is normal, and assuming normality when the data are skewed or bimodal is a common error. Always look at the histogram before applying the rule. If the histogram is skewed — heaped toward one side with a long tail toward the other — the normal distribution's rules do not apply, and the mean has been pulled toward the tail away from where most of the data live.
 
 ---
 
-## Concept 3 — The normal distribution: Reading a curve, understanding confidence
+## Z-scores: measuring relative position
 
-**Cold open: The bell curve, and why it's everywhere**
+The 68-95-99.7 rule answers a question about the whole population. But sometimes you want to know about one individual: *where does this person stand relative to everyone else?*
 
-John Kerrich was an English mathematician. In 1940, he was in Denmark on a research visit. Germany invaded. Kerrich was captured and placed in an internment camp for the duration of the war—five years.
-
-He had all the time in the world. He had a coin. He decided to test a theory mathematically: if you flip a fair coin many, many times, the number of heads you get should be normally distributed—that is, the results should form a symmetric, bell-shaped histogram.
-
-While imprisoned, Kerrich flipped a coin 10,000 times and recorded the results. He broke the 10,000 flips into groups of 100 flips, and counted how many heads appeared in each group of 100. Then he made a histogram of the results.
-
-The histogram was bell-shaped. Symmetric. Normal distribution. The mathematics held up. Kerrich had just proved, through sheer tedious action, that a pattern every statistician expected was real.
-
-### The normal distribution in nature
-
-Many measurements in nature produce bell-shaped distributions. Heights of people in a population. Test scores. Birth weights. Circumferences of tree trunks of the same species. Time it takes to run a marathon. The distribution of many repeated measurements, if they're measuring the same underlying thing without systematic error, tends to cluster around the mean, taper off symmetrically on both sides, and form a curve.
-
-This is so common that it has a name: the **normal distribution**. And because it's so common, we have a set of rules—the **68-95-99.7 rule**—that tell us how to interpret any normally distributed dataset, knowing only two numbers: the mean and the standard deviation.
-
-### The 68-95-99.7 rule
-
-If data are normally distributed with mean $\mu$ (mu, Greek for "mean") and standard deviation $s$, then:
-
-- **68%** of the data fall within one standard deviation of the mean. That is, between $\mu - s$ and $\mu + s$.
-- **95%** fall within two standard deviations: between $\mu - 2s$ and $\mu + 2s$.
-- **99.7%** fall within three standard deviations: between $\mu - 3s$ and $\mu + 3s$.
-
-**Example:** Adult male heights in the United States are normally distributed with mean 70 inches and standard deviation 2.5 inches.
-
-- **68%** of men are between 67.5 inches (70 − 2.5) and 72.5 inches (70 + 2.5) tall.
-- **95%** are between 65 inches (70 − 5) and 75 inches (70 + 5) tall.
-- **99.7%** are between 62.5 inches (70 − 7.5) and 77.5 inches (70 + 7.5) tall.
-
-This means if you randomly meet an adult male, there's a 68% chance he's between 5'7.5" and 6'0.5". There's a 95% chance he's between 5'5" and 6'3". And there's only a 0.3% chance he's shorter than 5'2.5" or taller than 6'5.5".
-
-### Percentiles and the language of normal distributions
-
-Sometimes it's useful to ask: "What percentage of the population is below a certain value?" That percentage is the **percentile rank**.
-
-If a male is 72 inches tall, what percentile is he at? He's one standard deviation above the mean (70 + 2.5 = 72.5 is one standard deviation; 72 is close). From the 68-95-99.7 rule, 68% of the population is within one standard deviation of the mean. That leaves 32% outside—16% below one standard deviation below the mean, and 16% above one standard deviation above the mean. So someone at exactly one standard deviation above the mean is at about the 84th percentile (50% below the mean + 34% between the mean and one standard deviation above = 84%).
-
-We can use this to compare individuals from different populations.
-
-**Example:** Candace Parker scored 1450 on the SAT. Her friend scored 29 on the ACT. Which is the better score?
-
-The SAT has mean 1060 and standard deviation 195 across test-takers. Parker's score: 1450. How far above the mean is she? $(1450 - 1060) / 195 = 390 / 195 = 2$ standard deviations. So she's at the 97.5th percentile (roughly—the exact value depends on calculation, but 95% are within 2 standard deviations, so she's above the 95th percentile, closer to the 97.5th).
-
-The ACT has mean 21 and standard deviation 5. Her friend's score: 29. How far above the mean? $(29 - 21) / 5 = 8 / 5 = 1.6$ standard deviations. That puts the friend at roughly the 95th percentile.
-
-Parker's SAT score is at a higher percentile. **Parker's score is better**, even though 1450 and 29 are incommensurable numbers from different tests. The normal distribution lets us compare.
-
-### Z-scores: The tool for comparing
-
-A **z-score** quantifies how many standard deviations a value is from the mean:
+That is what a **z-score** tells you.
 
 $$z = \frac{x - \mu}{s}$$
 
-where $x$ is the value, $\mu$ is the mean, and $s$ is the standard deviation.
+Take a value $x$. Subtract the mean $\mu$ (mu). Divide by the standard deviation $s$. The result is how many standard deviations above or below the mean the value sits.
 
-Parker's z-score on the SAT: $z = (1450 - 1060) / 195 = 2.0$. She scored 2 standard deviations above the mean.
+A z-score of 0 means the value is exactly at the mean. A z-score of 1 means one standard deviation above. A z-score of $-2$ means two standard deviations below.
 
-Her friend's z-score on the ACT: $z = (29 - 21) / 5 = 1.6$. The friend scored 1.6 standard deviations above the mean.
+Here is why this is useful. Suppose a student scores 1450 on the SAT and 29 on the ACT. The SAT and the ACT are different tests with different scales. You cannot directly compare 1450 and 29. But you can compare their z-scores.
 
-A higher z-score means a higher percentile. Parker's z-score of 2.0 beats 1.6. Parker did better relative to her peers.
+The SAT has mean 1060 and standard deviation 195. The z-score for 1450 is $\frac{1450 - 1060}{195} = \frac{390}{195} = 2.0$. Two standard deviations above the mean.
 
-### A worked example — using the normal distribution to make decisions
+The ACT has mean 21 and standard deviation 5. The z-score for 29 is $\frac{29 - 21}{5} = \frac{8}{5} = 1.6$. One-point-six standard deviations above the mean.
 
-Your college gives incoming students a placement test for math. Scores are normally distributed with mean 65 and standard deviation 8. If you score 73, are you placed in the regular calculus section or a remedial pre-calculus section? (The cutoff: students at the 60th percentile or higher go to calculus.)
+Both scores are excellent. But the SAT score, at z = 2.0, is at a higher percentile than the ACT score at z = 1.6. By the 68-95-99.7 rule, 95% of test-takers score within two standard deviations of the mean — so a z-score of 2.0 places a student near the 97th or 98th percentile. A z-score of 1.6 is around the 94th or 95th percentile. The SAT score is stronger relative to peers.
 
-**Compute your z-score:** $(73 - 65) / 8 = 8 / 8 = 1$ standard deviation above the mean.
+The z-score does one clean thing: it converts any normally distributed measurement into a common language — the language of standard deviations from the mean — so that a height, a test score, a salary, and a marathon time can all be placed on the same scale and compared.
 
-**Use the 68-95-99.7 rule:** One standard deviation above the mean puts you at roughly the 84th percentile. (68% are within one standard deviation, so 68%/2 = 34% are between the mean and one standard deviation above. Add the 50% below the mean: 50% + 34% = 84%.)
-
-**Conclusion:** You're at the 84th percentile. You exceed the 60th percentile cutoff. You're placed in calculus.
-
-### Common misconceptions
-
-**"A z-score of 2 means you scored twice as much as someone with a z-score of 1."** No. A z-score measures position relative to the mean, not magnitude. A z-score of 2 means you're twice as far from the mean as someone with a z-score of 1. If the mean is 100 and the standard deviation is 10, then z=1 corresponds to a score of 110, and z=2 corresponds to a score of 120. You didn't score twice as much; you scored 10 points higher.
-
-**"The normal distribution applies to all data."** Many datasets are approximately normal, but not all. Data can be skewed, bimodal, or shaped like something else entirely. Always plot your data before assuming it's normal.
-
-**"99.7% means absolutely everyone fits in three standard deviations."** No. It means 99.7% do. There's always a tail. The remaining 0.3% lies beyond three standard deviations. When you're dealing with millions of people, that 0.3% can be a lot.
+<!-- → [CHART: two side-by-side normal distribution curves — left curve: SAT distribution (mean 1060, SD 195) with a vertical line at 1450 and the area to the left shaded, labeled "≈97.7th percentile, z = 2.0"; right curve: ACT distribution (mean 21, SD 5) with a vertical line at 29 and the area to the left shaded, labeled "≈94th percentile, z = 1.6"; the two shaded areas are the visual argument that 1450 SAT > 29 ACT even though the raw numbers are incommensurable — student should see why z-scores enable comparison across different scales] -->
 
 ---
 
-## Integration: From sampling to confidence
+## From data back to the poll
 
-Return to the telephone poll from the opening. A polling firm calls 1,500 people. They find that 52% say they'll vote for candidate A, and 48% say candidate B. The margin of error is reported as ±3 percentage points.
+Return to the telephone poll from the opening of the chapter. A polling firm surveys 1,500 randomly selected voters and finds that 52% say they support candidate A. They report a margin of error of ±3 percentage points at 95% confidence.
 
-What does that margin of error actually mean?
+What does that mean, exactly?
 
-It means: **if we repeated this survey many times with different random samples of 1,500 people, the true population percentage would fall within 3 percentage points of our sample percentage about 95% of the time.**
+The 1,500 people surveyed are a sample. The true population percentage — what all 200 million eligible voters actually think — is unknown. The polling firm is using the sample to estimate that unknown quantity.
 
-This is statistics doing its real job. We cannot survey all 200 million eligible voters. We survey 1,500 (a sample). Our sample mean is 52%. The true population mean is unknown. But if our sampling method is unbiased (truly random, diverse, no non-response bias), the normal distribution tells us something: the sample mean is likely to be close to the true population mean, within a band we can calculate.
+Here is the logic. If the sampling is truly random, the sample percentage tends to be close to the population percentage. How close? That depends on the sample size and the variability in the population. The normal distribution, applied to the distribution of possible sample percentages from many such surveys, tells us the answer: there is a band around the sample percentage within which the true population percentage is likely to fall.
 
-The width of that band (the margin of error) depends on three things:
+At 95% confidence, that band is approximately ±3 percentage points for a sample of 1,500 — which is where the margin of error comes from.
 
-1. **Sample size.** Larger samples produce narrower margins of error. Bigger sample, more confident in the result.
+"95% confidence" does not mean there is a 95% chance the true value is in the interval. It means: if we drew many random samples of 1,500 and computed this interval each time, 95% of those intervals would contain the true population value. It is a statement about the method, not about this particular interval.
 
-2. **Variability in the population.** If the population is divided 50-50 on an issue, the sample will bounce around more than if it's 90-10. A more divided population requires a larger sample to be precise.
+Three things affect the width of the margin of error. A larger sample produces a narrower margin — more data, more confidence. A more divided population (say, 50-50 rather than 90-10 on an issue) produces a wider margin — more variability, harder to pin down. A higher desired confidence level (99% instead of 95%) produces a wider margin — you need more room to be more certain.
 
-3. **Desired confidence level.** Do you want to be 68% confident? 95% confident? 99.7% confident? Higher confidence requires a wider margin of error. You trade off precision for certainty.
+<!-- → [TABLE: three-row summary table — columns: "Factor", "If it increases...", "Effect on margin of error", "Intuition" — rows: sample size (larger → narrower margin), population variability (more divided → wider margin), confidence level (higher % → wider margin); the poll example (n=1500, ±3%, 95%) runs as a concrete anchor in the rightmost column — student should be able to read this table and immediately explain why "just survey more people" is not always the right answer] -->
 
-That's where the 68-95-99.7 rule reappears. A margin of error based on the 95% confidence level is the most common. Hence the "±" reporting: "52%, margin of error ±3, 95% confidence."
+The 68-95-99.7 rule reappears here, naturally. A margin of error at 95% confidence corresponds to approximately two standard deviations of the sampling distribution. A margin at 68% confidence would be one standard deviation; at 99.7%, three. The normal distribution is not just a description of heights and test scores. It is the foundation underneath every poll, every clinical trial, every quality-control measurement — anywhere we use a sample to estimate a population.
 
-The polling firm is saying: We're 95% confident that the true population percentage for candidate A is between 49% and 55%.
+---
+
+## Chapter summary
+
+Data is not just numbers. It is numbers produced by a method, and the method determines whether the numbers can be trusted.
+
+A biased sample — one drawn from a population that does not represent the whole — produces a biased estimate, regardless of how many responses you collect. The *Literary Digest* failed not because it was small but because it was wrong. Random sampling is the only defense against systematic bias.
+
+Once you have honest data, the mean, median, and mode each answer a different question. The median is the honest choice when the data are skewed; the mean is appropriate when you need to account for the total. The standard deviation tells you how spread out the data are — the story the mean leaves out.
+
+When data follow a normal distribution, the 68-95-99.7 rule lets you read the entire distribution from just two numbers. And z-scores let you compare values from different populations by translating everything into the language of standard deviations from the mean.
+
+The margin of error is not a guess. It is a direct consequence of the normal distribution applied to sampling: a quantified statement of how much the sample estimate might differ from the true population value, at a stated level of confidence.
+
+The mistake to watch for is the one the *Digest* made, and the one bad statistics always makes: confusing the sample for the population. Asking only people who answer phones. Reporting only the mean when the median is lower. Quoting a poll without its margin of error. The numbers are honest only if the method is. Your job, going forward, is to ask about the method every time.
+
+The Feynman test for this chapter: can you explain to someone why two million biased responses are less trustworthy than a thousand random ones? If you can — if you can show them what "random" actually means and why it is the only thing that prevents systematic distortion — you understand what statistics is for.
 
 ---
 
@@ -302,64 +175,71 @@ The polling firm is saying: We're 95% confident that the true population percent
 
 ### Warm-up
 
-**Exercise 8.1** *(LO: identify sampling bias.)* You are a polling firm hired by a local newspaper. Which of the following is a method you could use to sample opinion on a proposed school budget?
+**Exercise 8.1** *(Classify sampling methods; LO: identify sources of bias).* A school wants to survey student opinion on a new cafeteria menu. For each method below, name the sampling type and identify one specific source of bias.
 
-(a) Call 200 random households from the county voter registration list.
-(b) Stand at the grocery store and ask 200 people who walk by.
-(c) Send an email to everyone on the school's district email list and ask them to respond.
+(a) The principal asks for volunteers to fill out a survey during lunch.
+(b) A random number generator selects 60 student ID numbers from the school roster.
+(c) Five homeroom classes are chosen at random; every student in those classes is surveyed.
+(d) Students are divided by grade level; 15 are randomly selected from each grade.
 
-For each, identify whether it's simple random, systematic, stratified, cluster, or convenience sampling, and explain one source of bias.
+**Exercise 8.2** *(Compute and interpret measures of center; LO: choose the right measure for the question).* The annual salaries (in thousands) at a seven-person startup are: 45, 48, 50, 52, 55, 60, 210.
 
-**Exercise 8.2** *(LO: choose a measure of center.)* The salaries (in thousands) at a small company are: 30, 32, 31, 29, 28, 31, 32, 35, 34, 95. Compute the mean, median, and mode. Which measure best represents a "typical" employee salary, and why?
+(a) Compute the mean, median, and mode.
+(b) Which measure best represents a typical employee's salary? Explain why.
+(c) The CEO reports "the average salary here is \$74,286." Is this misleading? What would you report instead?
 
-**Exercise 8.3** *(LO: interpret standard deviation.)* Two neighborhoods have the same mean home price of $400,000. Neighborhood A has a standard deviation of $30,000. Neighborhood B has a standard deviation of $120,000. What does this tell you about the two neighborhoods?
+**Exercise 8.3** *(Interpret standard deviation; LO: read spread as a story).* Two hospitals report the same mean patient wait time of 40 minutes. Hospital A has a standard deviation of 5 minutes. Hospital B has a standard deviation of 25 minutes. What does this tell you about the patient experience at each hospital? Which would you prefer to use in an emergency, and why?
 
 ### Application
 
-**Exercise 8.4** *(LO: apply the 68-95-99.7 rule.)* Test scores in a large university course are normally distributed with mean 75 and standard deviation 8. What percentage of students score between 67 and 83?
+**Exercise 8.4** *(Apply the 68-95-99.7 rule; LO: use the normal distribution to estimate proportions).* A standardized test is normally distributed with mean 500 and standard deviation 80. Without a calculator, estimate:
 
-**Exercise 8.5** *(LO: compute and interpret z-scores.)* A student scores 1200 on the SAT (mean 1060, standard deviation 195) and 28 on the ACT (mean 21, standard deviation 5). Compute the z-score for each test. Which score is better (higher percentile), and by how much?
+(a) The percentage of test-takers who score between 420 and 580.
+(b) The percentage who score above 660.
+(c) The score below which approximately 2.5% of test-takers fall.
 
-**Exercise 8.6** *(LO: interpret margins of error.)* A poll shows 58% of voters support a ballot measure, with a margin of error of ±4 percentage points at 95% confidence. What does this mean? If the true population percentage is 54%, is that consistent with the poll?
+*Show which part of the 68-95-99.7 rule you are applying for each.*
+
+**Exercise 8.5** *(Compute and compare z-scores; LO: use z-scores to compare across populations).* A student earns 88 points on a chemistry exam (class mean 78, standard deviation 6) and 72 points on a history exam (class mean 65, standard deviation 10).
+
+(a) Compute the z-score for each exam.
+(b) On which exam did the student perform better relative to classmates? Explain.
+(c) What percentile (approximately) does each z-score correspond to, using the 68-95-99.7 rule?
+
+**Exercise 8.6** *(Interpret a margin of error; LO: read polling results correctly).* A poll reports that 47% of voters support a ballot measure, with a margin of error of ±4 percentage points at 95% confidence.
+
+(a) State the confidence interval.
+(b) Can you conclude the measure is likely to pass? Explain.
+(c) A different poll of the same population finds 51% support, with the same margin of error. Are the two polls in conflict? Why or why not?
 
 ### Synthesis
 
-**Exercise 8.7** *(LO: integrate sampling, measures of center, and normal distribution.)* You are launching a new product. You survey 100 random customers: 72% say they'll buy. The standard error (essentially, the margin of error) is 4%. What does this tell you about the true percentage of all customers who will buy? If you run this survey again, will you get exactly 72%? Why or why not?
+**Exercise 8.7** *(Connect sampling to margin of error; LO: understand what affects polling precision).* A polling firm wants to reduce its margin of error from ±4% to ±2% while maintaining 95% confidence. What must it do? Name two distinct ways the firm could achieve this reduction and explain the trade-off each involves.
 
-**Exercise 8.8** *(LO: recognize bias and evaluate data claims.)* A gym claims "users lose an average of 20 pounds in three months." They gathered this statistic by surveying people at the gym who had completed the three-month program. Identify three sources of bias in this data collection. How would you redesign the study to reduce bias?
+**Exercise 8.8** *(Evaluate a real statistical claim; LO: identify bias and misleading summaries).* A gym advertises: "Our members lose an average of 18 pounds in their first three months." They gathered this data by surveying members who had completed a full three-month program.
+
+Identify three distinct sources of bias in this claim. Then describe what an honest study would look like — how would you redesign the data collection to produce a trustworthy number?
 
 ### Challenge
 
-**Exercise 8.9** *(LO: apply multiple concepts.)* A researcher wants to study the effect of a new teaching method on test scores. She compares two schools: School A uses the new method, School B uses the traditional method. School A's students score mean 82 (SD 10). School B's students score mean 79 (SD 12). Does this prove the new method works? What confounding factors might explain the difference? What would a better study design look like?
+**Exercise 8.9** *(Construct and critique an argument from data; LO: integrate all chapter concepts).* A researcher compares two high schools. School A uses a new reading curriculum; School B uses the traditional one. After one year, School A students have a mean reading score of 74 (standard deviation 9, $n = 120$). School B students have a mean of 71 (standard deviation 14, $n = 95$).
 
-**Exercise 8.10** *(LO: open-ended, points forward.)* You notice a news headline: "Study shows chocolate lovers are happier." The study surveyed 500 chocolate lovers and found 73% reported high happiness, compared to 64% of non-chocolate lovers. Critique this study. What sampling bias might exist? What confounding variable might explain the correlation? What would you want to know before believing the headline?
+(a) Compute the z-score for a School A student who scored 83 and a School B student who scored 85. Which score is relatively stronger?
+(b) Does the difference in mean scores prove the new curriculum is more effective? List two confounding factors that might explain the difference without the curriculum causing it.
+(c) What would a better study design look like?
 
----
+**Exercise 8.10** *(Open-ended; LO: transfer to a novel claim).* Find a statistical claim in a news article, advertisement, or public report — one that cites a number, a percentage, or a survey result. Write a one-page critique that addresses: How was the data collected? Is the sampling method described, and is it random? Is the measure of center appropriate for the data? Is a margin of error reported? What would you need to know before trusting the claim?
 
-## Chapter summary
-
-You can now do three things you probably could not do an hour ago.
-
-You can **recognize where data come from** and whether the method is likely to produce honest results. You understand the Literary Digest failure: a large sample is only as good as the method that created it. Random sampling, stratification, and awareness of non-response bias are your tools.
-
-You can **choose the right measure of center** for the question you're asking. The mean, median, and mode each answer a different question. You understand that the median is robust to outliers while the mean is sensitive to them, and you can use that knowledge to decide which one to quote depending on what story you want to tell (and to recognize when someone else is doing the same).
-
-You can **apply the normal distribution** to data and understand what a standard deviation means. If data are normally distributed, you can instantly estimate what percentage of the population falls in any band around the mean. You can compute z-scores to compare individuals across different populations.
-
-You understand that a **margin of error is not a guess**. It's a statement of confidence built on the normal distribution, the sample size, and the variability of the population. When a poll says 52% ± 3%, they are saying: "We're 95% confident the true percentage is between 49% and 55%."
-
-The thing to watch for, going forward, is **how the data were collected**. A claim is only as good as its source. You have learned to ask: Was the sample biased? Are they comparing apples to oranges? Did they choose a measure of center that inflates their case? Are they hiding the margin of error? These questions are your defense against being fooled.
-
-What you should now be able to teach a friend who asks: Why a random sample matters more than a big sample; when to use the median instead of the mean; what 95% confidence actually means.
+*There is no single correct answer. The quality of your response depends on the precision of your critique and the specificity of your evidence.*
 
 ---
 
-## Connections forward
 
-In Chapter 7 (Probability), we learned that probability is the mathematics of what *should* happen if a process is random and fair. This chapter is statistics—what *actually* happened when we measured the real world. Probability told us the theory. Statistics measured whether the theory held up.
 
-Later, if you take a course in inference or experimental design, you'll learn to construct confidence intervals (the cousins of margins of error), to test hypotheses (to ask "is this difference real or just random noise?"), and to build models that predict one variable from another. All of those techniques rest on the foundation you've built here: understanding sampling, measures of center and spread, and the normal distribution.
+Chapter 7 on probability showed you the mathematics of what *should* happen when a process is random and fair. This chapter showed you what to do when the real world produces actual data — messy, collected under imperfect conditions, summarized by people who may have reasons to mislead. Probability is the theory. Statistics is the measurement of whether the theory holds.
 
-In Chapters 11 and 12, you'll encounter voting methods and graph theory. Statistics appears in both. Elections are predictions—if we sample some voters, can we forecast the outcome? Graphs represent networks of data. Both chapters benefit from the discipline you've learned: how to look at data honestly, to recognize bias, and to understand the limits of what numbers can claim.
+The inference tools built on this foundation — hypothesis testing, confidence intervals, regression — appear in virtually every field that uses data to make decisions: medicine, economics, social science, engineering, public policy. Every one of them rests on random sampling, the normal distribution, and the logic of margin of error that you have now seen from the inside.
 
-For now, the skill is this: when someone says "the data shows," you have questions. You know to ask where the data came from, what it really measures, and whether the person reporting it has a reason to lie.
+Chapter 11 on voting and Chapter 12 on graph theory both work with populations and representative subsets. The same question reappears: is this sample representative? Is this measurement honest? Is this summary the right one for the question being asked?
+
+You have learned to ask those questions. That is the most important thing this chapter teaches.
