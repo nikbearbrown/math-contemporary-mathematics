@@ -1,285 +1,177 @@
 # Chapter 4 — Number Representation and Calculation
+*The Notation Is the Engine, Not Just the Label.*
 
-## Possible titles
+Here is a fact about the year 1492 that has nothing to do with Columbus: you could record it in four symbols. 1, 4, 9, 2. Four symbols that any schoolchild could write in two seconds. That same year, in Roman numerals, is MCDXCII — longer, and harder to multiply by anything. And if you tried to record 1492 using the oldest human method, tally marks, you would need 1,492 of them. An entire afternoon of scratching.
 
-1. How Numbers Get Written Down — What Changes and What Stays the Same
-2. The Machinery of Place Value — Why Ten Fingers Built the World
-3. Other Bases and Ancient Minds — The Architecture of Counting Systems
-
----
-
-## TL;DR
-
-Numbers and numerals are different things. A numeral is a written symbol; a number is an abstract idea. The Hindu-Arabic system works because of place value — the position of a digit determines its meaning, not just repetition of marks. Once you understand how place value works in base 10, you can use that same machinery in any other base, including base 2 (the language of computers). This chapter shows you why that machinery is the same, how other cultures built it differently, and what it means to do arithmetic when your symbols and grouping change.
+The quantity didn't change. The year is still the year. What changed is the notation — the choice of how to write the number down. And that choice, it turns out, is one of the most consequential engineering decisions in human history.
 
 ---
 
-## Chapter opening — A price tag and three counting systems
+## The first thing to get clear: numbers versus numerals
 
-You're standing in a market in Cairo in the year 1100. The merchant is selling linen. You want to buy 27 cubits' worth. The merchant makes a mark on a piece of papyrus. One mark. Not 27 marks. One single symbol that means 27 to anyone who learned his writing. Sixteen hundred miles west, in what's now Spain, a Roman clerk records the same transaction using Roman numerals: XXVII — twenty, five, and two ones, written out symbol by symbol. One thousand miles east, in India, a different notation is emerging in a scholar's manuscript: the merchant there writes 27 using our modern digits, 2 and 7. Same quantity. Three different ways to say it.
+A **number** is an abstract idea. The concept of five-ness. The quantity of fingers on one hand.
 
-The question is: which system forces your brain to work less? Which one could you teach to a child in an afternoon? Which one lets you multiply two prices together without losing your mind?
+A **numeral** is a written symbol for that idea. The digit 5. The Roman V. The tally marks ⬜⬜⬜⬜⬜. The word *five*. They all point at the same concept from different angles.
 
-You probably know the answer. But the answer isn't obvious if you're the merchant in Cairo. It only becomes obvious once you understand the trick hiding inside the numerals.
+This sounds like the kind of distinction only a philosopher would care about. It isn't. Everything that follows depends on it. The quantity never changes. What changes — what humans have been tinkering with for five thousand years — is the system of symbols we use to represent it. And some systems are dramatically better than others, for reasons we can pin down precisely.
 
-### Learning objectives
-
-By the end of this chapter you will be able to:
-
-- **Distinguish** between a number (an abstract quantity) and a numeral (a way of writing it down), and explain why the difference matters.
-- **Explain** what place value is, why it works, and how it makes our arithmetic faster.
-- **Convert** between the Hindu-Arabic numeral system and expanded form using exponents.
-- **Understand** how ancient systems (Babylonian, Mayan, Roman) solved the problem of representing large quantities without place value.
-- **Identify** the base of a numeration system, name the legal symbols in that base, and convert between any base and base 10.
-- **Perform** addition, subtraction, and multiplication in bases other than 10, using the appropriate place-value machinery.
-
-### Prerequisites
-
-Arithmetic with whole numbers. Familiarity with exponents as repeated multiplication ($2^3 = 2 \times 2 \times 2 = 8$). Comfort reading place value in base 10: the rightmost digit represents ones, the next left represents tens, the next represents hundreds, and so on.
-
-### Why this chapter matters
-
-This chapter is not about learning to use a computer (though computers run in base 2, and you're about to see why). It's about understanding that the way we write numbers is a *choice*, not a law of nature. Once you grasp that choice — once you watch how the same quantity looks in base 10, base 2, base 20, and base 60 — you'll never again think of arithmetic as a fixed system handed down from on high. You'll see it as a human invention, debugged and refined over thousands of years. That shift in perspective is the beginning of real mathematical thinking. You'll see the machinery underneath, not just the rules on top.
+<!-- → [TABLE: two-column reference — left column: "The Number" (abstract quantity), right column: "The Numeral" (written symbol) — rows for five, twelve, and one thousand, each showing the same quantity rendered in Hindu-Arabic digits, Roman numerals, and tally marks — student should see at a glance that the same number has many legal representations] -->
 
 ---
 
-## Concept 1 — Numbers, numerals, and why place value was the innovation of the millennium
+## Tally marks: the floor, not the ceiling
 
-Open your eyes in a grocery store. You see a price tag on a carton of eggs: $3.99. That price tag is a numeral. It's written down using a specific system — the Hindu-Arabic system with its digits 0 through 9 and its rules about position. But the *amount of money* — the abstract idea of "almost four dollars" — that's the number.
+The oldest recording system we know of is simple: one mark per object. Scratch a line for every sheep, every day, every jug of wine. Group them in fives to make counting easier. This is an *additive* system — you add up the marks and get the quantity.
 
-A **numeral** is a symbol or a group of symbols used to write down a number. The number is the quantity itself. The word "four," the Roman numeral IV, the tally mark ⬜⬜⬜⬜, and the digit 4 are all different numerals for the same number: four.
+Tally marks work. They require no training to understand. Any human who can count can read them. But they scale terribly. The year 1492 requires 1,492 marks. A Roman census recorded in tally marks would require a warehouse of papyrus. The system hits its ceiling fast.
 
-This distinction seems small. It matters enormously for understanding why some systems of numerals work and others create chaos.
+The Romans saw the problem and engineered around it. Instead of one symbol, use several, each standing for a different quantity: I for one, V for five, X for ten, L for fifty, C for one hundred, D for five hundred, M for one thousand. Then add them up. MCMLII means one thousand, plus (one thousand minus one hundred), plus fifty, plus two. The number is the sum of the symbol-values.
 
-### The tally system and repetition
+This is still an additive system. You're still just adding. But now you need far fewer symbols — the whole Roman system uses only seven. MCDXCII (1492) is six symbols instead of 1,492 marks. Progress.
 
-The oldest way to record quantity was to repeat a single mark — one mark for one sheep, two marks for two sheep, a line through every fifth mark to group them. This is an *additive system*, from the Latin *addere*, meaning to add. You add up the marks and you know the count. A tally of 27 would require 27 marks. Write them all out.
+The Romans also invented a subtraction shorthand: writing a smaller symbol before a larger one means "subtract." IV is five minus one, so four. IX is ten minus one, so nine. This made the numerals more compact, but it also made them harder to compute with.
 
-This system has advantages: a child can understand it immediately, and there's no way to get confused about what a mark means. But try to record the year 1492 in tally marks. You'd use 1,492 marks. A Roman census would require a library. An accountant would go mad.
+Try this: multiply XXVII by XLII. With Roman numerals. Go ahead. It's not impossible, but it's closer to solving a puzzle than doing arithmetic. You have to translate, compute, retranslate. Roman accountants could do it, but only after considerable practice. The system doesn't help the arithmetic. It just records the result.
 
-### Roman numerals: still additive, but clever
-
-The Romans invented a refinement: use different symbols for different quantities. I for one, V for five, X for ten, L for fifty, C for one hundred, D for five hundred, M for one thousand. Then add them together: XVI means ten plus five plus one, so sixteen. MCMLVII means one thousand plus (one thousand minus one hundred) plus fifty plus five plus two, so nineteen hundred fifty-seven.
-
-This is still additive. You still add up the symbols. But now MCMLVII is manageable, because you're using seven symbols instead of 1,957 marks. The Roman system works reasonably well for modest numbers and readable dates. It fails catastrophically for multiplication. Try multiplying 37 by 24 using Roman numerals. You can do it (it's more like decoding a puzzle than arithmetic), but you'll understand why Roman accountants eventually retired.
-
-The problem: Roman numerals don't use position. The M in MCMLVII means "one thousand" no matter where it sits. So you can't use the same symbol in different positions to mean different quantities. You need a new symbol for each order of magnitude. Once you run out of symbols, you're stuck.
-
-### Place value: the idea that changed everything
-
-Somewhere around the fifth century in India, a mathematician named Aryabhata wrote down a transformative thought: *the position of a digit determines what it represents*. In the numeral 27, the 2 is in the "tens place," so it means 2 tens, or 20. The 7 is in the "ones place," so it means 7 ones. The number 27 is 20 + 7.
-
-More radically, Aryabhata realized you could write the same symbol in different positions and it would mean different things. In 222, the leftmost 2 means 2 hundreds (200), the middle 2 means 2 tens (20), and the rightmost 2 means 2 ones. Same symbol, three different values, because of position.
-
-**Place value** — from the Latin *platea*, a wide street or open space — means the position of a digit in a numeral determines its meaning. Each position is a multiple of some base raised to a power. In base 10, the rightmost position is $10^0 = 1$ (the ones place), the next left is $10^1 = 10$ (the tens place), the next is $10^2 = 100$ (the hundreds place), and so on.
-
-This is why the number $3,099 reads as three thousand ninety-nine: the 3 is in the thousands position ($10^3 = 1,000$), the 0 is in the hundreds position (meaning "skip the hundreds"), the 9 is in the tens position ($10^1 = 10$), and the 9 is in the ones position.
-
-But place value needs something tally marks don't: a symbol for zero. If you want to write "one thousand and nine" (no hundreds, no tens), you need a way to say "nothing is here" in the hundreds and tens places. You need 0.
-
-### Why zero was a hard invention
-
-For most of human history, there was no zero. The concept made philosophers uncomfortable. Aristotle didn't believe in void or emptiness — how could nothing be something? But merchants and engineers kept running into the same problem: you need to *show* that a place is empty. The Babylonians, around 700 BCE, used a space. The Mayans, around 400 CE, drew a symbol that looks like a shell. The Indians, around 600 CE, wrote a dot and later a circle — the ancestor of our 0.
-
-Brahmagupta, a mathematician in India in the seventh century, did something radical: he said 0 is a number. It has properties. You can do arithmetic with it. He made zero an object of study, not just a placeholder.
-
-Once place value and zero arrived together, the system became unstoppable. Here's why: *you need only as many symbols as your base*. Base 10 needs 10 symbols (0–9). That's it. Any number, no matter how large, can be written using those 10 symbols arranged in different positions. Your position determines your magnitude. A child who learns 10 symbols can represent any quantity in the world.
-
-### Worked example — unpacking a familiar numeral
-
-The number $738$ looks simple. When you read it aloud, you say "seven hundred thirty-eight." But that sentence is actually the *expanded form* of the numeral — you're naming each position's contribution.
-
-$738 = 7 \times 10^2 + 3 \times 10^1 + 8 \times 10^0$
-
-$= 7 \times 100 + 3 \times 10 + 8 \times 1$
-
-$= 700 + 30 + 8$
-
-The 7 is in the hundreds place, so it means 7 times 100. The 3 is in the tens place, so it means 3 times 10. The 8 is in the ones place, so it means 8 times 1. Add them up: 700 + 30 + 8 = 738. This is what "seven hundred thirty-eight" means: you're adding the contributions of each position.
-
-Reverse the process: take the expanded form and collapse it. $5 \times 10^3 + 0 \times 10^2 + 4 \times 10^1 + 9 \times 10^0$ becomes $5 \times 1000 + 0 + 40 + 9 = 5,049$. The digits are 5, 0, 4, 9. Write them in order from highest position to lowest: 5049. Notice the 0 in the hundreds position? That zero is doing work. It's saying "there are no hundreds." Without it, the numeral would be 549, which means something completely different.
-
-This is so automatic for you that you probably don't think about it. But this is the whole machinery of our numeral system. The position tells you what power of 10 to multiply by. Zero tells you "this position is empty." That's place value. And once you understand it, you can apply it to any base, not just base 10.
-
-### Common misconceptions
-
-**Place value is about position, not about the name of the position.** The number 237 doesn't "have" hundreds and tens and ones. The numeral 237 has a digit in the hundreds position ($10^2$), a digit in the tens position ($10^1$), and a digit in the ones position ($10^0$). The position is what matters. When you switch to base 7, the positions will mean something different (powers of 7, not powers of 10), but the machinery stays the same.
-
-**Zero is not "nothing" — it's a digit.** The number 204 has three digits: 2, 0, and 4. The 0 is a legitimate digit that means "zero items in the tens place." That's why 204 and 24 are different numbers. Without the zero in the middle, 24 reads as 2 tens + 4 ones. With the zero, 204 reads as 2 hundreds + zero tens + 4 ones. The zero is doing work.
+<!-- → [INFOGRAPHIC: timeline of numeration systems — horizontal axis from ~3000 BCE to ~900 CE — points marked for Tally marks, Babylonian base 60, Roman numerals, Mayan base 20, Hindu-Arabic place value — each with a one-line description of its key property (additive, positional, had zero, etc.) — student sees the arc from repetition toward position and zero] -->
 
 ---
 
-## Concept 2 — How other cultures solved the problem without place value
+## The idea that changed everything
 
-Different civilizations, with different needs and different symbols, developed different systems. Some used place value early. Some invented alternatives. All of them faced the same core challenge: how do you write down large numbers without drowning in symbols?
+Somewhere around the fifth century CE in India, a set of mathematicians worked out a different approach. Instead of having separate symbols for different magnitudes, use the *position* of a digit to carry that information.
 
-### The Babylonians: place value without zero
+In the numeral 27, the 2 is in the tens place, so it means two tens — twenty. The 7 is in the ones place, so it means seven ones — seven. The number is twenty plus seven. Now here's the radical part: you can reuse the same symbol in a different position and it means something completely different. In 222, the leftmost 2 means two hundreds. The middle 2 means two tens. The rightmost 2 means two ones. Same symbol. Three different values. Because of position.
 
-The Babylonians, around 1800 BCE, used a *positional system* based on powers of 60, not powers of 10. Sixty, from the Akkadian *šūšu*, appears to have been chosen because 60 has many divisors: you can divide it evenly by 2, 3, 4, 5, 6, 10, 12, 15, 20, 30. Mathematically, 60 is more versatile than 10.
+This is **place value**: the position of a digit in a numeral determines what it represents. Each position is a power of the base. In base 10, reading right to left, the positions represent $10^0 = 1$, $10^1 = 10$, $10^2 = 100$, $10^3 = 1{,}000$, and so on.
 
-The Babylonians used two symbols: a wedge (⋀) for 1, repeated up to 9 times, and a wider wedge (◁) for 10, repeated up to 5 times. So the symbol for 27 would be: ◁◁ followed by ⋀⋀⋀⋀⋀⋀⋀. Additive within each position, but positional across positions.
+The numeral 738 means:
 
-To convert a Babylonian numeral to base 10, you use powers of 60 just as you'd use powers of 10 in our system. Suppose the Babylonian numeral has two "digits" (two groups): the first group represents 4, the second represents 27. Then the value is:
+$$7 \times 10^2 + 3 \times 10^1 + 8 \times 10^0 = 700 + 30 + 8$$
 
-$$4 \times 60^1 + 27 \times 60^0 = 4 \times 60 + 27 \times 1 = 240 + 27 = 267$$
+That's the *expanded form* — you're unpacking what each position is contributing. The full numeral is just a shorthand for that sum. This is so automatic to you that it's invisible, which is exactly what good engineering looks like.
 
-The system worked beautifully for astronomy and land measurement. But it had a gap: there was no symbol for zero. A blank space had to serve the purpose. This created ambiguity. The numerals for 101, 110, and 11 (in base 60) could look nearly identical if the scribe wasn't careful. Over time, the Babylonians did develop a marker for an empty position — a symbol that looked like a double wedge — but it took centuries.
+<!-- → [IMAGE: annotated diagram of the numeral 738 — each digit sits in a labeled box (hundreds | tens | ones) with arrows pointing down to its expanded contribution (7×100, 3×10, 8×1) and a sum line at the bottom showing 700+30+8=738 — student sees place value as a decomposition, not just a reading convention] -->
 
-Babylonian place value still echoes in how we measure time: 60 seconds in a minute, 60 minutes in an hour. And in how we measure angles: 1 degree = 60 arcminutes, 1 arcminute = 60 arcseconds.
+But place value needs something tally marks never needed: a symbol for zero. Consider the number one thousand and nine. In that number there are no hundreds and no tens. How do you write it? If you just write the digits you have — 1, 9 — you get 19, which means something completely different. You need a placeholder that says: *this position is empty*. You need 1,009.
 
-### The Mayans: positional with zero and an astronomical twist
-
-The Mayans, in Mesoamerica, developed a place-value system based on powers of 20 around 400 CE. They had a dedicated symbol for zero — a glyph that resembled a shell or an empty eye socket. The system was fully positional: different positions meant different powers of 20. And it was written *vertically*, with the lowest power at the bottom and higher powers above, like a stack.
-
-$$\text{(top digit)} \times 20^2 + \text{(middle digit)} \times 20^1 + \text{(bottom digit)} \times 20^0$$
-
-So if the bottom is 9, the middle is 8, and the top is 6, the value is:
-
-$$6 \times 400 + 8 \times 20 + 9 \times 1 = 2,400 + 160 + 9 = 2,569$$
-
-The Mayans used dots for 1 through 4, a horizontal bar for 5, and combinations of bars and dots for 6 through 19. At 20, they would move to the next position. This is why historians call it base 20: once you've counted through 20 symbols (0–19), you start a new position.
-
-Here's where it gets interesting: the Mayans used base 20 for daily counting but a slightly modified system for their calendar. The calendar system used 1, 20, then 20×18 = 360, then 20×18×20 = 7,200. Why 18 instead of 20? Because 360 is close to the actual number of days in a solar year (365.25). They were engineering their numeral system to fit astronomy.
-
-### The Romans: no position, pure addition with subtraction tricks
-
-The Roman system never used place value. It relied entirely on addition (and a few subtraction tricks). The symbols were I (1), V (5), X (10), L (50), C (100), D (500), M (1,000). Larger numbers required new symbols — an overline to mean "multiply by 1,000" — but the system was fundamentally additive.
-
-The Romans developed a *subtractive* convention: instead of writing 4 as IIII (four ones), they wrote IV (one before five). Instead of 9 as VIIII, they wrote IX (one before ten). This convention made numerals shorter, but it also meant you had to understand the rule: a smaller numeral before a larger one means subtraction.
-
-The Roman system was adequate for accounting and record-keeping in an empire. It failed for science. You cannot easily multiply XXVII by XLII in your head or on wax. The system doesn't scale well. It died out as soon as Hindu-Arabic numerals arrived in Europe, because those numerals made arithmetic teachable to ordinary people.
-
-### Trade-off: repetition, position, or subtraction?
-
-Every ancient system faced a choice:
-- Use *repetition* of symbols (tally marks, basic Roman numerals). Easy to understand, drowns you in symbols for large numbers.
-- Use *position* (Babylonian base 60, Mayan base 20, eventual Hindu-Arabic base 10). Compact and works for any magnitude, but requires understanding the concept of place value and (ideally) a zero.
-- Use *subtraction* (Roman subtractive notation). A compromise, but requires knowing the rules, and it doesn't help with multiplication or division.
-
-The Hindu-Arabic system chose position and zero, and that choice let mathematicians and merchants compute faster, teach arithmetic more easily, and scale to any number. It's not inherently "better" — it's better *for multiplication and division*, which were the operations that mattered most once commerce and science needed to grow.
-
-### Worked example — converting from Roman numerals to base 10
-
-Roman numeral: **MMCMXLVIII**
-
-Read it left to right, applying the addition and subtraction rules:
-- MM = 2 × 1,000 = 2,000
-- CM = 900 (1,000 − 100)
-- XL = 40 (50 − 10)
-- V = 5
-- III = 3
-
-Sum: 2,000 + 900 + 40 + 5 + 3 = **2,948**
-
-Reverse: Convert 2,948 to Roman numerals.
-- 2,000 = MM
-- 900 = CM (one less than 1,000)
-- 40 = XL (one less than 50)
-- 8 = VIII (five plus three)
-
-Result: **MMCMXLVIII**
-
-### Common misconceptions
-
-**Different bases aren't "wrong" bases.** Base 60 is mathematically elegant and divisible by more numbers than base 10. Mayan base 20 was astronomically accurate. Roman numerals served an empire for centuries. They're all solutions to a real problem: representing quantity. They just have different costs. Base 10 is dominant now because of historical accident and because it matches our finger count, not because it's mathematically superior.
-
-**"Position" and "place value" mean the same thing.** Babylonian numerals were positional but didn't have a dedicated zero symbol. Mayan numerals were positional and had zero. Roman numerals were not positional at all. The machinery is different in each case.
+Zero is that placeholder. And inventing it was not easy.
 
 ---
 
-## Concept 3 — Generalizing place value: any base, any symbols
+## Zero: the hardest invention in mathematics
 
-Now that you've seen how different cultures invented different systems, you're ready for the leap: place value is not specific to base 10. It's a *generalizable machinery*. If you understand how it works in base 10, you can apply it to any base.
+For most of human history, nobody used zero as a number. This isn't stupidity — it's philosophy. Aristotle didn't believe void could exist. You can't have zero sheep in a field; you just have an empty field. The concept of *nothing as a thing* required a conceptual leap that most civilizations didn't make for millennia.
 
-Here's the insight: **all positional systems follow the same rules.** Whether you're working in base 10, base 60, base 20, or base 2, the machinery is identical. The position of a digit determines which power of the base you multiply it by. Zero (or an empty position) means "skip this power." Add up all the place values and you get the quantity. The symbols are different, the base is different, but the principle is the same. This is why learning base conversion is so important: once you can convert between any two bases, you've grasped the universal principle underneath all positional systems.
+The Babylonians around 700 BCE used a *space* to indicate an empty position. That's almost zero, but it's easy to misread — one slightly wider gap could be ambiguous. The Mayans, around 400 CE, drew a glyph resembling a shell for zero. It was a full symbol, a legitimate placeholder.
 
-### Why bases matter: how many symbols do you need?
+In India, around 600 CE, Brahmagupta did something further: he treated zero not just as a placeholder but as a *number*. You can add it, subtract it, multiply by it. He worked out the rules. He made zero an object of mathematics, not just a notational convenience.
 
-In base 10, we use 10 symbols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. Why 10? Because we group by tens — every time we've used up all our symbols, we move to the next position.
+Once you have place value and zero together, the system is complete. You need exactly as many symbols as your base. For base 10, that's ten symbols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. Ten symbols, and you can write any number in the universe. Because the position of each symbol tells you what power of ten to multiply it by, and zero tells you when a position is empty.
 
-In base 6, we'd use 6 symbols: 0, 1, 2, 3, 4, 5. Once we've counted through 5, the next number is 10 in base 6. That 1 means "one group of six" and that 0 means "zero ones." In base 6 notation, $10_6 = 6$ in base 10.
+The numeral 1,009 can now be read unambiguously: one in the thousands place, zero in the hundreds place, zero in the tens place, nine in the ones place. $1 \times 1{,}000 + 0 \times 100 + 0 \times 10 + 9 \times 1 = 1{,}009$. The zeros are doing work. Remove them and you change the number entirely.
 
-In base 2 (the language of computers), we use 2 symbols: 0 and 1. Every time we count up from 1, we move to a new position. The sequence goes: $0_2, 1_2, 10_2, 11_2, 100_2, 101_2, 110_2, 111_2, 1000_2, \ldots$
+<!-- → [IMAGE: side-by-side comparison of two numerals — left: "19" with expanded form 1×10+9=19; right: "1,009" with expanded form 1×1000+0×100+0×10+9×1=1009 — caption: "Zero is not decoration. It holds the position open." Student sees concretely what the placeholder is doing] -->
 
-For bases larger than 10, we run out of digits. We use letters. In base 12 (which some mathematicians argue is more practical than base 10), we'd use: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A (representing 10), B (representing 11). Then $10_{12} = 12$ in base 10.
+---
 
-Here's the scale shift: **a base larger than 10 needs letters because we've only invented 10 digits.** We use A = 10, B = 11, C = 12, etc. This isn't mystical. It's a notational choice.
+## How other cultures solved the same problem differently
 
-### Converting any base to base 10 using expanded form
+Calling the Hindu-Arabic system the "right" one would be too simple. Other cultures faced the same challenge and found different solutions, each reflecting different needs and different contexts.
 
-The machinery is identical to base 10. Write the numeral in expanded form using powers of the base.
+The Babylonians, around 1800 BCE, built a positional system based on powers of 60, not 10. Their base was sixty — *šūšu* in Akkadian — chosen probably because 60 is divisible by 2, 3, 4, 5, 6, 10, 12, 15, 20, and 30. That's a lot of convenient divisors. Base 60 makes fractions easier.
 
-Example: Convert $3024_6$ (a base 6 numeral) to base 10.
+Their two symbols — a wedge for 1, a wider wedge for 10 — could be combined to form any "digit" from 1 to 59. Then positions worked like ours: each position represents the next higher power of 60.
 
-The numeral has 4 digits. Reading left to right, the positions represent $6^3$, $6^2$, $6^1$, and $6^0$.
+$$4 \times 60^1 + 27 \times 60^0 = 240 + 27 = 267$$
 
-$$3024_6 = 3 \times 6^3 + 0 \times 6^2 + 2 \times 6^1 + 4 \times 6^0$$
+The Babylonian system is why we have 60 seconds in a minute, 60 minutes in an hour, and 360 degrees in a circle. That's not a coincidence or a cultural accident — it's Babylonian base 60 fossilized in our measurement of time and angle.
 
-Calculate:
+The Mayans, in Mesoamerica around 400 CE, built a base 20 system — probably because they counted on both fingers and toes. Their numerals were written vertically, lowest power at the bottom, higher powers stacked above. They had a genuine zero symbol. The system was positionally sound and worked beautifully for their calendar.
+
+Here's the twist: for their astronomical calendar, the Mayans modified the base slightly. Instead of pure powers of 20, they used $1, 20, 20 \times 18 = 360, 360 \times 20 = 7{,}200$. The second step is $18$, not $20$, because 360 is close to the number of days in a solar year. They bent their mathematical system to fit the sky. That's not error — that's engineering.
+
+Each of these systems reflects the problems its inventors were trying to solve: divisibility, astronomical cycles, ease of teaching. The Hindu-Arabic system won the historical competition not because it's mathematically superior in every dimension, but because it makes *multiplication and division* fast and teachable. Once commerce needed large-scale arithmetic, the system that made arithmetic easy was the one that spread.
+
+<!-- → [TABLE: five-column comparison of numeration systems — rows: Tally, Roman, Babylonian, Mayan, Hindu-Arabic — columns: Base, Has zero symbol, Positional, Best suited for, Major weakness — student sees all five systems on one surface and can reason about the trade-offs directly] -->
+
+---
+
+## The general machinery: any base, the same principle
+
+Here is the key idea, and I want you to really sit with it: **place value is not specific to base 10**. It is a general principle. You can build a positional system in any base, and the machinery is identical.
+
+In any base $b$:
+- Use $b$ symbols: $0, 1, 2, \ldots, b-1$.
+- The rightmost position represents $b^0 = 1$.
+- The next position left represents $b^1 = b$.
+- The next represents $b^2$.
+- And so on.
+- An $n$-digit numeral $d_{n-1} d_{n-2} \cdots d_1 d_0$ represents the quantity $d_{n-1} \times b^{n-1} + \cdots + d_1 \times b^1 + d_0 \times b^0$.
+
+The symbols change. The base changes. The machinery — write a digit, multiply by the appropriate power of the base, add — never changes.
+
+Let's work through base 6. In base 6, the legal symbols are 0, 1, 2, 3, 4, 5. Once you've used them all up, you start a new position. The number six, in base 6, is written $10_6$ — one group of six, zero ones. The number twelve is $20_6$. The number thirty-five is $55_6$ — five sixes plus five ones.
+
+To convert $3024_6$ to base 10, apply the machinery:
+
+$$3 \times 6^3 + 0 \times 6^2 + 2 \times 6^1 + 4 \times 6^0$$
 $$= 3 \times 216 + 0 \times 36 + 2 \times 6 + 4 \times 1$$
-$$= 648 + 0 + 12 + 4 = 664_{10}$$
+$$= 648 + 0 + 12 + 4 = 664$$
 
-The base 6 numeral $3024_6$ represents the same quantity as the base 10 numeral $664$. Different notations, same number.
+Same principle you use every day reading base 10, just with 6 as the base instead of 10.
 
-Example: Convert $4B7_{14}$ (a base 14 numeral using the letter B to mean 11) to base 10.
+Going the other direction — converting from base 10 to another base — requires a different process: repeated division with remainder.
 
-$$4B7_{14} = 4 \times 14^2 + 11 \times 14^1 + 7 \times 14^0$$
-$$= 4 \times 196 + 11 \times 14 + 7 \times 1$$
-$$= 784 + 154 + 7 = 945_{10}$$
+Convert $298$ to base 6. Divide by 6, keep the remainder, repeat:
 
-### Converting base 10 to any other base using division
+- $298 \div 6 = 49$, remainder $4$
+- $49 \div 6 = 8$, remainder $1$
+- $8 \div 6 = 1$, remainder $2$
+- $1 \div 6 = 0$, remainder $1$
 
-The reverse process is trickier conceptually but mechanical in execution: divide repeatedly by the base, keep track of remainders, and read the remainders *in reverse order*.
+Read the remainders from bottom to top: $1, 2, 1, 4$. So $298_{10} = 1214_6$.
 
-Example: Convert $298_{10}$ to base 6.
+Check it: $1 \times 216 + 2 \times 36 + 1 \times 6 + 4 = 216 + 72 + 6 + 4 = 298$. ✓
 
-Divide by 6 repeatedly:
-- $298 \div 6 = 49$ remainder $4$
-- $49 \div 6 = 8$ remainder $1$
-- $8 \div 6 = 1$ remainder $2$
-- $1 \div 6 = 0$ remainder $1$
+The reason remainders read bottom to top is that the division process extracts the *lowest* position first. The last remainder is the highest-power digit, so reading backward gives you the correct order.
 
-Read the remainders from bottom to top: **1, 2, 1, 4**. So $298_{10} = 1214_6$.
-
-Check: $1 \times 6^3 + 2 \times 6^2 + 1 \times 6^1 + 4 \times 6^0 = 216 + 72 + 6 + 4 = 298$. ✓
-
-Example: Convert $100_{10}$ to base 2.
-
-Divide by 2 repeatedly:
-- $100 \div 2 = 50$ remainder $0$
-- $50 \div 2 = 25$ remainder $0$
-- $25 \div 2 = 12$ remainder $1$
-- $12 \div 2 = 6$ remainder $0$
-- $6 \div 2 = 3$ remainder $0$
-- $3 \div 2 = 1$ remainder $1$
-- $1 \div 2 = 0$ remainder $1$
-
-Read the remainders from bottom to top: **1, 1, 0, 0, 1, 0, 0**. So $100_{10} = 1100100_2$.
-
-Notice: $100$ in base 10 takes only 3 digits, but in base 2 it takes 7 digits. Smaller bases require more digits to represent the same quantity. This is why computers using base 2 need a lot of digits, but they have the advantage that their "digits" (bits) are easy to represent electronically: high current or low current, on or off.
-
-### Common misconceptions
-
-**Larger bases don't make "bigger" numbers.** The numeral $24_6$ and the numeral $24_{10}$ look the same, but they mean different things. $24_6 = 2 \times 6 + 4 = 16_{10}$. The base subscript is not optional; it's part of the meaning.
-
-**There's no "best" base for all purposes.** Base 10 is human-friendly (matches finger count) and adequate for most purposes. Base 60 was better for ancient astronomy and measurement. Base 2 is essential for computer architecture. Base 12 divides more evenly than base 10. The choice depends on what you're trying to do.
-
-**Converting between bases is a process, not a trick.** Expanded form for converting *to* base 10. Repeated division for converting *from* base 10. Memorize the process and you can convert any base to any other base.
+<!-- → [IMAGE: step-by-step diagram of the repeated-division algorithm for 298 ÷ 6 — each division shown as a row with quotient and remainder clearly labeled — a curved arrow along the right margin points upward from the last remainder to the first, labeled "read this direction" — student sees visually why the reversal is necessary] -->
 
 ---
 
-## Integration — the three systems, side by side
+## Base 2: why computers speak binary
 
-You're now at a market stall looking at a linen price. The merchant from Cairo writes it in Egyptian numerals (an ancestor of our 0–9). The Roman visitor writes XXVII. The Mayan trader writes it vertically using dots and bars. The Hindu merchant writes 27. The computer scientist translates it to binary: 11011.
+The most extreme case of small base is base 2, called *binary*. In base 2 there are exactly two symbols: 0 and 1. Every position represents a power of 2.
 
-All five representations describe the same quantity. But they expose different structures.
+The number one hundred, in base 2, is:
 
-- **Egyptian/Hindu-Arabic:** Place value with repeated symbols (for small numbers) or position (for large numbers). Eventually, we abandoned repetition and went purely positional.
-- **Roman:** Pure addition with a subtraction trick. No place value. Compact for dates and monuments, useless for mathematics.
-- **Mayan:** Pure place value with a clear zero symbol. Vertically stacked. Elegant and mathematically sound.
-- **Binary:** Place value in base 2. Requires many digits but can be stored and processed by machines.
+$$1 \times 2^6 + 1 \times 2^5 + 0 \times 2^4 + 0 \times 2^3 + 1 \times 2^2 + 0 \times 2^1 + 0 \times 2^0$$
+$$= 64 + 32 + 0 + 0 + 4 + 0 + 0 = 100$$
 
-The deepest insight: **place value is the innovation that makes arithmetic teachable**. Once you have place value and zero, multiplication stops being a puzzle and becomes a process. A merchant's apprentice in 1500 CE, using Hindu-Arabic numerals, could multiply prices in an hour of training. A Roman accountant needed years of study to do the same calculation. That difference — that single shift in notation — transformed commerce and eventually science.
+So $100_{10} = 1100100_2$. Three digits in base 10 becomes seven digits in base 2. Smaller bases require more digits to represent the same quantity.
+
+Why would anyone want a system that requires more digits? Because the two symbols 0 and 1 can be stored electronically with extraordinary reliability. High voltage or low voltage. Magnetized or not. Hole or no hole. Any physical phenomenon with two clearly distinguishable states can encode a binary digit. Build enough of those states together and you can represent any number, any text, any image, any sound — all as sequences of 0s and 1s. The machinery inside every computer is doing exactly the arithmetic we've been doing in this chapter, just in base 2, billions of times per second.
+
+The number of symbols in your base is a trade-off: larger bases need fewer digit-positions (compact) but require more distinct symbols (complex). Smaller bases need more digit-positions (verbose) but work with very few symbols (simple to implement physically). Base 10 sits in a comfortable middle range for human use. Base 2 sits at the extreme simple end, which is why it's ideal for machines.
+
+<!-- → [CHART: scatter plot or table — x-axis: base (2, 6, 8, 10, 12, 16, 60); y-axis: number of digits needed to represent 1000 in that base — student sees the inverse relationship between base size and digit count; a second column or annotation notes the number of distinct symbols each base requires] -->
+
+---
+
+## What makes notation matter
+
+Let me end where I started: at the price tag, at the question of which system forces your brain to work less.
+
+The answer isn't about complexity or intelligence. A Roman accountant was not less intelligent than a medieval Indian merchant. The Roman was just working with notation that made arithmetic hard. The machinery didn't help. Multiplication in Roman numerals is essentially translation work — you decode the symbols, compute in your head, and recode the answer. The notation carries no scaffolding for the computation.
+
+The Hindu-Arabic system with place value carries scaffolding inside it. When you multiply two multi-digit numbers, you use the positions. You compute partial products for each place. The positions tell you where to put the results. The notation is doing some of the work. That's the difference.
+
+Aryabhata and Brahmagupta didn't just invent symbols. They invented a notation that cooperated with arithmetic rather than fighting it. A student who learns this system — ten symbols, the place-value rule, a zero — can multiply any two numbers after a few hours of practice. That student would have spent years achieving less facility in the Roman system.
+
+The notation spread because it was genuinely better for the work people needed to do. Commerce needed it. Astronomy needed it. Eventually engineering needed it. And now computers — which are, at their core, very fast arithmetic machines — carry the same idea into base 2 and work with it billions of times per second.
+
+The quantity never changed. The year 1492 was always 1492. What changed was how we agreed to write it down. And that agreement, it turns out, shapes what mathematics becomes possible.
 
 ---
 
@@ -287,75 +179,40 @@ The deepest insight: **place value is the innovation that makes arithmetic teach
 
 ### Warm-up
 
-**4.1** *(Understanding place value.)* Write the following numerals in expanded form using exponents.
-- (a) 5,247
-- (b) 30,905
-- (c) 1,000,001
+**Exercise 4.1** Write each of the following base 10 numerals in expanded form using exponents. (a) 4,029. (b) 70,300. (c) 1,000,001.
 
-**4.2** *(Converting between bases.)* Convert the following base 6 numerals to base 10.
-- (a) $34_6$
-- (b) $105_6$
-- (c) $523_6$
+**Exercise 4.2** Convert each base 6 numeral to base 10 using expanded form. (a) $43_6$. (b) $105_6$. (c) $524_6$.
 
-**4.3** *(Identifying legal symbols.)* For each base, list the legal symbols.
-- (a) Base 5
-- (b) Base 8
-- (c) Base 12
+**Exercise 4.3** For each base, list every legal digit symbol. (a) Base 4. (b) Base 9. (c) Base 12.
 
 ### Application
 
-**4.4** *(Converting from base 10.)* Convert the following base 10 numerals to the specified base.
-- (a) 50 to base 7
-- (b) 100 to base 2
-- (c) 45,134 to base 13
+**Exercise 4.4** Convert the following base 10 numerals to the specified base using repeated division. Show each division step. (a) 47 to base 6. (b) 100 to base 2. (c) 255 to base 16.
 
-**4.5** *(Arithmetic in a different base.)* Create a base 4 addition table. Then use it to calculate $132_4 + 213_4$.
+**Exercise 4.5** Convert the Roman numeral MDCCCLXXXIV to base 10. Then write the result in base 2.
 
-**4.6** *(Historical systems.)* Convert the Roman numeral MDCCCLXXIII to base 10. Then verify by converting the base 10 result back to Roman numerals.
+**Exercise 4.6** The number $267_{10}$ appears in the chapter as the result of a Babylonian place-value calculation. Verify this by working backward: express 267 in base 60 using repeated division by 60, and confirm the result matches the chapter's worked example ($4 \times 60 + 27$).
 
 ### Synthesis
 
-**4.7** *(Comparing systems.)* The number one thousand is written as:
-- 1,000 in base 10
-- 1750 in base 8
-- 15E8 in base 16 (where E represents 14)
+**Exercise 4.7** The same quantity, one thousand, can be written as $1000_{10}$, $1750_8$, and $3E8_{16}$ (where E represents 14). (a) Verify all three conversions using expanded form. (b) Why does base 16 need fewer digits than base 10 to represent the same number? (c) Computer scientists often use base 16 rather than base 2 when displaying binary data. What advantage does base 16 offer over base 2 for this purpose?
 
-(a) Verify each conversion. (b) Explain why base 16 uses fewer digits. (c) Why might computer scientists prefer base 16 or base 8 when discussing large numbers, instead of base 2?
-
-**4.8** *(Multiplication across bases.)* In base 5, calculate $23_5 \times 14_5$. Build a base 5 multiplication table if needed. Verify by converting both to base 10, multiplying, and converting back.
+**Exercise 4.8** A Mayan calendar system uses position values of 1, 20, 360, 7,200 (not pure powers of 20). A Mayan numeral has four positions, from bottom to top: 9, 4, 3, 2. (a) What base 10 number does this represent? (b) Why does this system use 360 rather than 400 ($20^2$) as its third position value? What does that choice reveal about the Mayans' priorities?
 
 ### Challenge
 
-**4.9** *(Thinking about divisibility.)* Base 12 has divisors 2, 3, 4, and 6. Base 10 has divisors 2 and 5. Base 6 has divisors 2 and 3. (a) Which base would be best for dividing a quantity into thirds? Explain. (b) What about dividing into fifths? (c) Design a base that would make dividing by 3, 4, and 5 all easy. What base would you choose and why?
+**Exercise 4.9** Base 12 has divisors 2, 3, 4, and 6. Base 10 has divisors 2 and 5. (a) In which base is it easier to express one-third as a terminating "decimal"? Explain why. (b) Design a base whose first four position values would make dividing by 3, 4, 5, and 7 all terminate cleanly. Is that possible, and if so, what base would you choose?
 
-**4.10** *(Open-ended: ancient commerce.)* You are a merchant in Babylon in 600 BCE. You've just learned about the Hindu-Arabic system (imagine it's been translated into your language). Write a one-paragraph argument for why your fellow merchants should abandon Babylonian base 60 numerals and adopt this new system. What concrete advantage would you highlight?
+**Exercise 4.10** The chapter argues that the Hindu-Arabic system spread because it made *multiplication and division* teachable. Write a one-paragraph argument from the perspective of a medieval European merchant who has just encountered Hindu-Arabic numerals for the first time. What specific computational task would make you immediately abandon Roman numerals? Be concrete — choose an actual multiplication and work it out in both systems to make your case.
 
----
+## LLM exercises
 
-## Chapter summary
+**LLM Exercise 4.1** Ask an AI to explain the difference between a number and a numeral. Then evaluate whether its explanation makes the distinction clear to a student who just read this chapter. Did it give examples? Did it connect the distinction to why notation matters for computation? Write a paragraph on what the AI got right and what it left out.
 
-You now understand why a written numeral is not the same as the abstract number it represents. You know that the Hindu-Arabic system's power comes from two ideas: **place value** (position determines meaning) and **zero** (a symbol for an empty position). Those two ideas, invented over centuries in India, eventually spread worldwide and made arithmetic fast enough for commerce and science to accelerate.
+**LLM Exercise 4.2** Give an AI this conversion problem: *Convert $3024_6$ to base 10, then convert the result back to base 6.* Solve it yourself first using the methods in this chapter. Then compare your process to the AI's. Did the AI show its work using expanded form and repeated division? Did it arrive at the correct answer? If there was a discrepancy, identify which step went wrong.
 
-You've also seen that place value is not an accident of base 10. It's a generalizable principle. You can build a positional system in any base. You can convert between any two bases using expanded form or repeated division. A base 6 system works exactly like base 10, just with different positions and different symbols. Base 2 works the same way, which is why computers can use it: the machinery is identical, only the base changes.
+**LLM Exercise 4.3** Ask an AI: *Why do computers use base 2 instead of base 10?* Evaluate the response. Does the AI explain the physical reason (two stable electronic states) or only the mathematical reason (only two symbols needed)? Does it mention the trade-off between compactness and symbol count? Write two sentences on what a complete answer should include that the AI's answer may have omitted.
 
-The last skill you should be able to demonstrate: given any base and any numeral written in that base, you can determine whether the numeral is valid (uses only legal symbols), convert it to base 10, and explain why a different base might be better or worse for a specific purpose.
+**LLM Exercise 4.4** Ask an AI to convert $100_{10}$ to base 2. Check the result using expanded form — add up $1 \times 2^k$ for each position with a 1-bit. Does the AI's binary numeral evaluate back to 100? If the AI made an error, describe what went wrong using the vocabulary from this chapter (expanded form, place value, power of the base).
 
-The thing to watch going forward: **whenever you see a numeral, ask what base it's in**. In this book, we'll mostly stick to base 10 because it's standard. But in computers, in cryptography, in some scientific fields, other bases do real work. The machinery you learned in this chapter is the foundation for understanding how they work.
-
----
-
-## Connections forward
-
-Chapter 5 moves into algebra — equations and functions. You'll use the place value system and decimal notation constantly. Every time you see a number like 2.5 or 3.14, you're reading a *decimal numeral*, which extends place value into negative powers of 10. The 5 in 2.5 is in the tenths position ($10^{-1}$). That's the same machinery you learned here, just with negative exponents.
-
-Then in Chapter 6 (Money management), you'll work with interest rates, prices, and percentages. All of those require clear understanding of what each digit means in base 10. You'll also encounter situations where base 2 and base 16 appear (in computer science, if you take that path), but the conversion skills are the same.
-
-Most importantly, the conceptual insight — that notation is a choice, and different choices have different costs — will reappear in algebra (different ways to write equations), statistics (different ways to visualize data), and geometry (different coordinate systems). The idea is always the same: find the notation that makes the problem clear.
-
----
-
-**What would change my mind:** If I discovered that place value didn't originate in India in the 5th–7th centuries but earlier, or in a different place, I would revise the historical framing. The mathematical machinery would stay unchanged.
-
-**Still puzzling:** Why base 20 for the Mayans? The leading hypothesis is that it matches counting on fingers and toes together (20 total). But I haven't found definitive archaeological evidence for the origin story. The choice seems culturally pragmatic, not mathematically necessitated.
-
-**Tags:** place-value, numeral-systems, bases, Hindu-Arabic, Babylonian, Mayan, Roman, base-conversion, mathematical-notation, Aryabhata, Brahmagupta, zero, positional-systems
+**LLM Exercise 4.5** Ask an AI to explain why the Babylonians used base 60. Evaluate whether the AI's explanation goes beyond "60 has many divisors" to explain *why* divisibility mattered for their specific needs (measurement, astronomy, commerce). Then in one paragraph, describe what the choice of base reveals about the problems a civilization was trying to solve — using at least two of the three historical examples from this chapter.
