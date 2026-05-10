@@ -1,303 +1,155 @@
 # Chapter 5 — Algebra
+*What You Already Do, Written Down So It Always Works.*
 
-## Suggested titles
+Here is the thing nobody tells you about algebra: you already do it. Every time you check your change, estimate whether you can afford something, or figure out how long a drive will take, you are doing algebra. You are reasoning about an unknown quantity using what you do know. The only difference between that and what this chapter teaches is that we are going to write it down — give the unknown a name, state the constraints precisely, and solve mechanically. That shift from informal arithmetic to formal symbol-manipulation is smaller than it looks. But it is enormously powerful, because it works in cases where the informal version breaks down completely.
 
-- **Algebra: When You Don't Know the Number (Yet)**
-- **How to Solve for X, and Why You'd Want To**
-- **Variables, Functions, and the Machinery of Constraint**
+The informal version breaks down the moment there are two unknowns, or twenty steps, or when the answer is not a nice integer. The formal version does not care. Write it down. Apply the rules. The answer appears.
 
----
+Here is the hook that will carry us through the chapter. A small restaurant sells two items: tacos at some price, and burritos at some price. You order two tacos and one burrito; the bill is $8.50. Your friend orders one taco and two burritos; the bill is $9.00. How much does a taco cost?
 
-## TL;DR
-
-Algebra is the language you speak when you need to find a number you don't yet know, or track how one quantity changes when another one does. We'll build three ideas that unlock almost everything: how to isolate an unknown value by reversing operations (solving equations), how to name and visualize relationships between quantities (functions and graphs), and how to solve real problems that hinge on multiple constraints at once (systems of equations).
+You could guess. You could try values. But you would spend a long time at it — and if the prices were not round numbers, you might never land on the exact answer. Algebra solves this in a few lines. By the end of this chapter, you will know exactly how, and you will know *why* it works.
 
 ---
 
-## Part 1: Cold Open
+## What an equation actually is
 
-You walk into a coffee shop and order a pastry. The barista rings it up: $3.85. You hand over a $10 bill. Before they hand back your change, your brain has already done the arithmetic: $10 − $3.85 = $6.15. You didn't think about it. You just flipped the operation—subtraction to find the missing part.
+An equation is a statement that two expressions are equal. That is the whole thing. Nothing mysterious. $3x + 5 = 20$ is a claim: the expression $3x + 5$ and the number $20$ name the same quantity, for some value of $x$. Your job is to find that value.
 
-But now imagine a different scenario. A small business uses wool to make scarves and sweaters. A scarf needs three bags of wool and sells for $8 profit. A sweater needs four bags of wool and sells for $10 profit. The business has exactly 27 bags of wool to spend this week, and they can make at most 8 items. They want to maximize profit. How many scarves and how many sweaters should they make?
+The tool for finding it is one principle, applied repeatedly: **whatever you do to one side of an equation, you must do to the other.** This keeps the statement true. It does not change the solution; it only changes the form of the equation, ideally toward a form where the answer is obvious.
 
-You can't just do this in your head. You need to set up the problem, write down the constraints, and find the answer systematically. This is where algebra becomes more than arithmetic—it becomes a tool for reasoning through complexity.
-
-In this chapter, we're going to build three interlocking skills. First: solving for unknown values when you have an equation (finding the missing number). Second: naming relationships between quantities and visualizing them on a graph (functions). Third: handling situations where multiple equations and constraints must all be satisfied at once (systems).
-
-The payoff is this: you'll be able to take a word problem—any word problem—translate it into mathematical language, and then solve it mechanically. You won't have to guess or test values. You'll have a method.
-
-### Learning objectives
-
-By the end of this chapter you will be able to:
-
-- **Solve** a linear equation in one variable using properties of equality, and **construct** an equation from a word problem.
-- **Distinguish** between an equation and a function; **evaluate** a function using function notation.
-- **Graph** a linear function using points, intercepts, or slope; **interpret** a graph to answer real-world questions.
-- **Solve** a system of two linear equations in two variables using substitution or elimination.
-- **Model** a real-world constraint problem using a system of equations and **verify** your solution.
-
-### Prerequisites
-
-You should be comfortable with arithmetic: adding, subtracting, multiplying, dividing whole numbers, fractions, and decimals. You should understand that when you do the same thing to both sides of an equation, the equation stays balanced. You should be able to read and use a simple coordinate plane (Chapter 4 touched on this).
-
-### Why this chapter matters
-
-Algebra is the language in which the rest of mathematics speaks. Logic (Chapter 2) uses algebraic reasoning. Money management (Chapter 6) relies on equations to calculate interest and loan payments. Probability and statistics (Chapters 7–8) use functions to describe distributions and predict outcomes. Geometry (Chapter 10) uses equations to describe lines, circles, and shapes. Every field that uses mathematics—engineering, medicine, agriculture, economics, social science—starts with the ability to set up and solve equations. And every equation, at root, is a puzzle: *find the number that makes this statement true*.
-
----
-
-## Concept 1: Solving Linear Equations — Finding the Unknown Value
-
-A **linear equation in one variable** is a statement that two expressions are equal, and your job is to find the number that makes it true. That number is called the **solution**.
-
-Here's the cold open for this section: You're buying a used car. The dealer offers you a deal: $5 per hour above minimum wage. You work 40 hours a week. If your weekly paycheck is $360, what is the hourly rate? Let $x$ be the hourly rate. You earn $5x$ from 40 hours of work. So:
-
-$$40x = 360$$
-
-To find $x$, you need to *undo* the multiplication by 40. You divide both sides by 40:
-
-$$\frac{40x}{40} = \frac{360}{40}$$
-
-$$x = 9$$
-
-Your hourly rate is $9 per hour. You just solved a linear equation.
-
-### The properties of equations
-
-When you solve an equation, you use one fundamental principle: **what you do to one side, you must do to the other**. This keeps the equation balanced.
-
-The four operations work like this:
-
-**Addition Property:** If $a = b$, then $a + c = b + c$. 
-
-**Subtraction Property:** If $a = b$, then $a − c = b − c$.
-
-**Multiplication Property:** If $a = b$, then $ac = bc$.
-
-**Division Property:** If $a = b$ and $c \neq 0$, then $\frac{a}{c} = \frac{b}{c}$.
-
-### A worked example: Solving a multi-step equation
-
-Solve: $3x + 5 = 20$.
-
-*Step 1: Subtract 5 from both sides to isolate the $x$ term:*
+From $3x + 5 = 20$, I want to isolate $x$. The $+5$ is in my way. I subtract 5 from both sides:
 
 $$3x + 5 - 5 = 20 - 5$$
 $$3x = 15$$
 
-*Step 2: Divide both sides by 3:*
+Now the $3$ is in my way. I divide both sides by 3:
 
 $$\frac{3x}{3} = \frac{15}{3}$$
 $$x = 5$$
 
-*Step 3: Check. Substitute $x = 5$ back into the original:*
+That is it. Substitute back to check: $3(5) + 5 = 15 + 5 = 20$. Correct.
 
-$$3(5) + 5 = 15 + 5 = 20$$ ✓
+The steps are mechanical, but the reasoning behind them matters. I am not applying rules by rote. I am *undoing* operations. The original equation had $x$ multiplied by 3, then increased by 5. To find $x$, I undo those operations in reverse order — subtract first, then divide. This is the same logic as unwrapping a package: you remove the outer layers before the inner ones.
 
-The solution is $x = 5$.
+<!-- → [DIAGRAM: vertical "unwrapping" diagram for 3x + 5 = 20 — top level shows the original equation; arrows pointing downward show each inverse operation applied to both sides (−5, then ÷3); final level shows x = 5; right margin labels each arrow with the operation name and the property of equality being used — student should see the reverse-order logic visually, not just follow the algebra steps] -->
 
-### Another worked example: Equations with variables on both sides
+Now try one where the unknown appears on both sides. Solve $5y - 3 = 2y + 9$.
 
-Solve: $5y - 3 = 2y + 9$.
-
-This equation has $y$ on both sides. Don't panic. You still follow the same principle: get all variable terms on one side, all constants on the other.
-
-*Step 1: Subtract $2y$ from both sides (to collect variables on the left):*
+There is no mystery here. The unknown is just in two places at once. Collect it on one side. Subtract $2y$ from both sides:
 
 $$5y - 2y - 3 = 2y - 2y + 9$$
 $$3y - 3 = 9$$
 
-*Step 2: Add 3 to both sides (to isolate the variable term):*
+Then add 3 to both sides:
 
-$$3y - 3 + 3 = 9 + 3$$
 $$3y = 12$$
-
-*Step 3: Divide both sides by 3:*
-
 $$y = 4$$
 
-*Step 4: Check. Substitute $y = 4$ into both sides of the original:*
+Check: left side is $5(4) - 3 = 17$; right side is $2(4) + 9 = 17$. Both are 17. The equation holds.
 
-Left side: $5(4) - 3 = 20 - 3 = 17$
+The check is not optional formality. It is the only moment you know for certain that you have not made an error. Algebra errors are common and easy. The check catches them.
 
-Right side: $2(4) + 9 = 8 + 9 = 17$
+### The hard part is not solving — it is writing the equation
 
-Both sides equal 17. ✓
+I want to pause here, because students consistently find the same thing difficult. The manipulation — subtracting from both sides, collecting terms, dividing — is mechanical. You learn it quickly. What takes longer is translating a word problem into an equation in the first place.
 
-The solution is $y = 4$.
+A gym charges $10 per month plus $5 per class. Your budget is $75. How many classes can you take?
 
-### Trade-off: Exactness vs. trial-and-error
+The translation step: let $c$ be the number of classes. Monthly cost is $10 + 5c$. Set that equal to the budget:
 
-When you have an equation like $3x + 5 = 20$, you could solve it by guessing. Try $x = 6$: $3(6) + 5 = 23$. Too big. Try $x = 4$: $3(4) + 5 = 17$. Too small. Eventually you'd land on $x = 5$. 
+$$10 + 5c = 75$$
 
-But this only works for small integers. If the answer is $x = 7.3$ or $x = -\frac{2}{5}$, guessing becomes impractical. The algebraic method—applying properties of equations step by step—gives you an exact answer every time, in any case, without trying values. That's the trade-off: equations demand more careful thinking up front, but they reward you with certainty and speed.
+Now it is mechanical again. Subtract 10: $5c = 65$. Divide by 5: $c = 13$.
 
-### Common misconceptions
+The equation was the hard part. Once you have it, the solution follows automatically. And the equation comes from reading carefully: identify what you do not know (give it a letter), identify what you do know (the price structure, the budget), and write the relationship.
 
-**You must do the same operation to both sides, completely.** If you have $\frac{x+2}{3} = 5$, you multiply both sides by 3 to get $x + 2 = 15$, not $x + 2 = 5 \cdot 3$. The 3 multiplies the entire left side and the entire right side.
-
-**Negative numbers don't break the rules.** When you subtract a negative, it becomes addition: $5 − (−3) = 5 + 3 = 8$. This is not a special case; it's the same principle applied.
-
-**An equation with no solution and an equation with infinitely many solutions are both valid answers.** For $x + 3 = x + 5$, no value of $x$ works (the variable cancels, leaving $3 = 5$, which is false). For $2(x + 1) = 2x + 2$, every value of $x$ works (both sides are identical). Both are legitimate outcomes.
-
-### Applications: Translating words to equations
-
-The hardest part is usually not solving the equation—it's writing it down from a word problem.
-
-**Example:** Your gym membership costs $10 per month, plus $5 per class you attend. Your budget is $75 per month. How many classes can you take?
-
-*Translation:*
-- Let $c$ = number of classes
-- Monthly cost = $10 + 5c$
-- Budget = $75$
-- Equation: $10 + 5c = 75$
-
-*Solution:*
-$$5c = 75 - 10 = 65$$
-$$c = 13$$
-
-You can take 13 classes on a $75 budget.
+This is worth practicing separately from the solving, because they are different skills.
 
 ---
 
-## Concept 2: Functions — Naming and Visualizing Relationships
+## Functions: naming a relationship
 
-A **function** is a relationship where each input has exactly one output. Think of it as a machine: you put a number in, the machine does something to it, and exactly one number comes out.
+A single equation finds a specific unknown value. But sometimes the relationship between two quantities is what matters — not just one answer, but the whole pattern of how one quantity changes when another does.
 
-Cold open: A pizza restaurant charges $12 for a large pizza plus $1.50 per topping. If you order with $t$ toppings, the cost is $12 + 1.5t$. 
+A pizza costs $12 plus $1.50 per topping. I could ask: what is the cost of a 4-topping pizza? That is a single-value question, answered by $12 + 1.5(4) = 18$.
 
-- 0 toppings: $12 + 1.5(0) = 12$
-- 1 topping: $12 + 1.5(1) = 13.50$
-- 2 toppings: $12 + 1.5(2) = 15$
-- 3 toppings: $12 + 1.5(3) = 16.50$
-
-Each number of toppings gives exactly one price. This is a function.
-
-### Function notation
-
-Instead of writing $y = 12 + 1.5t$, we can write:
+But the more interesting thing is the relationship itself. For any number of toppings $t$, the cost is $12 + 1.5t$. This rule — input a number of toppings, output a cost — is a **function**. We write it:
 
 $$f(t) = 12 + 1.5t$$
 
-Read "$f$ of $t$" or "the value of $f$ at $t$." The parentheses do not mean multiplication. They mean "input this value."
+Read this as "$f$ of $t$" — the value of the function $f$ at input $t$. The parentheses do not mean multiplication. They mean: put $t$ into the rule and see what comes out. $f(4) = 12 + 1.5(4) = 18$. $f(0) = 12$. $f(10) = 12 + 15 = 27$.
 
-If you want to know the cost of a pizza with 4 toppings:
+A function is a machine. One input in, one output out. The machine's rule can be anything — but it must be consistent. The same input always gives the same output. This is what makes it a function: no ambiguity about the output.
 
-$$f(4) = 12 + 1.5(4) = 12 + 6 = 18$$
-
-So $f(4) = 18$: a 4-topping pizza costs $18.
+<!-- → [INFOGRAPHIC: function-as-machine diagram — left side shows an input value (e.g., t = 4) entering a box labeled with the rule f(t) = 12 + 1.5t; right side shows the output value (18) emerging; below the machine, a small table lists four input-output pairs (t = 0, 1, 2, 3 → f = 12, 13.50, 15, 16.50); callout note labels the rule box "the rule" and the input/output arrows with "domain value" and "range value" — student should see at a glance why one-input-one-output is the defining property] -->
 
 ### Domain and range
 
-The **domain** (from Latin *dominium*, "territory") is the set of all possible inputs—all the values you're allowed to put in. For a pizza with toppings, the domain might be 0, 1, 2, 3, 4, 5 (whole numbers, since you can't order half a topping). 
+The **domain** is the set of all permitted inputs. For our pizza function, the domain might be the whole numbers $0, 1, 2, 3, \ldots$ up to some maximum (you cannot order half a topping, and there is a physical limit to how many will fit on a pizza).
 
-The **range** is the set of all possible outputs—all the values that come out. For our pizza function with domain 0 through 5:
+The **range** is the set of all outputs the function can produce. For our pizza with domain $0$ through $5$: the range is $\{12, 13.50, 15, 16.50, 18, 19.50\}$.
 
-$$\text{Range: } \{12, 13.50, 15, 16.50, 18, 19.50\}$$
+The domain and range depend on context. In pure mathematics, the function $y = x^2$ has domain all real numbers and range all non-negative real numbers. In a model of human height as a function of age, the domain is roughly $0$ to $100$ years and the range is heights that human bodies can reach. The algebra does not change; only the real-world constraints do.
 
-The domain and range depend on the real-world context. If you're graphing the function $y = x^2$ in pure math, the domain is all real numbers. If you're modeling height as a function of age for a human, the domain is ages 0 to about 100, and the range is heights 0 to about 8 feet.
+This is worth holding onto: mathematics gives you a tool, and then you decide what the tool is allowed to do in your specific situation. The domain and range are part of the model, not part of the algebra.
 
-### Another worked example: Evaluating and interpreting a function
+### Graphing a function
 
-A phone company charges \$50 per month (base fee) plus \$0.10 per text message. Write a function for monthly cost, and find the cost if you send 300 texts.
+A function has a visual form. To graph $f(x) = 2x + 3$, I compute some points:
 
-Let $t$ = number of texts, and $C(t)$ = monthly cost.
+- $f(0) = 3$ — point $(0, 3)$
+- $f(1) = 5$ — point $(1, 5)$
+- $f(2) = 7$ — point $(2, 7)$
+- $f(-1) = 1$ — point $(-1, 1)$
 
-$$C(t) = 50 + 0.10t$$
+Connect them. The result is a straight line. That is why this is called a *linear* function — the graph is a line.
 
-To find the cost for 300 texts:
+Two points are enough to draw any line. The two most useful are the **intercepts**:
 
-$$C(300) = 50 + 0.10(300) = 50 + 30 = 80$$
+The **y-intercept** is where the line crosses the vertical axis — where $x = 0$. For $f(x) = 2x + 3$, that is $f(0) = 3$. The point is $(0, 3)$.
 
-If you send 300 texts, your monthly bill is \$80.
+The **x-intercept** is where the line crosses the horizontal axis — where $y = 0$. Set $2x + 3 = 0$, solve: $x = -\frac{3}{2}$. The point is $(-\frac{3}{2}, 0)$.
 
-Notice: the domain here is $t \geq 0$ (you can't send a negative number of texts). The range is $C \geq 50$ (the minimum cost is \$50, even if you send no texts). These constraints come from the real-world context, not from the algebra itself.
+Plot those two points and connect them. Line drawn.
 
-### Graphing a function: Points and intercepts
+<!-- → [IMAGE: coordinate plane showing the graph of f(x) = 2x + 3 — four plotted points labeled with coordinates, x-intercept and y-intercept both labeled and circled, the line drawn through all points; slope triangle annotated between two adjacent points showing "rise = 2, run = 1"; student should see how intercepts and slope triangle connect to the equation's coefficients] -->
 
-To graph a function, you plot points and connect them. For $f(x) = 2x + 3$:
+### Slope: what the rate of change actually is
 
-- When $x = 0$: $f(0) = 2(0) + 3 = 3$. Plot $(0, 3)$.
-- When $x = 1$: $f(1) = 2(1) + 3 = 5$. Plot $(1, 5)$.
-- When $x = 2$: $f(2) = 2(2) + 3 = 7$. Plot $(2, 7)$.
-- When $x = -1$: $f(-1) = 2(-1) + 3 = 1$. Plot $(-1, 1)$.
+The **slope** of a line measures how steep it is — how much the output changes per unit change in input.
 
-Connect these points, and you see a straight line. That's why it's called a *linear* function.
+$$m = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}$$
 
-Two special points make graphing easier:
+Pick any two points on $y = 2x + 3$: say $(0, 3)$ and $(1, 5)$. Slope is $\frac{5-3}{1-0} = \frac{2}{1} = 2$. For every 1 unit you move right, the line moves 2 units up.
 
-- **x-intercept:** Where the line crosses the $x$-axis (where $y = 0$). Set $f(x) = 0$ and solve: $2x + 3 = 0 \Rightarrow x = -\frac{3}{2}$. Point: $(-\frac{3}{2}, 0)$.
-- **y-intercept:** Where the line crosses the $y$-axis (where $x = 0$). This is just $f(0) = 3$. Point: $(0, 3)$.
+The slope is the coefficient of $x$ in the equation — the $m$ in $y = mx + b$. That is not a coincidence. The equation $y = mx + b$ is built to make slope visible: $m$ is the rate of change, $b$ is the starting value (the y-intercept).
 
-With just these two points, you can draw the entire line.
+In context, slope is always *something per something*. A function $d(t) = 60t$ for a car traveling at 60 mph has slope 60 — sixty miles per hour. A function $M(d) = 100 - 5d$ for money declining at $5 per day has slope $-5$ — negative because the quantity decreases. The slope is the story the function tells about rate of change.
 
-### Slope: The rate of change
+One trap worth naming explicitly: a horizontal line has slope 0. A vertical line has undefined slope, because the denominator $\Delta x$ is zero. These are not the same situation. Zero slope means no change; undefined slope means the rule "one input, one output" breaks down entirely — a vertical line has infinitely many $y$-values for a single $x$-value, so it is not even a function.
 
-The **slope** of a line measures how steep it is. If you pick two points on the line, slope is:
-
-$$m = \frac{\text{rise}}{\text{run}} = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}$$
-
-For the line $y = 2x + 3$, using points $(0, 3)$ and $(1, 5)$:
-
-$$m = \frac{5 - 3}{1 - 0} = \frac{2}{1} = 2$$
-
-Slope 2 means: for every 1 unit you move right, you move 2 units up. The slope is also the coefficient of $x$ in the equation.
-
-**Slope in context:** If a car travels at 60 miles per hour, the function $d(t) = 60t$ has slope 60. The slope is the rate of change—miles per hour. A negative slope means the line goes downward as you move right. For example, if you have \$100 in your account and you spend \$5 per day, the function is $M(d) = 100 - 5d$ (money remaining after $d$ days). Slope is $-5$: you lose \$5 per day.
-
-### Another worked example: Finding slope from two points
-
-Find the slope of the line passing through $(2, 3)$ and $(5, 9)$.
-
-$$m = \frac{9 - 3}{5 - 2} = \frac{6}{3} = 2$$
-
-The slope is 2. This means: for every 1 unit you move right, you move 2 units up. Or equivalently, for every 3 units right, you move 6 units up.
-
-**Note on order:** The order of the points doesn't matter. If you compute it as $\frac{3 - 9}{2 - 5} = \frac{-6}{-3} = 2$, you get the same answer. The key is to be consistent: if you subtract $y$-values in the numerator, subtract the corresponding $x$-values in the denominator.
-
-### Trade-off: Slope-intercept form vs. point-slope form
-
-A linear function can be written as:
-
-**Slope-intercept form:** $y = mx + b$, where $m$ is slope and $b$ is the y-intercept. Easy to graph; shows the y-intercept at a glance.
-
-**Point-slope form:** $y - y_1 = m(x - x_1)$, where $(x_1, y_1)$ is a point on the line. Useful when you know a point and the slope but not the y-intercept.
-
-Both are correct; use whichever is more convenient for the problem.
-
-### Common misconceptions
-
-**The slope is not "rise divided by run" in units; it's a ratio.** If you move 3 units right and 6 units up, the slope is $\frac{6}{3} = 2$, not "6 units." Slope is unitless (or carries the units of the vertical axis divided by the horizontal axis).
-
-**A horizontal line has slope 0; a vertical line has undefined slope.** Horizontal ($y = 5$) has $\Delta y = 0$, so slope is 0. Vertical ($x = 3$) has $\Delta x = 0$, so slope is $\frac{\Delta y}{0}$, which is undefined. These are not the same.
-
-**Function notation is not multiplication.** $f(3)$ does not mean $f \times 3$. It means "the output of $f$ when the input is 3."
+<!-- → [TABLE: three-row reference table — columns: "Line type", "Equation form", "Slope value", "Is it a function?" — rows: horizontal (y = k, slope = 0, yes), vertical (x = k, slope = undefined, no), diagonal (y = mx + b, slope = m, yes); callout on the vertical row explaining why undefined slope and "not a function" are linked — student should be able to scan this and immediately resolve the horizontal vs. vertical confusion] -->
 
 ---
 
-## Concept 3: Systems of Equations — Multiple Constraints
+## Systems of equations: when there are two unknowns
 
-A **system of equations** is a set of two or more equations that you solve together. The solution is the values that make all equations true at once.
+Return to the restaurant. Tacos at price $t$, burritos at price $b$. Two orders:
 
-Cold open: You go to a restaurant with a friend. You order 2 tacos and 1 burrito; it costs $8.50. Your friend orders 1 taco and 2 burritos; it costs $9. How much does a taco cost? How much does a burrito cost?
+$$2t + b = 8.50$$
+$$t + 2b = 9.00$$
 
-Let $t$ = cost of a taco, $b$ = cost of a burrito.
+Two equations, two unknowns. One equation with two unknowns has infinitely many solutions — it describes a line, and every point on the line is a valid pair of values. But two equations together constrain the problem. The solution must satisfy both simultaneously. Geometrically, each equation is a line; the solution is the point where they intersect.
 
-$$\begin{cases}
-2t + b = 8.50 \\
-t + 2b = 9
-\end{cases}$$
+There are two clean algebraic methods for finding that point.
 
-This is a system of two equations in two unknowns. You have two constraints: both your meal and your friend's meal have to cost the right amount.
+### Substitution
 
-### Solving by substitution
+Solve one equation for one variable, then substitute into the other.
 
-**Step 1: Solve one equation for one variable.**
+From the second equation: $t = 9 - 2b$.
 
-From the second equation:
-$$t + 2b = 9 \Rightarrow t = 9 - 2b$$
-
-**Step 2: Substitute into the other equation.**
+Substitute into the first:
 
 $$2(9 - 2b) + b = 8.50$$
 $$18 - 4b + b = 8.50$$
@@ -305,38 +157,22 @@ $$18 - 3b = 8.50$$
 $$-3b = -9.50$$
 $$b = \frac{9.50}{3} \approx 3.17$$
 
-A burrito costs about $3.17.
+Then: $t = 9 - 2(3.17) = 9 - 6.34 = 2.66$.
 
-**Step 3: Find the other variable.**
+Check both equations:
 
-$$t = 9 - 2(3.17) = 9 - 6.34 = 2.66$$
+- Equation 1: $2(2.66) + 3.17 = 5.32 + 3.17 = 8.49 \approx 8.50$ ✓
+- Equation 2: $2.66 + 2(3.17) = 2.66 + 6.34 = 9.00$ ✓
 
-A taco costs about $2.66.
+(The tiny rounding error in equation 1 vanishes if you keep the exact fractions throughout. The exact solution is $b = \frac{19}{6}$ and $t = \frac{8}{3}$.)
 
-**Step 4: Check both equations.**
+### Elimination
 
-- Equation 1: $2(2.66) + 3.17 = 5.32 + 3.17 = 8.49 ≈ 8.50$ ✓
-- Equation 2: $2.66 + 2(3.17) = 2.66 + 6.34 = 9$ ✓
+The second method works by making a variable cancel. Multiply the second equation by $-2$:
 
-The solution is approximately $(t, b) = (2.66, 3.17)$.
-
-### Solving by elimination
-
-Sometimes substitution is messy. **Elimination** is an alternative: multiply equations to make one variable cancel, then add or subtract.
-
-Using the same system:
-
-$$\begin{cases}
-2t + b = 8.50 \\
-t + 2b = 9
-\end{cases}$$
-
-**Step 1: Multiply the second equation by $-2$:**
-
-$$-2(t + 2b) = -2(9)$$
 $$-2t - 4b = -18$$
 
-**Step 2: Add this to the first equation:**
+Add this to the first equation:
 
 $$\begin{align}
 2t + b &= 8.50 \\
@@ -345,138 +181,79 @@ $$\begin{align}
 -3b &= -9.50
 \end{align}$$
 
-**Step 3: Solve for $b$:**
+The $t$ terms vanish. Solve for $b$: same answer, $b \approx 3.17$. Substitute back for $t$.
 
-$$b = \frac{9.50}{3} \approx 3.17$$
+Both methods reach the same place. Substitution is cleaner when one equation is already solved for a variable or is easy to solve. Elimination is cleaner when the coefficients are arranged to cancel nicely, or when substitution would produce messy fractions.
 
-**Step 4: Substitute back to find $t$:**
+### Why two equations are needed, not one
 
-$$2t + 3.17 = 8.50 \Rightarrow 2t = 5.33 \Rightarrow t = 2.66$$
+This is worth understanding, not just accepting. One equation in two unknowns describes a line — an infinite collection of solutions. Every point $(t, b)$ on that line satisfies the equation. You have no way to narrow it down further.
 
-Same answer, different path.
+The second equation adds a constraint. A second line. The solution must lie on both lines — that is, at their intersection. One intersection point (if the lines are not parallel, and not the same line). That is the unique solution.
 
-### Graphing a system
+This generalizes. Three unknowns require three equations. $n$ unknowns require $n$ equations. Each equation eliminates one dimension of ambiguity. Algebra, at its root, is about counting constraints: you need as many independent equations as you have unknowns.
 
-Each equation in a system is a line. The solution is the point where the lines intersect.
+### What happens when the system misbehaves
 
-For our restaurant example:
-- Line 1: $2t + b = 8.50 \Rightarrow b = 8.50 - 2t$ (y-intercept 8.50, slope -2)
-- Line 2: $t + 2b = 9 \Rightarrow b = 4.50 - 0.5t$ (y-intercept 4.50, slope -0.5)
+Two special cases are worth seeing.
 
-Plot both lines. They intersect at approximately $(2.66, 3.17)$. That's the solution.
-
-The graphical method is useful for understanding what's happening: you're looking for the point where both constraints are satisfied simultaneously. But graphing by hand is imprecise. Unless the intersection is at integer coordinates (like $(2, 3)$), it's hard to read the exact values from a graph. This is why we use algebra: to find the precise answer.
-
-### Verification: Why checking matters
-
-Once you find a solution, always substitute it back into both original equations. Errors in algebra are common—a small slip can invalidate the entire solution. But if both equations check out, you know you have the right answer.
-
-For our restaurant example with $t = 2.66$ and $b = 3.17$:
-- Equation 1: $2(2.66) + 3.17 = 5.32 + 3.17 = 8.49 \approx 8.50$ ✓
-- Equation 2: $2.66 + 2(3.17) = 2.66 + 6.34 = 9.00$ ✓
-
-(The first equation is close but not exact because we rounded $2.66$ and $3.17$; if we use the exact values, both equations check perfectly.)
-
-### Trade-off: Substitution vs. elimination vs. graphing
-
-**Substitution** is good when one equation is already solved for a variable, or when solving for it is easy.
-
-**Elimination** is good when coefficients line up nicely to cancel.
-
-**Graphing** shows you visually where the solution is, but it's hard to read exact values unless the intersection is at integer coordinates.
-
-In practice, you often use substitution or elimination. Graphing helps you see whether the system makes sense and whether your answer is reasonable.
-
-### Special cases: No solution and infinitely many
-
-**No solution:** Two parallel lines never intersect. For example:
+**No solution:** If the two equations represent parallel lines — same slope, different y-intercepts — they never intersect. There is no point satisfying both. Example:
 
 $$\begin{cases}
 y = 2x + 3 \\
 y = 2x + 5
 \end{cases}$$
 
-Both lines have slope 2 but different y-intercepts (3 vs. 5). They never meet. The system has no solution.
+Both lines rise at the same rate, but one is shifted up by 2. They never meet. If you try to solve algebraically, the variable cancels and you are left with a false statement: $3 = 5$. That is the signal. No solution.
 
-**Infinitely many solutions:** Two equations represent the same line. For example:
+**Infinitely many solutions:** If the two equations represent the same line — one is a multiple of the other — every point on the line is a solution. Example:
 
 $$\begin{cases}
 2x + y = 5 \\
 4x + 2y = 10
 \end{cases}$$
 
-The second equation is just the first multiplied by 2. They're the same line. Every point on the line is a solution.
+The second is the first times two. Algebraically, the variable cancels and you are left with a true statement: $0 = 0$. The system has infinitely many solutions — any point on the line $2x + y = 5$.
 
-### Common misconceptions
+These are not errors or failures. They are valid outcomes. They tell you something about the structure of the problem. "No solution" means the constraints are contradictory — they cannot both be satisfied. "Infinitely many" means the constraints are redundant — one adds no new information beyond the other.
 
-**You need two equations to solve two unknowns.** One equation in two unknowns has infinitely many solutions (it's a line). Two equations can narrow it to one point, or one line, or no solution.
-
-**A solution to a system must satisfy all equations.** If a point works in one equation but not the other, it's not a solution to the system.
-
-**Graphing is not guessing.** You can graph a system roughly to check your algebraic answer, but the algebra is what gives you the exact solution.
+<!-- → [IMAGE: three-panel side-by-side coordinate plane diagrams — Panel 1: two lines intersecting at one point, labeled "Unique solution"; Panel 2: two parallel lines that never meet, labeled "No solution"; Panel 3: two lines that are identical (one drawn over the other), labeled "Infinitely many solutions"; each panel annotated with a brief note on what the algebra produces (one answer / false statement / true identity) — student should see all three cases at once and connect visual form to algebraic signal] -->
 
 ---
 
-## Integration: The Restaurant Receipt
+## The connection between it all
 
-Return to the pizza and topping scenario. Now imagine a more realistic situation: a pizza shop offers two specialty pies.
+Step back. Equations, functions, and systems are not three separate topics. They are the same idea at different scales.
 
-- **Margherita:** \$12 base + \$1 per topping
-- **Supreme:** \$16 base + \$0.50 per topping
+An **equation** is a constraint: one relationship, one unknown, one solution.
 
-You want a Margherita and a Supreme, with the same number of toppings on each. You spend $40 total. How many toppings does each pizza have?
+A **function** is a relationship: one input, one output, visualized across a whole range of inputs.
 
-Let $n$ = number of toppings on each.
+A **system** is multiple constraints: several relationships, several unknowns, a solution that satisfies all of them simultaneously.
 
-$$12 + 1n + 16 + 0.5n = 40$$
-$$28 + 1.5n = 40$$
-$$1.5n = 12$$
-$$n = 8$$
+The algebra is the same throughout — the same properties of equality, the same operations, the same logic. What changes is how many unknowns you have and how many constraints you have placed on them.
 
-Each pizza has 8 toppings. Check: $(12 + 8) + (16 + 4) = 20 + 20 = 40$ ✓.
+And the real world is almost always a system. Prices depend on multiple products. Schedules depend on multiple constraints. Budgets balance multiple demands. Every time you have two things you do not know and two pieces of information about them, you have a system. The taco and burrito problem is exactly that — a shopping receipt that contains two constraints, and we extracted the two prices it implied.
 
-This is a single equation, but notice the structure: you translated a word problem into an equation, solved for the unknown, and verified the answer. This is the core of algebra.
+Thurgood Marshall's argument in Chapter 2 was a logical chain: if premise A and premise B, then conclusion C. Algebra is the same structure with numbers instead of propositions. If cost equation A and cost equation B both hold, then prices $(t, b)$ must be this value. Logic and algebra are cousins. Both are about what follows necessarily from what you are given.
 
-### A more complex scenario: Different topping counts
+---
 
-Now add a complication: what if you want the Margherita to have 2 more toppings than the Supreme?
+## Chapter summary
 
-Let $m$ = toppings on Margherita, $s$ = toppings on Supreme.
+You now have three interlocking tools.
 
-$$\begin{cases}
-12 + m + 16 + 0.5s = 40 \\
-m = s + 2
-\end{cases}$$
+Solving equations: identify the unknown, write the constraint, undo operations in reverse order, check your answer. The hard part is the translation from words; the solving is mechanical.
 
-Substitute the second into the first:
+Functions: a rule that assigns one output to every input. Written $f(x)$, graphed as a curve or line, characterized by domain, range, and — for linear functions — slope. The slope is the rate of change. The y-intercept is the starting value.
 
-$$12 + (s + 2) + 16 + 0.5s = 40$$
-$$30 + s + 0.5s = 40$$
-$$30 + 1.5s = 40$$
-$$1.5s = 10$$
-$$s = \frac{10}{1.5} = 6.67$$
+Systems: two (or more) equations, two (or more) unknowns. Solve by substitution or elimination. The solution is the point where all constraints are satisfied simultaneously. No solution means contradictory constraints. Infinitely many means redundant ones.
 
-The Supreme has about 6.67 toppings. The Margherita has about 8.67 toppings. Since you can't order a fractional topping, you'd round: perhaps 7 toppings on the Supreme and 9 on the Margherita. Let's check:
+The one idea that ties everything together: algebra is the discipline of finding what must be true, given constraints. You are given some information and asked to determine what else follows. That is the same thing logic does, the same thing proof does, the same thing the whole of mathematics does. Algebra just does it with numbers and symbols.
 
-Cost = $(12 + 9) + (16 + 7 \times 0.5) = 21 + 19.5 = 40.50$.
+The mistake to watch for: writing down the wrong equation. Check your translation. Read the problem again. Make sure the equation you have written actually says what the problem says, before you solve it. A correct solution to the wrong equation is still wrong.
 
-That's \$0.50 over budget. Try 6 and 8 instead: $(12 + 8) + (16 + 6 \times 0.5) = 20 + 19 = 39$. That's \$1 under budget. In real life, you'd pick whichever is closest or ask the shop if they can adjust.
-
-**The point:** as problems get more complex, you move from single equations (one unknown) to systems (multiple unknowns). Algebra gives you the toolkit to handle them. And real-world answers often require judgment—the math gets you close, but context matters for the final decision.
-
-### Graphing the system
-
-We could also solve this graphically. Write both equations in the form $s = ...$:
-
-From Equation 1: $12 + m + 16 + 0.5s = 40 \Rightarrow m + 0.5s = 12 \Rightarrow s = 24 - 2m$
-
-From Equation 2: $s = m - 2$
-
-Plot both lines:
-- Line 1: $s = 24 - 2m$ has y-intercept 24 and slope -2 (as $m$ increases by 1, $s$ decreases by 2).
-- Line 2: $s = m - 2$ has y-intercept -2 and slope 1 (as $m$ increases by 1, $s$ increases by 1).
-
-The intersection occurs at approximately $(m, s) = (8.67, 6.67)$. This confirms our algebraic answer. The graphical method shows visually that the two constraints narrow down the solution to a single point (or region, if we had inequalities instead of equalities).
+The Feynman test for this chapter: can you explain to someone why you need two equations to find two unknowns? If you can show them that one equation is a line — an infinite set of possibilities — and that a second equation is another line, and that the solution is where they cross, you understand what systems of equations are actually doing.
 
 ---
 
@@ -484,114 +261,75 @@ The intersection occurs at approximately $(m, s) = (8.67, 6.67)$. This confirms 
 
 ### Warm-up
 
-**5.1** Solve: $5x - 7 = 18$. Check your answer.
+**Exercise 5.1** *(Solve a one-step equation; LO: properties of equality).* Solve each equation and check your answer by substituting back into the original.
 
-**5.2** Solve: $2y + 3 = y + 8$ (note: $y$ appears on both sides).
+(a) $4x = 28$
+(b) $y - 9 = 3$
+(c) $\frac{z}{6} = 5$
 
-**5.3** Write an equation for this situation, then solve: "You earn \$15 per hour. After working, you have \$180. How many hours did you work?"
+*Difficulty: low. Each equation requires exactly one operation to isolate the variable.*
 
-**5.4** For the function $f(x) = 3x - 2$, find (a) $f(0)$, (b) $f(4)$, and (c) $f(-1)$.
+**Exercise 5.2** *(Solve a multi-step equation; LO: undo operations in reverse order).* Solve: $2x + 7 = 19$. Show every step and verify your answer.
 
-**5.5** Graph the line $y = -2x + 5$ by plotting at least three points. Identify the y-intercept and the slope.
+**Exercise 5.3** *(Evaluate a function; LO: function notation).* A phone plan charges a flat fee of \$25 per month plus \$0.05 per text message. Write the monthly cost as a function $C(t)$, where $t$ is the number of texts. Then evaluate $C(0)$, $C(100)$, and $C(500)$. Identify the domain and range constraints imposed by real-world context.
+
+**Exercise 5.4** *(Compute slope from two points; LO: slope as rate of change).* Find the slope of the line passing through $(1, 4)$ and $(5, 12)$. In one sentence, describe what this slope means if the horizontal axis represents hours and the vertical axis represents miles traveled.
 
 ### Application
 
-**5.6** A car rental costs \$50 per day plus \$0.25 per mile. You rent for 3 days and drive 150 miles. What is your total cost?
+**Exercise 5.5** *(Translate and solve; LO: writing equations from word problems).* A parking garage charges \$4 to enter plus \$2 per hour. You leave with a bill of \$14. How many hours did you park? Write the equation first, then solve it.
 
-**5.7** Find the slope of the line passing through $(1, 2)$ and $(4, 8)$. Interpret what the slope tells you in real-world terms if these coordinates represent (hours, distance in miles).
+**Exercise 5.6** *(Graph a linear function; LO: intercepts and slope).* For the function $g(x) = -3x + 6$:
 
-**5.8** A gym charges a flat monthly fee of \$30 plus \$2 per class. Write a function $C(c)$ for the monthly cost as a function of number of classes attended. If you attend 12 classes in a month, what is your cost?
+(a) Find the y-intercept.
+(b) Find the x-intercept.
+(c) Compute the slope.
+(d) Sketch the line using the two intercept points.
 
-**5.9** Solve the system using substitution: 
-$$\begin{cases}
-x + 2y = 7 \\
-2x - y = 4
-\end{cases}$$
+**Exercise 5.7** *(Solve a system by substitution; LO: two equations, two unknowns).* Solve:
 
-**5.10** You have \$20. Apples cost \$2 each and oranges cost \$3 each. Write an equation showing the combinations of apples and oranges you can buy with exactly \$20. Find one solution (a specific number of apples and oranges) that works.
+$$\begin{cases} x + y = 10 \\ x - y = 4 \end{cases}$$
+
+Check your solution in both equations.
+
+**Exercise 5.8** *(Solve a system by elimination; LO: elimination method).* Solve:
+
+$$\begin{cases} 3x + 2y = 16 \\ x - 2y = 0 \end{cases}$$
+
+State which variable you eliminated and why elimination is convenient here.
 
 ### Synthesis
 
-**5.11** A gym charges a \$50 membership fee plus \$5 per class. A yoga studio charges \$10 per class with no membership fee. 
+**Exercise 5.9** *(Compare two cost functions; LO: set functions equal to find a break-even point).* A streaming service offers two plans: Plan A costs \$8 per month with no per-movie fee. Plan B costs \$3 per month plus \$1.50 per movie.
 
-(a) Write a function $G(c)$ for the gym's total cost after $c$ classes, and a function $Y(c)$ for the yoga studio's total cost after $c$ classes.
+(a) Write a cost function for each plan in terms of $m$ (movies watched per month).
+(b) Find the number of movies per month at which the two plans cost the same.
+(c) For a viewer who watches 6 movies per month, which plan is cheaper?
 
-(b) After how many classes does the gym become the cheaper option? (Hint: set $G(c) = Y(c)$ and solve.)
+**Exercise 5.10** *(Classify a system; LO: no solution vs. infinitely many vs. unique solution).* Without solving algebraically, determine whether each system has a unique solution, no solution, or infinitely many solutions. Explain your reasoning using slope and y-intercept.
 
-**5.12** Graph both $f(x) = 2x + 1$ and $g(x) = -x + 4$ on the same coordinate plane. Find their intersection point algebraically (by solving the system), then verify it on your graph.
+(a) $y = 4x + 1$ and $y = 4x - 3$
+(b) $y = 2x + 5$ and $2y = 4x + 10$
+(c) $y = 3x + 2$ and $y = -x + 6$
 
-**5.13** A bakery sells cupcakes for \$3 each and cookies for \$2 each. They want to sell 25 items total and make exactly \$60 in revenue. Set up a system of equations and solve for the number of cupcakes and cookies they must sell.
+**Exercise 5.11** *(Model a constraint problem; LO: translate a multi-constraint word problem into a system).* A farmer has 100 acres to plant with corn and soybeans. Corn requires 2 hours of labor per acre; soybeans require 1 hour. The farmer has 140 hours of labor available. Set up a system of two equations and solve for the number of acres of each crop. Check that your solution satisfies both constraints.
 
 ### Challenge
 
-**5.14** Three friends split a restaurant bill. Alex ate twice as much as Chris. Blake ate \$2 more than Chris. The total bill is \$50. 
+**Exercise 5.12** *(Open-ended; LO: construct, solve, and interpret a system from real data).* Find a situation in your own life — a budget, a schedule, a recipe scaled to a different serving size, a travel problem — that involves two unknown quantities and two constraints. Write the system of equations, solve it, and verify the solution makes sense in context. Explain in one paragraph what the solution tells you about the original situation.
 
-(a) Set up a system of equations (let $c$ = Chris's share, $a$ = Alex's share, $b$ = Blake's share).
-
-(b) Solve for each person's share.
-
-(c) Check that the three shares add up to \$50.
-
-**5.15** A line passes through the points $(2, 5)$ and $(4, 11)$.
-
-(a) Find the slope.
-
-(b) Use the slope-intercept form $y = mx + b$ to find $b$ (the y-intercept).
-
-(c) Write the equation of the line.
-
-**5.16** You need to deliver packages to a town 120 miles away. You drive at 60 mph for the first part of the journey, then the weather worsens and you drive at 40 mph for the rest. The entire trip takes 2.5 hours. How many miles did you drive at each speed?
-
-(Hint: Let $t_1$ = time at 60 mph and $t_2$ = time at 40 mph. Set up: $t_1 + t_2 = 2.5$ and $60t_1 + 40t_2 = 120$.)
+*This exercise has no single correct answer. What matters is that your two equations are genuinely independent (not multiples of each other) and that your solution satisfies both.*
 
 ---
 
-## Chapter Summary
+## Connections forward
 
-You can now do five things you probably could not do an hour ago.
+Chapter 6 on money management is built on equations. Every loan payment formula, every compound interest calculation, every savings projection is an equation or a system. You will recognize the machinery immediately.
 
-You can **translate a word problem into an equation** and **solve it using properties of equality**—adding, subtracting, multiplying, or dividing both sides—to find the value of an unknown. This is the core skill of algebra.
+Chapter 7 on probability introduces expected value — which is a weighted sum, which is a function. You are computing the output of a rule applied to probabilities and outcomes. The function notation $f(x)$ appears in a new costume, but the idea is identical.
 
-You can **name a relationship between two quantities using function notation** and **evaluate it** to find outputs for given inputs. You understand that a function is a machine: one input, one output.
+Chapter 8 on statistics uses linear regression, which fits a line to data. The slope and y-intercept of that line are found by solving a system of equations. Everything in this chapter reappears.
 
-You can **graph a linear function** using points, intercepts, or slope, and read the graph to answer questions like "when does the function equal zero?" or "what is the rate of change?"
+And Chapter 10 on geometry describes shapes with equations. The equation of a line is $y = mx + b$. The equation of a circle is $(x-h)^2 + (y-k)^2 = r^2$. The shapes are defined by the constraints. Algebra is the language geometry speaks.
 
-You can **set up and solve a system of two linear equations** using substitution or elimination, finding the point (or points) where both equations are true at once. This is how you handle problems with multiple constraints.
-
-And you understand the **trade-offs** in each method: equations are exact but require symbol-manipulation; graphs are visual but hard to read precisely; systems with no solution or infinitely many solutions are valid outcomes, not errors.
-
-The thing to watch for, going forward, is **clarity of translation**. Most algebra mistakes don't happen in the solving; they happen when you write down the equation. Read the problem twice. Identify what you're solving for. Label your variable. Translate carefully from words to symbols. Once the equation is right, the algebra is just mechanical.
-
-What you should now be able to teach a friend who asks: how to solve $2x + 3 = 11$ without guessing, why a function is different from an equation, how to graph a line using slope and a point, and what it means for a system to have no solution.
-
----
-
-## Connections Forward
-
-**Chapter 6: Money Management** builds entirely on your ability to set up and solve equations. Loan payments, compound interest, retirement savings—all are equations. You'll use the same algebraic thinking here.
-
-**Chapter 7: Probability** asks "what's the expected value?" The answer is a weighted average: an equation. You'll set up probabilities (functions of outcomes) and solve for unknowns.
-
-**Chapter 8: Statistics** uses linear regression, which is a system of equations that fits a line to data. You're doing the same algebra, but now with purpose: understanding real data.
-
-**Chapter 10: Geometry** describes lines, circles, and shapes with equations. A line is described by $y = mx + b$; a circle is described by $(x - h)^2 + (y - k)^2 = r^2$. You'll recognize these forms and use them to reason about space.
-
-**Chapter 11: Voting and Apportionment** and **Chapter 12: Graph Theory** both use constraints and optimization (linear programming, from the deferred material in this chapter). The algebra of systems is how you model fair voting methods and efficient networks.
-
-You've now learned the **alphabet** of mathematics. Everything that follows is **spelling with it**.
-
----
-
-## What would change my mind
-
-If a student showed me that linear equations, functions, and systems of equations are not actually sufficient to model the constraint problems that citizens and professionals face—that more exotic machinery is needed at the outset—I would revise the scope. But every example I know (pricing, scheduling, medical dosing, elections, infrastructure) starts here. I'm confident in the choice.
-
-## Still puzzling
-
-I'm still not entirely satisfied with the integration section. It works, but it could be richer. A three-variable system (three pizzas, three constraints) might be more compelling, but it also exceeds the scope of this chapter. I've left this as a note for the next draft.
-
----
-
-## Tags
-
-`algebra` `equations` `functions` `systems` `variables` `constraint-modeling` `Descartes` `real-world-application`
+You have learned the alphabet. What follows is learning to write.
