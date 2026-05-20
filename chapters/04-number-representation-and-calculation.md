@@ -205,14 +205,104 @@ The quantity never changed. The year 1492 was always 1492. What changed was how 
 
 **Exercise 4.10** The chapter argues that the Hindu-Arabic system spread because it made *multiplication and division* teachable. Write a one-paragraph argument from the perspective of a medieval European merchant who has just encountered Hindu-Arabic numerals for the first time. What specific computational task would make you immediately abandon Roman numerals? Be concrete — choose an actual multiplication and work it out in both systems to make your case.
 
-## LLM exercises
+---
 
-**LLM Exercise 4.1** Ask an AI to explain the difference between a number and a numeral. Then evaluate whether its explanation makes the distinction clear to a student who just read this chapter. Did it give examples? Did it connect the distinction to why notation matters for computation? Write a paragraph on what the AI got right and what it left out.
+## LLM Exercise — Chapter 4: Number Representation and Calculation (Audit a Real-World System Project)
 
-**LLM Exercise 4.2** Give an AI this conversion problem: *Convert $3024_6$ to base 10, then convert the result back to base 6.* Solve it yourself first using the methods in this chapter. Then compare your process to the AI's. Did the AI show its work using expanded form and repeated division? Did it arrive at the correct answer? If there was a discrepancy, identify which step went wrong.
+**Project:** Audit one real-world system through 13 chapters of mathematics.
+**What you're building this chapter:** an analysis of how the system encodes information — account numbers, IDs, codes, SKUs — and what those encoding choices reveal.
+**Tool:** **Claude Project** (same system spec as Ch 1).
 
-**LLM Exercise 4.3** Ask an AI: *Why do computers use base 2 instead of base 10?* Evaluate the response. Does the AI explain the physical reason (two stable electronic states) or only the mathematical reason (only two symbols needed)? Does it mention the trade-off between compactness and symbol count? Write two sentences on what a complete answer should include that the AI's answer may have omitted.
+**The Prompt:**
 
-**LLM Exercise 4.4** Ask an AI to convert $100_{10}$ to base 2. Check the result using expanded form — add up $1 \times 2^k$ for each position with a 1-bit. Does the AI's binary numeral evaluate back to 100? If the AI made an error, describe what went wrong using the vocabulary from this chapter (expanded form, place value, power of the base).
+```
+Chapter 4 of my system-audit project. Chapter 4 covered:
+numbers vs. numerals; place value; the role of zero in
+positional notation; bases other than 10 (especially binary,
+base 6, base 60); historical numeration systems; why a base
+gets chosen.
 
-**LLM Exercise 4.5** Ask an AI to explain why the Babylonians used base 60. Evaluate whether the AI's explanation goes beyond "60 has many divisors" to explain *why* divisibility mattered for their specific needs (measurement, astronomy, commerce). Then in one paragraph, describe what the choice of base reveals about the problems a civilization was trying to solve — using at least two of the three historical examples from this chapter.
+Apply to my system. Every system encodes information in
+chosen formats. Surface those choices.
+
+1. **Identify three encoding schemes the system uses.**
+   Examples:
+   - Transit: route IDs (Red Line, Bus 39), station IDs
+     (numerical or alphabetical), fare types (zone-based
+     codes).
+   - Streaming: catalog IDs, user IDs, subscription tiers.
+   - Sports: jersey numbers, position codes, statistical
+     abbreviations (RBI, PER, xG).
+   - Hospital: ICD-10 codes, medical record numbers, triage
+     levels.
+   For each, document: what range of values, what the
+   alphabet is (digits 0-9; letters; combination), how
+   long.
+
+2. **Analyze the choice of base / alphabet for each.**
+   - If purely numeric, what base implicitly? (Decimal
+     for human-facing, but the underlying storage is
+     binary.)
+   - If alphanumeric, why? (Compactness — more compact
+     than decimal-only; collision-resistance — easier to
+     spell-check; accidental-confusion-resistance — like
+     omitting O and 0, I and 1.)
+   - If a checksum digit is used (credit card numbers, ISBN,
+     MRN), describe the algorithm.
+
+3. **Convert one system code to another base.** Take one
+   number in the system (an account number, a route code, a
+   batch ID). Convert it to:
+   - Binary (base 2).
+   - Hexadecimal (base 16).
+   - One historical base — pick from base 6 (Babylonian-
+     adjacent) or base 60.
+   Show your work using expanded form. Note which
+   representation is shortest, which is longest, which a
+   human can read fastest.
+
+4. **Find an encoding limitation.** Every encoding has a
+   capacity — a fixed-length code can only represent so
+   many distinct values. Calculate the capacity of one of
+   the system's encodings. Predict when the system might
+   run out of identifiers. (Famous examples: IPv4 address
+   exhaustion in 2011; Y2K in 2000; the 2038 problem with
+   32-bit Unix timestamps.)
+
+5. **Find one place the system's representation choice
+   reveals a design decision.** Why did the designers pick
+   THIS encoding? What were they optimizing for? What did
+   they sacrifice?
+
+End with: a one-page "encoding audit" of the system. Three
+encodings documented. One base-conversion of a real code.
+One capacity calculation predicting when the encoding might
+fail. One design-decision insight.
+```
+
+**What this produces:** An encoding audit. Most systems' design decisions show up in their encoding choices — what a system encodes verbosely vs. compactly says what it expects to scale.
+
+**Connection to previous chapters:** Builds on Ch 3 (the underlying counting / cardinality dictates encoding capacity). Builds on Ch 1 (the categories you identified are often what the encoding distinguishes).
+
+**Preview of next chapter:** Chapter 5 — apply algebra to the system's break-even, threshold, or tipping-point problems. Every system has at least one "when does X cross Y" question; this chapter solves yours.
+
+---
+
+## AI Wayback Machine
+
+**Al-Kindi** was 9th-century Arab philosopher and mathematician who developed the place-value Hindu-Arabic numeral system into a form Europe would later adopt.
+
+**Run this:**
+
+```
+Who is Al-Kindi, and how does their work connect to number representation we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about their career or ideas.
+```
+
+→ Search **"Al-Kindi"** on Wikipedia.
+
+**Now make the prompt better.** Try one of these:
+
+- Ask it to apply Al-Kindi's ideas to a specific concrete problem in this chapter.
+- Add a constraint: "Answer including criticisms or limits of Al-Kindi's framework."
+
+What changes? What gets better? What gets worse?

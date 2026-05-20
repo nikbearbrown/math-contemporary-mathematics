@@ -333,3 +333,102 @@ Chapter 8 on statistics uses linear regression, which fits a line to data. The s
 And Chapter 10 on geometry describes shapes with equations. The equation of a line is $y = mx + b$. The equation of a circle is $(x-h)^2 + (y-k)^2 = r^2$. The shapes are defined by the constraints. Algebra is the language geometry speaks.
 
 You have learned the alphabet. What follows is learning to write.
+---
+
+## LLM Exercise — Chapter 5: Algebra (Audit a Real-World System Project)
+
+**Project:** Audit one real-world system through 13 chapters of mathematics.
+**What you're building this chapter:** the system's break-even, threshold, or tipping-point problems solved algebraically.
+**Tool:** **Claude Project** (same system spec as Ch 1).
+
+**The Prompt:**
+
+```
+Chapter 5 of my system-audit project. Chapter 5 covered:
+equations as statements about unknowns; solving linear
+equations; functions as named relationships; systems of
+equations and the meaning of their solution; graphing.
+
+Apply to my system. Every real system has thresholds — places
+where a value crosses a line and the system's behavior
+changes. Algebra finds those thresholds.
+
+1. **Identify three thresholds in the system.** Examples:
+   - Transit: when does buying a monthly pass beat per-ride
+     fares (find ride count where they equal)? When does
+     adding a third bus on a route stop being worth the
+     marginal cost?
+   - Streaming: at what subscriber count does the next
+     server upgrade pay for itself?
+   - Restaurant: at what daily customer count does the
+     restaurant break even?
+   - Sports: at what record does a team mathematically
+     clinch a playoff spot?
+   - Hospital: at what occupancy rate does the ED start
+     diverting ambulances?
+
+2. **Set up the algebra for one threshold.** Pick the most
+   meaningful threshold. Write the equation that defines
+   the crossing point. Examples:
+   - Monthly pass break-even: 90 (monthly pass price) =
+     2.40 × n (per-ride fare × rides). Solve for n.
+   - Restaurant break-even: revenue = cost. Both are
+     functions of customer count c. Solve revenue(c) =
+     cost(c) for c.
+
+3. **Solve the equation. Show every step.** Don't skip
+   algebraic steps even if Claude wants to. The point of
+   the chapter is the procedure.
+
+4. **Set up a system of two equations** describing two
+   features of the system. Example: the linear cost function
+   AND the linear revenue function for a small operation in
+   the system. Solve the system. Identify the meaning of
+   the solution point graphically.
+
+5. **Sketch (or describe) the graph.** What does it look
+   like? Where's the threshold? What is the slope's real-
+   world meaning (cost per ride, revenue per customer)?
+   What is the y-intercept's real-world meaning (fixed
+   cost, baseline price)?
+
+6. **State the consequence.** Now that you know the
+   threshold value, what does it mean for the system?
+   Examples: the monthly-pass break-even at 37.5 rides
+   means commuters who take fewer than 38 rides per month
+   lose money buying the pass. The restaurant break-even
+   at 95 customers/day means a 90-customer day costs the
+   restaurant money.
+
+End with: a one-page "threshold audit" of the system. Three
+thresholds named. One solved with algebra. One system of
+equations solved. The decision-relevant interpretation of the
+solution.
+```
+
+**What this produces:** A threshold audit identifying the decision-relevant tipping points in the system. Algebra is most useful where it tells you when to do something (or when to stop).
+
+**Connection to previous chapters:** Often builds on Ch 3's cycles (thresholds often appear in cyclical patterns) and Ch 4's encoded values (codes often correspond to threshold tiers).
+
+**Preview of next chapter:** Chapter 6 — apply interest and amortization mathematics to the system's financial machinery. Every system involves money flowing through it; this chapter computes the interest, the amortization, and the credit-card-like dynamics if any.
+
+---
+
+## AI Wayback Machine
+
+**Emmy Noether** was founded modern abstract algebra in the 1920s — and proved the theorem connecting symmetries to conservation laws. She couldn't hold a salaried position in Germany because she was a woman.
+
+**Run this:**
+
+```
+Who is Emmy Noether, and how does their work connect to algebra we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about their career or ideas.
+```
+
+→ Search **"Emmy Noether"** on Wikipedia.
+
+**Now make the prompt better.** Try one of these:
+
+- Ask it to apply Emmy Noether's ideas to a specific concrete problem in this chapter.
+- Add a constraint: "Answer including criticisms or limits of Emmy Noether's framework."
+
+What changes? What gets better? What gets worse?

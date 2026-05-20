@@ -243,3 +243,102 @@ The inference tools built on this foundation — hypothesis testing, confidence 
 Chapter 11 on voting and Chapter 12 on graph theory both work with populations and representative subsets. The same question reappears: is this sample representative? Is this measurement honest? Is this summary the right one for the question being asked?
 
 You have learned to ask those questions. That is the most important thing this chapter teaches.
+---
+
+## LLM Exercise — Chapter 8: Statistics (Audit a Real-World System Project)
+
+**Project:** Audit one real-world system through 13 chapters of mathematics.
+**What you're building this chapter:** a statistical analysis of the system's published data — what averages reveal, what they hide, and what variability says.
+**Tool:** **Claude Project** (same system spec as Ch 1).
+
+**The Prompt:**
+
+```
+Chapter 8 of my system-audit project. Chapter 8 covered:
+data types; sampling methods and bias; measures of center
+(mean, median, mode); measures of spread (range, variance,
+standard deviation); the shape of a distribution
+(symmetric, skewed); the normal distribution and z-scores;
+inference from sample to population.
+
+Apply to my system. Most systems publish averaged data that
+hides the more interesting story underneath.
+
+1. **Find one published statistic the system reports.**
+   Examples:
+   - Transit: "average commute time"; "on-time percentage."
+   - Streaming: "average viewing time per user."
+   - Sports: "team's average points per game."
+   - Restaurant: "average check size."
+   - Hospital: "average ED wait time."
+   - Election: "average voter turnout."
+   Document the headline number AND the source.
+
+2. **Identify what the average is hiding.**
+   - Is the distribution skewed? (A long right tail of
+     extreme cases pulls the mean above the median.)
+   - Is there a bimodal pattern? (A second peak hidden
+     in the average.)
+   - Are there subgroups with very different distributions?
+     (The fleet-wide average ED wait masks the difference
+     between Mondays and Sundays; between 7 AM and 11 PM.)
+   Use whatever data is publicly available to disaggregate.
+
+3. **Compute mean, median, and mode for one disaggregated
+   subset.** Example: take ED wait times for a single
+   weekday vs. weekend day. Compute mean, median, and mode
+   for each. Where do they differ?
+
+4. **Compute the standard deviation (or describe the spread)
+   for that subset.** A system whose mean wait is 30 min
+   with a standard deviation of 5 min is very different
+   from a system whose mean wait is 30 min with a standard
+   deviation of 45 min — even though the headline number
+   is the same.
+
+5. **Apply z-scores to one user / customer / patient
+   experience.** For a particular case (your own commute
+   yesterday, a famous athlete's stat line, a published
+   ED wait time), compute the z-score relative to the
+   distribution. Was that experience 1 SD above the mean,
+   2 SD, more? What does that tell you?
+
+6. **Identify the sampling problem in the published data.**
+   - Selection bias: who's in the sample and who isn't?
+   - Survivorship bias: are dropouts excluded?
+   - Response bias: do only certain people respond?
+   - Self-reporting bias: are responses honest?
+   Pick one and explain how it shapes the headline number.
+
+End with: a one-page "statistical audit" of the system. The
+headline statistic. What it hides. The disaggregated mean /
+median / spread. One z-score interpretation. One sampling
+problem.
+```
+
+**What this produces:** A statistical audit. Headline statistics are usually marketing; this exercise pulls the actual story out from underneath them.
+
+**Connection to previous chapters:** Builds on Ch 7's probability (distributions are how probability shows up over many cases) and Ch 1's set-theoretic categories (disaggregation usually breaks the population into the categories you identified in Ch 1).
+
+**Preview of next chapter:** Chapter 9 — apply metric measurement and dimensional analysis to the system's units. Every system has units flowing through it; many have unit-confusion problems hiding in plain sight.
+
+---
+
+## AI Wayback Machine
+
+**W.E.B. Du Bois** was built foundational statistical sociology in 'The Philadelphia Negro' (1899) — applying rigorous quantitative methods to questions of race and inequality decades before the field was named.
+
+**Run this:**
+
+```
+Who is W.E.B. Du Bois, and how does their work connect to statistics we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about their career or ideas.
+```
+
+→ Search **"W.E.B. Du Bois"** on Wikipedia.
+
+**Now make the prompt better.** Try one of these:
+
+- Ask it to apply W.E.B. Du Bois's ideas to a specific concrete problem in this chapter.
+- Add a constraint: "Answer including criticisms or limits of W.E.B. Du Bois's framework."
+
+What changes? What gets better? What gets worse?

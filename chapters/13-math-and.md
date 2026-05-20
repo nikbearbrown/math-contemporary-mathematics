@@ -220,14 +220,139 @@ The principle is real. The overgeneralization is not. When you see $\phi$ claime
 
 **Exercise 13.10** Equal temperament requires 12 equal half-steps to span an octave (frequency ratio 2:1). Suppose instead you wanted to span an octave in 19 equal half-steps. (a) What frequency ratio would each step require? (b) Find which step count closest approximates the perfect fifth ratio $3:2$. (c) Some historical tuning systems used 19 or 31 equal steps rather than 12. What trade-off would a 19-step system offer compared to the standard 12-step equal temperament?
 
-## LLM exercises
+---
 
-**LLM Exercise 13.1** Ask an AI to explain why the ratio of consecutive Fibonacci numbers converges to the golden ratio. Evaluate whether the AI gives a conceptual explanation — that the golden ratio is the fixed point of the ratio recursion — or just notes the numerical convergence without explaining the mechanism. Write a paragraph on what a genuinely explanatory answer would include that a numerical demonstration alone misses.
+## LLM Exercise — Chapter 13: Math and... (Audit a Real-World System Project) — FINAL CLOSER
 
-**LLM Exercise 13.2** Ask an AI: *Why do sunflowers have Fibonacci spiral counts?* Evaluate whether the response identifies the golden angle ($\approx 137.5°$), explains why it arises from $\phi$, and explains why packing efficiency under rotational growth produces Fibonacci numbers. Does the AI distinguish between the mathematical mechanism and the numerical observation? Write two sentences on what separates a good explanation from a pattern-observation.
+**Project:** Audit one real-world system through 13 chapters of mathematics — final integration.
+**What you're building this chapter:** the aesthetic / pattern analysis + the **complete 13-lens integrated audit** of the system.
+**Tool:** **Claude Project** + **Cowork** for final assembly.
 
-**LLM Exercise 13.3** Give an AI this problem: *Middle C is 262 Hz. What is the frequency of the note 7 half-steps above middle C (a perfect fifth)?* Solve it yourself first using $f = 262 \times 2^{7/12}$. Compare your answer to the AI's. Did the AI use the equal-temperament formula, or did it use the idealized $3:2$ ratio instead? Are the two answers close? What does the difference reveal about the compromise of equal temperament?
+**The Prompt:**
 
-**LLM Exercise 13.4** Ask an AI to explain the difference between just intonation and equal temperament in music. Evaluate whether its explanation correctly identifies the trade-off: just intonation sounds purer in one key but cannot transpose; equal temperament enables transposition but makes every interval except the octave slightly impure. Does the AI name the mathematical constraint that forces this trade-off? Write a paragraph evaluating the completeness of the explanation.
+```
+Chapter 13 — the closing chapter — of my system-audit project.
+Chapter 13 covered: the golden ratio (φ ≈ 1.618); the
+Fibonacci sequence and its convergence to φ; the golden
+rectangle and its self-replicating property; equal temperament
+in music (the twelfth root of 2); the unifying idea that
+mathematics describes recurring proportional structures; the
+caveat that golden-ratio claims are over-applied (most
+"golden ratio in nature / art" claims are post-hoc).
 
-**LLM Exercise 13.5** Ask an AI to explain the golden rectangle and its self-replicating property — that cutting off a square always leaves another golden rectangle. Then ask it to explain why this connects to the logarithmic spiral. Evaluate whether the AI uses the algebraic property $\phi - 1 = 1/\phi$ to explain the self-replication, or just describes the visual pattern without the algebra. Write two sentences on what the algebraic explanation adds that the visual description alone cannot.
+Two parts.
+
+PART A — Pattern and Aesthetic Analysis.
+
+1. **Find a real proportion in the system.** Look honestly
+   for one place the system uses (or coincidentally shows)
+   a meaningful proportional structure. Examples:
+   - Transit: the ratio of express stops to local stops
+     on a typical line.
+   - Streaming: the ratio of recommended-to-not-recommended
+     content shown to a typical user.
+   - Sports: the ratio of regular-season to postseason
+     games; the geometric ratios of court / field.
+   - Restaurant: menu-pricing ratios (appetizer to entrée
+     to dessert).
+   - Hospital: bed-to-staff ratios.
+   Compute the ratio. Compare to φ ≈ 1.618 honestly — is
+   it close, or are you forcing it?
+
+2. **The honesty caveat.** The chapter explicitly warns
+   against over-applying golden-ratio reasoning. Apply that
+   caveat to your system. Where would a sloppy golden-ratio
+   analysis claim a pattern that isn't actually there?
+   This is the "naming what's not there" move.
+
+3. **Find one Fibonacci-like recursive structure.** Many
+   systems have something that doubles every period, or
+   grows at compound rates that approximate Fibonacci.
+   Identify one. Compute the convergence ratio of
+   consecutive terms.
+
+4. **Find one equal-temperament-like compromise.** Many
+   systems split a continuous resource into discrete
+   tiers using a logarithmic or geometric subdivision.
+   Examples: streaming bitrate tiers; transit fare zones;
+   restaurant pricing tiers; hospital triage levels.
+   Compute the subdivision ratio. Is it geometric (each
+   tier is r times the previous) or arithmetic (each tier
+   is t more than the previous)?
+
+5. **The unifying observation.** What does the system
+   reveal about how mathematics describes recurring
+   structures in human-designed systems? Is the
+   "mathematics is everywhere" claim defensible for your
+   system, or is it overreach?
+
+PART B — The 13-Lens Integrated Audit.
+
+Compile the complete audit of your system. Have Claude (with
+Cowork's help) produce a single 25-30 page document organized
+exactly as follows:
+
+1. **Executive summary** (1 page). The system in one
+   paragraph. The most important finding from the audit
+   in one paragraph. The most important UNANSWERED question
+   in one paragraph.
+
+2. **System specification** (1-2 pages). The Ch 1 spec,
+   updated with whatever you learned across the audit.
+
+3. **The 13 chapter audits** (12-20 pages, ~1.5 per
+   chapter). Lightly edited for cohesion. Cross-reference
+   findings — when Ch 7's probability finding connects
+   to Ch 11's voting paradox, name the connection
+   explicitly.
+
+4. **Three connecting observations** (1-2 pages). What
+   does the system look like from one of these heights?
+   - Where do multiple lenses agree about a system feature?
+   - Where do multiple lenses disagree about it?
+   - What does the system do that no single lens caught,
+     but the integration of several lenses reveals?
+
+5. **What I'd recommend** (1 page). Three concrete
+   recommendations for the system's owners / operators
+   / users based on the audit. Defended with the
+   audit findings.
+
+6. **What would change my mind** (½ page). What new
+   information about the system would force a substantial
+   revision of the audit?
+
+End with a 200-word **Coda — What 13 Lenses Taught Me About
+Mathematics** (not just about the system). The reflective
+close — most students discover that mathematics is not 13
+disconnected topics but 13 different angles on the same
+underlying activity (counting, measuring, modeling, comparing,
+reasoning). Naming that integration is the chapter's gift.
+```
+
+**What this produces:** Pattern analysis + the compiled 25-30 page integrated audit. The "what would change my mind" section is the intellectual-honesty discipline; the Coda is the reflective close.
+
+**Connection to previous chapters:** Every prior chapter feeds the final audit. The compilation tests whether the 13 mathematical lenses cohere into an integrated reading.
+
+**Preview of next chapter:** There is no next chapter — this is the close. What's next is the audit itself: a 25-30 page document demonstrating that mathematics is not a list of formulas but an integrated way of looking at any system in the world. Pin the audit somewhere durable. Use it as the template for the next time anyone asks you to "explain how this system works."
+
+---
+
+## AI Wayback Machine
+
+**Hannah Fry** was contemporary British mathematician whose work makes the connections between math and modern life — algorithms, romance, fairness, justice — visible to general audiences.
+
+**Run this:**
+
+```
+Who is Hannah Fry, and how does their work connect to math and the modern world we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about their career or ideas.
+```
+
+→ Search **"Hannah Fry"** on Wikipedia.
+
+**Now make the prompt better.** Try one of these:
+
+- Ask it to apply Hannah Fry's ideas to a specific concrete problem in this chapter.
+- Add a constraint: "Answer including criticisms or limits of Hannah Fry's framework."
+
+What changes? What gets better? What gets worse?

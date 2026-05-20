@@ -217,3 +217,111 @@ Write a one-page recommendation that: (a) names a specific voting method and sta
 Chapter 12 turns to graph theory. The connection is not decorative. When legislative districts are drawn — the process of dividing a state into geographic units, each sending one representative — the result is a graph: nodes are communities, edges are shared boundaries. Gerrymandering is the deliberate manipulation of that graph to favor one party. Mathematicians now use graph algorithms to test thousands of alternate district maps and determine whether the current map is an outlier — constructed, rather than neutral.
 
 The impossibility theorems from this chapter set the context. Gerrymandering is possible precisely because the choice of district boundaries is itself a political choice that mathematics constrains but does not determine. The same pattern, again: math defines the space of what is possible; politics fills it.
+---
+
+## LLM Exercise — Chapter 11: Voting and Apportionment (Audit a Real-World System Project)
+
+**Project:** Audit one real-world system through 13 chapters of mathematics.
+**What you're building this chapter:** an analysis of any aggregation, ranking, or apportionment mechanism in the system — voting methods applied, fairness criteria checked, paradoxes surfaced.
+**Tool:** **Claude Project** (same system spec as Ch 1).
+
+**The Prompt:**
+
+```
+Chapter 11 of my system-audit project. Chapter 11 covered:
+voting methods (plurality, majority, plurality-with-runoff,
+Borda count, instant-runoff/IRV, Condorcet); fairness
+criteria (majority, monotonicity, Condorcet, independence
+of irrelevant alternatives); Arrow's impossibility theorem
+(no voting method satisfies all four reasonable criteria
+simultaneously); apportionment methods (Hamilton, Jefferson,
+Webster); apportionment paradoxes (Alabama, population, new
+states).
+
+Apply to my system. Most systems aggregate or rank or
+allocate something; the rules they pick determine which
+outcomes are possible.
+
+1. **Identify one aggregation / ranking / allocation
+   mechanism in the system.** Examples:
+   - Streaming: the recommendation algorithm (it ranks
+     content for you using some implicit voting between
+     features).
+   - Sports: the playoff seeding system (multiple teams
+     compete via scheduled games; ranking aggregates
+     game outcomes into a final order).
+   - Election: literally a voting system.
+   - Restaurant: customer-rating aggregation (5-star
+     averages); top-of-menu placement.
+   - Hospital: triage scoring (a ranking method that
+     allocates limited capacity).
+   - Transit: fare zone allocation (an apportionment
+     problem if revenue is divided across zones).
+
+2. **Map the system's aggregation method to a textbook
+   voting method.** Example: 5-star ratings averaged ≈
+   Borda count. A leaderboard based on win count ≈
+   plurality across head-to-head contests. An IRV
+   election explicitly is IRV.
+
+3. **Run a SECOND voting method on the same data.** Take
+   the same input (the same ratings, the same head-to-
+   heads, the same ballots) and aggregate it using a
+   different method. Does the winner change? How?
+
+4. **Test for fairness-criterion violations.** Pick two
+   criteria from the chapter. Check whether the system's
+   actual mechanism satisfies them on a recent real case.
+   Examples:
+   - Independence of irrelevant alternatives: does adding
+     a small amount of new content change which of two
+     other items the system recommends first?
+   - Monotonicity: if a team wins MORE games, can it
+     somehow drop in the standings?
+   - Majority: can a candidate (or item, or recommendation)
+     with 60% support lose to one with 40%?
+
+5. **If the system involves apportionment** (allocating
+   limited slots / seats / resources to categories
+   proportional to size), apply at least two apportionment
+   methods (Hamilton, Webster, Jefferson) to a real
+   allocation case. Compare the answers. Identify any
+   apportionment paradox that could arise.
+
+6. **Connect to Arrow's theorem.** Identify one concrete
+   trade-off the system has chosen. Arrow's theorem
+   guarantees the system sacrifices SOMETHING — name what
+   it sacrificed and what it preserved.
+
+End with: a one-page "fairness audit" of the system. The
+aggregation mechanism. Mapped to a textbook voting method.
+A second method's outcome compared. Two fairness criteria
+checked. The Arrow trade-off named.
+```
+
+**What this produces:** A fairness audit revealing the choices the system has made about what to optimize at the cost of what. Arrow's theorem guarantees something has been sacrificed — naming it is the chapter's point.
+
+**Connection to previous chapters:** Builds on Ch 8 (the data being aggregated has distributions analyzed in Ch 8) and Ch 7 (probabilistic outcomes feed many aggregation systems).
+
+**Preview of next chapter:** Chapter 12 — apply graph theory to the system. Vertices, edges, Euler paths, shortest-path problems, the traveling salesperson. Almost every system can be modeled as a graph; the right model surfaces structural questions the system itself doesn't ask.
+
+---
+
+## AI Wayback Machine
+
+**Kenneth Arrow** was economist whose 1951 impossibility theorem proved that no voting rule can simultaneously satisfy a short list of seemingly obvious fairness conditions.
+
+**Run this:**
+
+```
+Who is Kenneth Arrow, and how does their work connect to voting and apportionment we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about their career or ideas.
+```
+
+→ Search **"Kenneth Arrow"** on Wikipedia.
+
+**Now make the prompt better.** Try one of these:
+
+- Ask it to apply Kenneth Arrow's ideas to a specific concrete problem in this chapter.
+- Add a constraint: "Answer including criticisms or limits of Kenneth Arrow's framework."
+
+What changes? What gets better? What gets worse?

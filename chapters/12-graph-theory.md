@@ -215,3 +215,109 @@ Whether you are routing mail carriers (edges), planning delivery tours (vertices
 I do not fully understand why degree conditions are sufficient and necessary for Euler circuits but have no analogue for Hamilton cycles. The intuition is clear — edges and vertices are different objects, and local structure governs the former while global structure governs the latter. But the formal explanation of why local structure suffices for one and not the other runs into complexity theory and algebraic combinatorics that this chapter does not reach.
 
 The gap between the two problems is one of the clearest signatures of the P vs. NP divide. Nobody fully understands why that divide exists where it does, or whether it is as absolute as we believe. The Königsberg bridges and the traveling salesman are, in some sense, still waiting for a deeper explanation.
+---
+
+## LLM Exercise — Chapter 12: Graph Theory (Audit a Real-World System Project)
+
+**Project:** Audit one real-world system through 13 chapters of mathematics.
+**What you're building this chapter:** a graph-theoretic model of the system — vertices, edges, paths, Euler / Hamilton circuits, shortest-path or coverage problem solved on the graph.
+**Tool:** **Claude Project** (same system spec as Ch 1).
+
+**The Prompt:**
+
+```
+Chapter 12 of my system-audit project. Chapter 12 covered:
+graphs as vertices + edges; vertex degree; Euler's argument
+(an Euler circuit exists iff every vertex has even degree —
+the Königsberg bridges, 1736); the Chinese postman problem
+(find the shortest route that covers every edge); the
+traveling salesperson problem (find the shortest route that
+visits every vertex — NP-hard).
+
+Apply to my system. Most systems can be modeled as graphs;
+the modeling itself is half the work.
+
+1. **Model your system as a graph.** Choose vertices and
+   edges deliberately. Examples:
+   - Transit: stations as vertices, segments between
+     adjacent stations as edges, segment travel times
+     as edge weights.
+   - Streaming: content items as vertices, "users who
+     watched both" relationships as edges.
+   - Sports: teams as vertices, games played as edges
+     (or wins as directed edges).
+   - Restaurant: tables and stations as vertices, server
+     paths as edges.
+   - Hospital: ED bays and resources as vertices, patient
+     transfers as edges.
+   - Election: precincts as vertices, ballot-transport
+     routes as edges.
+   State the choice clearly. List the vertex set and at
+   least 5 representative edges with weights.
+
+2. **Compute degrees.** What's the highest-degree vertex
+   (the most-connected node)? What does that mean in real
+   terms? (The most-connected station; the most-watched
+   content; the busiest player; the most-allocated bay.)
+
+3. **Check for an Euler circuit.** Does your graph have
+   one? (Recall: every vertex must have even degree.) If
+   yes, does the system actually use it? If no, identify
+   which vertices have odd degree and what real-world
+   feature creates the asymmetry.
+
+4. **Solve a real shortest-path problem on your graph.**
+   Pick two specific vertices. Find the shortest path
+   between them. Show the work (Dijkstra-style if you
+   want, or just by inspection on a small graph).
+
+5. **Apply the Chinese postman or TSP framing.** Pick
+   one and apply it:
+   - Postman (cover every edge): if your system has a
+     coverage requirement (a postal route, a maintenance
+     schedule, an inspection cycle), what's the optimal
+     route?
+   - TSP (visit every vertex): if your system has a
+     visit-every-node requirement (a tour, a delivery
+     route, a meter-reader's day), what's the (approximately)
+     shortest route? Explain why the exact answer is
+     computationally hard and what heuristic you used.
+
+6. **Identify one structural inefficiency the graph
+   reveals.** Often the graph view exposes a missing
+   edge (a connection that would dramatically shorten
+   paths) or a redundant edge (a connection that adds
+   cost without value). Name one for your system.
+
+End with: a one-page "structural audit" of the system. The
+graph model. The high-degree vertex. The Euler-circuit check.
+The shortest-path solution. The TSP / postman framing. The
+structural inefficiency identified.
+```
+
+**What this produces:** A structural audit. Graph theory's value is that it surfaces structural questions the system itself doesn't ask — a missing edge, a high-degree node, an inefficient route.
+
+**Connection to previous chapters:** Builds on Ch 10 (geometric distances often become edge weights) and Ch 1 (the categories you identified often correspond to vertex labels).
+
+**Preview of next chapter:** Chapter 13 — the close. Apply golden ratio, Fibonacci, equal-temperament, and aesthetic-mathematical reasoning to the system. Most systems have at least one place where pattern, proportion, or musical-ratio reasoning illuminates a design choice. Then the final synthesis: a 25-30 page integrated audit using all 13 lenses.
+
+---
+
+## AI Wayback Machine
+
+**Paul Erdős** was prolific Hungarian mathematician who wrote over 1,500 papers and lived out of suitcases his entire adult life — and built a substantial portion of modern graph theory.
+
+**Run this:**
+
+```
+Who is Paul Erdős, and how does their work connect to graph theory we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about their career or ideas.
+```
+
+→ Search **"Paul Erdős"** on Wikipedia.
+
+**Now make the prompt better.** Try one of these:
+
+- Ask it to apply Paul Erdős's ideas to a specific concrete problem in this chapter.
+- Add a constraint: "Answer including criticisms or limits of Paul Erdős's framework."
+
+What changes? What gets better? What gets worse?

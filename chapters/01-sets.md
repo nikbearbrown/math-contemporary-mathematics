@@ -307,3 +307,101 @@ The one thing to carry forward, the one place where students consistently go wro
 **LLM Exercise 1.4** Prompt an AI: *List all subsets of the set $\{1, 2, 3, 4\}$ and tell me how many there are.* Check the AI's output. Did it list all $2^4 = 16$ subsets? Did it include the empty set and the full set? If it made any errors, describe them precisely using the vocabulary from this chapter.
 
 **LLM Exercise 1.5** Ask an AI to explain Cantor's diagonal argument — why the real numbers are uncountably infinite while the natural numbers are countably infinite. You haven't learned the proof in this chapter, and you're not expected to fully evaluate the mathematics. But you can evaluate whether the AI's explanation is clear, whether it distinguishes between countable and uncountable infinity, and whether it gives you any intuition for why the two sizes are genuinely different. Write a paragraph reporting what you found.
+---
+
+## LLM Exercise — Chapter 1: Sets (Audit a Real-World System Project)
+
+**Project:** Pick one specific real-world system and analyze it through every chapter's mathematics. By Chapter 13 you will have produced a 25-30 page comprehensive analysis demonstrating 13 mathematical lenses on one target. The system you choose in this chapter carries through every later chapter.
+**What you're building this chapter:** the system specification + the first analytical pass — a set-theoretic diagram of the system's user / customer / product / category groupings.
+**Tool:** **Claude Project** (set the system spec at the top so every later chapter references it) + Cowork for the audit folder.
+
+**The Prompt:**
+
+```
+I'm starting a 13-chapter project where I analyze ONE real-world
+system through every chapter of a contemporary-mathematics
+textbook. I need to pick the system and then do the first
+analytical pass.
+
+Step 1 — Pick the system. Help me choose ONE of the following
+that I can actually research:
+
+   a. A city's transit network (NYC subway, Boston T, your
+      hometown bus system).
+   b. A streaming-service catalog (Netflix, Spotify, Disney+).
+   c. A sports league (NBA, NFL, English Premier League).
+   d. A fast-food chain's menu and pricing (McDonald's, Chipotle).
+   e. A university's enrollment / course-catalog system.
+   f. An apartment building / housing complex.
+   g. A hospital's emergency department workflow.
+   h. A grocery store's inventory and pricing.
+   i. Your country's tax brackets and deductions.
+   j. A specific election (with public ballot results).
+
+Reject any "system" too vague to count things in — the system
+must have countable elements (users, customers, products,
+categories, routes, items, slots).
+
+Step 2 — Specify the system. Once chosen, write a 200-word
+specification: what the system is, who uses it, what it
+produces, what numerical / quantitative data is publicly
+available about it, where I can find that data.
+
+Step 3 — Apply Chapter 1's machinery (sets) to the system:
+
+   1. Identify 3-4 meaningful set-categorizations of the
+      system's elements. (Example for a transit network:
+      lines, stations, fare zones, time periods.)
+
+   2. Pick TWO of the categorizations and build a Venn
+      diagram showing their intersection. (Example:
+      stations that are on the Red Line AND in fare
+      zone 1.)
+
+   3. Calculate cardinalities — how many elements in each
+      set, in each intersection, in each union.
+
+   4. Apply the cardinality formula:
+      |A ∪ B| = |A| + |B| − |A ∩ B|. Verify your numbers.
+
+   5. Identify one real subset relationship in the system
+      and one pair of complement sets. Use proper set
+      notation.
+
+   6. Apply De Morgan's laws to one specific case in the
+      system. (Example: "stations that are NOT (Red Line
+      OR fare zone 1)" vs. "stations that are NOT Red Line
+      AND NOT fare zone 1.")
+
+End with: a one-paragraph "system spec" + a Venn diagram (drawn
+in markdown / ASCII / image) + a table of cardinalities. Save the
+system spec at the top of your Claude Project — every later
+chapter references it.
+```
+
+**What this produces:** A locked-in system specification + first analytical pass demonstrating set theory on the system. The system spec is the foundation document.
+
+**Connection to previous chapters:** None — this is the project foundation.
+
+**Preview of next chapter:** Chapter 2 — apply logic and truth tables to the if-then rules your system runs on (eligibility rules, billing rules, scheduling rules). You'll formalize at least three of the system's logical rules and check whether the system's stated logic matches what it actually does.
+
+---
+
+## AI Wayback Machine
+
+**Georg Cantor** was founded set theory in the 1870s — showing that there are different sizes of infinity. He died in a sanatorium, his work having been bitterly attacked.
+
+**Run this:**
+
+```
+Who is Georg Cantor, and how does their work connect to set theory we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about their career or ideas.
+```
+
+→ Search **"Georg Cantor"** on Wikipedia.
+
+**Now make the prompt better.** Try one of these:
+
+- Ask it to apply Georg Cantor's ideas to a specific concrete problem in this chapter.
+- Add a constraint: "Answer including criticisms or limits of Georg Cantor's framework."
+
+What changes? What gets better? What gets worse?

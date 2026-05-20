@@ -225,3 +225,104 @@ The calculation is not hard. It requires only what this chapter taught you: the 
 I do not fully understand why compound interest is not a universal requirement in secondary school mathematics. It directly affects every person who borrows money, opens a savings account, or pays a credit card bill — which is most people, eventually. The calculation requires only algebra taught by tenth grade. The civic stakes are as high as anything in mathematics education.
 
 The gap is a policy puzzle, not a mathematical one. The mathematics is settled. The question of why it is not universally taught remains open, and I find it genuinely difficult to explain.
+---
+
+## LLM Exercise — Chapter 6: Money Management (Audit a Real-World System Project)
+
+**Project:** Audit one real-world system through 13 chapters of mathematics.
+**What you're building this chapter:** the system's financial machinery — interest, amortization, fees, the time value of money in the system's cash flows.
+**Tool:** **Claude Project** (same system spec as Ch 1).
+
+**The Prompt:**
+
+```
+Chapter 6 of my system-audit project. Chapter 6 covered:
+simple vs. compound interest; the compound-interest formula
+A = P(1 + r/n)^(nt); amortization (loans dying through
+scheduled payments); the credit-card trap (minimum payments
+applied to principal AFTER interest); the same machine working
+in both directions (your savings vs. your debt).
+
+Apply to my system. Even systems that aren't directly
+financial have money flowing through them.
+
+1. **Identify three financial flows in the system.**
+   Examples:
+   - Transit: fare collection; capital costs and bond
+     financing; subsidies.
+   - Streaming: subscription revenue; content licensing
+     costs; ad revenue (if applicable).
+   - Sports: ticket sales; broadcast rights; player
+     contracts.
+   - Restaurant: food costs; labor; rent; revenue.
+   - Hospital: patient billing; insurance reimbursement;
+     equipment financing.
+
+2. **Compute one interest calculation in the system.**
+   Examples:
+   - Capital project: city issues a $500M bond at 4.5%
+     for 30 years. What is the annual debt service?
+   - Subscription: streaming service holds $X in cash
+     reserves earning 4%. What is annual interest income?
+   - Restaurant: a small business loan of $200K at 7%
+     for 7 years. What is the monthly payment?
+   Use compound interest. Show the formula. Show the
+   plug-in.
+
+3. **Build an amortization schedule (first 6 periods)
+   for one debt-like flow in the system.** Show: starting
+   balance, payment, interest portion, principal portion,
+   ending balance. Don't fake any numbers — derive them.
+
+4. **Find a "credit card dynamic" in the system.** Many
+   non-credit-card situations have the same structure:
+   small payments mostly servicing accumulating fees /
+   interest / overhead, with the principal barely moving.
+   Examples: late-fee accumulation in city parking
+   tickets; accruing interest on unpaid medical bills;
+   library fines; vehicle-impound fees.
+   - Identify one such dynamic in your system.
+   - Compute how long it would take a typical user /
+     customer / payer to dig out from a starting debt
+     paying just the minimum.
+
+5. **Compare the same machine in both directions.** Pick
+   one financial decision the system implicitly forces
+   (whether to buy a monthly pass; whether to subscribe
+   yearly vs. monthly; whether to finance equipment vs.
+   buy outright). Show the same compound-interest
+   machinery working in both directions. Show what changes
+   when you're the borrower vs. when you're the lender.
+
+End with: a one-page "money audit" of the system. Three
+financial flows. One interest calculation. One 6-period
+amortization schedule. One credit-card-style dynamic. One
+both-directions comparison.
+```
+
+**What this produces:** A financial audit revealing the time-value-of-money machinery operating in the system. Most systems are quietly running compound-interest calculations on someone — students often don't notice until they've seen the schedule on paper.
+
+**Connection to previous chapters:** Builds on Ch 5 (algebraic solving of break-even equations) and Ch 3 (cycles often correspond to billing periods).
+
+**Preview of next chapter:** Chapter 7 — apply probability to the system. What's the probability that a user / customer / patient encounters X? What's the expected value of the system's typical outcome? Where is the system implicitly running a casino on its users?
+
+---
+
+## AI Wayback Machine
+
+**Robert Shiller** was Nobel-winning economist whose work on behavioral finance reframed money management around the predictable irrationalities of human decision-making.
+
+**Run this:**
+
+```
+Who is Robert Shiller, and how does their work connect to money management we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about their career or ideas.
+```
+
+→ Search **"Robert Shiller"** on Wikipedia.
+
+**Now make the prompt better.** Try one of these:
+
+- Ask it to apply Robert Shiller's ideas to a specific concrete problem in this chapter.
+- Add a constraint: "Answer including criticisms or limits of Robert Shiller's framework."
+
+What changes? What gets better? What gets worse?

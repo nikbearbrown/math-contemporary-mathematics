@@ -213,14 +213,108 @@ The deepest reason to learn geometry is this: it teaches you to extract informat
 
 **Exercise 10.11** A surveyor wants to measure the width of a river. She stands at point $A$ on one bank and marks a point $B$ directly across the river on the opposite bank. She walks 40 meters along her bank to point $C$, perpendicular to the line $AB$. From $C$, she measures the angle to $B$ and calculates $CB = 30$ meters. (a) Draw a diagram of the situation, labeling all three points and all given measurements. (b) Identify the right angle in the triangle. (c) Calculate the width of the river $AB$.
 
-## LLM exercises
+---
 
-**LLM Exercise 10.1** Ask an AI to explain the difference between perimeter and area, then evaluate whether its explanation makes the distinction clear to someone who might confuse them. Does it give examples? Does it explain the units difference (linear vs. square) and what happens to each when you scale a shape? Write a paragraph evaluating what the AI got right and what it left out.
+## LLM Exercise — Chapter 10: Geometry (Audit a Real-World System Project)
 
-**LLM Exercise 10.2** Give an AI this problem: *A right triangle has legs of 5 cm and 12 cm. Find the hypotenuse.* Solve it yourself first using the Pythagorean theorem. Then compare your approach to the AI's. Did the AI set up the formula correctly — identifying which sides are legs and which is the hypotenuse? Did it check whether the result is a Pythagorean triple?
+**Project:** Audit one real-world system through 13 chapters of mathematics.
+**What you're building this chapter:** the system's spatial structure — distances, areas, Pythagorean relationships, similar-triangle scaling.
+**Tool:** **Claude Project** (same system spec as Ch 1).
 
-**LLM Exercise 10.3** Ask an AI to explain why the Pythagorean theorem works — not just what it says, but the geometric reason behind it. Evaluate whether the AI's explanation uses the areas-of-squares interpretation (the square on the hypotenuse equals the sum of the squares on the legs) or just restates the formula. Write two sentences on what a genuinely explanatory answer would include that a formula restatement misses.
+**The Prompt:**
 
-**LLM Exercise 10.4** Ask an AI: *Two angles are supplementary. One measures 3x + 15 degrees and the other measures 2x + 10 degrees. Find x and the measure of each angle.* Solve it yourself first. Check whether the AI sets up the equation $( 3x + 15) + (2x + 10) = 180$, solves correctly, and verifies that the two angles sum to 180°. If it made an error, identify which step went wrong using the vocabulary from this chapter.
+```
+Chapter 10 of my system-audit project. Chapter 10 covered:
+the basic vocabulary of geometry (point, line, angle, polygon);
+perimeter (boundary length) and area (interior coverage);
+the Pythagorean theorem (a² + b² = c² for right triangles);
+similar triangles and their use in measuring inaccessible
+quantities.
 
-**LLM Exercise 10.5** Ask an AI to explain what similar triangles are and why they are useful. Then evaluate whether its explanation goes beyond the definition ("same angles, proportional sides") to explain why the property is powerful — for example, that it lets you measure things you cannot physically reach by setting up a small-scale version. Write a paragraph describing at least one real-world application the AI mentioned and whether you find the explanation convincing.
+Apply to my system. Many systems have a spatial layout that
+matters; some have hidden geometric inefficiencies.
+
+1. **Identify the spatial structure of your system.** Three
+   examples:
+   - Transit: routes as line segments, stations as points,
+     fare zones as regions.
+   - Streaming: server geography (CDN edge nodes), latency
+     proportional to distance.
+   - Sports: court / field geometry, player positions, lines
+     of sight.
+   - Restaurant: floor plan, table placements, kitchen-to-
+     table flow lines.
+   - Hospital: ED bays, treatment rooms, ambulance bays,
+     internal corridors.
+   - Election: polling-place geographic distribution.
+   Map (or describe) the spatial structure as concretely as
+   the publicly available data allows.
+
+2. **Compute one real distance using the Pythagorean
+   theorem.** Pick two points in the system. Calculate
+   the straight-line distance between them. Compare to
+   the actual path distance (which is usually longer
+   because real paths aren't straight). Compute the
+   "directness ratio": straight-line / actual.
+
+3. **Compute one real area in the system.** Examples:
+   - The fare zone of a transit system.
+   - The "service area" of an ED (geographic radius from
+     which patients arrive).
+   - A polling district.
+   - A streaming-service CDN's coverage region.
+   Use the right area formula for the shape (rectangle,
+   circle, polygon). Show your work.
+
+4. **Apply similar triangles to one scaling problem in the
+   system.** Examples:
+   - If a city doubles in area, how does the average
+     transit commute scale? (Hint: not linearly.)
+   - If a streaming service expands from 1 city to 10
+     similar cities, what scales linearly and what scales
+     differently?
+   - If you increase a sports field's dimensions by 20%,
+     what happens to the area?
+
+5. **Find one geometric inefficiency.** Identify one place
+   where the system's spatial layout creates extra cost or
+   delay. Examples:
+   - Transit: a route that detours significantly to serve
+     low-ridership stops.
+   - Restaurant: a kitchen layout requiring excessive
+     server walking.
+   - Hospital: an ED layout requiring patients to traverse
+     long corridors during transfer.
+
+End with: a one-page "spatial audit" of the system. The
+spatial structure. One Pythagorean distance + directness
+ratio. One area calculation. One scaling analysis. One
+identified geometric inefficiency.
+```
+
+**What this produces:** A spatial audit. Geometry is most useful when it surfaces inefficiencies that the system's stated logic doesn't see. The directness ratio is the geometry equivalent of the "what does the average hide" question from Ch 8.
+
+**Connection to previous chapters:** Builds on Ch 9 (units of distance, area, volume), Ch 1 (spatial regions correspond to set categories), and Ch 5 (scaling problems often reduce to algebra).
+
+**Preview of next chapter:** Chapter 11 — apply voting and apportionment theory to any aggregation, ranking, or decision mechanism in the system. If your system aggregates user preferences in any way (rankings, recommendations, votes, ratings), Arrow's theorem and the apportionment paradoxes apply.
+
+---
+
+## AI Wayback Machine
+
+**Bonaventura Cavalieri** was 17th-century Italian mathematician whose 'method of indivisibles' anticipated integral calculus — and whose principle for comparing areas and volumes still appears in every geometry textbook.
+
+**Run this:**
+
+```
+Who is Bonaventura Cavalieri, and how does their work connect to geometry we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about their career or ideas.
+```
+
+→ Search **"Bonaventura Cavalieri"** on Wikipedia.
+
+**Now make the prompt better.** Try one of these:
+
+- Ask it to apply Bonaventura Cavalieri's ideas to a specific concrete problem in this chapter.
+- Add a constraint: "Answer including criticisms or limits of Bonaventura Cavalieri's framework."
+
+What changes? What gets better? What gets worse?

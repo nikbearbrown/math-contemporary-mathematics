@@ -66,3 +66,39 @@ Bear authorized the bulk run after pilot. 12 chapters dispatched to parallel sub
 - Chapter 10 (Geometry) at 3,911 words — same situation.
 - All deferred topics across all chapters are catalogued in their respective bookmap files. A "deferred topic" pass could fill an appendix volume.
 
+
+---
+
+## 2026-05-12 — Running Project Exercises generated (Audit a Real-World System)
+
+Running-project LLM exercises added to all 13 chapters. Project: **Audit One Real-World System Through 13 Lenses** — student picks one specific system in Ch 1 (a transit network, streaming catalog, sports league, restaurant, hospital, election, university enrollment system, etc.), then analyzes it through every chapter's mathematics. Final deliverable: a 25-30 page integrated audit using all 13 mathematical lenses on a single target.
+
+**Replaced 27 pre-existing chapter-specific verify-the-LLM exercises** across chapters 02, 03, 04, 07, 10, 13. The legacy format (5 short prompts per chapter, asking the student to ask an LLM something and check the answer) was pedagogically sound for the audience but did not connect chapters into a project. Per user direction, replaced with single running-project block per chapter that builds toward the integrated audit.
+
+| Ch | Topic | Audit lens added |
+|---|---|---|
+| 01 | Sets | System spec + set-theoretic categorization (Venn diagram, cardinalities, De Morgan) |
+| 02 | Logic | Logical audit — formalize 3 if-then rules, identify 1 invalid argument, De Morgan on system language |
+| 03 | Real Numbers / Number Theory | Divisibility audit — cycles via LCM, shared structure via GCD, fraction reduction, irrational appearances |
+| 04 | Number Representation | Encoding audit — 3 encoding schemes, base conversion, capacity calculation, design-decision insight |
+| 05 | Algebra | Threshold audit — 3 thresholds, one solved with algebra, one system of equations |
+| 06 | Money Management | Money audit — 3 financial flows, interest calc, 6-period amortization, credit-card-style dynamic |
+| 07 | Probability | Probability audit — 3 events, complement trick, EV calc, identified "casino" feature |
+| 08 | Statistics | Statistical audit — disaggregation, mean/median/spread, z-score, sampling problem |
+| 09 | Metric Measurement | Units audit — inventory, conversion vulnerability, dimensional analysis, scaling factor, reasonableness check |
+| 10 | Geometry | Spatial audit — Pythagorean distance + directness ratio, area calc, similar-triangle scaling, geometric inefficiency |
+| 11 | Voting & Apportionment | Fairness audit — map system to voting method, run second method, fairness criteria check, Arrow trade-off named |
+| 12 | Graph Theory | Structural audit — graph model, high-degree vertex, Euler check, shortest path, TSP/postman framing |
+| 13 | "Math and..." + CLOSER | Pattern analysis (with honesty caveat) + **compiled 25-30 page integrated audit** (executive summary, 13 chapter audits, 3 connecting observations, recommendations, what-would-change-my-mind, 200-word coda) |
+
+**Project shape:** Persistent Claude Project across all 13 chapters. The system spec drafted in Ch 1 carries forward; every chapter adds an analytical lens. Final deliverable in Ch 13 is the 25-30 page integrated audit organized in 6 sections.
+
+**Calibration choices:**
+- Ch 1 forces system specification — the prompt rejects systems "too vague to count things in" and requires a 200-word spec saved to the Project.
+- Ch 13's PART A includes an explicit honesty caveat against over-applying golden-ratio reasoning — the chapter itself warns about this and the exercise enforces it.
+- Ch 13's coda asks the student to reflect on what 13 lenses taught them about MATHEMATICS (not just about the system).
+- Each chapter's exercise references prior-chapter findings so the project genuinely accumulates.
+
+**Audience flag:** This project is more analytically demanding than Project 1 (Daily-Life Casebook) would have been. Some gen-ed students may find it stretched. The user picked it deliberately knowing this — the artifact is more impressive at the cost of accessibility.
+
+**No follow-ups flagged.**

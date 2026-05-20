@@ -217,14 +217,107 @@ And that asymmetry — random in the short run, predictable in the long run — 
 
 **Exercise 7.11** The gambler's fallacy is the belief that after a string of losses, a win is "due." Using what you know about independence and expected value, write a two-paragraph explanation of why this belief is wrong. In the first paragraph, explain why the wheel has no memory. In the second paragraph, explain what *does* happen in the long run — and why that is not the same thing as a single outcome being "due."
 
-## LLM exercises
+---
 
-**LLM Exercise 7.1** Ask an AI to explain the difference between theoretical probability, empirical probability, and subjective probability, then evaluate whether its explanation gives a clear example of each. Does it say when each type is appropriate to use — and crucially, what can go wrong when you use the wrong one? Write a paragraph evaluating what the AI got right and what it left out.
+## LLM Exercise — Chapter 7: Probability (Audit a Real-World System Project)
 
-**LLM Exercise 7.2** Give an AI this problem: *A bag contains 5 red balls and 3 blue balls. You draw two balls without replacement. What is the probability that both are red?* Solve it yourself first. Then compare your approach to the AI's. Did it correctly account for the "without replacement" condition by reducing the available count for the second draw? If it gave the wrong answer, identify which step introduced the error.
+**Project:** Audit one real-world system through 13 chapters of mathematics.
+**What you're building this chapter:** a probability analysis of the system's outcomes — the chances of various user / customer / patient experiences and the expected values driving the system's design.
+**Tool:** **Claude Project** (same system spec as Ch 1).
 
-**LLM Exercise 7.3** Ask an AI to explain the gambler's fallacy. Evaluate whether its explanation correctly identifies why the fallacy is wrong using the concept of independence — that each trial is unaffected by previous outcomes. Does it connect the fallacy to the roulette example or a similar game? Does it distinguish between the gambler's fallacy (believing past outcomes affect future independent ones) and valid reasoning about long-run averages under the Law of Large Numbers? Write two sentences on what a complete explanation should include.
+**The Prompt:**
 
-**LLM Exercise 7.4** Ask an AI to calculate the expected value of a $1 bet on black in American roulette (38 slots: 18 black, 18 red, 2 green). Check whether it sets up the formula correctly with outcome values and probabilities, arrives at $-2/38$, and interprets the result in plain English — what does a negative expected value mean for a player who bets $1,000 times?
+```
+Chapter 7 of my system-audit project. Chapter 7 covered:
+sample spaces and events; theoretical, empirical, and
+subjective probability; the complement trick (1 − P(not E));
+counting principles (combinations and permutations); expected
+value (∑ value × probability); independence and the gambler's
+fallacy.
 
-**LLM Exercise 7.5** Ask an AI: *How many 5-card poker hands are possible from a standard 52-card deck?* Then ask it to compute the probability of being dealt a royal flush. Check both answers against the values in this chapter ($C(52,5) = 2{,}598{,}960$ and $P \approx 0.0000015$). Did the AI use the combination formula correctly? Did it explain *why* combinations rather than permutations are the right tool here? Write a paragraph explaining in your own words why order doesn't matter for a poker hand and what goes wrong if you use permutations instead.
+Apply to my system. Most systems implicitly run probability
+calculations on their users.
+
+1. **Identify three probabilistic events in the system.**
+   Examples:
+   - Transit: probability of catching the bus you wanted;
+     probability of a delay over 5 min; probability of
+     two consecutive trains being on time.
+   - Streaming: probability that a given recommendation is
+     watched to completion; probability of a renewal at
+     end of trial; probability of a subscriber upgrading
+     to ad-free.
+   - Sports: probability of a team winning a given game;
+     probability of a bracket "Cinderella" run; probability
+     of a perfect bracket.
+   - Hospital: probability of a triage misclassification;
+     probability of a 4-hour ED stay; probability of
+     readmission within 30 days.
+
+2. **Compute one probability from data.** Pick one event.
+   Find the actual frequency from public data (an OnTime
+   percentage, a churn rate, a win rate). Translate to
+   probability. State whether this is theoretical (modeled),
+   empirical (observed), or subjective (estimated).
+
+3. **Apply the complement trick.** For one event in the
+   system, compute P(event happens at least once in N
+   tries) using P(at least one) = 1 − P(none). Example:
+   if there's a 5% chance the bus is more than 10 min
+   late on any given commute, what's the probability
+   you'll experience at least one such late bus over a
+   month of commuting (20 trips)?
+
+4. **Compute one expected value from the system.** Pick
+   one decision the system implicitly forces. Compute the
+   EV of the user's choice. Examples:
+   - Transit: EV of paying per-ride vs. monthly pass given
+     ride-count distribution.
+   - Streaming: EV of an annual vs. monthly subscription
+     given the probability you cancel mid-year.
+   - Hospital: EV of an elective procedure given outcome
+     probabilities.
+   - Sports: EV of buying a ticket on the resale market
+     for a specific game.
+   Show the table: outcome, value, probability, product.
+
+5. **Find one place the system runs a "casino" on its
+   users.** Most systems have at least one feature with
+   negative EV for the user that nevertheless gets
+   chosen — late fees, surge pricing, in-app purchases,
+   loot boxes, paid-search ads. Compute the EV. Identify
+   the cognitive bias (loss aversion, overconfidence,
+   gambler's fallacy) being exploited.
+
+End with: a one-page "probability audit" of the system.
+Three events. One empirical probability. One complement-
+trick calculation. One EV calculation. One identified
+"casino" feature with the EV computed.
+```
+
+**What this produces:** A probability audit revealing where the system's odds are stacked, what its expected outcomes actually are, and where it's running a casino on users. Most systems have at least one such feature — naming it is the chapter's point.
+
+**Connection to previous chapters:** Builds on Ch 6's financial machinery (most "casino" features in real systems are financial) and Ch 5's thresholds (probability often determines which side of a threshold a user lands on).
+
+**Preview of next chapter:** Chapter 8 — apply statistics to the system's published data. Distributions, measures of center, variability, polls, samples. What does the system's averaged data hide?
+
+---
+
+## AI Wayback Machine
+
+**Florence Nightingale David** was 20th-century British statistician — Karl Pearson's protégée — whose work on combinatorial probability remains in standard textbooks.
+
+**Run this:**
+
+```
+Who is Florence Nightingale David, and how does their work connect to probability we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about their career or ideas.
+```
+
+→ Search **"Florence Nightingale David"** on Wikipedia.
+
+**Now make the prompt better.** Try one of these:
+
+- Ask it to apply Florence Nightingale David's ideas to a specific concrete problem in this chapter.
+- Add a constraint: "Answer including criticisms or limits of Florence Nightingale David's framework."
+
+What changes? What gets better? What gets worse?

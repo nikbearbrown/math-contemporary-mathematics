@@ -339,12 +339,97 @@ The patient has fever and chills.
 
 ---
 
-## LLM Exercises
+---
 
-**Exercise 2-LLM-1.** Ask a large language model to give you three examples of the fallacy of affirming the consequent — arguments that *look* valid but are not. Then check each one: identify the premises, identify the conclusion, and explain precisely which row in the truth table shows the argument is invalid.
+## LLM Exercise — Chapter 2: Logic (Audit a Real-World System Project)
 
-**Exercise 2-LLM-2.** Give a language model the following argument and ask whether it is valid: "All mammals are warm-blooded. Whales are warm-blooded. Therefore, whales are mammals." The model may say yes. Your job is to determine whether it is right. Identify the form, construct or inspect the truth table, and write a one-paragraph explanation of your conclusion. Then show the explanation to the model and ask for a response.
+**Project:** Audit one real-world system through 13 chapters of mathematics.
+**What you're building this chapter:** a logical analysis of the system's if-then rules — which are valid, which are invalid, where the stated logic and the actual behavior diverge.
+**Tool:** **Claude Project** (same system spec as Ch 1).
 
-**Exercise 2-LLM-3.** Ask a language model to translate the following into symbolic form using $p$, $q$, $r$, and the connectives $\land$, $\lor$, $\sim$, $\rightarrow$: "If I study hard and attend every class, then either I will pass the exam or I will need to retake it." Check the model's translation. If it is wrong, explain what it got wrong and why. If it is right, verify by constructing a partial truth table for the cases where the hypothesis is true.
+**The Prompt:**
 
-**Exercise 2-LLM-4.** De Morgan's Laws say that $\sim(p \land q) \equiv \sim p \lor \sim q$. Ask a language model to explain in plain English, using a real-world example (not variables), why this equivalence holds. Evaluate the explanation: does it actually show why the two statements have the same truth value in all cases, or does it just assert that they do?
+```
+Chapter 2 of my system-audit project. Chapter 2 covered:
+propositions; truth tables; conjunction (AND), disjunction (OR),
+negation (NOT), conditional (IF...THEN); valid vs. invalid
+arguments; affirming the consequent and denying the antecedent
+as classic fallacies.
+
+Apply to my system (use the spec from Ch 1):
+
+1. **Identify three logical rules the system runs on.** These
+   are usually if-then statements. Examples:
+   - Transit: "IF you tap a card with insufficient balance,
+     THEN the gate stays closed."
+   - Streaming: "IF you have a Premium subscription AND you
+     are in the US, THEN you can access 4K content."
+   - Hospital: "IF the patient's pain score is ≥ 7, THEN
+     they are seen within 30 minutes."
+   For each rule, write it down precisely.
+
+2. **Formalize each rule.** Assign propositional variables
+   (p, q, r) to the simple statements. Write the rule in
+   symbolic form using ∧, ∨, ∼, →. Construct the truth
+   table. Identify the rows that make the rule TRUE and the
+   rows that make it FALSE.
+
+3. **Test for consistency.** For each rule, identify a real
+   case (or a hypothetical that could realistically occur)
+   that would violate the rule. Did the rule correctly
+   classify that case?
+
+4. **Find one invalid argument the system implicitly makes.**
+   Most real systems contain at least one rule that LOOKS
+   logical but isn't. Common patterns:
+   - Affirming the consequent: "IF eligible THEN approved.
+     This person was approved. THEREFORE this person was
+     eligible." (Wrong — they could have been approved by
+     mistake.)
+   - Denying the antecedent: "IF you pay full fare THEN you
+     get a transfer. You didn't pay full fare. THEREFORE
+     you don't get a transfer." (Wrong — you might still
+     get one through a different path.)
+   Identify one such fallacy embedded in the system you're
+   auditing. Show the truth table that proves it's invalid.
+
+5. **Apply De Morgan to one system rule.** Take a rule with
+   AND or OR and write its negation correctly. (Example:
+   "service is interrupted when there's a delay AND a
+   cancellation" → negation: "service is NOT interrupted
+   when there's no delay OR no cancellation.") Note where
+   the system's plain-English exception language is
+   ambiguous between these.
+
+End with: a one-page "logical audit" of the system. Three
+rules formalized. One invalid argument identified. One De
+Morgan application showing where the system's language is
+ambiguous.
+```
+
+**What this produces:** A logical audit identifying where the system's stated rules are valid, where they leak, and where the language is ambiguous. Builds directly on the Ch 1 system spec.
+
+**Connection to previous chapters:** Direct — uses the Ch 1 system spec. The set-theoretic groupings from Ch 1 often correspond to the propositions you'll formalize here.
+
+**Preview of next chapter:** Chapter 3 — apply prime factorization, GCD, and LCM to the numerical patterns hiding in the system (scheduling cycles, billing periods, packet sizes, batch sizes). Most systems have hidden divisibility structure; this chapter surfaces it.
+
+---
+
+## AI Wayback Machine
+
+**George Boole** was developed Boolean algebra in 1854 — turning logic into mathematics. Every modern computer reasons in Boole's framework.
+
+**Run this:**
+
+```
+Who is George Boole, and how does their work connect to logic we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about their career or ideas.
+```
+
+→ Search **"George Boole"** on Wikipedia.
+
+**Now make the prompt better.** Try one of these:
+
+- Ask it to apply George Boole's ideas to a specific concrete problem in this chapter.
+- Add a constraint: "Answer including criticisms or limits of George Boole's framework."
+
+What changes? What gets better? What gets worse?

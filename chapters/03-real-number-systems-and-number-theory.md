@@ -285,14 +285,97 @@ If you find yourself drawn to it, you are in good company. Gauss, Euler, Riemann
 
 ---
 
-## LLM Exercises
+---
 
-**Prompt 1.** Ask a language model: "Is 1 a prime number? Explain your reasoning." Evaluate whether the explanation correctly identifies that 1 is excluded because of the Fundamental Theorem of Arithmetic — not simply because of convention. Push back on any answer that gives a weaker reason.
+## LLM Exercise — Chapter 3: Real Numbers and Number Theory (Audit a Real-World System Project)
 
-**Prompt 2.** Give a language model this problem: "A camp has 48 sleeping bags and 60 water bottles. What is the maximum number of identical kits, with no items left over?" Verify the model's arithmetic by working out GCD(48, 60) yourself using prime factorization. If the model's answer differs from yours, determine which is correct.
+**Project:** Audit one real-world system through 13 chapters of mathematics.
+**What you're building this chapter:** the system's hidden divisibility structure — scheduling cycles, billing periods, batch sizes, packet sizes — analyzed via prime factorization, GCD, and LCM.
+**Tool:** **Claude Project** (same system spec as Ch 1).
 
-**Prompt 3.** Ask a language model to explain why $\sqrt{2}$ is irrational using a proof by contradiction. Compare the proof it gives to the argument in this chapter. Identify any steps it skips, compresses, or explains differently. Does it reach the same conclusion by the same logic, or does something differ?
+**The Prompt:**
 
-**Prompt 4.** Ask: "What is the monthly interest rate if the annual rate is 4.8%? Show the fraction in lowest terms." Check that the model converts correctly and reduces $\frac{4.8}{100 \times 12}$ to lowest terms. Note whether it handles the decimal in the numerator correctly.
+```
+Chapter 3 of my system-audit project. Chapter 3 covered: real
+numbers and their subsets (naturals, integers, rationals,
+irrationals); prime factorization and the Fundamental Theorem
+of Arithmetic; greatest common divisor (GCD); least common
+multiple (LCM); the relationship GCD(a,b) × LCM(a,b) = a × b;
+the proof that √2 is irrational.
 
-**Prompt 5.** Give a language model two large numbers — say, 252 and 198 — and ask for their GCD and LCM. Verify using prime factorization. Then ask the model to confirm the relationship $\text{GCD}(a,b) \times \text{LCM}(a,b) = a \times b$. Does it check out?
+Apply to my system. Most systems have hidden divisibility
+structure. Surface it.
+
+1. **Find the cycles.** Identify three numerical cycles in
+   your system. Examples:
+   - Transit: train arrival intervals (every 6 min on the
+     Red Line; every 10 min on the bus).
+   - Streaming: billing cycles (every 30 days), promo
+     cycles (90 days), content-refresh cycles.
+   - Sports: game frequency, season length, playoff format.
+   - Restaurant: shift lengths, ingredient delivery cycles,
+     menu rotation.
+
+2. **Apply LCM to find synchronization points.** For two of
+   the cycles you identified, compute the LCM. The LCM is
+   when both cycles align. Example: if Red Line trains run
+   every 6 min and Green Line trains run every 10 min,
+   they both arrive simultaneously every LCM(6,10) = 30 min.
+
+3. **Apply GCD to find shared structure.** For two related
+   numerical features (e.g., two prices, two batch sizes,
+   two seat counts), compute the GCD. The GCD is the
+   largest "natural unit" that divides both evenly. Example:
+   if a streaming service offers 480p, 720p, 1080p, and 4K
+   tiers, GCD analysis on the bandwidth requirements may
+   reveal an underlying baseline rate.
+
+4. **Find a fraction in the system that should be reduced.**
+   Pick one ratio in the system (price-per-unit, success
+   rate, conversion rate, fare-per-mile). Express it as a
+   fraction. Use prime factorization to reduce it to lowest
+   terms. Discuss whether the unreduced form was hiding
+   something — sometimes systems advertise unreduced ratios
+   ("12/15 customers approve!") that look more impressive
+   than the reduced form (4/5).
+
+5. **Find an irrational in the system (if there is one).**
+   Most real systems involve irrational numbers somewhere —
+   geometric calculations involving √2 (diagonal distances),
+   π (round structures), or e (compound growth). Identify
+   one irrational appearing in the system, prove (or sketch)
+   its irrationality, and note how the system handles it
+   (rounded to how many decimal places? truncated?).
+
+End with: a one-page "divisibility audit" of the system.
+Three cycles. One LCM synchronization point. One GCD shared
+structure. One reduced fraction. One irrational appearance
+with the precision the system uses.
+```
+
+**What this produces:** A divisibility audit revealing the system's hidden numerical structure. Cycles often determine when the system experiences peak load, when promotions overlap, when costs synchronize.
+
+**Connection to previous chapters:** Builds on Ch 1's set-theoretic structure (the cycles you identify often correspond to the categories from Ch 1). Builds on Ch 2's logical rules (cycle-related rules often appear in the system's logic).
+
+**Preview of next chapter:** Chapter 4 — apply place value and number representation to the system's encoding choices. Account numbers, IDs, route codes, product SKUs — every system encodes information, and the encoding choices reveal design decisions.
+
+---
+
+## AI Wayback Machine
+
+**Srinivasa Ramanujan** was self-taught Indian mathematician who produced thousands of identities and theorems in number theory before dying at 32 — many still being unpacked a century later.
+
+**Run this:**
+
+```
+Who is Srinivasa Ramanujan, and how does their work connect to number theory we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about their career or ideas.
+```
+
+→ Search **"Srinivasa Ramanujan"** on Wikipedia.
+
+**Now make the prompt better.** Try one of these:
+
+- Ask it to apply Srinivasa Ramanujan's ideas to a specific concrete problem in this chapter.
+- Add a constraint: "Answer including criticisms or limits of Srinivasa Ramanujan's framework."
+
+What changes? What gets better? What gets worse?

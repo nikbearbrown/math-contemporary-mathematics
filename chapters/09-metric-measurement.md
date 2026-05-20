@@ -263,3 +263,104 @@ None of this requires trusting the system on faith. You can verify every convers
 ## Still Open
 
 The United States is one of three countries in the world — alongside Liberia and Myanmar — that has not fully adopted the metric system. The Mars Climate Orbiter failure did not change this. The cost of the switch is real: road signs, product packaging, consumer intuition trained over decades. But the cost of not switching is also real and has been paid in concrete disasters and uncountable small inefficiencies. The tradeoff is genuinely complicated. What is not complicated is the mathematics of the system itself. The system is correct, consistent, and learnable. What you decide to do with that knowledge is a separate question.
+---
+
+## LLM Exercise — Chapter 9: Metric Measurement (Audit a Real-World System Project)
+
+**Project:** Audit one real-world system through 13 chapters of mathematics.
+**What you're building this chapter:** a units / dimensional-analysis audit of the system — what units it uses, where it converts, where it could fail.
+**Tool:** **Claude Project** (same system spec as Ch 1).
+
+**The Prompt:**
+
+```
+Chapter 9 of my system-audit project. Chapter 9 covered:
+the metric system's decimal logic and prefix structure;
+dimensional analysis as a check on calculations; unit
+conversion (linear → squared for area → cubed for volume);
+temperature as a different kind of conversion (interval
+scale, not ratio); the reasonableness test; the Mars Climate
+Orbiter (1999, $325M, lost because two teams used different
+units).
+
+Apply to my system. Most systems have units flowing through
+them. Some quietly have bugs.
+
+1. **Inventory the units in your system.** List every
+   measurable quantity the system produces or consumes.
+   For each: the unit used (km, mph, $, kWh, Mbps, °F),
+   the appropriate magnitude, the system's reporting
+   precision.
+   Examples for a transit system: distance (km vs. mi),
+   speed (km/h vs. mph), capacity (passengers per train),
+   time (min, hr), fare ($).
+   Examples for a streaming service: bandwidth (Mbps),
+   resolution (pixels), file size (MB / GB), data caps
+   (GB/month).
+
+2. **Find one unit-confusion vulnerability.** Where does
+   the system convert between units? Where does it report
+   in one unit but compute in another? Examples:
+   - International streaming (megabits vs. megabytes;
+     factor of 8 confusion).
+   - Hospital dosing (mg vs. mcg; factor of 1000
+     confusion that has killed patients).
+   - Aviation fuel (L vs. gal; the Gimli Glider, Air
+     Canada 143, 1983).
+   - Gas mileage (mpg US vs. mpg UK; factor of 1.2
+     confusion).
+   Identify one specific risk in your system.
+
+3. **Apply dimensional analysis to one calculation.**
+   Pick a real calculation the system performs (revenue
+   per passenger-mile; energy per byte transmitted; cost
+   per square meter). Show the units in every step.
+   Verify the final units make sense.
+
+4. **Apply the squared / cubed factor to one geometric
+   quantity in the system.** If you scaled a system feature
+   linearly by a factor of 2, what would happen to the
+   areas (×4) and volumes (×8)? Example: doubling a
+   building's footprint doubles the lot area required by 4×
+   and the cubic capacity by 8×. Doubling a city's radius
+   quadruples its area.
+
+5. **Apply the reasonableness test.** Find one published
+   number in the system. Sanity-check it against an
+   independent estimate. Example: if a transit system
+   reports it carries 5 million passengers a day, is that
+   plausible given the city's population and the share of
+   commuters?
+
+End with: a one-page "units audit" of the system. The unit
+inventory. One conversion vulnerability. One dimensional
+analysis. One scaling-factor calculation. One reasonableness
+check.
+```
+
+**What this produces:** A units audit. The Mars Climate Orbiter analog: every system has at least one unit-handling vulnerability waiting to bite. Surfacing it is the chapter's point.
+
+**Connection to previous chapters:** Builds on Ch 8's statistics (every published statistic has units that need auditing) and Ch 6's money (currency is itself a unit, with conversion vulnerabilities).
+
+**Preview of next chapter:** Chapter 10 — apply geometry to the system. Spatial layout, distances, areas, similar triangles. Most systems have a spatial component; many have hidden geometric inefficiencies.
+
+---
+
+## AI Wayback Machine
+
+**Pierre Méchain** was French astronomer whose careful geodetic measurements between Dunkirk and Barcelona helped define the meter as one ten-millionth of the distance from pole to equator.
+
+**Run this:**
+
+```
+Who is Pierre Méchain, and how does their work connect to metric measurement we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about their career or ideas.
+```
+
+→ Search **"Pierre Méchain"** on Wikipedia.
+
+**Now make the prompt better.** Try one of these:
+
+- Ask it to apply Pierre Méchain's ideas to a specific concrete problem in this chapter.
+- Add a constraint: "Answer including criticisms or limits of Pierre Méchain's framework."
+
+What changes? What gets better? What gets worse?
