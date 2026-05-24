@@ -345,21 +345,3 @@ Who is Kenneth Arrow, and how does their work connect to voting and apportionmen
 - Add a constraint: "Answer including criticisms or limits of Kenneth Arrow's framework."
 
 What changes? What gets better? What gets worse?
-
-## Prompts
-
-Use these prompts with Claude to generate interactive D3 v7 versions of the
-figures in this chapter. Each produces a standalone HTML file you can open
-in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
-your Claude project context before using these prompts. They define the stack,
-naming conventions, color system, and typography the figures use.
-
----
-
-### Figure 11.1 — Diagram showing the parallel structure of both impossibility
-
-Create a standalone D3 v7 HTML file for Figure Diagram showing the parallel structure of both impossibility. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: two-panel diagram showing the parallel structure of both impossibility theorems — left panel labeled "Arrow (1972): Voting"; right panel labeled "Balinski-Young (1983): Apportionment"; each panel has: (1) a list of the fairness criteria or properties, (2) a set of methods below, (3) arrows connecting each method to the criteria it satisfies and the criteria it violates; the key visual element: in both panels, no method connects to all criteria with a satisfied arrow — the structural parallel should be immediately visible without reading the text; a single caption beneath both panels: "Different problem. Same shape. Same result.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in t
-
-> Reference implementation: `d3/11-voting-and-apportionment-fig-01.html`
