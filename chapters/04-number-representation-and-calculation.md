@@ -15,7 +15,9 @@ A **numeral** is a written symbol for that idea. The digit 5. The Roman V. The t
 
 This sounds like the kind of distinction only a philosopher would care about. It isn't. Everything that follows depends on it. The quantity never changes. What changes — what humans have been tinkering with for five thousand years — is the system of symbols we use to represent it. And some systems are dramatically better than others, for reasons we can pin down precisely.
 
-<!-- → [TABLE: two-column reference — left column: "The Number" (abstract quantity), right column: "The Numeral" (written symbol) — rows for five, twelve, and one thousand, each showing the same quantity rendered in Hindu-Arabic digits, Roman numerals, and tally marks — student should see at a glance that the same number has many legal representations] -->
+| The Number" (abstract quantity) | right column: "The Numeral" (written symbol) — rows for five | twelve | and one thousand | each showing the same quantity rendered in Hindu-Arabic digits |
+| --- | --- | --- | --- | --- |
+| two-column reference | left | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
 
 ---
 
@@ -33,7 +35,8 @@ The Romans also invented a subtraction shorthand: writing a smaller symbol befor
 
 Try this: multiply XXVII by XLII. With Roman numerals. Go ahead. It's not impossible, but it's closer to solving a puzzle than doing arithmetic. You have to translate, compute, retranslate. Roman accountants could do it, but only after considerable practice. The system doesn't help the arithmetic. It just records the result.
 
-<!-- → [INFOGRAPHIC: timeline of numeration systems — horizontal axis from ~3000 BCE to ~900 CE — points marked for Tally marks, Babylonian base 60, Roman numerals, Mayan base 20, Hindu-Arabic place value — each with a one-line description of its key property (additive, positional, had zero, etc.) — student sees the arc from repetition toward position and zero] -->
+![Timeline of numeration systems ](images/04-number-representation-and-calculation-fig-01.png)
+*Figure 4.1 — Timeline of numeration systems *
 
 ---
 
@@ -51,7 +54,8 @@ $$7 \times 10^2 + 3 \times 10^1 + 8 \times 10^0 = 700 + 30 + 8$$
 
 That's the *expanded form* — you're unpacking what each position is contributing. The full numeral is just a shorthand for that sum. This is so automatic to you that it's invisible, which is exactly what good engineering looks like.
 
-<!-- → [IMAGE: annotated diagram of the numeral 738 — each digit sits in a labeled box (hundreds | tens | ones) with arrows pointing down to its expanded contribution (7×100, 3×10, 8×1) and a sum line at the bottom showing 700+30+8=738 — student sees place value as a decomposition, not just a reading convention] -->
+![Diagram of the numeral 738 ](images/04-number-representation-and-calculation-fig-02.png)
+*Figure 4.2 — Diagram of the numeral 738 *
 
 But place value needs something tally marks never needed: a symbol for zero. Consider the number one thousand and nine. In that number there are no hundreds and no tens. How do you write it? If you just write the digits you have — 1, 9 — you get 19, which means something completely different. You need a placeholder that says: *this position is empty*. You need 1,009.
 
@@ -71,7 +75,8 @@ Once you have place value and zero together, the system is complete. You need ex
 
 The numeral 1,009 can now be read unambiguously: one in the thousands place, zero in the hundreds place, zero in the tens place, nine in the ones place. $1 \times 1{,}000 + 0 \times 100 + 0 \times 10 + 9 \times 1 = 1{,}009$. The zeros are doing work. Remove them and you change the number entirely.
 
-<!-- → [IMAGE: side-by-side comparison of two numerals — left: "19" with expanded form 1×10+9=19; right: "1,009" with expanded form 1×1000+0×100+0×10+9×1=1009 — caption: "Zero is not decoration. It holds the position open." Student sees concretely what the placeholder is doing] -->
+![Zero is not decoration. It holds the position open.](images/04-number-representation-and-calculation-fig-03.png)
+*Figure 4.3 — Comparison of two numerals *
 
 ---
 
@@ -93,7 +98,9 @@ Here's the twist: for their astronomical calendar, the Mayans modified the base 
 
 Each of these systems reflects the problems its inventors were trying to solve: divisibility, astronomical cycles, ease of teaching. The Hindu-Arabic system won the historical competition not because it's mathematically superior in every dimension, but because it makes *multiplication and division* fast and teachable. Once commerce needed large-scale arithmetic, the system that made arithmetic easy was the one that spread.
 
-<!-- → [TABLE: five-column comparison of numeration systems — rows: Tally, Roman, Babylonian, Mayan, Hindu-Arabic — columns: Base, Has zero symbol, Positional, Best suited for, Major weakness — student sees all five systems on one surface and can reason about the trade-offs directly] -->
+| Base | Has zero symbol | Positional | Best suited for | Major weakness — student sees all five systems on one surface |
+| --- | --- | --- | --- | --- |
+| Tally, Roman, Babylonian, Mayan, Hindu-Arabic | columns: Base, Has zero symbol, Positional, Best suited for, Major weakness | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
 
 ---
 
@@ -136,7 +143,8 @@ Check it: $1 \times 216 + 2 \times 36 + 1 \times 6 + 4 = 216 + 72 + 6 + 4 = 298$
 
 The reason remainders read bottom to top is that the division process extracts the *lowest* position first. The last remainder is the highest-power digit, so reading backward gives you the correct order.
 
-<!-- → [IMAGE: step-by-step diagram of the repeated-division algorithm for 298 ÷ 6 — each division shown as a row with quotient and remainder clearly labeled — a curved arrow along the right margin points upward from the last remainder to the first, labeled "read this direction" — student sees visually why the reversal is necessary] -->
+![Step-by-step diagram of the repeated-division algorithm for 298](images/04-number-representation-and-calculation-fig-04.png)
+*Figure 4.4 — Step-by-step diagram of the repeated-division algorithm for 298*
 
 ---
 
@@ -155,7 +163,8 @@ Why would anyone want a system that requires more digits? Because the two symbol
 
 The number of symbols in your base is a trade-off: larger bases need fewer digit-positions (compact) but require more distinct symbols (complex). Smaller bases need more digit-positions (verbose) but work with very few symbols (simple to implement physically). Base 10 sits in a comfortable middle range for human use. Base 2 sits at the extreme simple end, which is why it's ideal for machines.
 
-<!-- → [CHART: scatter plot or table — x-axis: base (2, 6, 8, 10, 12, 16, 60); y-axis: number of digits needed to represent 1000 in that base — student sees the inverse relationship between base size and digit count; a second column or annotation notes the number of distinct symbols each base requires] -->
+![Scatter plot or table ](images/04-number-representation-and-calculation-fig-05.png)
+*Figure 4.5 — Scatter plot or table *
 
 ---
 
@@ -306,3 +315,53 @@ Who is Al-Kindi, and how does their work connect to number representation we cov
 - Add a constraint: "Answer including criticisms or limits of Al-Kindi's framework."
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 4.1 — Timeline of numeration systems 
+
+Create a standalone D3 v7 HTML file for Figure Timeline of numeration systems . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: timeline of numeration systems — horizontal axis from ~3000 BCE to ~900 CE — points marked for Tally marks, Babylonian base 60, Roman numerals, Mayan base 20, Hindu-Arabic place value — each with a one-line description of its key property (additive, positional, had zero, etc.) — student sees the arc from repetition toward position and zero. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/04-number-representation-and-calculation-fig-01.html`
+
+---
+
+### Figure 4.2 — Diagram of the numeral 738 
+
+Create a standalone D3 v7 HTML file for Figure Diagram of the numeral 738 . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: annotated diagram of the numeral 738 — each digit sits in a labeled box (hundreds | tens | ones) with arrows pointing down to its expanded contribution (7×100, 3×10, 8×1) and a sum line at the bottom showing 700+30+8=738 — student sees place value as a decomposition, not just a reading convention. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/04-number-representation-and-calculation-fig-02.html`
+
+---
+
+### Figure 4.3 — Comparison of two numerals 
+
+Create a standalone D3 v7 HTML file for Figure Comparison of two numerals . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: side-by-side comparison of two numerals — left: "19" with expanded form 1×10+9=19; right: "1,009" with expanded form 1×1000+0×100+0×10+9×1=1009 — caption: "Zero is not decoration. It holds the position open." Student sees concretely what the placeholder is doing. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/04-number-representation-and-calculation-fig-03.html`
+
+---
+
+### Figure 4.4 — Step-by-step diagram of the repeated-division algorithm for 298
+
+Create a standalone D3 v7 HTML file for Figure Step-by-step diagram of the repeated-division algorithm for 298. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: step-by-step diagram of the repeated-division algorithm for 298 ÷ 6 — each division shown as a row with quotient and remainder clearly labeled — a curved arrow along the right margin points upward from the last remainder to the first, labeled "read this direction" — student sees visually why the reversal is necessary. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/04-number-representation-and-calculation-fig-04.html`
+
+---
+
+### Figure 4.5 — Scatter plot or table 
+
+Create a standalone D3 v7 HTML file for Figure Scatter plot or table . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: scatter plot or table — x-axis: base (2, 6, 8, 10, 12, 16, 60); y-axis: number of digits needed to represent 1000 in that base — student sees the inverse relationship between base size and digit count; a second column or annotation notes the number of distinct symbols each base requires. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/04-number-representation-and-calculation-fig-05.html`

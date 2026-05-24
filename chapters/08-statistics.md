@@ -29,7 +29,10 @@ A **cluster sample** selects entire clusters at random — five city blocks, twe
 
 The worst option, the one responsible for most bad polling, is the **convenience sample** — asking whoever is available. Stand at a street corner, call whoever answers their phone at 6pm, email your subscriber list. You will systematically miss everyone who is not there. The missed people are rarely missing at random.
 
-<!-- → [TABLE: five-row reference table of sampling methods — columns: "Method", "How it works", "Key strength", "Key risk / failure mode" — rows: simple random, systematic random, stratified, cluster, convenience; the convenience row should be visually flagged (e.g., shaded or marked with a warning symbol) to signal it is not a valid random method — student should be able to scan this and immediately identify which method the Literary Digest used and why it failed] -->
+| Method | How it works | Key strength | Key risk | failure mode" — |
+| --- | --- | --- | --- | --- |
+| simple random, systematic random, stratified, cluster, convenience | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | The pattern becomes easy to misuse or overlook. |
+| the convenience row should be visually flagged (e.g., shaded or marked with a warning symbol) to signal it is not a valid random method | student should be able to scan this and immediately identify which method the Literary Digest used and why it failed | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | The pattern becomes easy to misuse or overlook. |
 
 There is a second failure mode, subtler than a bad list: **non-response bias**. Even with a random sample, if only some people respond, you have a problem. The people who answer political surveys are not the same as the people who hang up. The ones who respond may feel more strongly, more informed, more angry, or more at leisure. Whatever systematically distinguishes responders from non-responders will show up in your data as a distortion.
 
@@ -53,7 +56,10 @@ The **mode** is the most frequently occurring value. In this dataset, $90,000 ap
 
 These three measures answer three different questions. The mean answers: if you split the total equally, what does each person get? The median answers: what does the person in the middle earn? The mode answers: what is the most common value?
 
-<!-- → [TABLE: three-row reference table — columns: "Measure", "What it computes", "The question it answers", "When to use it", "Sensitive to outliers?" — rows: mean, median, mode; the basketball salary dataset (90, 90, 95, 100, 102, 105, 110, 115, 120, 190) runs as a worked column alongside each row showing the computed value — student should see at a glance why the mean ($111.7K) and median ($103.5K) diverge and what that gap means] -->
+| Measure | What it computes | The question it answers | When to use it | Sensitive to outliers?" — |
+| --- | --- | --- | --- | --- |
+| mean, median, mode | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| the basketball salary dataset (90, 90, 95, 100, 102, 105, 110, 115, 120, 190) runs as a worked column alongside each row showing the computed value | student should see at a glance why the mean ($111.7K) and median ($103.5K) diverge and what that gap means | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
 
 The choice between them is not arbitrary. It depends on what you are trying to communicate — and on whether the data are symmetric or skewed.
 
@@ -77,7 +83,8 @@ For the three scores 75, 80, 85 (mean = 80): the differences are $-5, 0, 5$. Squ
 
 The standard deviation has a feel once you work with it. A low standard deviation means the data cluster tightly around the mean — consistent, predictable. A high standard deviation means the data scatter widely — diverse, variable, possibly with outliers driving the spread. Two datasets with the same mean can have entirely different stories, and the standard deviation is what tells you which story you are in.
 
-<!-- → [INFOGRAPHIC: side-by-side dot plots for two datasets with the same mean (80) but different standard deviations — left plot: scores tightly bunched between 75–85, standard deviation 5; right plot: scores spread from 60–100, standard deviation ~15; vertical line marks the mean in both; bracket annotations show "1 SD" on each side of the mean; label beneath each: "Same mean. Different story." — student should see viscerally that mean alone is insufficient] -->
+![Dot plots for two datasets with the same](images/08-statistics-fig-01.png)
+*Figure 8.1 — Dot plots for two datasets with the same*
 
 ---
 
@@ -95,7 +102,8 @@ Specifically, the **68-95-99.7 rule** tells you:
 - 95% fall within two standard deviations
 - 99.7% fall within three standard deviations
 
-<!-- → [IMAGE: annotated bell curve diagram — x-axis labeled in standard deviation units (−3s to +3s) with mean μ at center; three nested shaded regions: innermost (±1s) labeled "68%", middle (±2s) labeled "95%", outer (±3s) labeled "99.7%"; a second x-axis beneath shows the heights example in inches (62.5, 65, 67.5, 70, 72.5, 75, 77.5) so the abstract rule is immediately grounded in a real example — student should be able to read off any percentage directly from the diagram] -->
+![Bell curve diagram ](images/08-statistics-fig-02.png)
+*Figure 8.2 — Bell curve diagram *
 
 Adult male heights in the United States are approximately normally distributed with mean 70 inches and standard deviation 2.5 inches. The rule tells us immediately: 68% of men are between 67.5 and 72.5 inches tall. 95% are between 65 and 75 inches. 99.7% are between 62.5 and 77.5 inches. If you meet a random man, there is less than a 0.3% chance he is shorter than 5'2.5" or taller than 6'5.5".
 
@@ -127,7 +135,8 @@ Both scores are excellent. But the SAT score, at z = 2.0, is at a higher percent
 
 The z-score does one clean thing: it converts any normally distributed measurement into a common language — the language of standard deviations from the mean — so that a height, a test score, a salary, and a marathon time can all be placed on the same scale and compared.
 
-<!-- → [CHART: two side-by-side normal distribution curves — left curve: SAT distribution (mean 1060, SD 195) with a vertical line at 1450 and the area to the left shaded, labeled "≈97.7th percentile, z = 2.0"; right curve: ACT distribution (mean 21, SD 5) with a vertical line at 29 and the area to the left shaded, labeled "≈94th percentile, z = 1.6"; the two shaded areas are the visual argument that 1450 SAT > 29 ACT even though the raw numbers are incommensurable — student should see why z-scores enable comparison across different scales] -->
+![Two side-by-side normal distribution curves ](images/08-statistics-fig-03.png)
+*Figure 8.3 — Two side-by-side normal distribution curves *
 
 ---
 
@@ -147,7 +156,12 @@ At 95% confidence, that band is approximately ±3 percentage points for a sample
 
 Three things affect the width of the margin of error. A larger sample produces a narrower margin — more data, more confidence. A more divided population (say, 50-50 rather than 90-10 on an issue) produces a wider margin — more variability, harder to pin down. A higher desired confidence level (99% instead of 95%) produces a wider margin — you need more room to be more certain.
 
-<!-- → [TABLE: three-row summary table — columns: "Factor", "If it increases...", "Effect on margin of error", "Intuition" — rows: sample size (larger → narrower margin), population variability (more divided → wider margin), confidence level (higher % → wider margin); the poll example (n=1500, ±3%, 95%) runs as a concrete anchor in the rightmost column — student should be able to read this table and immediately explain why "just survey more people" is not always the right answer] -->
+| Factor | If it increases |
+| --- | --- |
+| sample size (larger → narrower margin | A concrete checkpoint for applying the chapter concept. |
+| population variability (more divided → wider margin | A concrete checkpoint for applying the chapter concept. |
+| confidence level (higher % → wider margin | A concrete checkpoint for applying the chapter concept. |
+| the poll example (n=1500, ±3%, 95%) runs as a concrete anchor in the rightmost column | student should be able to read this table and immediately explain why "just survey more people" is not always the right answer |
 
 The 68-95-99.7 rule reappears here, naturally. A margin of error at 95% confidence corresponds to approximately two standard deviations of the sampling distribution. A margin at 68% confidence would be one standard deviation; at 99.7%, three. The normal distribution is not just a description of heights and test scores. It is the foundation underneath every poll, every clinical trial, every quality-control measurement — anywhere we use a sample to estimate a population.
 
@@ -342,3 +356,37 @@ Who is W.E.B. Du Bois, and how does their work connect to statistics we covered 
 - Add a constraint: "Answer including criticisms or limits of W.E.B. Du Bois's framework."
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 8.1 — Dot plots for two datasets with the same
+
+Create a standalone D3 v7 HTML file for Figure Dot plots for two datasets with the same. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: side-by-side dot plots for two datasets with the same mean (80) but different standard deviations — left plot: scores tightly bunched between 75–85, standard deviation 5; right plot: scores spread from 60–100, standard deviation ~15; vertical line marks the mean in both; bracket annotations show "1 SD" on each side of the mean; label beneath each: "Same mean. Different story." — student should see viscerally that mean alone is insufficient. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/08-statistics-fig-01.html`
+
+---
+
+### Figure 8.2 — Bell curve diagram 
+
+Create a standalone D3 v7 HTML file for Figure Bell curve diagram . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: annotated bell curve diagram — x-axis labeled in standard deviation units (−3s to +3s) with mean μ at center; three nested shaded regions: innermost (±1s) labeled "68%", middle (±2s) labeled "95%", outer (±3s) labeled "99.7%"; a second x-axis beneath shows the heights example in inches (62.5, 65, 67.5, 70, 72.5, 75, 77.5) so the abstract rule is immediately grounded in a real example — student should be able to read off any percentage directly from the diagram. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/08-statistics-fig-02.html`
+
+---
+
+### Figure 8.3 — Two side-by-side normal distribution curves 
+
+Create a standalone D3 v7 HTML file for Figure Two side-by-side normal distribution curves . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: two side-by-side normal distribution curves — left curve: SAT distribution (mean 1060, SD 195) with a vertical line at 1450 and the area to the left shaded, labeled "≈97.7th percentile, z = 2.0"; right curve: ACT distribution (mean 21, SD 5) with a vertical line at 29 and the area to the left shaded, labeled "≈94th percentile, z = 1.6"; the two shaded areas are the visual argument that 1450 SAT > 29 ACT even though the raw numbers are incommensurable — student should see why z-scores enable comparison across different scales. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/08-statistics-fig-03.html`

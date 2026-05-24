@@ -25,7 +25,10 @@ Before you can prove that fair voting is impossible, you need to say what fair m
 
 Read these again. Each one is just a formalization of something you already believe about fairness. Together, they describe a voting system that cannot be gamed, cannot be spoiled, and rewards genuine majority preference. Arrow's theorem says: you cannot have all four.
 
-<!-- → [TABLE: four-row reference table of fairness criteria — columns: "Criterion", "Plain-language statement", "The intuition behind it", "What violating it looks like in practice" — rows: majority, Condorcet, monotonicity, independence of irrelevant alternatives; the "what violation looks like" column should use one-line real examples (e.g., IIA: "Nader's presence changes Gore vs. Bush outcome") — student should be able to scan this table and immediately recognize a criterion violation when they see one in the exercises] -->
+| Criterion | Plain-language statement | The intuition behind it | What violating it looks like in practice" — |
+| --- | --- | --- | --- |
+| majority, Condorcet, monotonicity, independence of irrelevant alternatives | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| the "what violation looks like" column should use one-line real examples (e.g., IIA: "Nader's presence changes Gore vs. Bush outcome") | student should be able to scan this table and immediately recognize a criterion violation when they see one in the exercises | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
 
 ---
 
@@ -63,7 +66,13 @@ What it sacrifices: it fails when no Condorcet candidate exists. Voter preferenc
 
 Here is the pattern Arrow identified. You can have majority rule or Condorcet satisfaction. You can have monotonicity or spoiler-proofing. You cannot have all of them. Every method surrenders something.
 
-<!-- → [TABLE: six-row summary matrix of voting methods vs. fairness criteria — rows: plurality, runoff, ranked-choice, Borda, pairwise comparison, approval voting; columns: majority criterion, Condorcet criterion, monotonicity, independence of irrelevant alternatives; each cell contains ✓ (satisfies) or ✗ (violates); no method has all ✓ in every column — this is the visual proof of Arrow's claim before the formal theorem is stated; student should see at a glance that every row has at least one ✗] -->
+| majority criterion | Condorcet criterion | monotonicity | independence of irrelevant alternatives |
+| --- | --- | --- | --- |
+| plurality, runoff, ranked-choice, Borda, pairwise comparison, approval voting | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| columns: majority criterion, Condorcet criterion, monotonicity, independence of irrelevant alternatives | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| each cell contains ✓ (satisfies) or ✗ (violates | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| no method has all ✓ in every column | this is the visual proof of Arrow's claim before the formal theorem is stated | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| student should see at a glance that every row has at least one ✗ | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
 
 ---
 
@@ -93,7 +102,12 @@ The most famous is the **Alabama paradox**, discovered in 1880. Congressional st
 
 This is not an arithmetic error. It is a consequence of the method being used (Hamilton's method, which awards remaining seats to states with the largest fractional remainders). When the house size changes, the standard divisor changes, which changes all the fractional remainders, which changes who wins the remaining seats in the final distribution. Alabama lost out in the shuffle.
 
-<!-- → [TABLE: two-column side-by-side apportionment table illustrating the Alabama paradox — left side: House size = 299, showing each state's standard quota and final Hamilton allocation; right side: House size = 300, same states, same populations, showing how Alabama's allocation drops from 8 to 7 despite the house growing; the Alabama row should be visually highlighted; a caption beneath: "The house grew by one seat. Alabama lost one seat." — student should see the paradox in numbers, not just in prose] -->
+| Item | Meaning |
+| --- | --- |
+| illustrating the Alabama paradox | left side: House size = 299, showing each state's standard quota and final Hamilton allocation |
+| right side: House size = 300, same states, same populations, showing how Alabama's allocation drops from 8 to 7 despite the house growing | A concrete checkpoint for applying the chapter concept. |
+| the Alabama row should be visually highlighted | A concrete checkpoint for applying the chapter concept. |
+| a caption beneath: "The house grew by one seat. Alabama lost one seat." | student should see the paradox in numbers, not just in prose |
 
 Two other paradoxes compound the problem. The **population paradox**: a state growing faster than another can lose a seat while the slower-growing state gains one. The **new-states paradox**: when a new state is added and the house is enlarged to accommodate it, an existing state can lose a seat it previously held — even though that state's population has not changed.
 
@@ -103,7 +117,12 @@ The methods that avoid paradoxes — Jefferson's method, Adams's method, Webster
 
 Hamilton's method respects the quota rule strictly but produces the Alabama paradox and the others. There is no method that does both.
 
-<!-- → [TABLE: four-row apportionment methods comparison — rows: Hamilton, Jefferson, Adams, Webster; columns: "Satisfies quota rule?", "Alabama paradox possible?", "Population paradox possible?", "New-states paradox possible?", "Bias (if any)"; cells: ✓/✗ for each property, with "favors large states" / "favors small states" / "balanced" in the bias column — the visual echo of the voting methods matrix above; student should see that no row is all ✓, mirroring the voting methods table and making the parallel structure of the two impossibility theorems visible] -->
+| Satisfies quota rule? | Alabama paradox possible? | Population paradox possible? | New-states paradox possible? | Bias (if any) |
+| --- | --- | --- | --- | --- |
+| Hamilton, Jefferson, Adams, Webster | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| columns: "Satisfies quota rule?", "Alabama paradox possible?", "Population paradox possible?", "New-states paradox possible?", "Bias (if any)" | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| cells: ✓ | ✗ for each property, with "favors large states" | "favors small states" | "balanced" in the bias column | the visual echo of the voting methods matrix above |
+| student should see that no row is all ✓, mirroring the voting methods table and making the parallel structure of the two impossibility theorems visible | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
 
 ---
 
@@ -115,7 +134,8 @@ But the same underlying structure: you have a set of fairness criteria, each of 
 
 This pattern appears wherever you try to formalize fairness with mathematics and then apply it to a world where things cannot be divided indefinitely. Votes cannot be split. Seats cannot be fractional. When you try to turn continuous fairness into discrete decisions, something breaks. Arrow and Balinski-Young proved which breakages are unavoidable.
 
-<!-- → [INFOGRAPHIC: two-panel diagram showing the parallel structure of both impossibility theorems — left panel labeled "Arrow (1972): Voting"; right panel labeled "Balinski-Young (1983): Apportionment"; each panel has: (1) a list of the fairness criteria or properties, (2) a set of methods below, (3) arrows connecting each method to the criteria it satisfies and the criteria it violates; the key visual element: in both panels, no method connects to all criteria with a satisfied arrow — the structural parallel should be immediately visible without reading the text; a single caption beneath both panels: "Different problem. Same shape. Same result."] -->
+![Diagram showing the parallel structure of both impossibility](images/11-voting-and-apportionment-fig-01.png)
+*Figure 11.1 — Diagram showing the parallel structure of both impossibility*
 
 The practical consequence is exactly what the opening of this chapter suggested: choosing a voting method is not a technical decision. It is a political one. When a legislature chooses plurality voting over ranked-choice, or Hamilton's method over Webster's, it is choosing which fairness criterion to sacrifice and which constituency to advantage. The mathematics does not make that choice. It only reveals that a choice is being made — whether the people making it acknowledge it or not.
 
@@ -325,3 +345,21 @@ Who is Kenneth Arrow, and how does their work connect to voting and apportionmen
 - Add a constraint: "Answer including criticisms or limits of Kenneth Arrow's framework."
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 11.1 — Diagram showing the parallel structure of both impossibility
+
+Create a standalone D3 v7 HTML file for Figure Diagram showing the parallel structure of both impossibility. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: two-panel diagram showing the parallel structure of both impossibility theorems — left panel labeled "Arrow (1972): Voting"; right panel labeled "Balinski-Young (1983): Apportionment"; each panel has: (1) a list of the fairness criteria or properties, (2) a set of methods below, (3) arrows connecting each method to the criteria it satisfies and the criteria it violates; the key visual element: in both panels, no method connects to all criteria with a satisfied arrow — the structural parallel should be immediately visible without reading the text; a single caption beneath both panels: "Different problem. Same shape. Same result.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in t
+
+> Reference implementation: `d3/11-voting-and-apportionment-fig-01.html`

@@ -53,7 +53,9 @@ $$\mathbb{Q} = \left\{ \frac{p}{q} \;\middle|\; p \text{ and } q \text{ are inte
 
 The vertical bar reads *such that*. Everything before it says what elements look like; everything after is the rule that determines membership. This is *set-builder notation*, and it's the right tool whenever listing fails.
 
-<!-- → [TABLE: three-column reference — columns: Notation Type, How to Write It, When to Use It — rows for Roster/listing, Ellipsis, Set-builder — student sees at a glance which tool fits which situation] -->
+| Notation Type | How to Write It | When to Use It — rows for Roster | listing | Ellipsis |
+| --- | --- | --- | --- | --- |
+| three-column reference — | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
 
 ---
 
@@ -67,7 +69,8 @@ The empty set shows up more than you'd expect. The set of women who served as U.
 
 Here is the trap: $\{0\}$ is *not* the empty set. It's a set containing one element, which happens to be the number zero. The set is the box; zero is something in the box. A box containing zero is not an empty box.
 
-<!-- → [IMAGE: side-by-side illustration of two boxes — left box empty labeled ∅ or {}, right box containing a token labeled "0" labeled {0} — caption: "The empty set is an empty container. {0} is a container holding zero. They are not the same thing."] -->
+![The empty set is an empty container. {0} is a container holding zero. They are not the same thing.](images/01-sets-fig-01.png)
+*Figure 1.1 — Illustration of two boxes *
 
 ---
 
@@ -79,7 +82,8 @@ Two sets are *equivalent* if they have the same number of elements — the same 
 
 Equal implies equivalent. Equivalent does not imply equal. Use the picky word when you mean the picky thing.
 
-<!-- → [INFOGRAPHIC: one-way arrow diagram — "Equal" arrow pointing to "Equivalent" labeled "always", reverse arrow labeled "not always" — plus two small example pairs: one pair of sets that are both equal and equivalent, one pair that are equivalent but not equal] -->
+![One-way arrow diagram ](images/01-sets-fig-02.png)
+*Figure 1.2 — One-way arrow diagram *
 
 ---
 
@@ -115,7 +119,8 @@ The empty set satisfies this too: $2^0 = 1$, and the empty set has exactly one s
 
 The formula looks innocent. It isn't. Ten elements gives $2^{10} = 1{,}024$ subsets. Twenty elements gives $2^{20} = 1{,}048{,}576$. Fifty gives more than a quadrillion. Combinatorial problems explode in exactly this way, and Chapter 7 will spend a great deal of time managing the explosion.
 
-<!-- → [CHART: bar chart or table showing n (0 through 10) on x-axis against 2^n on y-axis — student should see the explosive growth clearly; the jump from n=5 (32) to n=10 (1024) makes the doubling-per-element rule visceral] -->
+![Bar chart or table showing n (0 through](images/01-sets-fig-03.png)
+*Figure 1.3 — Bar chart or table showing n (0 through*
 
 ---
 
@@ -135,7 +140,8 @@ Two hundred fifty years later, Georg Cantor showed the situation is more interes
 
 We won't prove Cantor's theorem here. But the result sits in the room whenever we talk about infinite sets, and it's worth knowing it's there.
 
-<!-- → [INFOGRAPHIC: two-column comparison — left column: "Countably Infinite (ℵ₀)" listing N, Z, Q with example one-to-one pairings shown; right column: "Uncountably Infinite" listing R — caption notes that the gap between the two columns is Cantor's result, not an intuitive difference in "how many"] -->
+![Two-column comparison ](images/01-sets-fig-04.png)
+*Figure 1.4 — Two-column comparison *
 
 ---
 
@@ -163,7 +169,8 @@ The complement always depends on the universe. This is not a formality — it ma
 
 When two sets share no elements — $A \cap B = \emptyset$ — they are called *disjoint*. Lions and tigers in a zoo are disjoint subsets of the big-cat enclosures. Neither is the complement of the other within big cats — there are also leopards and jaguars. Disjoint just means no overlap; complement is a stronger relationship.
 
-<!-- → [IMAGE: three labeled Venn diagrams side by side — left: A ∪ B shaded (union), center: A ∩ B shaded (intersection), right: A' shaded within U (complement) — each with its symbolic definition beneath; student should be able to read the operation from the shading pattern] -->
+![Three labeled Venn diagrams side by side ](images/01-sets-fig-05.png)
+*Figure 1.5 — Three labeled Venn diagrams side by side *
 
 ---
 
@@ -196,7 +203,8 @@ Two overlapping circles divide the rectangle into four regions: in $A$ only, in 
 
 The value of the diagram is that it turns the bookkeeping into geometry. Instead of tracking which elements belong to which combination of sets, you place a count in each region and read the answers off the picture. The three-set version of this — filling in regions from the inside outward, starting with the all-three intersection and working out — is one of the most useful problem-solving routines in this course.
 
-<!-- → [IMAGE: annotated two-set Venn diagram with regions labeled: "only A", "A ∩ B", "only B", "neither (U outside both circles)" — followed by a blank three-set version with all eight regions outlined but unlabeled, so the student can practice naming them] -->
+![Two-set Venn diagram with regions labeled: "only A",](images/01-sets-fig-06.png)
+*Figure 1.6 — Two-set Venn diagram with regions labeled: "only A",*
 
 ---
 
@@ -219,7 +227,8 @@ Right side: $A' = \{1, 5, 6, 7\}$, $B' = \{1, 2, 7\}$, and $A' \cap B' = \{1, 7\
 
 Both sides give $\{1, 7\}$. ✓ A specific check isn't a proof — to prove it properly you'd shade two Venn diagrams and show the regions match for any sets, not just these. But checking a specific case is a good way to build intuition before you trust the general statement.
 
-<!-- → [IMAGE: two-row Venn diagram proof of the first De Morgan law — top row: shade (A ∪ B) then shade its complement; bottom row: shade A' then B' then shade their intersection — student should see both shadings produce the identical region, making the identity visually obvious] -->
+![Two-row Venn diagram proof of the first De](images/01-sets-fig-07.png)
+*Figure 1.7 — Two-row Venn diagram proof of the first De*
 
 ---
 
@@ -240,7 +249,8 @@ Return to the Saturday-morning blood drive. The cooler holds 100 donor bags sort
 
 Sum: $7 + 6 + 2 + 12 + 36 + 33 + 1 + 3 = 100$. ✓
 
-<!-- → [IMAGE: three-set Venn diagram for blood types — circles labeled A, B, Rh+ — each of the eight regions populated with its count from the table (O−=7 outside all circles, A−=6, B−=2, AB−=1, O+=12, A+=36, B+=33, AB+=3) — student should be able to verify any single-factor total by summing the four regions inside that circle] -->
+![Three-set Venn diagram for blood types ](images/01-sets-fig-08.png)
+*Figure 1.8 — Three-set Venn diagram for blood types *
 
 Think of this as a three-set Venn diagram. Circle $A$ catches everyone with the type-A antigen. Circle $B$ catches everyone with type-B. Circle $\text{Rh}^+$ catches everyone with the Rh-positive factor. Each of the eight blood types corresponds to one of the eight regions of the diagram.
 
@@ -405,3 +415,77 @@ Who is Georg Cantor, and how does their work connect to set theory we covered in
 - Add a constraint: "Answer including criticisms or limits of Georg Cantor's framework."
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 1.1 — Illustration of two boxes 
+
+Create a standalone D3 v7 HTML file for Figure Illustration of two boxes . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: side-by-side illustration of two boxes — left box empty labeled ∅ or {}, right box containing a token labeled "0" labeled {0} — caption: "The empty set is an empty container. {0} is a container holding zero. They are not the same thing.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/01-sets-fig-01.html`
+
+---
+
+### Figure 1.2 — One-way arrow diagram 
+
+Create a standalone D3 v7 HTML file for Figure One-way arrow diagram . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: one-way arrow diagram — "Equal" arrow pointing to "Equivalent" labeled "always", reverse arrow labeled "not always" — plus two small example pairs: one pair of sets that are both equal and equivalent, one pair that are equivalent but not equal. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/01-sets-fig-02.html`
+
+---
+
+### Figure 1.3 — Bar chart or table showing n (0 through
+
+Create a standalone D3 v7 HTML file for Figure Bar chart or table showing n (0 through. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: bar chart or table showing n (0 through 10) on x-axis against 2^n on y-axis — student should see the explosive growth clearly; the jump from n=5 (32) to n=10 (1024) makes the doubling-per-element rule visceral. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/01-sets-fig-03.html`
+
+---
+
+### Figure 1.4 — Two-column comparison 
+
+Create a standalone D3 v7 HTML file for Figure Two-column comparison . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: two-column comparison — left column: "Countably Infinite (ℵ₀)" listing N, Z, Q with example one-to-one pairings shown; right column: "Uncountably Infinite" listing R — caption notes that the gap between the two columns is Cantor's result, not an intuitive difference in "how many". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/01-sets-fig-04.html`
+
+---
+
+### Figure 1.5 — Three labeled Venn diagrams side by side 
+
+Create a standalone D3 v7 HTML file for Figure Three labeled Venn diagrams side by side . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: three labeled Venn diagrams side by side — left: A ∪ B shaded (union), center: A ∩ B shaded (intersection), right: A' shaded within U (complement) — each with its symbolic definition beneath; student should be able to read the operation from the shading pattern. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/01-sets-fig-05.html`
+
+---
+
+### Figure 1.6 — Two-set Venn diagram with regions labeled: "only A",
+
+Create a standalone D3 v7 HTML file for Figure Two-set Venn diagram with regions labeled: "only A",. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: annotated two-set Venn diagram with regions labeled: "only A", "A ∩ B", "only B", "neither (U outside both circles)" — followed by a blank three-set version with all eight regions outlined but unlabeled, so the student can practice naming them. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/01-sets-fig-06.html`
+
+---
+
+### Figure 1.7 — Two-row Venn diagram proof of the first De
+
+Create a standalone D3 v7 HTML file for Figure Two-row Venn diagram proof of the first De. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: two-row Venn diagram proof of the first De Morgan law — top row: shade (A ∪ B) then shade its complement; bottom row: shade A' then B' then shade their intersection — student should see both shadings produce the identical region, making the identity visually obvious. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/01-sets-fig-07.html`
+
+---
+
+### Figure 1.8 — Three-set Venn diagram for blood types 
+
+Create a standalone D3 v7 HTML file for Figure Three-set Venn diagram for blood types . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: three-set Venn diagram for blood types — circles labeled A, B, Rh+ — each of the eight regions populated with its count from the table (O−=7 outside all circles, A−=6, B−=2, AB−=1, O+=12, A+=36, B+=33, AB+=3) — student should be able to verify any single-factor total by summing the four regions inside that circle. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/01-sets-fig-08.html`

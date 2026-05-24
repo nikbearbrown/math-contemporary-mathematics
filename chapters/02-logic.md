@@ -21,7 +21,9 @@ A **proposition** — logicians sometimes call it a logical statement — is a c
 
 The proposition is the atom of logic. Everything else we will do — joining statements, negating them, building arguments out of them — requires that we start with sentences that have definite truth values. They can be unknown to us. They can be contested. But they must be decidable in principle.
 
-<!-- → [TABLE: two-column classification table — left column: "Sentence", right column: "Proposition? (Yes/No) / Why not?" — rows include a statement, a question, a command, an exclamation, and a borderline contested claim; student should see at a glance what makes each sentence admissible or inadmissible as a proposition] -->
+| Sentence | right column: "Proposition? (Yes | No) | Why not?" — rows include a statement | a question |
+| --- | --- | --- | --- | --- |
+| left | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | It makes the underlying reasoning visible instead of implied. | A concrete checkpoint for applying the chapter concept. |
 
 We represent propositions with lowercase letters. Say $p$ is "It is raining in Boston right now." Say $q$ is "The sidewalks are wet." Both are decidable. Neither of us is in Boston, so we do not know their truth values at this moment. That is fine. The sentences still have truth values. We just have not determined them.
 
@@ -43,7 +45,10 @@ And: the negation of "Some A are B" is "No A are B."
 
 And: the negation of "No A are B" is "Some A are B."
 
-<!-- → [TABLE: three-row reference table — columns: "Original quantifier", "Original statement form", "Negation form", "How to read it" — rows: All/Some...not, Some/No, No/Some; this is the pattern card students will return to when constructing negations on exams] -->
+| Original quantifier | Original statement form | Negation form | How to read it" — |
+| --- | --- | --- | --- |
+| All | Some...not, Some | No, No | Some |
+| this is the pattern card students will return to when constructing negations on exams | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
 
 Check each one. If the original is true, the negation must be false. If the original is false, the negation must be true. Run through them and satisfy yourself that these patterns work.
 
@@ -92,7 +97,8 @@ For two propositions $p$ and $q$, there are four possible combinations. Here are
 | F | T | F | T | T |
 | F | F | F | F | T |
 
-<!-- → [INFOGRAPHIC: annotated version of this truth table with color-coded columns — AND column highlighted to show the single "T" at top; OR column highlighted to show the single "F" at bottom; IF...THEN column highlighted to show the single "F" in row 2; callout arrows pointing to the "key row" for each connective with a one-line explanation of why that row is the defining case] -->
+![Version of this truth table with color-coded columns](images/02-logic-fig-01.png)
+*Figure 2.1 — Version of this truth table with color-coded columns*
 
 Read the AND column: true only in the top row, where both parts are true. Read the OR column: false only in the bottom row, where both parts fail. Read the IF...THEN column: false only in the second row, where $p$ is true but $q$ is false.
 
@@ -168,7 +174,12 @@ A third form is the **chain rule** — also called *hypothetical syllogism*:
 
 This is valid. The chain can be extended indefinitely. Every legal syllogism, every multi-step mathematical proof, every piece of reasoning with more than one "if-then" is using this form.
 
-<!-- → [TABLE: three-column reference table of valid argument forms — columns: "Name", "Symbolic form (premises → conclusion)", "Plain-English template" — rows: Law of Detachment (modus ponens), Law of Denying the Consequent (modus tollens), Chain Rule (hypothetical syllogism), plus a fourth row for the INVALID form "Affirming the Consequent" marked in red or with a ✗ — student should be able to scan this table and identify which form any given argument uses] -->
+| Name | Symbolic form (premises → conclusion) | Plain-English template" — |
+| --- | --- | --- |
+| Law of Detachment (modus ponens | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| Law of Denying the Consequent (modus tollens | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| Chain Rule (hypothetical syllogism | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| plus a fourth row for the INVALID form "Affirming the Consequent" marked in red or with a ✗ | student should be able to scan this table and identify which form any given argument uses | A concrete checkpoint for applying the chapter concept. |
 
 ### Validity versus truth
 
@@ -208,7 +219,8 @@ Read the second one: "It is not the case that either $p$ or $q$" means the same 
 
 These laws have a satisfying symmetry. Negation distributes across AND and OR, and when it does, the connective flips: AND becomes OR, OR becomes AND.
 
-<!-- → [INFOGRAPHIC: side-by-side visual of the two De Morgan transformations — left side shows the original compound statement as a Venn-style diagram or labeled box; right side shows the equivalent rewritten form; arrows between them labeled "De Morgan" with the connective flip (AND↔OR) highlighted; one row for each law so the symmetry between them is visually obvious] -->
+![Visual of the two De Morgan transformations ](images/02-logic-fig-02.png)
+*Figure 2.2 — Visual of the two De Morgan transformations *
 
 This is the same duality that appeared in Chapter 1 with sets. The complement of a union is the intersection of complements: $(A \cup B)' = A' \cap B'$. De Morgan for sets. The same pattern appears here in logic. De Morgan for propositions. The algebra is identical; only the notation changes.
 
@@ -235,7 +247,8 @@ In 1954, Thurgood Marshall argued *Brown v. Board of Education* before the Supre
 - Premise 3: If separate facilities are not equal, then segregation in schools violates the equal protection of the law.
 - Conclusion: Segregation in schools violates the equal protection of the law.
 
-<!-- → [DIAGRAM: linear argument-chain diagram for the Brown v. Board argument — boxes for each premise connected by arrows labeled with the argument form being applied (Chain Rule, then Law of Detachment); final box is the conclusion, visually distinct (bold border or filled); student should see at a glance how the premises link to produce a forced conclusion — this is the "bones of the argument" the chapter promises to teach] -->
+![Linear argument-chain diagram for the Brown v](images/02-logic-fig-03.png)
+*Figure 2.3 — Linear argument-chain diagram for the Brown v*
 
 The form is chain rule plus law of detachment. Premises 1 and 2 establish the facts. Premise 3 connects those facts to a legal conclusion. The conclusion follows necessarily from the premises. If you accept all three premises, you cannot deny the conclusion without contradicting yourself. There is no logical escape.
 
@@ -433,3 +446,37 @@ Who is George Boole, and how does their work connect to logic we covered in this
 - Add a constraint: "Answer including criticisms or limits of George Boole's framework."
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 2.1 — Version of this truth table with color-coded columns
+
+Create a standalone D3 v7 HTML file for Figure Version of this truth table with color-coded columns. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: annotated version of this truth table with color-coded columns — AND column highlighted to show the single "T" at top; OR column highlighted to show the single "F" at bottom; IF...THEN column highlighted to show the single "F" in row 2; callout arrows pointing to the "key row" for each connective with a one-line explanation of why that row is the defining case. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/02-logic-fig-01.html`
+
+---
+
+### Figure 2.2 — Visual of the two De Morgan transformations 
+
+Create a standalone D3 v7 HTML file for Figure Visual of the two De Morgan transformations . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: side-by-side visual of the two De Morgan transformations — left side shows the original compound statement as a Venn-style diagram or labeled box; right side shows the equivalent rewritten form; arrows between them labeled "De Morgan" with the connective flip (AND↔OR) highlighted; one row for each law so the symmetry between them is visually obvious. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/02-logic-fig-02.html`
+
+---
+
+### Figure 2.3 — Linear argument-chain diagram for the Brown v
+
+Create a standalone D3 v7 HTML file for Figure Linear argument-chain diagram for the Brown v. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: linear argument-chain diagram for the Brown v. Board argument — boxes for each premise connected by arrows labeled with the argument form being applied (Chain Rule, then Law of Detachment); final box is the conclusion, visually distinct (bold border or filled); student should see at a glance how the premises link to produce a forced conclusion — this is the "bones of the argument" the chapter promises to teach. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/02-logic-fig-03.html`

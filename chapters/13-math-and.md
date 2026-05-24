@@ -37,7 +37,8 @@ $$\frac{1}{\phi} = \phi - 1 \approx 0.618$$
 
 The reciprocal of $\phi$ equals $\phi$ minus 1. The square of $\phi$ equals $\phi$ plus 1. This algebraic self-consistency is not a trick; it is the definition of $\phi$ in different clothing. These relationships will matter when we build golden rectangles.
 
-<!-- → [IMAGE: annotated line segment showing the golden ratio division — total length labeled a+b, longer segment labeled a, shorter segment labeled b — two ratio arrows showing (a+b)/a = a/b = φ ≈ 1.618 — beneath: the three algebraic properties listed: φ = (1+√5)/2, φ² = φ+1, 1/φ = φ-1 — student sees the geometric definition and the algebraic self-consistency as the same object] -->
+![Line segment showing the golden ratio division ](images/13-math-and-fig-01.png)
+*Figure 13.1 — Line segment showing the golden ratio division *
 
 ---
 
@@ -67,7 +68,8 @@ Why is the golden angle special? Because $\phi$ is irrational — its decimal ex
 
 The spiral count falls into Fibonacci numbers because of a number-theoretic property of $\phi$: rational approximations to $\phi$ are given by consecutive Fibonacci ratios. When the packing algorithm uses $\phi$ as its fundamental parameter, the visible spirals count out as Fibonacci numbers. Not by design. By necessity.
 
-<!-- → [IMAGE: two-panel diagram — left panel: simulated seed placement using a rational angle (e.g., 90°) showing seeds aligning into obvious spokes with gaps; right panel: seed placement using the golden angle 137.5° showing dense, gap-free packing with no spokes — caption: "Rational angle: seeds align along spokes. Golden angle: no two seeds share a radial direction. The packing is maximally dense."] -->
+![Rational angle: seeds align along spokes. Golden angle: no two seeds share a radial direction. The packing is maximally dense.](images/13-math-and-fig-02.png)
+*Figure 13.2 — Diagram *
 
 A daisy in the wild has 13 or 21 or 34 petals — Fibonacci numbers, because petals grow by the same mechanism. So do the scales of a pine cone, the bumps on a pineapple, the branching of some trees. The constraint — continuous growth with rotation — produces the solution, and the solution involves $\phi$ and Fibonacci numbers.
 
@@ -85,7 +87,8 @@ That is $\phi$ to five decimal places.
 
 Why does this happen? Because the Fibonacci rule — each term equals the sum of the previous two — is the simplest possible linear recursion. And $\phi$ is the unique fixed point of the ratio under that recursion: if the ratio of consecutive terms converges to any limit $L$, then $L$ must satisfy $L = 1 + 1/L$, which is exactly the equation that defines $\phi$. The Fibonacci sequence is the simplest recursive growth pattern; the golden ratio is what that pattern converges to. They are the same idea from two different angles.
 
-<!-- → [CHART: line chart showing consecutive Fibonacci ratios F(n+1)/F(n) on the y-axis for n=1 through 15 on the x-axis — the line starts at 2.0 and oscillates downward, converging to the dashed horizontal line at φ≈1.618 — student sees the convergence visually and understands that the ratios approach but never exactly reach φ for finite n] -->
+![Line chart showing consecutive Fibonacci ratios F(n+1)/F(n) on](images/13-math-and-fig-03.png)
+*Figure 13.3 — Line chart showing consecutive Fibonacci ratios F(n+1)/F(n) on*
 
 ---
 
@@ -101,7 +104,8 @@ The operation of "cut off a square" regenerates a smaller golden rectangle. This
 
 This is not a stylistic observation. It is a consequence of structure. A logarithmic spiral is the shape that maintains constant proportions at every scale — every turn of the spiral is self-similar to every other turn. Golden rectangles self-replicate under the square-removal operation precisely because $\phi - 1 = 1/\phi$ — the algebraic self-similarity creates the geometric self-similarity. The spiral is the visual signature of that algebra.
 
-<!-- → [IMAGE: golden rectangle with the square-removal process shown in four steps — first the full φ×1 rectangle with the 1×1 square marked for removal; then the smaller golden rectangle; then a third; then a fourth — nested squares tiling inward with each rotated 90°, and a logarithmic spiral arc drawn through the corners of all the squares — caption: "Each removal leaves a golden rectangle. The spiral is the curve traced by connecting the corners."] -->
+![Each removal leaves a golden rectangle. The spiral is the curve traced by connecting the corners.](images/13-math-and-fig-04.png)
+*Figure 13.4 — Golden rectangle with the square-removal process shown in*
 
 This is why the golden ratio appears in classical architecture. The Parthenon's facade fits within a golden rectangle. Whether the architects of 450 BCE knew $\phi$ explicitly, or discovered the proportion by trial and error and aesthetic refinement, the proportion they found is the same one that emerges from the constraint of self-similar balance. What looks balanced to human perception is often, on measurement, close to $\phi$.
 
@@ -125,7 +129,8 @@ Next simplest: $3:2$. This is a *perfect fifth* — C to G, say. It is the secon
 
 The interval $\sqrt{2} : 1$ — the so-called tritone, C to F# — is historically called *diabolus in musica*, the devil in music. Its frequency ratio is irrational. It sounds neither consonant nor dissonant but perpetually unresolved. Medieval composers forbade it. Modern composers use it precisely for that tension.
 
-<!-- → [IMAGE: ranked table of musical intervals — columns: Interval Name, Frequency Ratio, Perceived Consonance — rows from most to least consonant: Unison (1:1), Octave (2:1), Perfect Fifth (3:2), Perfect Fourth (4:3), Major Third (5:4), Minor Third (6:5), Tritone (√2:1) — student sees the direct relationship between ratio simplicity and perceived consonance, and the tritone as the anomalous irrational case] -->
+![Ranked table of musical intervals ](images/13-math-and-fig-05.png)
+*Figure 13.5 — Ranked table of musical intervals *
 
 ---
 
@@ -152,7 +157,9 @@ The factor $2^{1/12}$ is irrational. It cannot be written as a ratio of integers
 
 Equal temperament is a compromise. Every interval except the octave is slightly out of tune, in exchange for the ability to play in any key with the same instrument. The tuning systems that came before equal temperament — just intonation, meantone temperament, Pythagorean tuning — made some keys sound perfect and others harsh. Equal temperament makes every key sound equally, slightly impure.
 
-<!-- → [TABLE: comparison of just intonation vs equal temperament for four key intervals — columns: Interval, Just Intonation Ratio, Just Intonation Decimal, Equal Temperament (2^n/12), Equal Temperament Decimal, Difference — rows: Octave, Perfect Fifth, Major Third, Minor Third — student sees the compromise quantified: the octave is exact, the fifth is off by 0.2%, the major third by 0.8%] -->
+| Interval | Just Intonation Ratio | Just Intonation Decimal | Equal Temperament (2^n | 12) |
+| --- | --- | --- | --- | --- |
+| Octave, Perfect Fifth, Major Third, Minor Third | student sees the compromise quantified: the octave is exact, the fifth is off by 0.2%, the major third by 0.8% | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
 
 Bach composed the Well-Tempered Clavier partly to demonstrate that a well-tempered (nearly equal-tempered) instrument could play beautifully in all 24 major and minor keys. It was a proof of concept for equal temperament. The mathematics of the constraint — transposability across all keys — produced the solution: the twelfth root of two.
 
@@ -170,7 +177,8 @@ In architecture, the constraint is self-similar proportion — a structure that 
 
 These three domains obey different laws. Yet they share solutions because they share *types of constraint*: self-similarity, additive recursion, exponential growth. When any system is pushed toward maximum efficiency under one of these constraints, mathematics describes the result. Not because humans imposed it. Because the constraint itself is mathematical.
 
-<!-- → [INFOGRAPHIC: three-column summary table — columns: Domain, Constraint, Mathematical Solution, Observable Signature — rows: Sunflower (continuous rotational growth → golden angle from φ → Fibonacci spiral counts), Music (transposability across all keys → 2^(1/12) per half-step → logarithmic pitch perception), Architecture (self-similar proportion → golden rectangle → logarithmic spiral) — student sees all three threads of the chapter unified in one view] -->
+![Three-column summary table ](images/13-math-and-fig-06.png)
+*Figure 13.6 — Three-column summary table *
 
 This is what I mean by saying mathematics builds the world rather than decorating it. The spiral in a nautilus is not beautiful because someone decided spirals are beautiful. It is the signature of an animal growing its shell by the most efficient algorithm available under the constraint of continuous expansion without waste. The mathematics was the solution first. The beauty is what the solution looks like from the outside.
 
@@ -356,3 +364,61 @@ Who is Hannah Fry, and how does their work connect to math and the modern world 
 - Add a constraint: "Answer including criticisms or limits of Hannah Fry's framework."
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 13.1 — Line segment showing the golden ratio division 
+
+Create a standalone D3 v7 HTML file for Figure Line segment showing the golden ratio division . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: annotated line segment showing the golden ratio division — total length labeled a+b, longer segment labeled a, shorter segment labeled b — two ratio arrows showing (a+b)/a = a/b = φ ≈ 1.618 — beneath: the three algebraic properties listed: φ = (1+√5)/2, φ² = φ+1, 1/φ = φ-1 — student sees the geometric definition and the algebraic self-consistency as the same object. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/13-math-and-fig-01.html`
+
+---
+
+### Figure 13.2 — Diagram 
+
+Create a standalone D3 v7 HTML file for Figure Diagram . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: two-panel diagram — left panel: simulated seed placement using a rational angle (e.g., 90°) showing seeds aligning into obvious spokes with gaps; right panel: seed placement using the golden angle 137.5° showing dense, gap-free packing with no spokes — caption: "Rational angle: seeds align along spokes. Golden angle: no two seeds share a radial direction. The packing is maximally dense.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/13-math-and-fig-02.html`
+
+---
+
+### Figure 13.3 — Line chart showing consecutive Fibonacci ratios F(n+1)/F(n) on
+
+Create a standalone D3 v7 HTML file for Figure Line chart showing consecutive Fibonacci ratios F(n+1)/F(n) on. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: line chart showing consecutive Fibonacci ratios F(n+1)/F(n) on the y-axis for n=1 through 15 on the x-axis — the line starts at 2.0 and oscillates downward, converging to the dashed horizontal line at φ≈1.618 — student sees the convergence visually and understands that the ratios approach but never exactly reach φ for finite n. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/13-math-and-fig-03.html`
+
+---
+
+### Figure 13.4 — Golden rectangle with the square-removal process shown in
+
+Create a standalone D3 v7 HTML file for Figure Golden rectangle with the square-removal process shown in. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: golden rectangle with the square-removal process shown in four steps — first the full φ×1 rectangle with the 1×1 square marked for removal; then the smaller golden rectangle; then a third; then a fourth — nested squares tiling inward with each rotated 90°, and a logarithmic spiral arc drawn through the corners of all the squares — caption: "Each removal leaves a golden rectangle. The spiral is the curve traced by connecting the corners.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/13-math-and-fig-04.html`
+
+---
+
+### Figure 13.5 — Ranked table of musical intervals 
+
+Create a standalone D3 v7 HTML file for Figure Ranked table of musical intervals . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: ranked table of musical intervals — columns: Interval Name, Frequency Ratio, Perceived Consonance — rows from most to least consonant: Unison (1:1), Octave (2:1), Perfect Fifth (3:2), Perfect Fourth (4:3), Major Third (5:4), Minor Third (6:5), Tritone (√2:1) — student sees the direct relationship between ratio simplicity and perceived consonance, and the tritone as the anomalous irrational case. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/13-math-and-fig-05.html`
+
+---
+
+### Figure 13.6 — Three-column summary table 
+
+Create a standalone D3 v7 HTML file for Figure Three-column summary table . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: three-column summary table — columns: Domain, Constraint, Mathematical Solution, Observable Signature — rows: Sunflower (continuous rotational growth → golden angle from φ → Fibonacci spiral counts), Music (transposability across all keys → 2^(1/12) per half-step → logarithmic pitch perception), Architecture (self-similar proportion → golden rectangle → logarithmic spiral) — student sees all three threads of the chapter unified in one view. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/13-math-and-fig-06.html`

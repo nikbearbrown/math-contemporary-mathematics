@@ -10,7 +10,8 @@ That is the situation. A multiplication problem that takes a fraction of a secon
 
 This is not a quirk or a clever trick layered on top of arithmetic. It is a consequence of the deepest structural fact about the integers: every number above 1 is either prime or breaks uniquely into primes, and while the breaking-down is guaranteed to exist, no one has found a fast way to find it. The guarantee of existence and the computational difficulty of discovery live in the same theorem. That tension is what cryptographers are renting when they build encryption.
 
-<!-- → [INFOGRAPHIC: Two-column asymmetry diagram — left column "Multiply two primes" with arrow pointing right, label "< 1 second"; right column "Factor the product back" with arrow pointing right, label "300 trillion years on current hardware". Visual emphasis on the one-way arrow. Student should see that the same operation is trivially fast in one direction and computationally impossible in the other — this is the premise the rest of the chapter pays off.] -->
+![Two-column asymmetry diagram ](images/03-real-number-systems-and-number-theory-fig-01.png)
+*Figure 3.1 — Two-column asymmetry diagram *
 
 This chapter teaches you to see inside numbers — how they factor, how they combine with signs, how they subdivide into fractions. Not as rules to memorize but as things that are true for reasons you can understand.
 
@@ -33,7 +34,12 @@ To avoid long division for common cases, mathematicians developed divisibility t
 | 5 | Last digit is 0 or 5 |
 | 10 | Last digit is 0 |
 
-<!-- → [TABLE: Expanded divisibility rules reference — add columns for 4 (last two digits divisible by 4), 6 (divisible by both 2 and 3), 9 (digit sum divisible by 9), with a "why it works" column giving a one-sentence plain-language explanation of each rule. Students need this as a reference card and the "why" column prevents rote memorization.] -->
+| Item | Meaning |
+| --- | --- |
+| Expanded divisibility rules reference | add columns for 4 (last two digits divisible by 4 |
+| 6 (divisible by both 2 and 3 | A concrete checkpoint for applying the chapter concept. |
+| 9 (digit sum divisible by 9 | A concrete checkpoint for applying the chapter concept. |
+| with a "why it works" column giving a one-sentence plain-language explanation of each rule. Students need this as a reference card and the "why" column prevents rote memorization. | A specific, evidence-linked version that readers can verify. |
 
 Try it on 318. Is it divisible by 3? Add the digits: $3 + 1 + 8 = 12$. Is 12 divisible by 3? Yes: $12 = 3 \times 4$. So 318 is divisible by 3. Check: $318 = 3 \times 106$. The test worked.
 
@@ -86,7 +92,8 @@ A factor tree shows the same calculation visually: write 140 at the top, branch 
              5    7
 ```
 
-<!-- → [IMAGE: Clean rendered factor tree for 140 with color coding — composite nodes in one color, prime leaf nodes in a contrasting color, and the final factorization $2^2 \times 5 \times 7$ displayed below the tree. A second smaller tree beside it showing an alternate starting factorization (e.g., starting with $4 \times 35$) that reaches the same leaves — this is the visual proof that the leaves are path-independent.] -->
+![Clean rendered factor tree for 140 with color](images/03-real-number-systems-and-number-theory-fig-02.png)
+*Figure 3.2 — Clean rendered factor tree for 140 with color*
 
 The leaves are always the same, regardless of which branches you chose.
 
@@ -127,7 +134,8 @@ $$\text{LCM}(12, 18) = 2^{\max(2,1)} \times 3^{\max(1,2)} = 2^2 \times 3^2 = 36$
 
 There is a compact relationship between the two: $\text{GCD}(a,b) \times \text{LCM}(a,b) = a \times b$. Check: $6 \times 36 = 216 = 12 \times 18$. ✓
 
-<!-- → [INFOGRAPHIC: Side-by-side Venn diagram for GCD and LCM using prime factor "bubbles" — left circle contains prime factors unique to 12 ($2^2 \times 3$), right circle contains prime factors unique to 18 ($2 \times 3^2$), overlapping region shows shared factors. Caption: GCD takes the overlap (minimum exponents); LCM takes the union (maximum exponents). This is the cleanest visual for why the min/max rule works, and students almost always request it.] -->
+![Venn diagram for GCD and LCM using prime](images/03-real-number-systems-and-number-theory-fig-03.png)
+*Figure 3.3 — Venn diagram for GCD and LCM using prime*
 
 GCD solves packing and division problems: a camp director with 48 sleeping bags and 64 tent stakes who wants identical kits with no leftovers needs GCD(48, 64) kits. $48 = 2^4 \times 3$, $64 = 2^6$. GCD $= 2^4 = 16$. Sixteen kits, 3 sleeping bags and 4 stakes each.
 
@@ -151,7 +159,8 @@ $3 + (-5) = -2$ — start at 3, move left 5, land at −2.
 
 $(-3) + (-5) = -8$ — start at −3, move left 5, land at −8.
 
-<!-- → [IMAGE: Horizontal number line from −10 to +10, showing all three addition examples as labeled arrows — each arrow a different color, with start point marked, direction of movement shown, and landing point circled. Student should see the physical meaning of sign: positive = rightward movement, negative = leftward movement. Include a fourth arrow showing $7 - (-3) = 10$ to illustrate the double-reversal.] -->
+![Horizontal number line from −10 to +10, showing](images/03-real-number-systems-and-number-theory-fig-04.png)
+*Figure 3.4 — Horizontal number line from −10 to +10, showing*
 
 Subtraction reverses: $a - b$ means start at $a$ and move *against* the direction of $b$.
 
@@ -207,7 +216,8 @@ $$\frac{3}{12} + \frac{2}{12} = \frac{5}{12}$$
 
 Why do you need a common denominator? Because $\frac{1}{4}$ and $\frac{1}{6}$ are measuring in different units — fourths and sixths. You cannot add them directly any more than you can add 3 feet and 2 meters without converting. The LCM converts both to the same unit.
 
-<!-- → [IMAGE: Area-model diagram for fraction addition — a rectangle divided into 12 equal parts. Left portion shaded to show $\frac{3}{12}$ (= $\frac{1}{4}$), a differently-shaded portion showing $\frac{2}{12}$ (= $\frac{1}{6}$), combined shading showing $\frac{5}{12}$. The visual makes concrete why the denominator is a unit of measurement and why changing it doesn't change the value of the fraction.] -->
+![Area-model diagram for fraction addition ](images/03-real-number-systems-and-number-theory-fig-05.png)
+*Figure 3.5 — Area-model diagram for fraction addition *
 
 ### Multiplying and Dividing
 
@@ -253,7 +263,8 @@ Assume it can: $\sqrt{2} = \frac{p}{q}$ in lowest terms. Then $2 = \frac{p^2}{q^
 
 The assumption fails. $\sqrt{2}$ is not rational. It is **irrational** — real, but not expressible as any fraction. The rational numbers are dense on the number line (between any two rationals there is always another rational), but they have gaps, and irrational numbers fill them. Together, rationals and irrationals form the **real numbers**.
 
-<!-- → [INFOGRAPHIC: Number line zoomed in on the interval [1, 2], showing: (1) a cluster of rational number markers as tick marks with fractions labeled ($\frac{3}{2}$, $\frac{4}{3}$, $\frac{7}{5}$, $\frac{10}{7}$, converging toward $\sqrt{2}$), (2) $\sqrt{2} \approx 1.41421...$ marked with a distinct symbol showing it falls in the gap between rational approximations, and (3) a small inset showing the unit square with diagonal labeled $\sqrt{2}$ to connect the abstract number to its geometric origin. Caption: The rationals are everywhere dense but don't cover everything. $\sqrt{2}$ is the gap.] -->
+![Number line zoomed in on the interval [1,](images/03-real-number-systems-and-number-theory-fig-06.png)
+*Figure 3.6 — Number line zoomed in on the interval [1,*
 
 ---
 
@@ -269,7 +280,8 @@ The GCD shows up in reporting: when combining data from systems with different m
 
 Prime structure secures the whole system. Integer arithmetic runs it. Rational arithmetic measures the transactions. All three rest on the same foundation: the integers, extended by the rules of divisibility and the fact that every number factors uniquely.
 
-<!-- → [INFOGRAPHIC: Three-layer stack diagram — bottom layer labeled "Integers: direction + magnitude", middle layer labeled "Prime factorization: unique structure", top layer labeled "Rational arithmetic: exact ratios". An arrow running up the left side labeled "Chapter 3 builds upward." At the top, a small icon of a lock representing the cryptography application. Student should see that the three concepts aren't parallel — they're layered, each one depending on the one below.] -->
+![Three-layer stack diagram ](images/03-real-number-systems-and-number-theory-fig-07.png)
+*Figure 3.7 — Three-layer stack diagram *
 
 The thing to hold onto — the one idea from this chapter that matters most:
 
@@ -379,3 +391,69 @@ Who is Srinivasa Ramanujan, and how does their work connect to number theory we 
 - Add a constraint: "Answer including criticisms or limits of Srinivasa Ramanujan's framework."
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 3.1 — Two-column asymmetry diagram 
+
+Create a standalone D3 v7 HTML file for Figure Two-column asymmetry diagram . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two-column asymmetry diagram — left column "Multiply two primes" with arrow pointing right, label "< 1 second"; right column "Factor the product back" with arrow pointing right, label "300 trillion years on current hardware". Visual emphasis on the one-way arrow. Student should see that the same operation is trivially fast in one direction and computationally impossible in the other — this is the premise the rest of the chapter pays off.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/03-real-number-systems-and-number-theory-fig-01.html`
+
+---
+
+### Figure 3.2 — Clean rendered factor tree for 140 with color
+
+Create a standalone D3 v7 HTML file for Figure Clean rendered factor tree for 140 with color. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Clean rendered factor tree for 140 with color coding — composite nodes in one color, prime leaf nodes in a contrasting color, and the final factorization $2^2 \times 5 \times 7$ displayed below the tree. A second smaller tree beside it showing an alternate starting factorization (e.g., starting with $4 \times 35$) that reaches the same leaves — this is the visual proof that the leaves are path-independent.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/03-real-number-systems-and-number-theory-fig-02.html`
+
+---
+
+### Figure 3.3 — Venn diagram for GCD and LCM using prime
+
+Create a standalone D3 v7 HTML file for Figure Venn diagram for GCD and LCM using prime. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Side-by-side Venn diagram for GCD and LCM using prime factor "bubbles" — left circle contains prime factors unique to 12 ($2^2 \times 3$), right circle contains prime factors unique to 18 ($2 \times 3^2$), overlapping region shows shared factors. Caption: GCD takes the overlap (minimum exponents); LCM takes the union (maximum exponents). This is the cleanest visual for why the min/max rule works, and students almost always request it.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/03-real-number-systems-and-number-theory-fig-03.html`
+
+---
+
+### Figure 3.4 — Horizontal number line from −10 to +10, showing
+
+Create a standalone D3 v7 HTML file for Figure Horizontal number line from −10 to +10, showing. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Horizontal number line from −10 to +10, showing all three addition examples as labeled arrows — each arrow a different color, with start point marked, direction of movement shown, and landing point circled. Student should see the physical meaning of sign: positive = rightward movement, negative = leftward movement. Include a fourth arrow showing $7 - (-3) = 10$ to illustrate the double-reversal.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/03-real-number-systems-and-number-theory-fig-04.html`
+
+---
+
+### Figure 3.5 — Area-model diagram for fraction addition 
+
+Create a standalone D3 v7 HTML file for Figure Area-model diagram for fraction addition . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Area-model diagram for fraction addition — a rectangle divided into 12 equal parts. Left portion shaded to show $\frac{3}{12}$ (= $\frac{1}{4}$), a differently-shaded portion showing $\frac{2}{12}$ (= $\frac{1}{6}$), combined shading showing $\frac{5}{12}$. The visual makes concrete why the denominator is a unit of measurement and why changing it doesn't change the value of the fraction.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/03-real-number-systems-and-number-theory-fig-05.html`
+
+---
+
+### Figure 3.6 — Number line zoomed in on the interval [1,
+
+Create a standalone D3 v7 HTML file for Figure Number line zoomed in on the interval [1,. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Number line zoomed in on the interval [1, 2], showing: (1) a cluster of rational number markers as tick marks with fractions labeled ($\frac{3}{2}$, $\frac{4}{3}$, $\frac{7}{5}$, $\frac{10}{7}$, converging toward $\sqrt{2}$), (2) $\sqrt{2} \approx 1.41421...$ marked with a distinct symbol showing it falls in the gap between rational approximations, and (3) a small inset showing the unit square with diagonal labeled $\sqrt{2}$ to connect the abstract number to its geometric origin. Caption: The rationals are everywhere dense but don't cover everything. $\sqrt{2}$ is the gap.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono fo
+
+> Reference implementation: `d3/03-real-number-systems-and-number-theory-fig-06.html`
+
+---
+
+### Figure 3.7 — Three-layer stack diagram 
+
+Create a standalone D3 v7 HTML file for Figure Three-layer stack diagram . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Three-layer stack diagram — bottom layer labeled "Integers: direction + magnitude", middle layer labeled "Prime factorization: unique structure", top layer labeled "Rational arithmetic: exact ratios". An arrow running up the left side labeled "Chapter 3 builds upward." At the top, a small icon of a lock representing the cryptography application. Student should see that the three concepts aren't parallel — they're layered, each one depending on the one below.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/03-real-number-systems-and-number-theory-fig-07.html`

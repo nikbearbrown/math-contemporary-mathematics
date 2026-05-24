@@ -21,19 +21,22 @@ Two distinct points determine exactly one line. That line extends forever in bot
 
 The notation is systematic. A point is a capital letter: $A$. A segment from $A$ to $B$ gets a bar over the letters: $\overline{AB}$. A ray starting at $A$ through $B$ gets an arrow: $\overrightarrow{AB}$. A full line through both gets arrows in both directions: $\overleftrightarrow{AB}$.
 
-<!-- → [IMAGE: four labeled diagrams in a row — point A (dot), segment AB (line with two endpoints), ray AB (line with one endpoint and one arrow), line AB (line with arrows at both ends) — each with its symbol beneath; student should be able to read the symbol and immediately identify which object it represents] -->
+![Four labeled diagrams in a row ](images/10-geometry-fig-01.png)
+*Figure 10.1 — Four labeled diagrams in a row *
 
 Now introduce direction. When two rays share a starting point — called the *vertex* — they form an *angle*. The angle is measured by the rotation from one ray to the other, in degrees. A full rotation is 360°. Half a rotation is a *straight angle*, 180°. A quarter rotation is a *right angle*, 90°, marked with a small square at the vertex. Below 90° is *acute*. Between 90° and 180° is *obtuse*.
 
 Two angles that sum to 90° are *complementary*. Two that sum to 180° are *supplementary*. These words carry information: if you know one of a complementary pair, you can always find the other; same with supplementary. The relationship does the work.
 
-<!-- → [IMAGE: four angle diagrams side by side — acute (<90°), right (90° with square corner symbol), obtuse (90°–180°), straight (180°) — each labeled with its name and degree range; beneath, a small diagram showing a complementary pair summing to 90° and a supplementary pair summing to 180°] -->
+![Four angle diagrams side by side ](images/10-geometry-fig-02.png)
+*Figure 10.2 — Four angle diagrams side by side *
 
 Two lines that never meet — that maintain the same distance forever — are *parallel*, written $\ell_1 \parallel \ell_2$. Two lines that meet at exactly 90° are *perpendicular*, written $\ell_1 \perp \ell_2$. A perpendicular from a point to a line is the shortest path from that point to the line. This is not a definition; it is a theorem. But it is one of those theorems so close to obvious that it feels like a definition.
 
 Here is the structural fact about angles that makes surveying possible. When a line — called a *transversal* — crosses two parallel lines, it creates eight angles. The corresponding angles on the same side of each parallel line are equal. The alternate interior angles (on opposite sides of the transversal, between the parallels) are also equal. This is how a surveyor checks whether two roads are actually parallel: find a road that crosses both, measure the corresponding angles. Equal? Parallel. Unequal? The roads are drifting toward each other.
 
-<!-- → [IMAGE: two parallel horizontal lines crossed by a diagonal transversal — all eight angles labeled 1–8 — corresponding pairs (1 and 5, 2 and 6, etc.) highlighted in the same color; alternate interior pairs (3 and 6, 4 and 5) highlighted in a second color — student should see at a glance which angle pairs are forced to be equal when the lines are parallel] -->
+![Two parallel horizontal lines crossed by a diagonal](images/10-geometry-fig-03.png)
+*Figure 10.3 — Two parallel horizontal lines crossed by a diagonal*
 
 A right angle is not just a geometric object. It is the guarantee of perpendicularity, and perpendicularity is the guarantee that walls stand straight and floors lie flat. The right angle is the most practically important angle measurement in all of construction.
 
@@ -85,7 +88,8 @@ Here is the thing students most often confuse: perimeter and area are not the sa
 
 Double the dimensions of a rectangle. What happens to the perimeter? It doubles. What happens to the area? It quadruples. This matters enormously in the real world. A kitchen twice as long and twice as wide doesn't need twice as much tile — it needs four times as much. A developer who confuses perimeter and area when estimating materials has made an expensive mistake.
 
-<!-- → [IMAGE: two rectangles side by side — left: 3×2 rectangle with perimeter=10 and area=6 labeled; right: 6×4 rectangle (doubled dimensions) with perimeter=20 (×2) and area=24 (×4) labeled — caption: "Double the dimensions. Perimeter doubles. Area quadruples." Student sees the scaling asymmetry as a visual fact, not just an algebraic result] -->
+![Double the dimensions. Perimeter doubles. Area quadruples.](images/10-geometry-fig-04.png)
+*Figure 10.4 — Two rectangles side by side *
 
 ---
 
@@ -107,7 +111,8 @@ $$a^2 + b^2 = c^2$$
 
 Not approximately. Exactly. Always, for every right triangle, in flat space.
 
-<!-- → [IMAGE: right triangle with a square constructed on each of its three sides — the two smaller squares on the legs are shaded in one color each, the large square on the hypotenuse shaded in a third color — caption: "The area of the square on the hypotenuse equals the combined area of the squares on the two legs. This is what a²+b²=c² actually says." Student sees the theorem as a statement about areas, not just side lengths] -->
+![The area of the square on the hypotenuse equals the combined area of the squares on the two legs. This is what a²+b²=c² actually says.](images/10-geometry-fig-05.png)
+*Figure 10.5 — Right triangle with a square constructed on each*
 
 The most famous right triangle has legs 3 and 4. The hypotenuse is $\sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5$. The triple $(3, 4, 5)$ is the simplest Pythagorean triple. The ancient Babylonian surveyors used knotted ropes with 12 equally-spaced knots. Tie the ends together, pull the rope into a triangle with sides 3, 4, and 5 knots, and you have a guaranteed right angle at the corner — a right angle you can lay out without any instrument except a knotted rope.
 
@@ -133,7 +138,8 @@ Check: $(60, 80, 100) = 20 \times (3, 4, 5)$. Pythagorean triple, scales correct
 
 The surveyor has measured $AB$ without walking it. She turned an impossible direct measurement into two easy perpendicular measurements and a calculation. The pond didn't change. Her ability to reason about it did.
 
-<!-- → [IMAGE: top-down diagram of the pond problem — point A on the left shore, point C directly below A connected by a vertical segment labeled "60 m", point B on the right shore connected to C by a horizontal segment labeled "80 m", dashed line from A to B labeled "? (hypotenuse)" crossing the pond — right angle marked at C; below the diagram, the calculation AB²=60²+80²=10000, AB=100 m — student sees the abstract right triangle mapped onto the concrete surveying situation] -->
+![Top-down diagram of the pond problem ](images/10-geometry-fig-06.png)
+*Figure 10.6 — Top-down diagram of the pond problem *
 
 ---
 
@@ -147,7 +153,8 @@ Architects use this constantly. A blueprint at 1:50 scale means every measuremen
 
 And here is the connection that makes trigonometry possible — though that's another chapter. In a right triangle with a given angle, the ratio of any two sides is fixed, regardless of how big or small the triangle is. Give me the angle; I'll give you the ratio. That's what the trigonometric functions are: tables of those ratios, so you can calculate the sides you can't measure from the angles you can.
 
-<!-- → [IMAGE: two similar right triangles — small triangle with legs 3 and 4 and hypotenuse 5; large triangle with legs 9 and 12 and hypotenuse 15 — corresponding sides connected by labeled ratio arrows (×3) — the angle at the lower-left corner labeled θ in both — caption: "Same angle θ, same side ratios, regardless of size. This is why scaling preserves shape."] -->
+![Same angle θ, same side ratios, regardless of size. This is why scaling preserves shape.](images/10-geometry-fig-07.png)
+*Figure 10.7 — Two similar right triangles *
 
 ---
 
@@ -318,3 +325,69 @@ Who is Bonaventura Cavalieri, and how does their work connect to geometry we cov
 - Add a constraint: "Answer including criticisms or limits of Bonaventura Cavalieri's framework."
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 10.1 — Four labeled diagrams in a row 
+
+Create a standalone D3 v7 HTML file for Figure Four labeled diagrams in a row . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: four labeled diagrams in a row — point A (dot), segment AB (line with two endpoints), ray AB (line with one endpoint and one arrow), line AB (line with arrows at both ends) — each with its symbol beneath; student should be able to read the symbol and immediately identify which object it represents. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/10-geometry-fig-01.html`
+
+---
+
+### Figure 10.2 — Four angle diagrams side by side 
+
+Create a standalone D3 v7 HTML file for Figure Four angle diagrams side by side . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: four angle diagrams side by side — acute (<90°), right (90° with square corner symbol), obtuse (90°–180°), straight (180°) — each labeled with its name and degree range; beneath, a small diagram showing a complementary pair summing to 90° and a supplementary pair summing to 180°. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/10-geometry-fig-02.html`
+
+---
+
+### Figure 10.3 — Two parallel horizontal lines crossed by a diagonal
+
+Create a standalone D3 v7 HTML file for Figure Two parallel horizontal lines crossed by a diagonal. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: two parallel horizontal lines crossed by a diagonal transversal — all eight angles labeled 1–8 — corresponding pairs (1 and 5, 2 and 6, etc.) highlighted in the same color; alternate interior pairs (3 and 6, 4 and 5) highlighted in a second color — student should see at a glance which angle pairs are forced to be equal when the lines are parallel. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/10-geometry-fig-03.html`
+
+---
+
+### Figure 10.4 — Two rectangles side by side 
+
+Create a standalone D3 v7 HTML file for Figure Two rectangles side by side . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: two rectangles side by side — left: 3×2 rectangle with perimeter=10 and area=6 labeled; right: 6×4 rectangle (doubled dimensions) with perimeter=20 (×2) and area=24 (×4) labeled — caption: "Double the dimensions. Perimeter doubles. Area quadruples." Student sees the scaling asymmetry as a visual fact, not just an algebraic result. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/10-geometry-fig-04.html`
+
+---
+
+### Figure 10.5 — Right triangle with a square constructed on each
+
+Create a standalone D3 v7 HTML file for Figure Right triangle with a square constructed on each. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: right triangle with a square constructed on each of its three sides — the two smaller squares on the legs are shaded in one color each, the large square on the hypotenuse shaded in a third color — caption: "The area of the square on the hypotenuse equals the combined area of the squares on the two legs. This is what a²+b²=c² actually says." Student sees the theorem as a statement about areas, not just side lengths. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/10-geometry-fig-05.html`
+
+---
+
+### Figure 10.6 — Top-down diagram of the pond problem 
+
+Create a standalone D3 v7 HTML file for Figure Top-down diagram of the pond problem . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: top-down diagram of the pond problem — point A on the left shore, point C directly below A connected by a vertical segment labeled "60 m", point B on the right shore connected to C by a horizontal segment labeled "80 m", dashed line from A to B labeled "? (hypotenuse)" crossing the pond — right angle marked at C; below the diagram, the calculation AB²=60²+80²=10000, AB=100 m — student sees the abstract right triangle mapped onto the concrete surveying situation. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/10-geometry-fig-06.html`
+
+---
+
+### Figure 10.7 — Two similar right triangles 
+
+Create a standalone D3 v7 HTML file for Figure Two similar right triangles . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: two similar right triangles — small triangle with legs 3 and 4 and hypotenuse 5; large triangle with legs 9 and 12 and hypotenuse 15 — corresponding sides connected by labeled ratio arrows (×3) — the angle at the lower-left corner labeled θ in both — caption: "Same angle θ, same side ratios, regardless of size. This is why scaling preserves shape.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/10-geometry-fig-07.html`

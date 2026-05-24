@@ -24,7 +24,10 @@ None of this is stupid. These units grew from practical use, and the numbers tha
 
 But consider what you cannot do easily with customary units: convert from one scale to another. How many square feet in a square mile? $5,280^2 = 27,878,400$. How many cubic feet in a cubic yard? $3^3 = 27$. How many ounces in a ton? $16 \times 2,000 = 32,000$. Every conversion requires you to memorize a different, arbitrary number. There is no pattern. You cannot derive the conversion factors from first principles. You have to look them up.
 
-<!-- → [TABLE: Side-by-side comparison of customary vs. metric conversion factors — rows: length, area, volume, mass; columns: "Customary: what you must memorize" (12 in/ft, 5,280 ft/mi, 43,560 ft²/acre, 16 oz/lb, etc.) vs. "Metric: what you derive" (always a power of 10, shown as $10^1$, $10^2$, $10^3$). Student should see at a glance that the customary column is a list of unrelated arbitrary numbers and the metric column is one rule applied repeatedly.] -->
+| Customary: what you must memorize" (12 in | ft | 5 | 280 ft | mi |
+| --- | --- | --- | --- | --- |
+| length, area, volume, mass | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| columns: "Customary: what you must memorize" (12 in | ft, 5,280 ft | mi, 43,560 ft² | acre, 16 oz | lb, etc.) vs. "Metric: what you derive" (always a power of 10, shown as $10^1$, $10^2$, $10^3$). Student should see at a glance that the customary column is a list of unrelated arbitrary numbers and the metric column is one rule applied repeatedly. |
 
 The metric system was designed to fix this. In 1791, in the aftermath of the French Revolution, a committee of the French Academy of Sciences proposed a new measurement system based on a single principle: every unit should be a power of ten times the base unit. Change the prefix, change the power. The math takes care of itself.
 
@@ -54,7 +57,8 @@ Each of these base units can be rescaled by attaching a prefix. The prefix deter
 
 Read the table as a ladder. Each rung is a factor of ten. Move up one rung and the unit gets ten times larger. Move down one rung and it gets ten times smaller. A kilometer is $10^3$ meters — one thousand meters. A millimeter is $10^{-3}$ meters — one thousandth of a meter. A centimeter is $10^{-2}$ meters — one hundredth of a meter, or ten millimeters.
 
-<!-- → [IMAGE: Vertical ladder diagram of the seven metric prefixes — kilo at top, milli at bottom, each rung labeled with its symbol, power of 10, and one concrete example (1 km = 1,000 m, 1 cm = 0.01 m, etc.). Between each pair of rungs, an arrow pointing down labeled "÷ 10 (going larger to smaller)" and an arrow pointing up labeled "× 10 (going smaller to larger)". This is the single most-referenced diagram in the chapter; students should be able to use it to derive any conversion without memorizing anything beyond the prefix names.] -->
+![Vertical ladder diagram of the seven metric prefixes](images/09-metric-measurement-fig-01.png)
+*Figure 9.1 — Vertical ladder diagram of the seven metric prefixes*
 
 The mnemonic that gets used in classrooms is *King Henry Died From Drinking Chocolate Milk* — kilo, hecto, deca, base, deci, centi, milli. The mnemonic doesn't matter much. What matters is that you understand what the ladder means: each step is a factor of ten, and which direction you move determines whether you multiply or divide.
 
@@ -90,7 +94,8 @@ Scale it up: one liter is one thousand cubic centimeters (we will derive this in
 
 This means you can anchor your intuition with one fact: *a liter of water is a kilogram.* A two-liter bottle of soda weighs roughly two kilograms. A 500 mL water bottle weighs half a kilogram. A medicine label that says "500 mg per tablet" is telling you the tablet contains half a gram of active ingredient — less than the mass of a paper clip.
 
-<!-- → [INFOGRAPHIC: Three nested cubes showing the volume-mass relationship — smallest cube: 1 cm × 1 cm × 1 cm labeled "1 cm³ = 1 mL = 1 g of water"; middle cube: 10 cm × 10 cm × 10 cm labeled "1 dm³ = 1 L = 1 kg of water"; largest cube (outline only, implied): 100 cm × 100 cm × 100 cm labeled "1 m³ = 1,000 L = 1,000 kg of water". Student should see that length, volume, and mass all connect through the same nested powers of 10 — this is the internal consistency of the metric system made visual.] -->
+![Three nested cubes showing the volume-mass relationship ](images/09-metric-measurement-fig-02.png)
+*Figure 9.2 — Three nested cubes showing the volume-mass relationship *
 
 ---
 
@@ -108,7 +113,8 @@ $$(100 \text{ cm}) \times (100 \text{ cm}) = 10{,}000 \text{ cm}^2$$
 
 So $1 \text{ m}^2 = 10{,}000 \text{ cm}^2$. The linear factor was 100. The area factor is $100^2 = 10{,}000$.
 
-<!-- → [IMAGE: A square drawn to scale with sides labeled "1 m = 100 cm". The interior divided into a 10×10 grid of decimeter squares (each dm² shaded lightly), with one corner square enlarged to show the 10×10 centimeter grid inside it. Caption: "1 m² contains 100 dm². Each dm² contains 100 cm². Total: 10,000 cm². The factor squared because the space is two-dimensional." Student should see why you cannot simply use the linear conversion factor for area — the visual makes the squaring rule geometrically obvious rather than a rule to memorize.] -->
+![1 m² contains 100 dm². Each dm² contains 100 cm². Total: 10,000 cm². The factor squared because the space is two-dimensional.](images/09-metric-measurement-fig-03.png)
+*Figure 9.3 — A square drawn to scale with sides labeled*
 
 The rule: **when converting area, square the linear conversion factor.**
 
@@ -166,7 +172,8 @@ The table of connections:
 | 1 dm³ = 1 L | — |
 | 1 L of water = 1 kg | mass ↔ volume |
 
-<!-- → [INFOGRAPHIC: Three-column relationship map connecting the three measurement types — left column "LENGTH" with mm → cm → dm → m → km; middle column "VOLUME" with mL → cL → dL → L → kL; right column "MASS" with mg → cg → dg → g → kg. Horizontal arrows connecting: dm ↔ L ↔ kg (the key equivalence row, highlighted). Vertical arrows between all rungs labeled ×10 or ÷10. This is the "one system" map — student should see that all three measurement types share the same prefix ladder and that the middle row ties them all together through the water definition.] -->
+![Three-column relationship map connecting the three measurement types](images/09-metric-measurement-fig-04.png)
+*Figure 9.4 — Three-column relationship map connecting the three measurement types*
 
 A worked example. A juice carton is 6 cm long, 6 cm wide, and 20 cm tall. A factory produces 28,800 liters of juice each day. How many cartons does the factory need?
 
@@ -210,7 +217,8 @@ For quick mental estimates, a useful approximation: double the Celsius temperatu
 
 The key difference from metric-to-metric conversion: you cannot just multiply by a factor. You must shift by 32 *and* scale by 1.8. Getting the order of operations wrong — scaling before shifting, or shifting in the wrong direction — gives an answer that is plausible-looking but wrong. This is another version of the unit-mismatch problem. The scale of the units matches (degrees feel like they should be comparable), but the zeros are in different places.
 
-<!-- → [IMAGE: Two parallel thermometer diagrams side by side — left labeled Fahrenheit (32° at bottom reference point, 212° at top), right labeled Celsius (0° at bottom reference point, 100° at top). Horizontal dashed lines connecting: freezing point (32°F = 0°C) and boiling point (212°F = 100°C). Between the two thermometers, annotation showing the two-step conversion: "Step 1: subtract 32 (shift zeros into alignment). Step 2: divide by 1.8 (rescale the degree size)." A third annotation showing the error that results from reversing the steps. Student should see visually why the offset and the scale factor must be applied in the correct order.] -->
+![Two parallel thermometer diagrams side by side ](images/09-metric-measurement-fig-05.png)
+*Figure 9.5 — Two parallel thermometer diagrams side by side *
 
 ---
 
@@ -230,7 +238,12 @@ A liter is slightly larger than a quart — roughly a large water bottle. A mill
 
 Body temperature is 37°C. Room temperature is about 20–22°C. Water boils at 100°C. Water freezes at 0°C.
 
-<!-- → [TABLE: Reasonableness reference card — four sections (Length, Mass, Volume, Temperature), each with 4–5 benchmark rows: the metric measurement, the real-world object it matches, and the approximate customary equivalent. Examples: "1 mm ≈ thickness of a credit card"; "1 kg ≈ bag of flour / 1 L of water"; "250 mL ≈ a cup / standard mug"; "37°C = body temperature". Formatted for quick visual scanning, not reading. This is the reference card a student tapes to their desk during the first month of working with metric units.] -->
+| Item | Meaning |
+| --- | --- |
+| the metric measurement, the real-world object it matches, and the approximate customary equivalent. Examples: "1 mm ≈ thickness of a credit card" | Use the chapter example as the concrete test case. |
+| "1 kg ≈ bag of flour | 1 L of water" |
+| "250 mL ≈ a cup | standard mug" |
+| "37°C = body temperature". Formatted for quick visual scanning, not reading. This is the reference card a student tapes to their desk during the first month of working with metric units. | A concrete checkpoint for applying the chapter concept. |
 
 Against these anchors, you can evaluate almost any measurement. A doorway that is "1.5 cm tall" is wrong — it should be 1.5 m. A human weighing "80 g" is wrong — it should be 80 kg. A coffee mug holding "250 L" is wrong — it should be 250 mL.
 
@@ -256,7 +269,8 @@ Its key properties are worth naming directly.
 
 None of this requires trusting the system on faith. You can verify every conversion from the prefix definitions. That is the point. A system you can verify is a system you can use confidently. And a system that is used confidently, across teams and borders and decades, is a system that does not lose spacecraft.
 
-<!-- → [INFOGRAPHIC: Timeline of the Mars Climate Orbiter mission (Dec 1998 launch → Sep 1999 arrival → disintegration), with a callout box at the disintegration point showing the specific error: "Thruster output reported in pound-force (lbf). Navigation software expected newtons (N). Ratio: 1 lbf = 4.45 N. Nine months of 4.45× navigation error." Below the timeline, a single-line summary: "A reasonableness check comparing expected vs. reported thrust values would have flagged the mismatch on day one." The visual purpose is to close the hook opened in the first paragraph with specific numbers, making the abstract lesson concrete.] -->
+![Timeline of the Mars Climate Orbiter mission (Dec](images/09-metric-measurement-fig-06.png)
+*Figure 9.6 — Timeline of the Mars Climate Orbiter mission (Dec*
 
 ---
 
@@ -364,3 +378,61 @@ Who is Pierre Méchain, and how does their work connect to metric measurement we
 - Add a constraint: "Answer including criticisms or limits of Pierre Méchain's framework."
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 9.1 — Vertical ladder diagram of the seven metric prefixes
+
+Create a standalone D3 v7 HTML file for Figure Vertical ladder diagram of the seven metric prefixes. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Vertical ladder diagram of the seven metric prefixes — kilo at top, milli at bottom, each rung labeled with its symbol, power of 10, and one concrete example (1 km = 1,000 m, 1 cm = 0.01 m, etc.). Between each pair of rungs, an arrow pointing down labeled "÷ 10 (going larger to smaller)" and an arrow pointing up labeled "× 10 (going smaller to larger)". This is the single most-referenced diagram in the chapter; students should be able to use it to derive any conversion without memorizing anything beyond the prefix names.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/09-metric-measurement-fig-01.html`
+
+---
+
+### Figure 9.2 — Three nested cubes showing the volume-mass relationship 
+
+Create a standalone D3 v7 HTML file for Figure Three nested cubes showing the volume-mass relationship . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Three nested cubes showing the volume-mass relationship — smallest cube: 1 cm × 1 cm × 1 cm labeled "1 cm³ = 1 mL = 1 g of water"; middle cube: 10 cm × 10 cm × 10 cm labeled "1 dm³ = 1 L = 1 kg of water"; largest cube (outline only, implied): 100 cm × 100 cm × 100 cm labeled "1 m³ = 1,000 L = 1,000 kg of water". Student should see that length, volume, and mass all connect through the same nested powers of 10 — this is the internal consistency of the metric system made visual.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/09-metric-measurement-fig-02.html`
+
+---
+
+### Figure 9.3 — A square drawn to scale with sides labeled
+
+Create a standalone D3 v7 HTML file for Figure A square drawn to scale with sides labeled. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: A square drawn to scale with sides labeled "1 m = 100 cm". The interior divided into a 10×10 grid of decimeter squares (each dm² shaded lightly), with one corner square enlarged to show the 10×10 centimeter grid inside it. Caption: "1 m² contains 100 dm². Each dm² contains 100 cm². Total: 10,000 cm². The factor squared because the space is two-dimensional." Student should see why you cannot simply use the linear conversion factor for area — the visual makes the squaring rule geometrically obvious rather than a rule to memorize.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/09-metric-measurement-fig-03.html`
+
+---
+
+### Figure 9.4 — Three-column relationship map connecting the three measurement types
+
+Create a standalone D3 v7 HTML file for Figure Three-column relationship map connecting the three measurement types. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Three-column relationship map connecting the three measurement types — left column "LENGTH" with mm → cm → dm → m → km; middle column "VOLUME" with mL → cL → dL → L → kL; right column "MASS" with mg → cg → dg → g → kg. Horizontal arrows connecting: dm ↔ L ↔ kg (the key equivalence row, highlighted). Vertical arrows between all rungs labeled ×10 or ÷10. This is the "one system" map — student should see that all three measurement types share the same prefix ladder and that the middle row ties them all together through the water definition.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/09-metric-measurement-fig-04.html`
+
+---
+
+### Figure 9.5 — Two parallel thermometer diagrams side by side 
+
+Create a standalone D3 v7 HTML file for Figure Two parallel thermometer diagrams side by side . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two parallel thermometer diagrams side by side — left labeled Fahrenheit (32° at bottom reference point, 212° at top), right labeled Celsius (0° at bottom reference point, 100° at top). Horizontal dashed lines connecting: freezing point (32°F = 0°C) and boiling point (212°F = 100°C). Between the two thermometers, annotation showing the two-step conversion: "Step 1: subtract 32 (shift zeros into alignment). Step 2: divide by 1.8 (rescale the degree size)." A third annotation showing the error that results from reversing the steps. Student should see visually why the offset and the scale factor must be applied in the correct order.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Us
+
+> Reference implementation: `d3/09-metric-measurement-fig-05.html`
+
+---
+
+### Figure 9.6 — Timeline of the Mars Climate Orbiter mission (Dec
+
+Create a standalone D3 v7 HTML file for Figure Timeline of the Mars Climate Orbiter mission (Dec. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Timeline of the Mars Climate Orbiter mission (Dec 1998 launch → Sep 1999 arrival → disintegration), with a callout box at the disintegration point showing the specific error: "Thruster output reported in pound-force (lbf). Navigation software expected newtons (N). Ratio: 1 lbf = 4.45 N. Nine months of 4.45× navigation error." Below the timeline, a single-line summary: "A reasonableness check comparing expected vs. reported thrust values would have flagged the mismatch on day one." The visual purpose is to close the hook opened in the first paragraph with specific numbers, making the abstract lesson concrete.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md col
+
+> Reference implementation: `d3/09-metric-measurement-fig-06.html`

@@ -25,7 +25,11 @@ When the outcomes aren't equally likely — a weighted die, a baseball batter ag
 
 And when you can't list outcomes and you have no past data — a new rocket design, an unprecedented medical treatment — you use *subjective probability*: an educated estimate from someone who knows the domain. Useful when necessary. The weakest of the three. State clearly which kind you're using, because they have different strengths and different failure modes.
 
-<!-- → [TABLE: three-column reference — columns: Type, How You Get It, When It Breaks Down — rows: Theoretical (count equally-likely outcomes), Empirical (observe frequency over many trials), Subjective (expert estimate) — student sees the three methods as a ranked toolkit, not interchangeable options] -->
+| Type | How You Get It | When It Breaks Down — |
+| --- | --- | --- |
+| Theoretical (count equally-likely outcomes | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| Empirical (observe frequency over many trials | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| Subjective (expert estimate) | student sees the three methods as a ranked toolkit, not interchangeable options | A concrete checkpoint for applying the chapter concept. |
 
 ---
 
@@ -45,7 +49,8 @@ Complement approach: the opposite of "at least one head" is "no heads at all" �
 
 Same answer, but the complement approach required thinking about exactly one outcome instead of seven. When the event you want is complex and its complement is simple, the complement approach is almost always faster. In problems with large sample spaces — "at least one success in ten tries" — the complement approach is often the only practical route.
 
-<!-- → [IMAGE: side-by-side comparison for the three-coin flip — left side shows all 8 outcomes of HHH/HHT/HTH/HTT/THH/THT/TTH/TTT with 7 shaded for the direct approach; right side shows only TTT shaded for the complement approach — caption: "The complement approach asks: what's the one thing I don't want?" Student sees visually why the complement is faster] -->
+![The complement approach asks: what's the one thing I don't want?](images/07-probability-fig-01.png)
+*Figure 7.1 — Comparison for the three-coin flip *
 
 ---
 
@@ -75,7 +80,8 @@ $$P(n, r) = \frac{n!}{(n-r)!}$$
 
 For the swimmers: $P(8, 3) = 8!/5! = 336$. The $5!$ in the denominator cancels all the terms below 6, leaving exactly the $8 \times 7 \times 6$ you calculated directly.
 
-<!-- → [IMAGE: annotated factorial cancellation diagram for P(8,3) — shows 8!/5! written out as (8×7×6×5×4×3×2×1)/(5×4×3×2×1) with the 5! terms crossed out in both numerator and denominator, leaving 8×7×6=336 — student sees that the formula is not magic, just organized cancellation] -->
+![Factorial cancellation diagram for P(8,3) ](images/07-probability-fig-02.png)
+*Figure 7.2 — Factorial cancellation diagram for P(8,3) *
 
 ### When order doesn't matter: combinations
 
@@ -97,7 +103,9 @@ About one and a half in a million. You don't need to deal millions of hands to k
 
 The question of whether to use permutations or combinations is always the same question: does the order of selection matter? Podium positions, sequences, passwords — order matters, use permutations. Committees, card hands, lottery numbers — order doesn't matter, use combinations. Use the wrong one and you'll be off by a factor of $r!$, which for even modest $r$ is enormous.
 
-<!-- → [TABLE: two-column decision guide — left column: "Use Permutations (order matters)" with examples: podium placements, passwords, race finishing order; right column: "Use Combinations (order doesn't matter)" with examples: committee selection, poker hands, lottery numbers — student can use this as a quick reference when setting up a counting problem] -->
+| Use Permutations (order matters)" with examples: podium placements | passwords | race finishing order |
+| --- | --- | --- |
+| two-column decision guide | left | A concrete checkpoint for applying the chapter concept. |
 
 ---
 
@@ -123,7 +131,8 @@ Now consider the casino's side of this bet. For every dollar wagered, the casino
 
 The casino is not beating players by being clever. It's not predicting outcomes. It's not exploiting psychology (well, it is, but that's not where the money comes from). The money comes from the structure of the payoff: the casino pays out $1 on a win but has a $20/38$ probability of winning instead of $18/38$. That asymmetry is tiny on any single bet — two extra slots on a 38-slot wheel. Repeated thousands of times, it's an iron guarantee.
 
-<!-- → [CHART: line chart showing cumulative net winnings for a player making 1,000 $1 bets on red in American roulette — the line wanders above and below zero in the early trials (variance) but trends steadily downward toward the expected value of −$52.6 by trial 1000 — a dashed line shows the theoretical expected value trajectory; student sees the Law of Large Numbers pulling the noisy short-run toward the predictable long-run] -->
+![Line chart showing cumulative net winnings for a](images/07-probability-fig-03.png)
+*Figure 7.3 — Line chart showing cumulative net winnings for a*
 
 ### What expected value is not
 
@@ -133,7 +142,8 @@ $$E(X) = 1 \times \frac{1}{6} + 2 \times \frac{1}{6} + 3 \times \frac{1}{6} + 4 
 
 You will never roll a 3.5. The expected value is a statement about the average over many trials, not a prediction for any single trial.
 
-<!-- → [IMAGE: number line from 1 to 6 with each die face marked, and an arrow pointing to 3.5 labeled "E(X) = 3.5" — the arrow lands between 3 and 4, in the gap — caption: "The expected value of a fair die is a number you can never actually roll. It's an average, not a prediction." Student sees the abstract meaning of expected value made concrete by its impossible location on the die] -->
+![The expected value of a fair die is a number you can never actually roll. It's an average, not a prediction.](images/07-probability-fig-04.png)
+*Figure 7.4 — Number line from 1 to 6 with each*
 
 Expected value also doesn't guarantee anything about your personal short-run experience. A lottery ticket with an expected value of $0.50 on a $2 investment has a negative expected value of $1.50 per ticket. If you buy one ticket, you might win the jackpot. If you buy 10,000 tickets over twenty years, you will almost certainly lose close to $15,000 total. The guarantee works in the long run. How long the long run needs to be depends on the variance — how wildly outcomes jump around. High-variance games can look profitable for a long time before the expected value asserts itself.
 
@@ -163,7 +173,8 @@ Counting (the multiplication rule, permutations, combinations) lets you calculat
 
 The sequence is: count $\to$ calculate probability $\to$ calculate expected value $\to$ make a decision.
 
-<!-- → [INFOGRAPHIC: four-box flow diagram — box 1: "Count" (multiplication rule / permutations / combinations → gives n(E) and n(S)); box 2: "Probability" (n(E)/n(S) → gives a number 0 to 1); box 3: "Expected Value" (weighted average of outcomes → gives long-run average); box 4: "Decision" (is E(X) positive or negative? how large is the variance?) — arrows connecting each box; student sees the whole chapter's logic as one pipeline] -->
+![Four-box flow diagram ](images/07-probability-fig-05.png)
+*Figure 7.5 — Four-box flow diagram *
 
 A casino uses all three. It counts the ways a bet can win or lose. It calculates the probabilities from those counts. It calculates the expected value from those probabilities. It sets the payouts so the expected value favors the house. Then it opens the doors and waits for the Law of Large Numbers to work.
 
@@ -321,3 +332,53 @@ Who is Florence Nightingale David, and how does their work connect to probabilit
 - Add a constraint: "Answer including criticisms or limits of Florence Nightingale David's framework."
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 7.1 — Comparison for the three-coin flip 
+
+Create a standalone D3 v7 HTML file for Figure Comparison for the three-coin flip . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: side-by-side comparison for the three-coin flip — left side shows all 8 outcomes of HHH/HHT/HTH/HTT/THH/THT/TTH/TTT with 7 shaded for the direct approach; right side shows only TTT shaded for the complement approach — caption: "The complement approach asks: what's the one thing I don't want?" Student sees visually why the complement is faster. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/07-probability-fig-01.html`
+
+---
+
+### Figure 7.2 — Factorial cancellation diagram for P(8,3) 
+
+Create a standalone D3 v7 HTML file for Figure Factorial cancellation diagram for P(8,3) . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: annotated factorial cancellation diagram for P(8,3) — shows 8!/5! written out as (8×7×6×5×4×3×2×1)/(5×4×3×2×1) with the 5! terms crossed out in both numerator and denominator, leaving 8×7×6=336 — student sees that the formula is not magic, just organized cancellation. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/07-probability-fig-02.html`
+
+---
+
+### Figure 7.3 — Line chart showing cumulative net winnings for a
+
+Create a standalone D3 v7 HTML file for Figure Line chart showing cumulative net winnings for a. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: line chart showing cumulative net winnings for a player making 1,000 $1 bets on red in American roulette — the line wanders above and below zero in the early trials (variance) but trends steadily downward toward the expected value of −$52.6 by trial 1000 — a dashed line shows the theoretical expected value trajectory; student sees the Law of Large Numbers pulling the noisy short-run toward the predictable long-run. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/07-probability-fig-03.html`
+
+---
+
+### Figure 7.4 — Number line from 1 to 6 with each
+
+Create a standalone D3 v7 HTML file for Figure Number line from 1 to 6 with each. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: number line from 1 to 6 with each die face marked, and an arrow pointing to 3.5 labeled "E(X) = 3.5" — the arrow lands between 3 and 4, in the gap — caption: "The expected value of a fair die is a number you can never actually roll. It's an average, not a prediction." Student sees the abstract meaning of expected value made concrete by its impossible location on the die. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/07-probability-fig-04.html`
+
+---
+
+### Figure 7.5 — Four-box flow diagram 
+
+Create a standalone D3 v7 HTML file for Figure Four-box flow diagram . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: four-box flow diagram — box 1: "Count" (multiplication rule / permutations / combinations → gives n(E) and n(S)); box 2: "Probability" (n(E)/n(S) → gives a number 0 to 1); box 3: "Expected Value" (weighted average of outcomes → gives long-run average); box 4: "Decision" (is E(X) positive or negative? how large is the variance?) — arrows connecting each box; student sees the whole chapter's logic as one pipeline. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/07-probability-fig-05.html`

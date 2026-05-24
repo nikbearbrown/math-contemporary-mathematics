@@ -10,7 +10,8 @@ You have not done the math. You looked at the interest rate — maybe 22%, maybe
 
 The math is not hard. That is the strange part. The machinery underneath credit cards, mortgages, savings accounts, retirement funds — all of it runs on one idea: interest compounds. An amount earns interest. That interest gets added to the amount. The new, larger amount earns interest. Repeat. What makes it feel mysterious is that the human brain cannot simulate exponential growth intuitively. We expect things to grow in straight lines. They don't.
 
-<!-- → [CHART: Side-by-side line graph comparing linear growth (simple interest, straight diagonal line) vs. exponential growth (compound interest, curve that starts nearly identical then bends sharply upward after year 10–15) for the same $1,000 principal at 6% over 30 years. Both start at the same point. Student should see exactly when and how dramatically the curves diverge — this is the visual proof that "interest compounds" is not a small technical detail but a qualitatively different kind of growth.] -->
+![Line graph comparing linear growth (simple interest, straight](images/06-money-management-fig-01.png)
+*Figure 6.1 — Line graph comparing linear growth (simple interest, straight*
 
 This chapter shows you the machinery. Once you see it, you cannot unsee it. You will look at the APR on a loan and know, with reasonable precision, what it will actually cost you. That is the only goal here.
 
@@ -26,7 +27,11 @@ How do we express the $50 as a rate? We compare it to the principal: $50 / $1,00
 
 One caution: the APR is a rate, not a cost. The cost depends on how much you borrow and how long you hold it. A 5% APR on $1,000 for one year costs $50. The same rate on $100,000 for ten years costs $50,000. The APR is the speed of the meter. The cost is what the meter reads when you stop.
 
-<!-- → [TABLE: APR vs. total cost matrix — rows are loan amounts ($1,000 / $10,000 / $100,000), columns are time horizons (1 year / 5 years / 10 years / 30 years), cells show total interest at a fixed 5% APR under simple interest. Student should see that the same rate produces wildly different costs depending on amount and duration, and that neither dimension alone tells the story.] -->
+| Item | Meaning |
+| --- | --- |
+| APR vs. total cost matrix | rows are loan amounts ($1,000 |
+| columns are time horizons (1 year | 5 years |
+| cells show total interest at a fixed 5% APR under simple interest. Student should see that the same rate produces wildly different costs depending on amount and duration, and that neither dimension alone tells the story. | A concrete checkpoint for applying the chapter concept. |
 
 ---
 
@@ -68,7 +73,9 @@ Year 3: interest = $1,081.60 × 0.04 = $43.26. New balance: $1,124.86.
 
 Compare to simple interest: $1,000 × 0.04 × 3 = $120 in interest, total $1,120. With compounding, she has $1,124.86 — a $4.86 difference. It seems trivial. Over three years on $1,000, it is trivial. But the gap widens every year, and it widens faster as the balance grows.
 
-<!-- → [TABLE: Year-by-year comparison table for Abena's $1,000 at 4% over 10 years — columns: Year, Simple Interest Balance, Compound Interest Balance, Difference. Rows 1–10. Student should see the difference start small ($4.86 at year 3) and grow to a meaningful gap by year 10 (~$48), making concrete what "the gap widens every year" means before the formulas introduce the general pattern.] -->
+| Year | Simple Interest Balance | Compound Interest Balance | Difference |
+| --- | --- | --- | --- |
+| for Abena's $1,000 at 4% over 10 years — | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
 
 The formula that replaces year-by-year calculation:
 
@@ -102,7 +109,8 @@ Nearly seven million dollars on a $5,000 debt. You did nothing except not pay. T
 
 (In practice, the credit card company would take legal action well before 30 years elapsed. The point is mathematical: the exponential doesn't care which direction it's pointed. It just runs.)
 
-<!-- → [CHART: Mirror-image chart showing compound growth in two directions from a shared zero point — above the axis: $5,000 invested at 5% growing to $21,609 over 30 years (labeled "saving"); below the axis: $5,000 owed at 24% compounded monthly growing to $6,881,900 over 30 years (labeled "debt"). The vertical scale is logarithmic so both curves are visible. The visual purpose is to make the directional asymmetry visceral: the saving curve is impressive; the debt curve is terrifying at the same scale.] -->
+![Mirror-image chart showing compound growth in two directions](images/06-money-management-fig-02.png)
+*Figure 6.2 — Mirror-image chart showing compound growth in two directions*
 
 ### Compounding Frequency
 
@@ -122,7 +130,9 @@ $$\left(1 + \frac{0.24}{365}\right)^{365} - 1 \approx 0.2712 = 27.12\%$$
 
 Not 24%. 27%. The gap is the compounding premium. When a card says 24% APR, run the effective rate calculation. Know what you're actually agreeing to.
 
-<!-- → [TABLE: Stated APR vs. effective annual rate for common credit card APRs (18%, 22%, 24%, 26%, 29.99%) under daily compounding — columns: Stated APR, Effective Annual Rate, Difference. Student should see that the gap is consistent (roughly 2–3 percentage points across the range) and that a card advertising 24% is genuinely charging over 27%. This converts an abstract formula into a reference card they can use.] -->
+| Stated APR | Effective Annual Rate | Difference |
+| --- | --- | --- |
+| Stated APR vs. effective annual rate for common credit card APRs (18%, 22%, 24%, 26%, 29.99%) under daily compounding — | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
 
 ---
 
@@ -136,7 +146,8 @@ The payment amount stays constant. What shifts is the composition. Early in the 
 
 Why? Because interest is calculated on the remaining balance. The remaining balance starts large and shrinks toward zero. As the balance falls, the monthly interest falls. The payment stays the same, so more of it hits the principal. The principal falls faster. The interest falls faster. The acceleration builds.
 
-<!-- → [CHART: Stacked area chart for the 30-year $300,000 mortgage — x-axis is payment number (1–360), y-axis is the $1,896.20 monthly payment. Two stacked bands: bottom band (interest portion, shaded darker) starts tall and shrinks toward zero; top band (principal portion, shaded lighter) starts nearly invisible and grows to fill the full payment by year 30. Student should see the crossing point (roughly year 22–23 for this mortgage) where principal overtakes interest, and understand visually why early extra payments are so powerful: you're operating almost entirely in the dark band for the first decade.] -->
+![Stacked area chart for the 30-year $300,000 mortgage](images/06-money-management-fig-03.png)
+*Figure 6.3 — Stacked area chart for the 30-year $300,000 mortgage*
 
 ### The Payment Formula
 
@@ -190,7 +201,8 @@ Suppose you carry a $5,000 balance at 24% APR. The monthly interest rate is $0.2
 
 Your entire minimum payment equals your interest charge. Nothing goes to principal. The balance does not move.
 
-<!-- → [INFOGRAPHIC: Single payment breakdown circle diagram for a $5,000 balance at 24% APR — the circle is almost entirely one color (interest: $100) with a nearly invisible sliver of another color (principal reduction: $0 to ~$2). Below it, a second circle showing what a fixed $200/month payment looks like in the same month: roughly $100 interest, $100 principal. Caption: Same balance, same rate. The only variable is how much you pay. Student should see that the minimum payment is architected to keep you in the debt, not to exit it.] -->
+![Single payment breakdown circle diagram for a $5,000](images/06-money-management-fig-04.png)
+*Figure 6.4 — Single payment breakdown circle diagram for a $5,000*
 
 In practice, the minimum is usually calculated to cover the interest plus a small amount of principal — perhaps $1 or $2. So the balance does shrink. By $1 or $2. Per month.
 
@@ -208,7 +220,8 @@ Here is the full picture in one place.
 
 *Saving:* you give money to a bank or invest it. The money earns interest. That interest is added to your balance. The new balance earns interest. Over time, the machine runs in your favor. The longer you wait, the more it accelerates. A 25-year-old who invests $5,000 once and never touches it will, at a 7% annual return, have roughly $75,000 at 65. That same $5,000 invested at 35 yields roughly $38,000 at 65. Same amount. Same rate. Ten years of difference. The machine had ten extra years to run.
 
-<!-- → [CHART: Two compound growth curves for the same $5,000 at 7% annual return — one starting at age 25, one at age 35, both ending at age 65. The curves should be plotted on the same axes so the gap at age 65 ($75,000 vs. $38,000) is visually prominent. Label the gap: "$37,000 — the cost of waiting 10 years." This is the single most persuasive visual in the chapter for young readers making decisions now about whether to start saving.] -->
+![Two compound growth curves for the same $5,000](images/06-money-management-fig-05.png)
+*Figure 6.5 — Two compound growth curves for the same $5,000*
 
 *Borrowing:* you take money from a bank and owe it back with interest. Interest accrues on what you owe. If you don't pay it down, the accrued interest is added to what you owe, and the machine runs against you. A credit card balance, a payday loan, a student loan with income-based repayment that doesn't cover the interest — all of these are situations where the principal grows instead of shrinks, and the machine accelerates in the wrong direction.
 
@@ -326,3 +339,53 @@ Who is Robert Shiller, and how does their work connect to money management we co
 - Add a constraint: "Answer including criticisms or limits of Robert Shiller's framework."
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 6.1 — Line graph comparing linear growth (simple interest, straight
+
+Create a standalone D3 v7 HTML file for Figure Line graph comparing linear growth (simple interest, straight. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Side-by-side line graph comparing linear growth (simple interest, straight diagonal line) vs. exponential growth (compound interest, curve that starts nearly identical then bends sharply upward after year 10–15) for the same $1,000 principal at 6% over 30 years. Both start at the same point. Student should see exactly when and how dramatically the curves diverge — this is the visual proof that "interest compounds" is not a small technical detail but a qualitatively different kind of growth.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/06-money-management-fig-01.html`
+
+---
+
+### Figure 6.2 — Mirror-image chart showing compound growth in two directions
+
+Create a standalone D3 v7 HTML file for Figure Mirror-image chart showing compound growth in two directions. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Mirror-image chart showing compound growth in two directions from a shared zero point — above the axis: $5,000 invested at 5% growing to $21,609 over 30 years (labeled "saving"); below the axis: $5,000 owed at 24% compounded monthly growing to $6,881,900 over 30 years (labeled "debt"). The vertical scale is logarithmic so both curves are visible. The visual purpose is to make the directional asymmetry visceral: the saving curve is impressive; the debt curve is terrifying at the same scale.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/06-money-management-fig-02.html`
+
+---
+
+### Figure 6.3 — Stacked area chart for the 30-year $300,000 mortgage
+
+Create a standalone D3 v7 HTML file for Figure Stacked area chart for the 30-year $300,000 mortgage. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Stacked area chart for the 30-year $300,000 mortgage — x-axis is payment number (1–360), y-axis is the $1,896.20 monthly payment. Two stacked bands: bottom band (interest portion, shaded darker) starts tall and shrinks toward zero; top band (principal portion, shaded lighter) starts nearly invisible and grows to fill the full payment by year 30. Student should see the crossing point (roughly year 22–23 for this mortgage) where principal overtakes interest, and understand visually why early extra payments are so powerful: you're operating almost entirely in the dark band for the first decade.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables a
+
+> Reference implementation: `d3/06-money-management-fig-03.html`
+
+---
+
+### Figure 6.4 — Single payment breakdown circle diagram for a $5,000
+
+Create a standalone D3 v7 HTML file for Figure Single payment breakdown circle diagram for a $5,000. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Single payment breakdown circle diagram for a $5,000 balance at 24% APR — the circle is almost entirely one color (interest: $100) with a nearly invisible sliver of another color (principal reduction: $0 to ~$2). Below it, a second circle showing what a fixed $200/month payment looks like in the same month: roughly $100 interest, $100 principal. Caption: Same balance, same rate. The only variable is how much you pay. Student should see that the minimum payment is architected to keep you in the debt, not to exit it.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/06-money-management-fig-04.html`
+
+---
+
+### Figure 6.5 — Two compound growth curves for the same $5,000
+
+Create a standalone D3 v7 HTML file for Figure Two compound growth curves for the same $5,000. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two compound growth curves for the same $5,000 at 7% annual return — one starting at age 25, one at age 35, both ending at age 65. The curves should be plotted on the same axes so the gap at age 65 ($75,000 vs. $38,000) is visually prominent. Label the gap: "$37,000 — the cost of waiting 10 years." This is the single most persuasive visual in the chapter for young readers making decisions now about whether to start saving.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/06-money-management-fig-05.html`

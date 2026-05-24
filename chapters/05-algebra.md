@@ -31,7 +31,8 @@ That is it. Substitute back to check: $3(5) + 5 = 15 + 5 = 20$. Correct.
 
 The steps are mechanical, but the reasoning behind them matters. I am not applying rules by rote. I am *undoing* operations. The original equation had $x$ multiplied by 3, then increased by 5. To find $x$, I undo those operations in reverse order — subtract first, then divide. This is the same logic as unwrapping a package: you remove the outer layers before the inner ones.
 
-<!-- → [DIAGRAM: vertical "unwrapping" diagram for 3x + 5 = 20 — top level shows the original equation; arrows pointing downward show each inverse operation applied to both sides (−5, then ÷3); final level shows x = 5; right margin labels each arrow with the operation name and the property of equality being used — student should see the reverse-order logic visually, not just follow the algebra steps] -->
+![Vertical "unwrapping" diagram for 3x + 5 =](images/05-algebra-fig-01.png)
+*Figure 5.1 — Vertical "unwrapping" diagram for 3x + 5 =*
 
 Now try one where the unknown appears on both sides. Solve $5y - 3 = 2y + 9$.
 
@@ -81,7 +82,8 @@ Read this as "$f$ of $t$" — the value of the function $f$ at input $t$. The pa
 
 A function is a machine. One input in, one output out. The machine's rule can be anything — but it must be consistent. The same input always gives the same output. This is what makes it a function: no ambiguity about the output.
 
-<!-- → [INFOGRAPHIC: function-as-machine diagram — left side shows an input value (e.g., t = 4) entering a box labeled with the rule f(t) = 12 + 1.5t; right side shows the output value (18) emerging; below the machine, a small table lists four input-output pairs (t = 0, 1, 2, 3 → f = 12, 13.50, 15, 16.50); callout note labels the rule box "the rule" and the input/output arrows with "domain value" and "range value" — student should see at a glance why one-input-one-output is the defining property] -->
+![Function-as-machine diagram ](images/05-algebra-fig-02.png)
+*Figure 5.2 — Function-as-machine diagram *
 
 ### Domain and range
 
@@ -112,7 +114,8 @@ The **x-intercept** is where the line crosses the horizontal axis — where $y =
 
 Plot those two points and connect them. Line drawn.
 
-<!-- → [IMAGE: coordinate plane showing the graph of f(x) = 2x + 3 — four plotted points labeled with coordinates, x-intercept and y-intercept both labeled and circled, the line drawn through all points; slope triangle annotated between two adjacent points showing "rise = 2, run = 1"; student should see how intercepts and slope triangle connect to the equation's coefficients] -->
+![Coordinate plane showing the graph of f(x) =](images/05-algebra-fig-03.png)
+*Figure 5.3 — Coordinate plane showing the graph of f(x) =*
 
 ### Slope: what the rate of change actually is
 
@@ -128,7 +131,12 @@ In context, slope is always *something per something*. A function $d(t) = 60t$ f
 
 One trap worth naming explicitly: a horizontal line has slope 0. A vertical line has undefined slope, because the denominator $\Delta x$ is zero. These are not the same situation. Zero slope means no change; undefined slope means the rule "one input, one output" breaks down entirely — a vertical line has infinitely many $y$-values for a single $x$-value, so it is not even a function.
 
-<!-- → [TABLE: three-row reference table — columns: "Line type", "Equation form", "Slope value", "Is it a function?" — rows: horizontal (y = k, slope = 0, yes), vertical (x = k, slope = undefined, no), diagonal (y = mx + b, slope = m, yes); callout on the vertical row explaining why undefined slope and "not a function" are linked — student should be able to scan this and immediately resolve the horizontal vs. vertical confusion] -->
+| Line type | Equation form | Slope value | Is it a function?" — |
+| --- | --- | --- | --- |
+| horizontal (y = k, slope = 0, yes | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| vertical (x = k, slope = undefined, no | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| diagonal (y = mx + b, slope = m, yes | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| callout on the vertical row explaining why undefined slope and "not a function" are linked | student should be able to scan this and immediately resolve the horizontal vs. vertical confusion | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
 
 ---
 
@@ -217,7 +225,8 @@ The second is the first times two. Algebraically, the variable cancels and you a
 
 These are not errors or failures. They are valid outcomes. They tell you something about the structure of the problem. "No solution" means the constraints are contradictory — they cannot both be satisfied. "Infinitely many" means the constraints are redundant — one adds no new information beyond the other.
 
-<!-- → [IMAGE: three-panel side-by-side coordinate plane diagrams — Panel 1: two lines intersecting at one point, labeled "Unique solution"; Panel 2: two parallel lines that never meet, labeled "No solution"; Panel 3: two lines that are identical (one drawn over the other), labeled "Infinitely many solutions"; each panel annotated with a brief note on what the algebra produces (one answer / false statement / true identity) — student should see all three cases at once and connect visual form to algebraic signal] -->
+![Side-by-side coordinate plane diagrams ](images/05-algebra-fig-04.png)
+*Figure 5.4 — Side-by-side coordinate plane diagrams *
 
 ---
 
@@ -432,3 +441,45 @@ Who is Emmy Noether, and how does their work connect to algebra we covered in th
 - Add a constraint: "Answer including criticisms or limits of Emmy Noether's framework."
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 5.1 — Vertical "unwrapping" diagram for 3x + 5 =
+
+Create a standalone D3 v7 HTML file for Figure Vertical "unwrapping" diagram for 3x + 5 =. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: vertical "unwrapping" diagram for 3x + 5 = 20 — top level shows the original equation; arrows pointing downward show each inverse operation applied to both sides (−5, then ÷3); final level shows x = 5; right margin labels each arrow with the operation name and the property of equality being used — student should see the reverse-order logic visually, not just follow the algebra steps. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/05-algebra-fig-01.html`
+
+---
+
+### Figure 5.2 — Function-as-machine diagram 
+
+Create a standalone D3 v7 HTML file for Figure Function-as-machine diagram . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: function-as-machine diagram — left side shows an input value (e.g., t = 4) entering a box labeled with the rule f(t) = 12 + 1.5t; right side shows the output value (18) emerging; below the machine, a small table lists four input-output pairs (t = 0, 1, 2, 3 → f = 12, 13.50, 15, 16.50); callout note labels the rule box "the rule" and the input/output arrows with "domain value" and "range value" — student should see at a glance why one-input-one-output is the defining property. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/05-algebra-fig-02.html`
+
+---
+
+### Figure 5.3 — Coordinate plane showing the graph of f(x) =
+
+Create a standalone D3 v7 HTML file for Figure Coordinate plane showing the graph of f(x) =. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: coordinate plane showing the graph of f(x) = 2x + 3 — four plotted points labeled with coordinates, x-intercept and y-intercept both labeled and circled, the line drawn through all points; slope triangle annotated between two adjacent points showing "rise = 2, run = 1"; student should see how intercepts and slope triangle connect to the equation's coefficients. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/05-algebra-fig-03.html`
+
+---
+
+### Figure 5.4 — Side-by-side coordinate plane diagrams 
+
+Create a standalone D3 v7 HTML file for Figure Side-by-side coordinate plane diagrams . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: three-panel side-by-side coordinate plane diagrams — Panel 1: two lines intersecting at one point, labeled "Unique solution"; Panel 2: two parallel lines that never meet, labeled "No solution"; Panel 3: two lines that are identical (one drawn over the other), labeled "Infinitely many solutions"; each panel annotated with a brief note on what the algebra produces (one answer / false statement / true identity) — student should see all three cases at once and connect visual form to algebraic signal. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/05-algebra-fig-04.html`

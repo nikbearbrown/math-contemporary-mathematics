@@ -14,7 +14,8 @@ Not metaphorically. He replaced each of the four land regions — north bank, so
 
 That picture is called a *graph*. Not the kind with axes and curves — that's a different use of the word. A graph in the sense Euler invented: a collection of *vertices* (the dots) connected by *edges* (the lines), stripped of everything except the pattern of connection.
 
-<!-- → [IMAGE: Side-by-side panel — left: a sketch of Königsberg showing the Pregel River, the four land regions (north bank, south bank, large island, small island), and the seven labeled bridges; right: the abstract graph with four labeled vertices and seven edges connecting them, with each vertex annotated with its degree (3, 3, 3, 5). A large arrow between the panels labeled "Euler's reduction: throw away everything except connectivity." Student should see the exact correspondence between the physical map and the abstract graph, and understand what information was discarded vs. preserved.] -->
+![Panel ](images/12-graph-theory-fig-01.png)
+*Figure 12.1 — Panel *
 
 Euler stared at the picture for a short while and proved the walk was impossible. Not just for Königsberg — for any city with the same connection pattern. He proved it by asking one question about the dots: how many lines meet at each one?
 
@@ -42,7 +43,8 @@ $$\sum_{v \in V} \deg(v) = 2|E|$$
 
 The sum of all degrees equals twice the number of edges. The reason is immediate: every edge has two endpoints. When you sum the degrees, you count each edge once at each end — so you count it exactly twice.
 
-<!-- → [IMAGE: A small graph (5 vertices, 6 edges) with each edge highlighted in a different color. Below the graph, two columns: left column lists each vertex with its degree; right column lists each edge and shows it being "counted" at both endpoints with matching colors. Caption: "Each edge contributes 1 to each of its two endpoints' degrees — counted twice in the total. Sum of degrees = 2 × number of edges, always." This makes the theorem's proof visual rather than verbal.] -->
+![Each edge contributes 1 to each of its two endpoints' degrees — counted twice in the total. Sum of degrees = 2 × number of edges, always.](images/12-graph-theory-fig-02.png)
+*Figure 12.2 — A small graph (5 vertices, 6 edges) with*
 
 A consequence: the number of vertices with odd degree is always even. If the sum of all degrees is even, and even-degree vertices contribute even amounts, then the odd-degree vertices must collectively sum to an even total — which requires an even count of them. You cannot have three odd-degree vertices. Or seven. They always come in pairs.
 
@@ -64,7 +66,8 @@ What about the start vertex? You leave it at the beginning (using one edge) and 
 
 Every vertex. Even degree. That is the necessary condition.
 
-<!-- → [IMAGE: Two diagrams of the same vertex side by side — left diagram: a vertex with even degree (4), showing two pairs of arrows: one "enter/exit" pair shaded one color, another pair shaded differently, all edges accounted for; right diagram: a vertex with odd degree (3), showing one enter/exit pair accounted for, one edge left over with no partner. Caption: "Even degree: every arrival has a departure. Odd degree: one edge is always left stranded." Student should see the parity argument geometrically — even-degree vertices can always be passed through cleanly; odd-degree vertices cannot.] -->
+![Even degree: every arrival has a departure. Odd degree: one edge is always left stranded.](images/12-graph-theory-fig-03.png)
+*Figure 12.3 — Two diagrams of the same vertex side by*
 
 It is also sufficient. If every vertex has even degree and the graph is connected, you can always find an Euler circuit. The proof is constructive — Fleury's algorithm finds the circuit greedily, removing each traversed edge and never crossing a bridge that would disconnect the remaining graph unless there is no other choice. The key insight is Euler's: the degree condition is everything.
 
@@ -90,7 +93,9 @@ By the same parity argument: every interior vertex — one you pass through but 
 - Two odd-degree vertices: Euler trail exists, starting at one odd vertex and ending at the other.
 - Four or more: no Euler trail exists.
 
-<!-- → [TABLE: Three-row decision table for Euler circuits and trails — columns: "Number of odd-degree vertices", "What exists", "Why", "Example". Row 1: 0 odd vertices → Euler circuit → every vertex can be entered and exited cleanly → a 4-cycle. Row 2: exactly 2 odd vertices → Euler trail (not circuit) → start and end absorb the odd edges → a path graph. Row 3: 4 or more odd vertices → nothing → too many stranded edges → Königsberg (4 odd). This is the complete decision procedure in one reference row.] -->
+| Number of odd-degree vertices | What exists | Why | Example |
+| --- | --- | --- | --- |
+| for Euler circuits and trails — | A concrete checkpoint for applying the chapter concept. | It makes the underlying reasoning visible instead of implied. | Use the chapter example as the concrete test case. |
 
 In Königsberg, there are four odd-degree vertices — two too many. Remove one bridge to reduce to two odd-degree regions, and a trail becomes possible (just not a circuit). The structure of the problem dictates the structure of the solution with precision.
 
@@ -110,7 +115,8 @@ We know odd-degree vertices come in pairs. To create an Euler circuit, we need t
 
 The constraint: choose pairings that minimize total added distance. For a network with four odd-degree vertices, there are three possible pairings. Compute the shortest-path distance between each pair of vertices, add them for each pairing, pick the cheapest. For eight odd-degree vertices, the pairing problem grows — but it remains solvable in polynomial time using minimum-weight matching algorithms.
 
-<!-- → [IMAGE: A small neighborhood street graph (8 intersections, 10 streets) with four odd-degree intersections highlighted in red. Three panels below showing the three possible pairings of the four odd vertices, with the duplicate paths drawn in dashed lines and total added distance labeled for each pairing. The cheapest pairing circled. Caption: "To eulerize the graph: pair all odd-degree vertices, duplicate the shortest paths between each pair, pick the pairing with minimum total added distance." This makes the postman algorithm a visual procedure rather than an abstract optimization.] -->
+![To eulerize the graph: pair all odd-degree vertices, duplicate the shortest paths between each pair, pick the pairing with minimum total added distance.](images/12-graph-theory-fig-04.png)
+*Figure 12.4 — A small neighborhood street graph (8 intersections, 10*
 
 Once the cheapest duplicate paths are added, every vertex has even degree. Run Fleury's algorithm. Done.
 
@@ -136,7 +142,8 @@ The only known method is to search.
 
 Why is the Hamilton problem harder? Euler circuits are determined by local structure: check each vertex's degree independently, and the global question answers itself. Hamilton cycles are determined by global structure: the arrangement of all vertices relative to all others. Local properties are easy to check; global structure requires exploration.
 
-<!-- → [IMAGE: Two graphs side by side with identical degree sequences (every vertex has degree 3) — left graph contains a Hamilton cycle (highlighted); right graph does not. Caption: "Same degree sequence. Different global structure. One has a Hamilton cycle; one does not. Degree alone cannot distinguish them." This is the sharpest possible visual rebuttal to the intuition that degrees should tell you about Hamilton cycles, and it is more convincing than any prose argument.] -->
+![Same degree sequence. Different global structure. One has a Hamilton cycle; one does not. Degree alone cannot distinguish them.](images/12-graph-theory-fig-05.png)
+*Figure 12.5 — Two graphs side by side with identical degree*
 
 ---
 
@@ -156,7 +163,8 @@ For 20 cities: $(19)!/2 \approx 6 \times 10^{16}$ tours. At one billion per seco
 
 For 50 cities: the number exceeds $10^{62}$. The fastest conceivable computer running since the Big Bang would not finish.
 
-<!-- → [CHART: Log-scale line chart with x-axis "Number of cities" (5 to 25) and y-axis "Number of distinct tours (log scale)". A single steeply rising curve for $(n-1)!/2$. Reference lines marking: "Computer solves in 1 second" (~11 cities), "Computer solves in 1 hour" (~14 cities), "Computer solves in 1 year" (~17 cities), "Age of universe insufficient" (~22 cities). Student should see that the "unsolvable" threshold is reached at surprisingly small city counts — this viscerally communicates why brute force is not a practical strategy.] -->
+![Log-scale line chart with x-axis "Number of cities"](images/12-graph-theory-fig-06.png)
+*Figure 12.6 — Log-scale line chart with x-axis "Number of cities"*
 
 The growth is factorial — it outruns exponential growth, outruns any polynomial. No algorithm defeats this in the worst case. TSP is **NP-hard**: a polynomial-time algorithm for it would imply polynomial-time solutions for every problem in NP. That equivalence — whether P equals NP — is one of the deepest unsolved problems in mathematics, open since 1971, carrying a $1,000,000 prize.
 
@@ -186,7 +194,12 @@ The trade-off is fundamental and will not go away:
 
 Which you choose depends on the cost of suboptimality vs. the cost of computation time. For most real applications, heuristic wins.
 
-<!-- → [TABLE: Decision matrix for TSP approach — rows: "Exact (brute force)", "Nearest-neighbor heuristic", "Sophisticated heuristic (Lin-Kernighan, etc.)"; columns: "Solution quality", "Computation time", "Practical limit (cities)", "When to use". Cells filled with specific values: exact = optimal / exponential / ~15 cities / small high-stakes problems; nearest-neighbor = ~20-30% above optimal / $O(n^2)$ / thousands / real-time routing; sophisticated = ~1-5% above optimal / hours / tens of thousands / airline scheduling, chip design. Student should see the three options as a genuine trade-off space, not a ranking.] -->
+| Solution quality | Computation time | Practical limit (cities) | When to use |
+| --- | --- | --- | --- |
+| "Exact (brute force)", "Nearest-neighbor heuristic", "Sophisticated heuristic (Lin-Kernighan, etc.)" | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. | A concrete checkpoint for applying the chapter concept. |
+| columns: "Solution quality", "Computation time", "Practical limit (cities)", "When to use". Cells filled with specific values: exact = optimal | exponential | ~15 cities | small high-stakes problems |
+| nearest-neighbor = ~20-30% above optimal | $O(n^2)$ | thousands | real-time routing |
+| sophisticated = ~1-5% above optimal | hours | tens of thousands | airline scheduling, chip design. Student should see the three options as a genuine trade-off space, not a ranking. |
 
 ---
 
@@ -321,3 +334,61 @@ Who is Paul Erdős, and how does their work connect to graph theory we covered i
 - Add a constraint: "Answer including criticisms or limits of Paul Erdős's framework."
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 12.1 — Panel 
+
+Create a standalone D3 v7 HTML file for Figure Panel . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Side-by-side panel — left: a sketch of Königsberg showing the Pregel River, the four land regions (north bank, south bank, large island, small island), and the seven labeled bridges; right: the abstract graph with four labeled vertices and seven edges connecting them, with each vertex annotated with its degree (3, 3, 3, 5). A large arrow between the panels labeled "Euler's reduction: throw away everything except connectivity." Student should see the exact correspondence between the physical map and the abstract graph, and understand what information was discarded vs. preserved.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/12-graph-theory-fig-01.html`
+
+---
+
+### Figure 12.2 — A small graph (5 vertices, 6 edges) with
+
+Create a standalone D3 v7 HTML file for Figure A small graph (5 vertices, 6 edges) with. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: A small graph (5 vertices, 6 edges) with each edge highlighted in a different color. Below the graph, two columns: left column lists each vertex with its degree; right column lists each edge and shows it being "counted" at both endpoints with matching colors. Caption: "Each edge contributes 1 to each of its two endpoints' degrees — counted twice in the total. Sum of degrees = 2 × number of edges, always." This makes the theorem's proof visual rather than verbal.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/12-graph-theory-fig-02.html`
+
+---
+
+### Figure 12.3 — Two diagrams of the same vertex side by
+
+Create a standalone D3 v7 HTML file for Figure Two diagrams of the same vertex side by. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two diagrams of the same vertex side by side — left diagram: a vertex with even degree (4), showing two pairs of arrows: one "enter/exit" pair shaded one color, another pair shaded differently, all edges accounted for; right diagram: a vertex with odd degree (3), showing one enter/exit pair accounted for, one edge left over with no partner. Caption: "Even degree: every arrival has a departure. Odd degree: one edge is always left stranded." Student should see the parity argument geometrically — even-degree vertices can always be passed through cleanly; odd-degree vertices cannot.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono
+
+> Reference implementation: `d3/12-graph-theory-fig-03.html`
+
+---
+
+### Figure 12.4 — A small neighborhood street graph (8 intersections, 10
+
+Create a standalone D3 v7 HTML file for Figure A small neighborhood street graph (8 intersections, 10. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: A small neighborhood street graph (8 intersections, 10 streets) with four odd-degree intersections highlighted in red. Three panels below showing the three possible pairings of the four odd vertices, with the duplicate paths drawn in dashed lines and total added distance labeled for each pairing. The cheapest pairing circled. Caption: "To eulerize the graph: pair all odd-degree vertices, duplicate the shortest paths between each pair, pick the pairing with minimum total added distance." This makes the postman algorithm a visual procedure rather than an abstract optimization.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required
+
+> Reference implementation: `d3/12-graph-theory-fig-04.html`
+
+---
+
+### Figure 12.5 — Two graphs side by side with identical degree
+
+Create a standalone D3 v7 HTML file for Figure Two graphs side by side with identical degree. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two graphs side by side with identical degree sequences (every vertex has degree 3) — left graph contains a Hamilton cycle (highlighted); right graph does not. Caption: "Same degree sequence. Different global structure. One has a Hamilton cycle; one does not. Degree alone cannot distinguish them." This is the sharpest possible visual rebuttal to the intuition that degrees should tell you about Hamilton cycles, and it is more convincing than any prose argument.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/12-graph-theory-fig-05.html`
+
+---
+
+### Figure 12.6 — Log-scale line chart with x-axis "Number of cities"
+
+Create a standalone D3 v7 HTML file for Figure Log-scale line chart with x-axis "Number of cities". Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Log-scale line chart with x-axis "Number of cities" (5 to 25) and y-axis "Number of distinct tours (log scale)". A single steeply rising curve for $(n-1)!/2$. Reference lines marking: "Computer solves in 1 second" (~11 cities), "Computer solves in 1 hour" (~14 cities), "Computer solves in 1 year" (~17 cities), "Age of universe insufficient" (~22 cities). Student should see that the "unsolvable" threshold is reached at surprisingly small city counts — this viscerally communicates why brute force is not a practical strategy.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/12-graph-theory-fig-06.html`
