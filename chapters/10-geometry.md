@@ -1,4 +1,11 @@
 # Chapter 10 — Geometry
+
+## TL;DR
+
+- How to Measure What You Cannot Reach.
+- The chapter moves through The vocabulary, Measuring the boundary and the interior, The Pythagorean theorem, The pond, worked out, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *How to Measure What You Cannot Reach.*
 
 There is a pond in the way.
@@ -307,8 +314,7 @@ identified geometric inefficiency.
 
 ---
 
-## AI Wayback Machine
-
+##  AI Wayback Machine
 **Bonaventura Cavalieri** was 17th-century Italian mathematician whose 'method of indivisibles' anticipated integral calculus — and whose principle for comparing areas and volumes still appears in every geometry textbook.
 
 **Run this:**

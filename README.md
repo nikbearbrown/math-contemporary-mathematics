@@ -1,35 +1,39 @@
 # Contemporary Mathematics: with LLMs
 
-**Publisher:** Humanitarians AI  
-**Edition:** 2026  
-**License:** CC BY 4.0 for text; AI+1 marks and cover design are trademarks of Humanitarians AI.
+**Author:** Humanitarians AI Incorporated  
+**Publisher:** Humanitarians AI Incorporated, a 501(c)(3) nonprofit organization  
+**Copyright:** Copyright © 2026 Humanitarians AI Incorporated. All rights reserved.  
+**Edition:** 2026
 
-## Overview
+## Summary
 
-Contemporary Mathematics: with LLMs is part of the AI+1 series from Humanitarians AI. The book asks what a Contemporary Mathematics practitioner can do with AI while preserving the human judgment, accountability, and domain expertise that the tool cannot supply.
+*Contemporary Mathematics: with LLMs* is a structured textbook for readers who need a clear path through the subject rather than a loose collection of explanations. It begins with Chapter 1 — Sets, moves through 13 core chapters, and ends with Chapter 13 — Math and....
 
-The book's front matter explains the copyright, CC BY 4.0 license, distribution model, AI and errata disclosure, and the Humanitarians AI publishing context. The introduction frames the reader's path through the chapters: where AI helps, where it fails, and how to keep the boundary between execution and judgment visible.
+AI matters to *Contemporary Mathematics: with LLMs* because the modern textbook is no longer only a static container. It is also part of a learning system: searchable, remixable, explainable, and increasingly connected to tools such as Medhavy. For Humanitarians AI books, the relevant question is not whether AI can replace the learner or the teacher. It cannot. The useful question is what AI can make easier to inspect: definitions, worked examples, misconceptions, practice sequences, alternate explanations, and the structure of an argument. This book treats AI as infrastructure for open, public-interest learning infrastructure. The chapters should still stand on their own as readable prose, but they are also designed to be legible to an intelligent textbook system.
 
 ## Table of Contents
 
-- [Chapter 1 — Sets](chapters/01-sets.md)
-- [Chapter 2 — Logic](chapters/02-logic.md)
-- [Chapter 3 — Real Numbers and Number Theory](chapters/03-real-number-systems-and-number-theory.md)
-- [Chapter 4 — Number Representation and Calculation](chapters/04-number-representation-and-calculation.md)
-- [Chapter 5 — Algebra](chapters/05-algebra.md)
-- [Chapter 6 — Money Management](chapters/06-money-management.md)
-- [Chapter 7 — Probability](chapters/07-probability.md)
-- [Chapter 8 — Statistics](chapters/08-statistics.md)
-- [Chapter 9 — Metric Measurement](chapters/09-metric-measurement.md)
-- [Chapter 10 — Geometry](chapters/10-geometry.md)
-- [Chapter 11 — Voting and Apportionment](chapters/11-voting-and-apportionment.md)
-- [Chapter 12 — Graph Theory](chapters/12-graph-theory.md)
-- [Chapter 13 — Math and...](chapters/13-math-and.md)
+- **Chapter 1: Chapter 1 — Sets.** - The Art of Deciding What Belongs Together. - The chapter moves through What a set actually is, Writing sets down, Counting what's inside, Equal versus equivalent — the picky distinction, and related ideas. - Read it for the main argument, the...
+- **Chapter 2: Chapter 2 — Logic.** - How to Build an Argument Nobody Can Escape. - The chapter moves through What counts as a statement, Negation, Compound statements, A concrete case, and related ideas. - Read it for the main argument, the vocabulary it introduces, and the practical...
+- **Chapter 3: Chapter 3 — Real Numbers and Number Theory.** - The lock that has no key and the fraction that has no end. - The chapter moves through What Divides What, The Prime Pieces, The Fundamental Theorem of Arithmetic, How to Factor, and related ideas. - Read it for the main...
+- **Chapter 4: Chapter 4 — Number Representation and Calculation.** - The Notation Is the Engine, Not Just the Label. - The chapter moves through The first thing to get clear: numbers versus numerals, Tally marks: the floor, not the ceiling, The idea that changed everything, Zero: the hardest invention in mathematics,...
+- **Chapter 5: Chapter 5 — Algebra.** - What You Already Do, Written Down So It Always Works. - The chapter moves through What an equation actually is, The hard part is not solving — it is writing the equation, Functions: naming a relationship, Domain and range, and related...
+- **Chapter 6: Chapter 6 — Money Management.** - Here is something almost nobody tells you when they hand you a credit card: the bank has already done the math. - The chapter moves through What Interest Is, Simple Interest, Compound Interest: The Machine That Changes Everything, What Time Does...
+- **Chapter 7: Chapter 7 — Probability.** - Here is a question that looks like it's about luck but isn't: why does a casino always make money? - The chapter moves through What probability actually is, The complement trick, The counting problem, When order matters: permutations, and related ideas....
+- **Chapter 8: Chapter 8 — Statistics.** - Two Million Wrong Answers, and How to Get a Thousand Right Ones. - The chapter moves through Where data come from, The story in the middle, Spread: the story the mean cannot tell, The shape of the data, and related ideas....
+- **Chapter 9: Chapter 9 — Metric Measurement.** - On September 23, 1999, NASA's Mars Climate Orbiter arrived at Mars after a nine-month, 125-million-kilometer journey and disintegrated in the Martian atmosphere. - The chapter moves through The Problem With Measurement, The Structure of the System, Converting Between Units, The Connection...
+- **Chapter 10: Chapter 10 — Geometry.** - How to Measure What You Cannot Reach. - The chapter moves through The vocabulary, Measuring the boundary and the interior, The Pythagorean theorem, The pond, worked out, and related ideas. - Read it for the main argument, the vocabulary it introduces,...
+- **Chapter 11: Chapter 11 — Voting and Apportionment.** - In 1972, an economist named Kenneth Arrow won the Nobel Prize partly for proving that no fair voting system can exist. - The chapter moves through What fairness requires, The machinery: voting methods and what they sacrifice, The theorem itself, The...
+- **Chapter 12: Chapter 12 — Graph Theory.** - The map Euler threw away — and what he saw without it. - The chapter moves through The Vocabulary of Connection, Euler's Argument, Two Vertices of Odd Degree, When the Route Doesn't Close: The Postman Problem, and related ideas. - Read...
+- **Chapter 13: Chapter 13 — Math and....** - When the Constraint Is the Same, the Solution Is the Same. - The chapter moves through The golden ratio, The Fibonacci sequence, The golden rectangle and its spiral, The mathematics of sound, and related ideas. - Read it for the main...
 
-## Copyright and License
+## Files
 
-Copyright © 2026 Humanitarians AI. The text is licensed under CC BY 4.0. See [LICENSE.md](LICENSE.md) for full terms, including trademark restrictions for AI+1 marks and cover design.
+- `chapters/00-frontmatter.md` — title page, copyright, dedication, and preface
+- `chapters/00-introduction.md` — roadmap and book-level AI note
+- `chapters/99-back-matter.md` — acknowledgments, author note, references placeholder, and Medhavy note
+- `LICENSE.md` — rights and reuse terms
 
-## Errata
+## Medhavy
 
-Errata, corrections, and suspected mistakes may be submitted through [humanitarians.ai](https://www.humanitarians.ai/).
+This book is prepared for Kindle, online publication, and integration with Medhavy: https://www.medhavy.com/

@@ -1,4 +1,11 @@
 # Chapter 8 — Statistics
+
+## TL;DR
+
+- Two Million Wrong Answers, and How to Get a Thousand Right Ones.
+- The chapter moves through Where data come from, The story in the middle, Spread: the story the mean cannot tell, The shape of the data, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *Two Million Wrong Answers, and How to Get a Thousand Right Ones.*
 
 In October 1936, the most prestigious polling organization in the United States announced its prediction for the presidential election: Alf Landon would defeat Franklin Roosevelt by eighteen percentage points. The organization was the *Literary Digest*. It had correctly predicted every presidential election since 1916. It had surveyed two million people — the largest poll in American history to that point.
@@ -336,9 +343,12 @@ problem.
 
 ---
 
-## AI Wayback Machine
-
+##  AI Wayback Machine
 **W.E.B. Du Bois** was built foundational statistical sociology in 'The Philadelphia Negro' (1899) — applying rigorous quantitative methods to questions of race and inequality decades before the field was named.
+
+![W.E.B. Du Bois](../images/w-e-b-du-bois-9ef.png)
+
+*Puppet Art by [Nik Bear Brown](https://www.nikbearbrown.com/).*
 
 **Run this:**
 

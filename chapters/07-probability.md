@@ -1,4 +1,11 @@
 # Chapter 7 — Probability
+
+## TL;DR
+
+- Here is a question that looks like it's about luck but isn't: why does a casino always make money?
+- The chapter moves through What probability actually is, The complement trick, The counting problem, When order matters: permutations, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *The House Doesn't Cheat. It Does Math.*
 
 Here is a question that looks like it's about luck but isn't: why does a casino always make money?
@@ -314,9 +321,12 @@ trick calculation. One EV calculation. One identified
 
 ---
 
-## AI Wayback Machine
-
+##  AI Wayback Machine
 **Florence Nightingale David** was 20th-century British statistician — Karl Pearson's protégée — whose work on combinatorial probability remains in standard textbooks.
+
+![Florence Nightingale David](../images/florence-nightingale-david-287.png)
+
+*Puppet Art by [Nik Bear Brown](https://www.nikbearbrown.com/).*
 
 **Run this:**
 

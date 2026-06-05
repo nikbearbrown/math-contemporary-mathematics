@@ -1,4 +1,11 @@
 # Chapter 4 — Number Representation and Calculation
+
+## TL;DR
+
+- The Notation Is the Engine, Not Just the Label.
+- The chapter moves through The first thing to get clear: numbers versus numerals, Tally marks: the floor, not the ceiling, The idea that changed everything, Zero: the hardest invention in mathematics, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *The Notation Is the Engine, Not Just the Label.*
 
 Here is a fact about the year 1492 that has nothing to do with Columbus: you could record it in four symbols. 1, 4, 9, 2. Four symbols that any schoolchild could write in two seconds. That same year, in Roman numerals, is MCDXCII — longer, and harder to multiply by anything. And if you tried to record 1492 using the oldest human method, tally marks, you would need 1,492 of them. An entire afternoon of scratching.
@@ -297,8 +304,7 @@ fail. One design-decision insight.
 
 ---
 
-## AI Wayback Machine
-
+##  AI Wayback Machine
 **Al-Kindi** was 9th-century Arab philosopher and mathematician who developed the place-value Hindu-Arabic numeral system into a form Europe would later adopt.
 
 **Run this:**

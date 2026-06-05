@@ -1,4 +1,11 @@
 # Chapter 5 — Algebra
+
+## TL;DR
+
+- What You Already Do, Written Down So It Always Works.
+- The chapter moves through What an equation actually is, The hard part is not solving — it is writing the equation, Functions: naming a relationship, Domain and range, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *What You Already Do, Written Down So It Always Works.*
 
 Here is the thing nobody tells you about algebra: you already do it. Every time you check your change, estimate whether you can afford something, or figure out how long a drive will take, you are doing algebra. You are reasoning about an unknown quantity using what you do know. The only difference between that and what this chapter teaches is that we are going to write it down — give the unknown a name, state the constraints precisely, and solve mechanically. That shift from informal arithmetic to formal symbol-manipulation is smaller than it looks. But it is enormously powerful, because it works in cases where the informal version breaks down completely.
@@ -423,9 +430,12 @@ solution.
 
 ---
 
-## AI Wayback Machine
-
+##  AI Wayback Machine
 **Emmy Noether** was founded modern abstract algebra in the 1920s — and proved the theorem connecting symmetries to conservation laws. She couldn't hold a salaried position in Germany because she was a woman.
+
+![Emmy Noether](../images/emmy-noether-cb6.png)
+
+*Puppet Art by [Nik Bear Brown](https://www.nikbearbrown.com/).*
 
 **Run this:**
 

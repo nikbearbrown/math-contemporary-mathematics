@@ -1,5 +1,12 @@
 # Chapter 9 — Metric Measurement
 
+
+## TL;DR
+
+- On September 23, 1999, NASA's Mars Climate Orbiter arrived at Mars after a nine-month, 125-million-kilometer journey and disintegrated in the Martian atmosphere.
+- The chapter moves through The Problem With Measurement, The Structure of the System, Converting Between Units, The Connection Between Mass and Volume, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *One prefix system. One decimal logic. One unit mismatch that cost $325 million.*
 
 ---
@@ -360,9 +367,12 @@ check.
 
 ---
 
-## AI Wayback Machine
-
+##  AI Wayback Machine
 **Pierre Méchain** was French astronomer whose careful geodetic measurements between Dunkirk and Barcelona helped define the meter as one ten-millionth of the distance from pole to equator.
+
+![Pierre Méchain](../images/pierre-mchain-hdj.png)
+
+*Puppet Art by [Nik Bear Brown](https://www.nikbearbrown.com/).*
 
 **Run this:**
 

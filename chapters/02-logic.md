@@ -1,4 +1,11 @@
 # Chapter 2 — Logic
+
+## TL;DR
+
+- How to Build an Argument Nobody Can Escape.
+- The chapter moves through What counts as a statement, Negation, Compound statements, A concrete case, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *How to Build an Argument Nobody Can Escape.*
 
 There is a habit of mind that separates people who can argue from people who can only disagree. It is not a talent. It is a technique. And once you see it, you cannot unsee it.
@@ -428,8 +435,7 @@ ambiguous.
 
 ---
 
-## AI Wayback Machine
-
+##  AI Wayback Machine
 **George Boole** was developed Boolean algebra in 1854 — turning logic into mathematics. Every modern computer reasons in Boole's framework.
 
 **Run this:**

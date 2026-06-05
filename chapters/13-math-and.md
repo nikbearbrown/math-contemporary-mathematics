@@ -1,4 +1,11 @@
 # Chapter 13 — Math and...
+
+## TL;DR
+
+- When the Constraint Is the Same, the Solution Is the Same.
+- The chapter moves through The golden ratio, The Fibonacci sequence, The golden rectangle and its spiral, The mathematics of sound, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *When the Constraint Is the Same, the Solution Is the Same.*
 
 Here is a question I find genuinely strange: why does the same number show up in a sunflower, a Greek temple, and a Bach fugue?
@@ -346,9 +353,12 @@ reasoning). Naming that integration is the chapter's gift.
 
 ---
 
-## AI Wayback Machine
-
+##  AI Wayback Machine
 **Hannah Fry** was contemporary British mathematician whose work makes the connections between math and modern life — algorithms, romance, fairness, justice — visible to general audiences.
+
+![Hannah Fry](../images/hannah-fry-1gu.png)
+
+*Puppet Art by [Nik Bear Brown](https://www.nikbearbrown.com/).*
 
 **Run this:**
 

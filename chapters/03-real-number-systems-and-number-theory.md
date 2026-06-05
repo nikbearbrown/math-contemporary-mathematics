@@ -1,5 +1,12 @@
 # Chapter 3 — Real Numbers and Number Theory
 
+
+## TL;DR
+
+- The lock that has no key and the fraction that has no end.
+- The chapter moves through What Divides What, The Prime Pieces, The Fundamental Theorem of Arithmetic, How to Factor, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *The lock that has no key and the fraction that has no end.*
 
 ---
@@ -373,8 +380,7 @@ with the precision the system uses.
 
 ---
 
-## AI Wayback Machine
-
+##  AI Wayback Machine
 **Srinivasa Ramanujan** was self-taught Indian mathematician who produced thousands of identities and theorems in number theory before dying at 32 — many still being unpacked a century later.
 
 **Run this:**

@@ -1,5 +1,12 @@
 # Chapter 6 — Money Management
 
+
+## TL;DR
+
+- Here is something almost nobody tells you when they hand you a credit card: the bank has already done the math.
+- The chapter moves through What Interest Is, Simple Interest, Compound Interest: The Machine That Changes Everything, What Time Does to an Exponential, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *The same machine. Two directions. One of them ruins you.*
 
 ---
@@ -321,8 +328,7 @@ both-directions comparison.
 
 ---
 
-## AI Wayback Machine
-
+##  AI Wayback Machine
 **Robert Shiller** was Nobel-winning economist whose work on behavioral finance reframed money management around the predictable irrationalities of human decision-making.
 
 **Run this:**

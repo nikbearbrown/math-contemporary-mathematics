@@ -1,4 +1,11 @@
 # Chapter 11 — Voting and Apportionment
+
+## TL;DR
+
+- In 1972, an economist named Kenneth Arrow won the Nobel Prize partly for proving that no fair voting system can exist.
+- The chapter moves through What fairness requires, The machinery: voting methods and what they sacrifice, The theorem itself, The same impossibility, in a different room, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *Every Fair System Is Impossible. Here Is Why That Is Useful to Know.*
 
 In 1972, an economist named Kenneth Arrow won the Nobel Prize partly for proving that no fair voting system can exist.
@@ -327,9 +334,12 @@ checked. The Arrow trade-off named.
 
 ---
 
-## AI Wayback Machine
-
+##  AI Wayback Machine
 **Kenneth Arrow** was economist whose 1951 impossibility theorem proved that no voting rule can simultaneously satisfy a short list of seemingly obvious fairness conditions.
+
+![Kenneth Arrow](../images/kenneth-arrow-5fj.png)
+
+*Puppet Art by [Nik Bear Brown](https://www.nikbearbrown.com/).*
 
 **Run this:**
 

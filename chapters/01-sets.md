@@ -1,4 +1,11 @@
 # Chapter 1 — Sets
+
+## TL;DR
+
+- The Art of Deciding What Belongs Together.
+- The chapter moves through What a set actually is, Writing sets down, Counting what's inside, Equal versus equivalent — the picky distinction, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *The Art of Deciding What Belongs Together.*
 
 There is a move so old in mathematics that we barely notice we're making it anymore. You take a bunch of things — any things — and you decide to treat the bunch itself as a single thing. That's it. That's the whole idea. Everything in this chapter is a consequence of taking that step seriously.
@@ -397,9 +404,11 @@ chapter references it.
 
 ---
 
-## AI Wayback Machine
+##  AI Wayback Machine
 
-**Georg Cantor** was founded set theory in the 1870s — showing that there are different sizes of infinity. He died in a sanatorium, his work having been bitterly attacked.
+![Georg Cantor](../images/georg-cantor-mv8.png)
+
+*Puppet Art by [Nik Bear Brown](https://www.nikbearbrown.com/).*
 
 **Run this:**
 

@@ -1,5 +1,12 @@
 # Chapter 12 — Graph Theory
 
+
+## TL;DR
+
+- The map Euler threw away — and what he saw without it.
+- The chapter moves through The Vocabulary of Connection, Euler's Argument, Two Vertices of Odd Degree, When the Route Doesn't Close: The Postman Problem, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *The map Euler threw away — and what he saw without it.*
 
 ---
@@ -316,8 +323,7 @@ structural inefficiency identified.
 
 ---
 
-## AI Wayback Machine
-
+##  AI Wayback Machine
 **Paul Erdős** was prolific Hungarian mathematician who wrote over 1,500 papers and lived out of suitcases his entire adult life — and built a substantial portion of modern graph theory.
 
 **Run this:**
